@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
         <file>Button.qml</file>
+        <file>image/facebook_logo.jpg</file>
     </qresource>
 </RCC>
