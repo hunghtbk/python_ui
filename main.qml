@@ -4,78 +4,124 @@ import QtQuick.Window 2.2
 Window {
     id: m_app
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+    width: 618
+    height: 436
+    title: qsTr("UI Project")
+    color: "#2E2C50"
 
-    Button {
+    Rectangle {
         id: btn_close
-        x: 540
-        y: 0
-        btn_width: 100
-        btn_heigh: 50
-        btn_title: "X"
-        onSendMessage: {
-            console.log("X button")
-            m_app.close();
+        x: 581
+        y: 14
+        width: 18
+        height: 18
+        color: "transparent"
+        Image {
+            anchors.centerIn: parent.Center
+            width: 9.01
+            height: 9.01
+            source: "qrc:/image/close.png"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                m_app.close();
+            }
         }
 
     }
 
-    Button {
+    Rectangle {
         id: btn_small
-        x: 440
-        y: 0
-        btn_width: 100
-        btn_heigh: 50
-        btn_title: "--"
-        onSendMessage: {
-            console.log("- button")
-            m_app.showMinimized();
+        x: 561
+        y: 14
+        width: 18
+        height: 18
+        color: "transparent"
+        Image {
+            x: 0
+            y: 5
+            width: 12
+            height: 1.5
+            source: "qrc:/image/minimize.png"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                m_app.showMinimized();
+            }
         }
     }
 
     Image {
-        id: logo_image
-        x: 0
+        id: upoVal
+        width: 280
+        height: 127
+        x: 338
         y: 0
-        width: 100
-        height: 100
+        source: "qrc:/image/oval_up.png"
+    }
+
+    Image {
+        id: downoVal
+        width: 486
+        height: 88
+        x: 0
+        y: 348
+        source: "qrc:/image/oval_down.png"
+    }
+
+    Image {
+        id: logo_image
+        x: 85
+        y: 84
+        width: 38
+        height: 38
         source: "qrc:/image/facebook_logo.jpg"
     }
 
     Text {
         id: logo_title
-        x: 200
-        y: 50
-        text: qsTr("Facebook Login")
+        x: 135
+        y: 92
+        width: 92
+        height: 22
+        text: qsTr("LevandoIO")
         font.family: "Helvetica"
-        font.pointSize: 24
+        font.pointSize: 18
+        color: "#FFFFFF"
     }
 
     Text {
         id: login_txt
-        x: 5
-        y: 200
+        x: 85
+        y: 152
+        width: 56
+        height: 22
         text: qsTr("LOGIN")
         font.family: "Helvetica"
-        font.pointSize: 24
+        font.pointSize: 18
+        color: "#907DE2"
     }
 
     Text {
         id: license_key_txt
-        x: 5
-        y: 250
+        x: 85
+        y: 191
+        width: 70
+        height: 15
         text: qsTr("License Key")
         font.family: "Helvetica"
-        font.pointSize: 18
+        font.pointSize: 12
+        color: "#FFFFFF"
+
     }
-    Rectangle {
-        x: 5
-        y: 300
-        width: 400
-        height: 50
-        border.color: "black"
+    Image {
+        x: 85
+        y: 215
+        width: 448
+        height: 30
+        source: "qrc:/image/text_input_bgr.png"
 
         TextInput {
             x: 10
@@ -85,16 +131,38 @@ Window {
         }
     }
 
-    Button {
-        id: btn_authen
-        x: 10
-        y: 400
-        btn_width: 150
-        btn_heigh: 50
-        btn_title: "Authentication"
-        onSendMessage: {
-            console.log("Authentication " + txt_input.text)
+    Image {
+        x: 85
+        y: 263
+        width: 160
+        height: 30
+        source: "qrc:/image/authen_bgr.png"
+
+        Text {
+            id: authentxt
+            width: 76
+            height: 15
+            x: 36
+            y: 6
+            text: qsTr("Authenticate")
+            font.family: "Helvetica"
+            font.pointSize: 12
+            color: "#2E2C50"
         }
 
+        Image {
+            x: 133
+            y: 12
+            width: 5
+            height: 10
+            source: "qrc:/image/authen_arrow.png"
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("Authenticate " + txt_input.text)
+            }
+        }
     }
 }

@@ -23,7 +23,6 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            console.log("hunght")
             sendMessage("abcd")
         }
     }
