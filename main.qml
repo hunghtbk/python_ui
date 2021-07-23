@@ -62,14 +62,6 @@ Window {
         source: "qrc:/image/oval_up.png"
     }
 
-    SmallLotus {
-        id: logo_image
-        x: 85
-        y: 84
-        width: 38
-        height: 38
-    }
-
     Text {
         id: logo_title
         x: 135
@@ -157,6 +149,95 @@ Window {
         }
     }
 
+    //SmallLotus
+    Image {
+        id: lotus1
+        width: 14.78
+        height: 9.1
+        x: 85
+        y: 97.63
+        source: "qrc:/image/small_lotus/small_1.png"
+    }
+    Image {
+        id: lotus2
+        width: 15.17
+        height: 7.97
+        x: 85
+        y: 94.45
+        source: "qrc:/image/small_lotus/small_2.png"
+    }
+    Image {
+        id: lotus3
+        width: 7.45
+        height: 15.53
+        x: 97.58
+        y: 84.01
+        source: "qrc:/image/small_lotus/small_3.png"
+    }
+    Image {
+        id: lotus4
+        width: 7.45
+        height: 15.53
+        x: 102.47
+        y: 84
+        source: "qrc:/image/small_lotus/small_4.png"
+    }
+
+    Image {
+        id: lotus5
+        width: 15.17
+        height: 7.97
+        x: 107.33
+        y: 94.46
+        source: "qrc:/image/small_lotus/small_5.png"
+    }
+
+    Image {
+        id: lotus6
+        width: 14.78
+        height: 9.1
+        x: 107.72
+        y: 97.63
+        source: "qrc:/image/small_lotus/small_6.png"
+    }
+
+    Image {
+        id: lotus7
+        width: 10.14
+        height: 13.84
+        x: 106.21
+        y: 105.83
+        source: "qrc:/image/small_lotus/small_7.png"
+    }
+
+    Image {
+        id: lotus8
+        width: 11.15
+        height: 12.74
+        x: 104.18
+        y: 106.97
+        source: "qrc:/image/small_lotus/small_8.png"
+    }
+
+    Image {
+        id: lotus9
+        width: 11.15
+        height: 12.74
+        x: 92.16
+        y: 106.97
+        source: "qrc:/image/small_lotus/small_9.png"
+    }
+
+    Image {
+        id: lotus10
+        width: 10.14
+        height: 13.84
+        x: 91.15
+        y: 105.83
+        source: "qrc:/image/small_lotus/small_10.png"
+    }
+
+    //BigLotus
     BigLotus {
         x: 320
         y: 263
