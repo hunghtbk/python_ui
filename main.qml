@@ -118,6 +118,7 @@ Window {
             id: txt_input
             anchors.verticalCenter: parent.verticalCenter
             text: "XXXXX-XXXXX-XXXXXX-XXXXXX"
+            color: "#907DE2"
         }
     }
 
