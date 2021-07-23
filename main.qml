@@ -238,11 +238,60 @@ Window {
     }
 
     //BigLotus
-    BigLotus {
-        x: 320
-        y: 263
+    Image {
+        id: big_lotus1
+        x: 338.5
+        y: 383.45
+        source: "qrc:/image/big_lostus/big_1.png"
+    }
+    Image {
+        id: big_lotus2
+        x: 325
+        y: 359.45
+        source: "qrc:/image/big_lostus/big_2.png"
     }
 
+    Image {
+        id: big_lotus3
+//        width: 123.46
+//        height: 141.580
+        x: 361.46
+        y: 260.85
+        source: "qrc:/image/big_lostus/big_3.png"
+    }
+    Image {
+        id: big_lotus4
+//        width: 123.49
+//        height: 141.6
+        x: 393.76
+        y: 238.26
+        source: "qrc:/image/big_lostus/big_4.png"
+    }
+    Image {
+        id: big_lotus5
+        x: 475.8
+        y: 251.79
+        source: "qrc:/image/big_lostus/big_5.png"
+    }
+    Image {
+        id: big_lotus6
+        x: 493.24
+        y: 273.67
+        source: "qrc:/image/big_lostus/big_6.png"
+    }
+    Image {
+        id: big_lotus7
+        x: 519
+        y: 364
+        source: "qrc:/image/big_lostus/big_7.png"
+    }
+    Image {
+        id: big_lotus8
+        x: 511.61
+        y: 376.79
+        source: "qrc:/image/big_lostus/big_8.png"
+    }
+    //////////////////
     Image {
         id: downoVal
         width: 486
