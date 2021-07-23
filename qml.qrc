@@ -29,5 +29,7 @@
         <file>image/text_input_bgr.png</file>
         <file>image/authen_bgr.png</file>
         <file>image/authen_arrow.png</file>
+        <file>SmallLotus.qml</file>
+        <file>BigLotus.qml</file>
     </qresource>
 </RCC>

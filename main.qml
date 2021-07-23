@@ -62,22 +62,12 @@ Window {
         source: "qrc:/image/oval_up.png"
     }
 
-    Image {
-        id: downoVal
-        width: 486
-        height: 88
-        x: 0
-        y: 348
-        source: "qrc:/image/oval_down.png"
-    }
-
-    Image {
+    SmallLotus {
         id: logo_image
         x: 85
         y: 84
         width: 38
         height: 38
-        source: "qrc:/image/facebook_logo.jpg"
     }
 
     Text {
@@ -164,5 +154,19 @@ Window {
                 console.log("Authenticate " + txt_input.text)
             }
         }
+    }
+
+    BigLotus {
+        x: 320
+        y: 263
+    }
+
+    Image {
+        id: downoVal
+        width: 486
+        height: 88
+        x: 0
+        y: 348
+        source: "qrc:/image/oval_down.png"
     }
 }
