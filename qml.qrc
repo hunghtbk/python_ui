@@ -32,5 +32,25 @@
         <file>SmallLotus.qml</file>
         <file>BigLotus.qml</file>
         <file>qmlScreen/loginScreen.qml</file>
+        <file>qmlScreen/TaskScreen.qml</file>
+        <file>image/dashboardIcon_inactive.png</file>
+        <file>image/taskIcon_active.png</file>
+        <file>image/selectedIcon.png</file>
+        <file>image/profileIcon_1_Inactive.png</file>
+        <file>image/profileIcon_inactive.png</file>
+        <file>image/proxyIcon_inactive.png</file>
+        <file>image/accounticon_inactive_2.png</file>
+        <file>image/accountIcon_inactive_1.png</file>
+        <file>image/settingIcon1.png</file>
+        <file>image/settingIcon2.png</file>
+        <file>image/changeTheme1_inactive.png</file>
+        <file>image/changeTheme2_inactive.png</file>
+        <file>image/changeTheme3_inactive.png</file>
+        <file>image/changeTheme4_inactive.png</file>
+        <file>image/changeTheme5_inactive.png</file>
+        <file>image/changeTheme6_inactive.png</file>
+        <file>image/changeTheme7_inactive.png</file>
+        <file>image/changeTheme8_inactive.png</file>
+        <file>image/changeTheme9_inactive.png</file>
     </qresource>
 </RCC>
