@@ -31,5 +31,6 @@
         <file>image/authen_arrow.png</file>
         <file>SmallLotus.qml</file>
         <file>BigLotus.qml</file>
+        <file>qmlScreen/loginScreen.qml</file>
     </qresource>
 </RCC>
