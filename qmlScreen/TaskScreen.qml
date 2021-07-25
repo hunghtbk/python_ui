@@ -447,4 +447,97 @@ Window {
         }
 
     }
+
+    Rectangle {
+        id: detailItem
+        x: 349
+        y: 0
+        width: 851
+        height: 730
+        color: "transparent"
+
+        Image {
+            id: borderImage1
+            width: 70.4
+            height: 70.4
+            x: 27
+            y: 22
+            source: "qrc:/image/image_borde.png"
+
+            Image {
+                id: siteImage
+                width: 52
+                height: 56
+                x: 9
+                y: 7
+                source: "qrc:/image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
+            }
+        }
+
+        Text {
+            id: siteTitle
+            text: qsTr("Site")
+            width: 19
+            height: 12
+            x: 118
+            y: 21
+            font.family: "Inter"
+            font.pointSize: 7
+            color: "#75719B"
+        }
+
+        Text {
+            id: siteName
+            text: qsTr("Bestbuy")
+            width: 47
+            height: 15
+            x: 118
+            y: 37
+            font.family: "Inter"
+            font.pointSize: 9
+            color: "#FFFFFF"
+        }
+
+        Text {
+            id: productTitle
+            text: qsTr("Product")
+            width: 39
+            height: 12
+            x: 118
+            y: 62
+            font.family: "Inter"
+            font.pointSize: 7
+            color: "#75719B"
+        }
+
+        Text {
+            id: productName
+            text: qsTr("Playstation 5 Digital Console")
+            width: 162
+            height: 15
+            x: 118
+            y: 78
+            font.family: "Inter"
+            font.pointSize: 9
+            color: "#FFFFFF"
+        }
+
+        Image {
+            id: boder2
+            width: 246
+            height: 30
+            x: 512
+            y: 21
+            source: "qrc:/image/border_2.png"
+        }
+
+        Image {
+            id: line
+            width: 851
+            height: 1
+            x: 0
+            y: 115.5
+            source: "qrc:/image/line.png"
+        }
+    }
 }
