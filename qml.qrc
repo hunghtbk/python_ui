@@ -52,5 +52,27 @@
         <file>image/changeTheme7_inactive.png</file>
         <file>image/changeTheme8_inactive.png</file>
         <file>image/changeTheme9_inactive.png</file>
+        <file>image/add_icon1.png</file>
+        <file>image/add_icon2.png</file>
+        <file>qmlScreen/TaskGroupDelegate.qml</file>
+        <file>qmlScreen/TaskGroupModel.qml</file>
+        <file>image/border_50_21.png</file>
+        <file>image/delete_icon.png</file>
+        <file>image/green_oval.png</file>
+        <file>image/red_oval.png</file>
+        <file>image/task_item_bgr-active.png</file>
+        <file>image/task_item_bgr_inactive.png</file>
+        <file>image/white_oval.png</file>
+        <file>image/image_borde.png</file>
+        <file>image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png</file>
+        <file>image/dashboardIcon_active.png</file>
+        <file>image/profileIcon_1_active.png</file>
+        <file>image/profileIcon_active.png</file>
+        <file>image/proxyIcon_active.png</file>
+        <file>image/taskIcon_inactive.png</file>
+        <file>image/settingIcon1_active.png</file>
+        <file>image/settingIcon2_active.png</file>
+        <file>image/accountIcon_active_1.png</file>
+        <file>image/accountIcon_active_2.png</file>
     </qresource>
 </RCC>

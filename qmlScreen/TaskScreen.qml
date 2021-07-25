@@ -140,6 +140,27 @@ Window {
             y: 68.75
             source: "qrc:/image/dashboardIcon_inactive.png"
         }
+
+        MouseArea {
+            width: 18
+            height: 18
+            x: 24
+            y: 59
+            onPressed: {
+                dbIcon1.source = "qrc:/image/dashboardIcon_active.png"
+                dbIcon2.source = "qrc:/image/dashboardIcon_active.png"
+                dbIcon3.source = "qrc:/image/dashboardIcon_active.png"
+                dbIcon4.source = "qrc:/image/dashboardIcon_active.png"
+            }
+            onReleased: {
+                dbIcon1.source = "qrc:/image/dashboardIcon_inactive.png"
+                dbIcon2.source = "qrc:/image/dashboardIcon_inactive.png"
+                dbIcon3.source = "qrc:/image/dashboardIcon_inactive.png"
+                dbIcon4.source = "qrc:/image/dashboardIcon_inactive.png"
+            }
+
+        }
+
         //End dash board icon
         //task group icon
         Image {
@@ -177,7 +198,7 @@ Window {
             height: 1.5
             x: 28.5
             y: 136.75
-            source: "qrc:/image/profileIcon_inactive.png"
+            source: "qrc:/image/profileIcon_1_Inactive.png"
         }
         Image {
             id: profileIcon2
@@ -185,8 +206,27 @@ Window {
             height: 1.5
             x: 34.5
             y: 136.75
-            source: "qrc:/image/profileIcon_inactive.png"
+            source: "qrc:/image/profileIcon_1_Inactive.png"
         }
+
+        MouseArea {
+            width: 15
+            height: 10.5
+            x: 25.5
+            y: 130.75
+            onPressed: {
+                profileIcon.source = "qrc:/image/profileIcon_active.png"
+                profileIcon1.source = "qrc:/image/profileIcon_1_active.png"
+                profileIcon2.source = "qrc:/image/profileIcon_1_active.png"
+            }
+
+            onReleased: {
+                profileIcon.source = "qrc:/image/profileIcon_inactive.png"
+                profileIcon1.source = "qrc:/image/profileIcon_1_Inactive.png"
+                profileIcon2.source = "qrc:/image/profileIcon_1_Inactive.png"
+            }
+        }
+
         //End profile icon
         //Proxy icon
         Image {
@@ -197,6 +237,17 @@ Window {
             y: 161.75
             source: "qrc:/image/proxyIcon_inactive.png"
         }
+
+        MouseArea {
+            anchors.fill: proxyIcon
+            onPressed: {
+                proxyIcon.source = "qrc:/image/proxyIcon_active.png"
+            }
+            onReleased: {
+                proxyIcon.source = "qrc:/image/proxyIcon_inactive.png"
+            }
+        }
+
         //End Proxy icon
         //Account Icon
         Image {
@@ -214,6 +265,21 @@ Window {
             x: 27.75
             y: 202.75
             source: "qrc:/image/accounticon_inactive_2.png"
+        }
+
+        MouseArea {
+            width: 18
+            height: 18
+            x: 24
+            y: 193
+            onPressed: {
+                accountIcon1.source = "qrc:/image/accountIcon_active_1.png"
+                accountIcon2.source = "qrc:/image/accountIcon_active_2.png"
+            }
+            onReleased: {
+                accountIcon1.source = "qrc:/image/accountIcon_inactive_1.png"
+                accountIcon2.source = "qrc:/image/accounticon_inactive_2.png"
+            }
         }
         //Account icon end
         //Setting Icon
@@ -233,6 +299,22 @@ Window {
             y: 231.37
             source: "qrc:/image/settingIcon2.png"
         }
+
+        MouseArea {
+            width: 15
+            height: 15
+            x: 25.5
+            y: 226.5
+            onPressed: {
+                settingIcon1.source = "qrc:/image/settingIcon1_active.png"
+                settingIcon2.source = "qrc:/image/settingIcon2_active.png"
+            }
+            onReleased: {
+                settingIcon1.source = "qrc:/image/settingIcon1.png"
+                settingIcon2.source = "qrc:/image/settingIcon2.png"
+            }
+        }
+
         //End setting Icon
         //Change Theme icon
         Image {
@@ -317,6 +399,52 @@ Window {
         height: 730
         color: "#282645"
 
+        Text {
+            id: taskGroupTitle
+            text: qsTr("Tasks Groups")
+            width: 103
+            height: 19
+            x: 33
+            y: 19
+            font.family: "Inter"
+            font.pointSize: 13
+            color: "#FFFFFF"
+        }
+
+        Image {
+            id: addIcon
+            width: 9.6
+            height: 9.6
+            x: 163.4
+            y: 24.4
+            source: "qrc:/image/add_icon2.png"
+        }
+        Image {
+            id: addIconBorder
+            width: 21
+            height: 21
+            x: 158
+            y: 19
+            source: "qrc:/image/add_icon1.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Add new Task Group")
+                }
+            }
+        }
+
+        //List task group
+        ListView {
+            width: 221
+            height: 660
+            x: 33
+            y: 64
+            model: TaskGroupModel {}
+            delegate: TaskGroupDelegate {}
+            clip: true
+        }
 
     }
 }
