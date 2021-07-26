@@ -92,5 +92,9 @@
         <file>image/starAll_icon.png</file>
         <file>image/stopAll_icon.png</file>
         <file>image/listviewTitleBorder.png</file>
+        <file>qmlScreen/TaskItemDelegate.qml</file>
+        <file>qmlScreen/TaskItemModel.qml</file>
+        <file>image/task_item_border.png</file>
+        <file>image/task_scroll_border.png</file>
     </qresource>
 </RCC>

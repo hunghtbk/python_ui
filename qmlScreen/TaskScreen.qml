@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
+import QtQuick.Controls 2.0
 
 Window {
     id: m_taskScreen
@@ -954,6 +955,35 @@ Window {
                 font.family: "Inter"
                 font.pointSize: 8
                 color: "#FFFFFF"
+            }
+        }
+        //List item
+        Image {
+            id: taskScrollBorder
+            width: 9
+            height: 480
+            x: 809
+            y: 229
+            source: "qrc:/image/task_scroll_border.png"
+        }
+        ListView {
+            id: listTaskItem
+            width: 793.2
+            height: 498
+            x: 27
+            y: 227
+            model: TaskItemModel {}
+            delegate: TaskItemDelegate {}
+            clip: true
+            flickableDirection: Flickable.VerticalFlick
+            boundsBehavior: Flickable.StopAtBounds
+            ScrollBar.vertical: ScrollBar {
+                contentItem: Rectangle {
+                    implicitWidth: 9
+                    implicitHeight: 221
+                    color: "#423F6B"
+                    radius: 10
+                }
             }
         }
 
