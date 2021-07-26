@@ -77,5 +77,20 @@
         <file>image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png</file>
         <file>image/line.png</file>
         <file>image/border_2.png</file>
+        <file>image/Dola_icon.png</file>
+        <file>image/Green_icon.png</file>
+        <file>image/Green_icon_1.png</file>
+        <file>image/Red_icon.png</file>
+        <file>image/Red_icon_1.png</file>
+        <file>image/close_icon.png</file>
+        <file>image/minimize_icon.png</file>
+        <file>image/mask_link_border.png</file>
+        <file>image/confirm_border.png</file>
+        <file>image/arrow_confirm.png</file>
+        <file>image/white_border.png</file>
+        <file>image/deleteAll_icon.png</file>
+        <file>image/starAll_icon.png</file>
+        <file>image/stopAll_icon.png</file>
+        <file>image/listviewTitleBorder.png</file>
     </qresource>
 </RCC>

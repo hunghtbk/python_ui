@@ -529,6 +529,172 @@ Window {
             x: 512
             y: 21
             source: "qrc:/image/border_2.png"
+
+            Image {
+                id: dolaIcon
+                width: 6
+                height: 7
+                x: 14
+                y: 11
+                source: "qrc:/image/Dola_icon.png"
+            }
+
+            Text {
+                id: dolaContent
+                text: qsTr("$2,309")
+                width: 43
+                height: 15
+                x: 27
+                y: 7
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#FFFFFF"
+            }
+
+            Image {
+                id: greenIcon
+                width: 9
+                height: 9
+                x: 108.5
+                y: 10.5
+                source: "qrc:/image/Green_icon.png"
+            }
+            Image {
+                id: greenIcon1
+                width: 4
+                height: 2.5
+                x: 111
+                y: 14.5
+                source: "qrc:/image/Green_icon_1.png"
+            }
+
+            Text {
+                id: greenContent
+                text: qsTr("78")
+                width: 43
+                height: 15
+                x: 125
+                y: 7
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#FFFFFF"
+            }
+
+            Image {
+                id: redIcon
+                width: 9
+                height: 9
+                x: 190.5
+                y: 10.5
+                source: "qrc:/image/Red_icon.png"
+            }
+            Image {
+                id: redIcon1
+                width: 9
+                height: 9.72
+                x: 190.5
+                y: 10.18
+                source: "qrc:/image/Red_icon_1.png"
+            }
+
+            Text {
+                id: redContent
+                text: qsTr("28")
+                width: 43
+                height: 15
+                x: 207
+                y: 7
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#FFFFFF"
+            }
+        }
+
+        Image {
+            id: minimizeIcon
+            width: 12
+            height: 1.5
+            x: 797
+            y: 22.5
+            source: "qrc:/image/minimize_icon.png"
+        }
+        MouseArea {
+            width: 18
+            height: 18
+            x: 794
+            y: 14
+            onClicked: {
+                console.log("Minimize")
+            }
+        }
+
+        Image {
+            id: closeIcon
+            width: 9.01
+            height: 9.01
+            x: 818.5
+            y: 18.5
+            source: "qrc:/image/close_icon.png"
+        }
+
+        MouseArea {
+            width: 18
+            height: 18
+            x: 814
+            y: 14
+            onClicked: {
+                console.log("Close icon")
+            }
+        }
+
+        Image {
+            id: masklinkboder
+            width: 196
+            height: 30
+            x: 512
+            y: 63
+            source: "qrc:/image/mask_link_border.png"
+
+            Text {
+                id: masklinkcontent
+                text: qsTr("Mass link change")
+                width: 101
+                height: 15
+                x: 12
+                y: 7
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#75719B"
+            }
+        }
+
+        Image {
+            id: confimborder
+            width: 98
+            height: 30
+            x: 720
+            y: 63
+            source: "qrc:/image/confirm_border.png"
+
+            Text {
+                id: confimbordercontent
+                text: qsTr("Confirm")
+                width: 47
+                height: 15
+                x: 20
+                y: 7
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#2E2C50"
+            }
+            Image {
+                id: arrowConfirm
+                width: 3.5
+                height: 7
+                x: 74
+                y: 12
+                source: "qrc:/image/arrow_confirm.png"
+            }
         }
 
         Image {
@@ -539,5 +705,257 @@ Window {
             y: 115.5
             source: "qrc:/image/line.png"
         }
+
+        Text {
+            id: tasktxt
+            text: qsTr("Tasks")
+            width: 44
+            height: 19
+            x: 27
+            y: 139
+            font.family: "Inter"
+            font.pointSize: 13
+            color: "#FFFFFF"
+        }
+
+        Image {
+            id: addTaskIcon
+            width: 9.6
+            height: 9.6
+            x: 96.4
+            y: 144.4
+            source: "qrc:/image/add_icon2.png"
+        }
+        Image {
+            id: addtaskIconBorder
+            width: 21
+            height: 21
+            x: 91
+            y: 139
+            source: "qrc:/image/add_icon1.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Add new Task Item")
+                }
+            }
+        }
+
+        Image {
+            id: startAllbtn
+            width: 104
+            height: 30
+            x: 490
+            y: 134
+            source: "qrc:/image/white_border.png"
+
+            Image {
+                id: startAllIcon
+                width: 7.7
+                height: 9.9
+                x: 75
+                y: 10
+                source: "qrc:/image/starAll_icon.png"
+            }
+
+            Text {
+                id: startAlltxt
+                text: qsTr("Start All")
+                width: 47
+                height: 15
+                x: 21
+                y: 8
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#29E182"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("start all button")
+                }
+            }
+        }
+
+        Image {
+            id: stopAllbtn
+            width: 104
+            height: 30
+            x: 602
+            y: 134
+            source: "qrc:/image/white_border.png"
+
+            Image {
+                id: stopAllIcon
+                width: 8
+                height: 8
+                x: 75
+                y: 11
+                source: "qrc:/image/stopAll_icon.png"
+            }
+
+            Text {
+                id: stopAlltxt
+                text: qsTr("Stop All")
+                width: 45
+                height: 15
+                x: 22
+                y: 8
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#FFA94F"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("stop all button")
+                }
+            }
+        }
+
+        Image {
+            id: deleteAllbtn
+            width: 104
+            height: 30
+            x: 714
+            y: 134
+            source: "qrc:/image/white_border.png"
+
+            Image {
+                id: deleteAllIcon
+                width: 9.6
+                height: 9.6
+                x: 77.96
+                y: 9.96
+                source: "qrc:/image/deleteAll_icon.png"
+            }
+            Text {
+                id: deleteAlltxt
+                text: qsTr("Delete All")
+                width: 56
+                height: 15
+                x: 14
+                y: 8
+                font.family: "Inter"
+                font.pointSize: 9
+                color: "#FA5B79"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("stop all button")
+                }
+            }
+        }
+
+        Image {
+            id: listviewTitleBorder
+            width: 791
+            height: 30
+            x: 27
+            y: 183
+            source: "qrc:/image/listviewTitleBorder.png"
+
+            Text {
+                id: idtxt
+                text: qsTr("ID")
+                width: 10
+                height: 12
+                x: 12
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: producttxt
+                text: qsTr("PRODUCT")
+                width: 50
+                height: 12
+                x: 40
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: sizetxt
+                text: qsTr("SIZE")
+                width: 22
+                height: 12
+                x: 235
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: sitetxt
+                text: qsTr("SITE")
+                width: 22
+                height: 12
+                x: 280
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: profiletxt
+                text: qsTr("PROFILE")
+                width: 42
+                height: 12
+                x: 377
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: proxytxt
+                text: qsTr("PROXY")
+                width: 35
+                height: 12
+                x: 468
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: statustxt
+                text: qsTr("STATUS")
+                width: 40
+                height: 12
+                x: 575
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+
+            Text {
+                id: actiontxt
+                text: qsTr("ACTION")
+                width: 46
+                height: 12
+                x: 696
+                y: 9
+                font.family: "Inter"
+                font.pointSize: 8
+                color: "#FFFFFF"
+            }
+        }
+
     }
 }
