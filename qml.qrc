@@ -96,5 +96,9 @@
         <file>qmlScreen/TaskItemModel.qml</file>
         <file>image/task_item_border.png</file>
         <file>image/task_scroll_border.png</file>
+        <file>image/delete_action.png</file>
+        <file>image/edit_action.png</file>
+        <file>image/start_action.png</file>
+        <file>image/stop_action.png</file>
     </qresource>
 </RCC>

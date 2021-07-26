@@ -656,13 +656,24 @@ Window {
             y: 63
             source: "qrc:/image/mask_link_border.png"
 
-            Text {
+//            Text {
+//                id: masklinkcontent
+//                text: qsTr("Mass link change")
+//                width: 101
+//                height: 15
+//                x: 12
+//                y: 7
+//                font.family: "Inter"
+//                font.pointSize: 9
+//                color: "#75719B"
+//            }
+            TextInput {
                 id: masklinkcontent
                 text: qsTr("Mass link change")
                 width: 101
                 height: 15
                 x: 12
-                y: 7
+                y: 8
                 font.family: "Inter"
                 font.pointSize: 9
                 color: "#75719B"
@@ -683,7 +694,7 @@ Window {
                 width: 47
                 height: 15
                 x: 20
-                y: 7
+                y: 8
                 font.family: "Inter"
                 font.pointSize: 9
                 color: "#2E2C50"
@@ -691,10 +702,17 @@ Window {
             Image {
                 id: arrowConfirm
                 width: 3.5
-                height: 7
+                height: 8
                 x: 74
                 y: 12
                 source: "qrc:/image/arrow_confirm.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Confirm button")
+                }
             }
         }
 
