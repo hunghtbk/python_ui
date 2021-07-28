@@ -369,7 +369,7 @@ Window {
         for (var a = 0; a < listTextID.length; a++) {
             listTextID[a].x = listTextID[a].x * rate
             listTextID[a].width = listTextID[a].width * rate
-            listTextID[a].textSize = listTextID[a].textSize * rate
+//            listTextID[a].textSize = listTextID[a].textSize * rate
         }
 
     }
