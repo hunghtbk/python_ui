@@ -8,7 +8,13 @@ Window {
     height: 436
     title: qsTr("UI Project")
     color: "#2E2C50"
-    flags:Qt.FramelessWindowHint
+//    flags:Qt.FramelessWindowHint
+
+    property int currentWidth: m_app.width
+    property int currentHeight: m_app.height
+
+    property var listID: []
+    property var listTextID: []
 
     Rectangle {
         id: btn_close
@@ -18,6 +24,7 @@ Window {
         height: 18
         color: "transparent"
         Image {
+            id: btn_close_image
             anchors.centerIn: parent.Center
             width: 9.01
             height: 9.01
@@ -40,6 +47,7 @@ Window {
         height: 18
         color: "transparent"
         Image {
+            id: btn_small_image
             x: 0
             y: 5
             width: 12
@@ -65,41 +73,45 @@ Window {
 
     Text {
         id: logo_title
+        property int textSize: 18
         x: 135
         y: 92
         width: 92
         height: 22
         text: qsTr("LevandoIO")
         font.family: "Helvetica"
-        font.pointSize: 18
+        font.pointSize: textSize
         color: "#FFFFFF"
     }
 
     Text {
         id: login_txt
+        property int textSize: 18
         x: 85
         y: 152
         width: 56
         height: 22
         text: qsTr("LOGIN")
         font.family: "Helvetica"
-        font.pointSize: 18
+        font.pointSize: textSize
         color: "#907DE2"
     }
 
     Text {
         id: license_key_txt
+        property int textSize: 12
         x: 85
         y: 191
         width: 70
         height: 15
         text: qsTr("License Key")
         font.family: "Helvetica"
-        font.pointSize: 12
+        font.pointSize: textSize
         color: "#FFFFFF"
 
     }
     Image {
+        id: input_bgr
         x: 85
         y: 215
         width: 448
@@ -107,15 +119,22 @@ Window {
         source: "qrc:/image/text_input_bgr.png"
 
         TextInput {
-            x: 10
             id: txt_input
-            anchors.verticalCenter: parent.verticalCenter
+            property int textSize: 12
+            width: 428
+            height: 20
+            x: 10
+            y: 5
+//            anchors.verticalCenter: parent.verticalCenter
             text: "XXXXX-XXXXX-XXXXXX-XXXXXX"
+            font.family: "Helvetica"
+            font.pointSize: textSize
             color: "#907DE2"
         }
     }
 
     Image {
+        id: img_authen_bgr
         x: 85
         y: 263
         width: 160
@@ -124,17 +143,19 @@ Window {
 
         Text {
             id: authentxt
+            property int textSize: 12
             width: 76
             height: 15
             x: 36
             y: 6
             text: qsTr("Authenticate")
             font.family: "Helvetica"
-            font.pointSize: 12
+            font.pointSize: textSize
             color: "#2E2C50"
         }
 
         Image {
+            id: authen_arrow
             x: 133
             y: 12
             width: 5
@@ -300,5 +321,70 @@ Window {
         x: 0
         y: 348
         source: "qrc:/image/oval_down.png"
+    }
+
+    Component.onCompleted: {
+        listID.push(upoVal)
+        listTextID.push(logo_title)
+        listTextID.push(login_txt)
+        listTextID.push(license_key_txt)
+        listID.push(input_bgr)
+        listTextID.push(txt_input)
+
+        listID.push(img_authen_bgr)
+        listID.push(authen_arrow)
+        listTextID.push(authentxt)
+        listID.push(lotus1)
+        listID.push(lotus2)
+        listID.push(lotus3)
+        listID.push(lotus4)
+        listID.push(lotus5)
+        listID.push(lotus6)
+        listID.push(lotus7)
+        listID.push(lotus8)
+        listID.push(lotus9)
+        listID.push(lotus10)
+
+        listID.push(big_lotus1)
+        listID.push(big_lotus2)
+        listID.push(big_lotus3)
+        listID.push(big_lotus4)
+        listID.push(big_lotus5)
+        listID.push(big_lotus6)
+        listID.push(big_lotus7)
+        listID.push(big_lotus8)
+        listID.push(btn_close);
+        listID.push(btn_small);
+        listID.push(btn_small_image);
+        listID.push(btn_close_image)
+        listID.push(downoVal)
+    }
+
+    onWidthChanged: {
+        var rate = width/currentWidth
+        for (var i = 0; i < listID.length; i++) {
+            listID[i].x = listID[i].x * rate
+            listID[i].width = listID[i].width * rate
+        }
+        for (var a = 0; a < listTextID.length; a++) {
+            listTextID[a].x = listTextID[a].x * rate
+            listTextID[a].width = listTextID[a].width * rate
+            listTextID[a].textSize = listTextID[a].textSize * rate
+        }
+
+    }
+    onHeightChanged: {
+        console.log("Heigh change = " + height)
+        var rate = height/currentHeight
+        for (var i = 0; i < listID.length; i++) {
+            listID[i].y = listID[i].y * rate
+            listID[i].height = listID[i].height * rate
+        }
+
+        for (var a = 0; a < listTextID.length; a++) {
+            listTextID[a].y = listTextID[a].y * rate
+            listTextID[a].height = listTextID[a].height * rate
+//            listTextID[a].textSize = listTextID[a].textSize * rate
+        }
     }
 }
