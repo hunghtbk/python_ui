@@ -9,7 +9,7 @@ Window {
     height: 730
     title: qsTr("Task Screen")
     color: "#2E2C50"
-//    flags:Qt.FramelessWindowHint
+    flags:Qt.FramelessWindowHint
 
     Rectangle {
         id: controlPart
@@ -626,6 +626,7 @@ Window {
             y: 14
             onClicked: {
                 console.log("Minimize")
+                m_taskScreen.showMinimized();
             }
         }
 
@@ -645,6 +646,7 @@ Window {
             y: 14
             onClicked: {
                 console.log("Close icon")
+                m_taskScreen.close()
             }
         }
 
@@ -1004,6 +1006,5 @@ Window {
                 }
             }
         }
-
     }
 }

@@ -15,6 +15,7 @@ Window {
 
     property var listID: []
     property var listTextID: []
+    property var listTextID_18: []
 
     Rectangle {
         id: btn_close
@@ -325,8 +326,8 @@ Window {
 
     Component.onCompleted: {
         listID.push(upoVal)
-        listTextID.push(logo_title)
-        listTextID.push(login_txt)
+        listTextID_18.push(logo_title)
+        listTextID_18.push(login_txt)
         listTextID.push(license_key_txt)
         listID.push(input_bgr)
         listTextID.push(txt_input)
@@ -369,8 +370,13 @@ Window {
         for (var a = 0; a < listTextID.length; a++) {
             listTextID[a].x = listTextID[a].x * rate
             listTextID[a].width = listTextID[a].width * rate
-//            listTextID[a].textSize = listTextID[a].textSize * rate
         }
+        for (var b = 0; b < listTextID_18.length; b++) {
+            listTextID_18[b].x = listTextID_18[b].x * rate
+            listTextID_18[b].width = listTextID_18[b].width * rate
+        }
+
+        listTextID_18
 
     }
     onHeightChanged: {
@@ -384,7 +390,15 @@ Window {
         for (var a = 0; a < listTextID.length; a++) {
             listTextID[a].y = listTextID[a].y * rate
             listTextID[a].height = listTextID[a].height * rate
-//            listTextID[a].textSize = listTextID[a].textSize * rate
+            var rateTextSize = height/436
+            listTextID[a].textSize = 12 * rateTextSize
+        }
+
+        for (var b = 0; b < listTextID_18.length; b++) {
+            listTextID_18[b].y = listTextID_18[b].y * rate
+            listTextID_18[b].height = listTextID_18[b].height * rate
+            var rateTextSize18 = height/436
+            listTextID_18[b].textSize = 18 * rateTextSize18
         }
     }
 }
