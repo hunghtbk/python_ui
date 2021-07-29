@@ -4,7 +4,8 @@ import QtQuick 2.5
 //productContent
 
 Rectangle {
-    property int widthDelegate : parent.width
+    property int widthDelegate : parent.width - 20
+    property int currentParent: 793
 
     width: widthDelegate
     height: 38
@@ -12,7 +13,7 @@ Rectangle {
     property int itemWid: 0
     Rectangle {
         id: rec_3_4
-        width: 770
+        width: widthDelegate
         height: 30
         color: "#37345E"
 
@@ -160,7 +161,9 @@ Rectangle {
     }
 
     onWidthDelegateChanged: {
-        console.log("width change to " + widthDelegate)
-        rec_3_4.width = widthDelegate
+        console.log("width change from " + currentParent + " to " + widthDelegate)
+//        var rate = widthDelegate/currentParent
+
+//        rec_3_4.width = 770 * rate
     }
 }

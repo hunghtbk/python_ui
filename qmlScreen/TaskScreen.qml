@@ -16,7 +16,7 @@ Window {
 
     property var listIMG_ID: []
     property var listREC_ID: []
-    property var listTXT_5: []
+    property var listListViewID: []
     property var listTXT_7: []
     property var listTXT_8: []
     property var listTXT_9: []
@@ -180,13 +180,14 @@ Window {
 
         Text {
             id: txt_1
+            property int textSize: 13
             text: qsTr("Tasks Groups")
             width: 103
             height: 19
             x: 33
             y: 19
             font.family: "Inter"
-            font.pointSize: 13
+            font.pointSize: textSize
             color: "#FFFFFF"
         }
 
@@ -241,49 +242,53 @@ Window {
 
         Text {
             id: txt_7
+            property int textSize: 7
             text: qsTr("Site")
             width: 19
             height: 12
             x: 118
             y: 21
             font.family: "Inter"
-            font.pointSize: 7
+            font.pointSize: textSize
             color: "#75719B"
         }
 
         Text {
             id: txt_8
+            property int textSize: 9
             text: qsTr("Bestbuy")
             width: 47
             height: 15
             x: 118
             y: 37
             font.family: "Inter"
-            font.pointSize: 9
+            font.pointSize: textSize
             color: "#FFFFFF"
         }
 
         Text {
             id: txt_9
+            property int textSize: 7
             text: qsTr("Product")
             width: 39
             height: 12
             x: 118
             y: 62
             font.family: "Inter"
-            font.pointSize: 7
+            font.pointSize: textSize
             color: "#75719B"
         }
 
         Text {
             id: txt_10
+            property int textSize: 9
             text: qsTr("Playstation 5 Digital Console")
             width: 162
             height: 15
             x: 118
             y: 78
             font.family: "Inter"
-            font.pointSize: 9
+            font.pointSize: textSize
             color: "#FFFFFF"
         }
 
@@ -306,13 +311,14 @@ Window {
 
             Text {
                 id: txt_12
+                property int textSize: 9
                 text: qsTr("$2,309")
                 width: 43
                 height: 15
                 x: 27
                 y: 7
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
@@ -327,13 +333,14 @@ Window {
 
             Text {
                 id: txt_13
+                property int textSize: 9
                 text: qsTr("78")
                 width: 43
                 height: 15
                 x: 125
                 y: 7
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
@@ -348,13 +355,14 @@ Window {
 
             Text {
                 id: txt_14
+                property int textSize: 9
                 text: qsTr("28")
                 width: 43
                 height: 15
                 x: 207
                 y: 7
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
         }
@@ -403,13 +411,14 @@ Window {
 
             TextInput {
                 id: txt_15
+                property int textSize: 9
                 text: qsTr("Mass link change")
                 width: 450
                 height: 15
                 x: 12
                 y: 8
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#75719B"
             }
         }
@@ -424,13 +433,14 @@ Window {
 
             Text {
                 id: txt_16
+                property int textSize: 9
                 text: qsTr("Confirm")
                 width: 47
                 height: 15
                 x: 20
                 y: 8
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#2E2C50"
             }
             Image {
@@ -461,13 +471,14 @@ Window {
 
         Text {
             id: txt_17
+            property int textSize: 13
             text: qsTr("Tasks")
             width: 44
             height: 19
             x: 27
             y: 139
             font.family: "Inter"
-            font.pointSize: 13
+            font.pointSize: textSize
             color: "#FFFFFF"
         }
 
@@ -514,13 +525,14 @@ Window {
 
             Text {
                 id: txt_18
+                property int textSize: 9
                 text: qsTr("Start All")
                 width: 47
                 height: 15
                 x: 21
                 y: 8
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#29E182"
             }
 
@@ -551,13 +563,14 @@ Window {
 
             Text {
                 id: txt_19
+                property int textSize: 9
                 text: qsTr("Stop All")
                 width: 45
                 height: 15
                 x: 22
                 y: 8
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#FFA94F"
             }
 
@@ -587,13 +600,14 @@ Window {
             }
             Text {
                 id: txt_20
+                property int textSize: 9
                 text: qsTr("Delete All")
                 width: 56
                 height: 15
                 x: 14
                 y: 8
                 font.family: "Inter"
-                font.pointSize: 9
+                font.pointSize: textSize
                 color: "#FA5B79"
             }
 
@@ -615,97 +629,105 @@ Window {
 
             Text {
                 id: txt_21
+                property int textSize: 8
                 text: qsTr("ID")
                 width: 10
                 height: 12
                 x: 12
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_22
+                property int textSize: 8
                 text: qsTr("PRODUCT")
                 width: 50
                 height: 12
                 x: 40
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_23
+                property int textSize: 8
                 text: qsTr("SIZE")
                 width: 22
                 height: 12
                 x: 235
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_24
+                property int textSize: 8
                 text: qsTr("SITE")
                 width: 22
                 height: 12
                 x: 280
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_25
+                property int textSize: 8
                 text: qsTr("PROFILE")
                 width: 42
                 height: 12
                 x: 377
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_26
+                property int textSize: 8
                 text: qsTr("PROXY")
                 width: 35
                 height: 12
                 x: 468
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_27
+                property int textSize: 8
                 text: qsTr("STATUS")
                 width: 40
                 height: 12
                 x: 575
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
 
             Text {
                 id: txt_28
+                property int textSize: 8
                 text: qsTr("ACTION")
                 width: 46
                 height: 12
                 x: 696
                 y: 9
                 font.family: "Inter"
-                font.pointSize: 8
+                font.pointSize: textSize
                 color: "#FFFFFF"
             }
         }
@@ -720,7 +742,7 @@ Window {
         }
         ListView {
             id: list_2
-            width: 793.2
+            width: 793
             height: 498
             x: 27
             y: 227
@@ -731,6 +753,7 @@ Window {
             boundsBehavior: Flickable.StopAtBounds
             ScrollBar.vertical: ScrollBar {
                 contentItem: Rectangle {
+                    id: rec_4
                     implicitWidth: 9
                     implicitHeight: 221
                     color: "#423F6B"
@@ -778,6 +801,73 @@ Window {
         listREC_ID.push(rec_3_1)
         listREC_ID.push(rec_3_2)
         listREC_ID.push(rec_3_3)
+
+        listTXT_7.push(txt_7)
+        listTXT_7.push(txt_9)
+
+        listTXT_8.push(txt_21)
+        listTXT_8.push(txt_22)
+        listTXT_8.push(txt_23)
+        listTXT_8.push(txt_24)
+        listTXT_8.push(txt_25)
+        listTXT_8.push(txt_26)
+        listTXT_8.push(txt_27)
+        listTXT_8.push(txt_28)
+
+        listTXT_9.push(txt_8)
+        listTXT_9.push(txt_10)
+        listTXT_9.push(txt_12)
+        listTXT_9.push(txt_13)
+        listTXT_9.push(txt_14)
+        listTXT_9.push(txt_15)
+        listTXT_9.push(txt_16)
+        listTXT_9.push(txt_18)
+        listTXT_9.push(txt_19)
+        listTXT_9.push(txt_20)
+
+        listTXT_13.push(txt_1)
+        listTXT_13.push(txt_17)
+
+        listListViewID.push(list_1)
+        listListViewID.push(list_2)
+    }
+    onHeightChanged: {
+        var rate = height/currentHeight
+        var rateTextSize = height/730
+        for (var i = 0; i < listIMG_ID.length; i++) {
+            listIMG_ID[i].y = listIMG_ID[i].y * rate
+            listIMG_ID[i].height = listIMG_ID[i].height * rate
+        }
+
+        for (var j = 0; j < listREC_ID.length; j++) {
+            listREC_ID[j].y = listREC_ID[j].y * rate
+            listREC_ID[j].height = listREC_ID[j].height * rate
+        }
+        for (var k = 0; k < listTXT_7.length; k++) {
+            listTXT_7[k].y = listTXT_7[k].y * rate
+            listTXT_7[k].height = listTXT_7[k].height * rate
+            listTXT_7[k].textSize = 7 * rateTextSize
+        }
+        for (var l = 0; l < listTXT_8.length; l++) {
+            listTXT_8[l].y = listTXT_8[l].y * rate
+            listTXT_8[l].height = listTXT_8[l].height * rate
+            listTXT_8[l].textSize = 8 * rateTextSize
+        }
+        for (var m = 0; m < listTXT_9.length; m++) {
+            listTXT_9[m].y = listTXT_9[m].y * rate
+            listTXT_9[m].height = listTXT_9[m].height * rate
+            listTXT_9[m].textSize = 9 * rateTextSize
+        }
+        for (var n = 0; n < listTXT_13.length; n++) {
+            listTXT_13[n].y = listTXT_13[n].y * rate
+            listTXT_13[n].height = listTXT_13[n].height * rate
+            listTXT_13[n].textSize = 13 * rateTextSize
+        }
+        for (var p = 0; p < listListViewID.length; p++) {
+            listListViewID[p].y = listListViewID[p].y * rate
+            listListViewID[p].height = listListViewID[p].height * rate
+        }
+        rec_4.implicitHeight = rec_4.implicitHeight * rate
     }
 
     onWidthChanged: {
@@ -791,16 +881,26 @@ Window {
             listREC_ID[j].x = listREC_ID[j].x * rate
             listREC_ID[j].width = listREC_ID[j].width * rate
         }
-        list_2.width = list_2.width * rate
-
-//        for (var a = 0; a < listTextID.length; a++) {
-//            listTextID[a].x = listTextID[a].x * rate
-//            listTextID[a].width = listTextID[a].width * rate
-//        }
-//        for (var b = 0; b < listTextID_18.length; b++) {
-//            listTextID_18[b].x = listTextID_18[b].x * rate
-//            listTextID_18[b].width = listTextID_18[b].width * rate
-//        }
-
+        for (var k = 0; k < listTXT_7.length; k++) {
+            listTXT_7[k].x = listTXT_7[k].x * rate
+            listTXT_7[k].width = listTXT_7[k].width * rate
+        }
+        for (var l = 0; l < listTXT_8.length; l++) {
+            listTXT_8[l].x = listTXT_8[l].x * rate
+            listTXT_8[l].width = listTXT_8[l].width * rate
+        }
+        for (var m = 0; m < listTXT_9.length; m++) {
+            listTXT_9[m].x = listTXT_9[m].x * rate
+            listTXT_9[m].width = listTXT_9[m].width * rate
+        }
+        for (var n = 0; n < listTXT_13.length; n++) {
+            listTXT_13[n].x = listTXT_13[n].x * rate
+            listTXT_13[n].width = listTXT_13[n].width * rate
+        }
+        for (var p = 0; p < listListViewID.length; p++) {
+            listListViewID[p].x = listListViewID[p].x * rate
+            listListViewID[p].width = listListViewID[p].width * rate
+        }
+        rec_4.implicitWidth = rec_4.implicitWidth *rate
     }
 }
