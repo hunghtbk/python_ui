@@ -56,14 +56,12 @@
         <file>image/add_icon2.png</file>
         <file>qmlScreen/TaskGroupDelegate.qml</file>
         <file>qmlScreen/TaskGroupModel.qml</file>
-        <file>image/border_50_21.png</file>
         <file>image/delete_icon.png</file>
         <file>image/green_oval.png</file>
         <file>image/red_oval.png</file>
         <file>image/task_item_bgr-active.png</file>
         <file>image/task_item_bgr_inactive.png</file>
         <file>image/white_oval.png</file>
-        <file>image/image_borde.png</file>
         <file>image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png</file>
         <file>image/dashboardIcon_active.png</file>
         <file>image/profileIcon_1_active.png</file>
@@ -100,5 +98,24 @@
         <file>image/edit_action.png</file>
         <file>image/start_action.png</file>
         <file>image/stop_action.png</file>
+        <file>image/0.Common/credit-card-outline-active.png</file>
+        <file>image/0.Common/credit-card-outline-inactive.png</file>
+        <file>image/0.Common/cube-outline-active.png</file>
+        <file>image/0.Common/cube-outline-inactive.png</file>
+        <file>image/0.Common/flash-outline-2-active.png</file>
+        <file>image/0.Common/flash-outline-2-inactive.png</file>
+        <file>image/0.Common/grid-outline-active.png</file>
+        <file>image/0.Common/grid-outline-inactive.png</file>
+        <file>image/0.Common/person-outline-active.png</file>
+        <file>image/0.Common/person-outline-inactive.png</file>
+        <file>image/0.Common/settings-2-outline-active.png</file>
+        <file>image/0.Common/settings-2-outline-inactive.png</file>
+        <file>image/0.Common/Small_lotus.png</file>
+        <file>image/0.Common/sun-outline-inactive.png</file>
+        <file>image/0.Common/Add_inactive_icon.png</file>
+        <file>image/0.Common/close-outline-inactive.png</file>
+        <file>image/0.Common/minus-outline-inactive.png</file>
+        <file>image/TaskScreen/image_borde.png</file>
+        <file>image/TaskScreen/border_50_21.png</file>
     </qresource>
 </RCC>
