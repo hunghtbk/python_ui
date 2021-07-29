@@ -4,8 +4,13 @@ import QtQuick 2.5
 //productContent
 
 Rectangle {
+    id: rect_1_1
     property int widthDelegate : parent.width - 20
-    property int currentParent: 793
+
+    property var listIMG_ID_DetailItem: []
+    property var listTEXT_ID_DetailItem: []
+    property int currentWidth_DetailItem: rect_1_1.width
+    property int currentDetaiItemWidth: rect_1_1.width
 
     width: widthDelegate
     height: 38
@@ -160,10 +165,32 @@ Rectangle {
         }
     }
 
-    onWidthDelegateChanged: {
-        console.log("width change from " + currentParent + " to " + widthDelegate)
-//        var rate = widthDelegate/currentParent
+    Component.onCompleted: {
+        listIMG_ID_DetailItem.push(img_37)
+        listIMG_ID_DetailItem.push(img_38)
+        listIMG_ID_DetailItem.push(img_39)
 
-//        rec_3_4.width = 770 * rate
+        listTEXT_ID_DetailItem.push(txt_29)
+        listTEXT_ID_DetailItem.push(txt_30)
+        listTEXT_ID_DetailItem.push(txt_31)
+        listTEXT_ID_DetailItem.push(txt_32)
+        listTEXT_ID_DetailItem.push(txt_33)
+        listTEXT_ID_DetailItem.push(txt_35)
+        listTEXT_ID_DetailItem.push(txt_36)
+    }
+
+    onWidthChanged: {
+        console.log("width change 1234")
+        var rate = width/currentDetaiItemWidth
+        console.log(rate)
+        for (var a = 0; a < listIMG_ID_DetailItem.length; a++) {
+            listIMG_ID_DetailItem[a].x = listIMG_ID_DetailItem[a].x * rate
+            listIMG_ID_DetailItem[a].width = listIMG_ID_DetailItem[a].width * rate
+        }
+
+        for (var b = 0; b < listTEXT_ID_DetailItem.length; b++) {
+            listTEXT_ID_DetailItem[b].x = listTEXT_ID_DetailItem[b].x * rate
+            listTEXT_ID_DetailItem[b].width = listTEXT_ID_DetailItem[b].width * rate
+        }
     }
 }

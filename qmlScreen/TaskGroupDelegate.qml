@@ -8,6 +8,14 @@ Rectangle {
     width: parent.width
     height: 106
     color: "transparent"
+
+    property var listIMG_ID_Item: []
+    property var listTEXT_ID_Item: []
+
+    property int currentWidth_Item: rec_2_1.width
+    property int currentParentHeight: parent.height
+    property int tmpHeight: currentParentHeight
+
     Rectangle {
         id: rec_2_2
         width: parent.width
@@ -35,24 +43,26 @@ Rectangle {
 
     Text {
         id: txt_2
+        property int textSize: 7
         x: 74
         y: 15
         width: 41
         height: 12
         font.family: "Inter"
-        font.pointSize: 7
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: itemStatus
     }
 
     Text {
         id: txt_3
+        property int textSize: 9
         width: 122
         height: 15
         x: 74
         y: 31
         font.family: "Inter"
-        font.pointSize: 9
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: itemName
     }
@@ -76,12 +86,13 @@ Rectangle {
 
         Text {
             id: txt_4
+            property int textSize: 5
             width: 14
             height: 10
             x: 19
             y: 5
             font.family: "Inter"
-            font.pointSize: 5
+            font.pointSize: textSize
             color: "#FFFFFF"
             text: whiteIndex
         }
@@ -106,12 +117,13 @@ Rectangle {
 
         Text {
             id: txt_5
+            property int textSize: 5
             width: 14
             height: 10
             x: 19
             y: 5
             font.family: "Inter"
-            font.pointSize: 5
+            font.pointSize: textSize
             color: "#FFFFFF"
             text: greenIndex
         }
@@ -136,12 +148,13 @@ Rectangle {
 
         Text {
             id: txt_6
+            property int textSize: 5
             width: 14
             height: 10
             x: 19
             y: 5
             font.family: "Inter"
-            font.pointSize: 5
+            font.pointSize: textSize
             color: "#FFFFFF"
             text: redIndex
         }
@@ -177,9 +190,57 @@ Rectangle {
             rec_2_2.color = "#37345E"
         }
     }
+    Component.onCompleted: {
+        listIMG_ID_Item.push(img_10)
+        listIMG_ID_Item.push(img_11)
+        listIMG_ID_Item.push(img_12)
+        listIMG_ID_Item.push(img_12_1)
+        listIMG_ID_Item.push(img_13)
+        listIMG_ID_Item.push(img_14)
+        listIMG_ID_Item.push(img_15)
+        listIMG_ID_Item.push(img_16)
+        listIMG_ID_Item.push(img_17)
+        listIMG_ID_Item.push(img_18)
+        listIMG_ID_Item.push(rec_2_2)
+
+        listTEXT_ID_Item.push(txt_2)
+        listTEXT_ID_Item.push(txt_3)
+        listTEXT_ID_Item.push(txt_4)
+        listTEXT_ID_Item.push(txt_5)
+        listTEXT_ID_Item.push(txt_6)
+    }
 
     onWidthChanged: {
         console.log("width change")
+        var rate = width/currentWidth_Item
+        for (var a = 0; a < listIMG_ID_Item.length; a++) {
+            listIMG_ID_Item[a].x = listIMG_ID_Item[a].x * rate
+            listIMG_ID_Item[a].width = listIMG_ID_Item[a].width * rate
+        }
+
+        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
+            listTEXT_ID_Item[b].x = listTEXT_ID_Item[b].x * rate
+            listTEXT_ID_Item[b].width = listTEXT_ID_Item[b].width * rate
+        }
+    }
+
+    onCurrentParentHeightChanged: {
+        var rate = currentParentHeight/tmpHeight
+        for (var a = 0; a < listIMG_ID_Item.length; a++) {
+            listIMG_ID_Item[a].y = listIMG_ID_Item[a].y * rate
+            listIMG_ID_Item[a].height = listIMG_ID_Item[a].height * rate
+        }
+
+        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
+            listTEXT_ID_Item[b].y = listTEXT_ID_Item[b].y * rate
+            listTEXT_ID_Item[b].height = listTEXT_ID_Item[b].height * rate
+        }
+        txt_2.textSize = 7 *rate
+        txt_3.textSize = 9 * rate
+        txt_4.textSize = 5 * 1.5
+        txt_5.textSize = 5 * 1.5
+        txt_6.textSize = 5 * 1.5
+        tmpHeight = currentParentHeight
     }
 }
 
