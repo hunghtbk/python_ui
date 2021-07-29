@@ -117,5 +117,7 @@
         <file>image/0.Common/minus-outline-inactive.png</file>
         <file>image/TaskScreen/image_borde.png</file>
         <file>image/TaskScreen/border_50_21.png</file>
+        <file>qmlScreen/CreateTaskScreen.qml</file>
+        <file>image/create_task_donw_oval.png</file>
     </qresource>
 </RCC>
