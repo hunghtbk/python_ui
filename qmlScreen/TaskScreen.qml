@@ -9,7 +9,18 @@ Window {
     height: 730
     title: qsTr("Task Screen")
     color: "#2E2C50"
-    flags:Qt.FramelessWindowHint
+//    flags:Qt.FramelessWindowHint
+
+    property int currentWidth: m_taskScreen.width
+    property int currentHeight: m_taskScreen.height
+
+    property var listIMG_ID: []
+    property var listREC_ID: []
+    property var listTXT_5: []
+    property var listTXT_7: []
+    property var listTXT_8: []
+    property var listTXT_9: []
+    property var listTXT_13: []
 
     Rectangle {
         id: rec_1
@@ -196,188 +207,14 @@ Window {
             x: 33
             y: 64
             model: TaskGroupModel {}
-            delegate: Rectangle {
-                id: rec_2_1
-                width: 221
-                height: 106
-                color: "transparent"
-                Rectangle {
-                    id: rec_2_2
-                    width: 221
-                    height: 98
-                    color: "#37345E"
-                }
-
-                Image {
-                    id: img_10
-                    x: 17
-                    y: 15
-                    width: 44
-                    height: 44
-                    source: "qrc:/image/TaskScreen/image_borde.png"
-
-                    Image {
-                        id: img_11
-                        x: 5
-                        y: 5
-                        width: 32
-                        height: 34
-                        source: itemSource
-                    }
-                }
-
-                Text {
-                    id: txt_2
-                    x: 74
-                    y: 15
-                    width: 41
-                    height: 12
-                    font.family: "Inter"
-                    font.pointSize: 7
-                    color: "#FFFFFF"
-                    text: itemStatus
-                }
-
-                Text {
-                    id: txt3
-                    width: 122
-                    height: 15
-                    x: 74
-                    y: 31
-                    font.family: "Inter"
-                    font.pointSize: 9
-                    color: "#FFFFFF"
-                    text: itemName
-                }
-
-                Image {
-                    id: img_12
-                    width: 50
-                    height: 21
-                    x: 17
-                    y: 71
-                    source: "qrc:/image/TaskScreen/border_50_21.png"
-
-                    Image {
-                        id: whiteIcon
-                        width: 5
-                        height: 5
-                        x: 8
-                        y: 8
-                        source: "qrc:/image/white_oval.png"
-                    }
-
-                    Text {
-                        id: whiteIndextxt
-                        width: 14
-                        height: 10
-                        x: 19
-                        y: 5
-                        font.family: "Inter"
-                        font.pointSize: 5
-                        color: "#FFFFFF"
-                        text: whiteIndex
-                    }
-                }
-
-                Image {
-                    id: boarder2
-                    width: 50
-                    height: 21
-                    x: 72
-                    y: 71
-                    source: "qrc:/image/TaskScreen/border_50_21.png"
-
-                    Image {
-                        id: greenIcon
-                        width: 5
-                        height: 5
-                        x: 8
-                        y: 8
-                        source: "qrc:/image/green_oval.png"
-                    }
-
-                    Text {
-                        id: greenIndextxt
-                        width: 14
-                        height: 10
-                        x: 19
-                        y: 5
-                        font.family: "Inter"
-                        font.pointSize: 5
-                        color: "#FFFFFF"
-                        text: greenIndex
-                    }
-                }
-
-                Image {
-                    id: boarder3
-                    width: 50
-                    height: 21
-                    x: 127
-                    y: 71
-                    source: "qrc:/image/TaskScreen/border_50_21.png"
-
-                    Image {
-                        id: redIcon
-                        width: 5
-                        height: 5
-                        x: 8
-                        y: 8
-                        source: "qrc:/image/red_oval.png"
-                    }
-
-                    Text {
-                        id: redIndextxt
-                        width: 14
-                        height: 10
-                        x: 19
-                        y: 5
-                        font.family: "Inter"
-                        font.pointSize: 5
-                        color: "#FFFFFF"
-                        text: redIndex
-                    }
-                }
-
-                Image {
-                    id: boarder4
-                    width: 21
-                    height: 21
-                    x: 182
-                    y: 71
-                    source: "qrc:/image/TaskScreen/border_50_21.png"
-
-                    Image {
-                        id: deleteIcon
-                        width: 9.6
-                        height: 9.6
-                        x: 5.46
-                        y: 5.46
-                        source: "qrc:/image/delete_icon.png"
-                    }
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: {
-                        rec_2_2.color = "#907DE2"
-                    }
-                    onReleased: {
-                        rec_2_2.color = "#37345E"
-                    }
-                    onCanceled: {
-                        rec_2_2.color = "#37345E"
-                    }
-                }
-            }
+            delegate: TaskGroupDelegate {}
             clip: true
         }
 
     }
 
     Rectangle {
-        id: detailItem
+        id: rec_3
         x: 349
         y: 0
         width: 851
@@ -385,7 +222,7 @@ Window {
         color: "transparent"
 
         Image {
-            id: borderImage1
+            id: img_19
             width: 70.4
             height: 70.4
             x: 27
@@ -393,7 +230,7 @@ Window {
             source: "qrc:/image/TaskScreen/image_borde.png"
 
             Image {
-                id: siteImage
+                id: img_20
                 width: 52
                 height: 56
                 x: 9
@@ -403,7 +240,7 @@ Window {
         }
 
         Text {
-            id: siteTitle
+            id: txt_7
             text: qsTr("Site")
             width: 19
             height: 12
@@ -415,7 +252,7 @@ Window {
         }
 
         Text {
-            id: siteName
+            id: txt_8
             text: qsTr("Bestbuy")
             width: 47
             height: 15
@@ -427,7 +264,7 @@ Window {
         }
 
         Text {
-            id: productTitle
+            id: txt_9
             text: qsTr("Product")
             width: 39
             height: 12
@@ -439,7 +276,7 @@ Window {
         }
 
         Text {
-            id: productName
+            id: txt_10
             text: qsTr("Playstation 5 Digital Console")
             width: 162
             height: 15
@@ -451,7 +288,7 @@ Window {
         }
 
         Image {
-            id: boder2
+            id: img_10
             width: 246
             height: 30
             x: 512
@@ -459,16 +296,16 @@ Window {
             source: "qrc:/image/border_2.png"
 
             Image {
-                id: dolaIcon
+                id: img_21
                 width: 6
-                height: 7
+                height: 11
                 x: 14
-                y: 11
-                source: "qrc:/image/Dola_icon.png"
+                y: 9
+                source: "qrc:/image/TaskScreen/dollar-sign-15.png"
             }
 
             Text {
-                id: dolaContent
+                id: txt_12
                 text: qsTr("$2,309")
                 width: 43
                 height: 15
@@ -480,24 +317,16 @@ Window {
             }
 
             Image {
-                id: greenIcon
-                width: 9
-                height: 9
-                x: 108.5
-                y: 10.5
-                source: "qrc:/image/Green_icon.png"
-            }
-            Image {
-                id: greenIcon1
-                width: 4
-                height: 2.5
-                x: 111
-                y: 14.5
-                source: "qrc:/image/Green_icon_1.png"
+                id: img_22
+                width: 12
+                height: 12
+                x: 107
+                y: 9
+                source: "qrc:/image/TaskScreen/shopping-bag-outline-green.png"
             }
 
             Text {
-                id: greenContent
+                id: txt_13
                 text: qsTr("78")
                 width: 43
                 height: 15
@@ -509,24 +338,16 @@ Window {
             }
 
             Image {
-                id: redIcon
-                width: 9
-                height: 9
-                x: 190.5
-                y: 10.5
-                source: "qrc:/image/Red_icon.png"
-            }
-            Image {
-                id: redIcon1
-                width: 9
-                height: 9.72
-                x: 190.5
-                y: 10.18
-                source: "qrc:/image/Red_icon_1.png"
+                id: img_23
+                width: 12
+                height: 12
+                x: 189
+                y: 9
+                source: "qrc:/image/TaskScreen/shopping-bag-outline-red.png"
             }
 
             Text {
-                id: redContent
+                id: txt_14
                 text: qsTr("28")
                 width: 43
                 height: 15
@@ -539,67 +360,51 @@ Window {
         }
 
         Image {
-            id: minimizeIcon
-            width: 12
-            height: 1.5
-            x: 797
-            y: 22.5
-            source: "qrc:/image/minimize_icon.png"
-        }
-        MouseArea {
+            id: img_24
             width: 18
             height: 18
             x: 794
             y: 14
-            onClicked: {
-                console.log("Minimize")
-                m_taskScreen.showMinimized();
+            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Minimize")
+                    m_taskScreen.showMinimized();
+                }
             }
         }
 
         Image {
-            id: closeIcon
-            width: 9.01
-            height: 9.01
-            x: 818.5
-            y: 18.5
-            source: "qrc:/image/close_icon.png"
-        }
-
-        MouseArea {
+            id: img_25
             width: 18
             height: 18
             x: 814
             y: 14
-            onClicked: {
-                console.log("Close icon")
-                m_taskScreen.close()
+            source: "qrc:/image/0.Common/close-outline-inactive.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Close icon")
+                    m_taskScreen.close()
+                }
             }
         }
 
-        Image {
-            id: masklinkboder
+        Rectangle {
+            id: rec_3_1
             width: 196
             height: 30
             x: 512
             y: 63
-            source: "qrc:/image/mask_link_border.png"
+            color:"#37345E"
 
-//            Text {
-//                id: masklinkcontent
-//                text: qsTr("Mass link change")
-//                width: 101
-//                height: 15
-//                x: 12
-//                y: 7
-//                font.family: "Inter"
-//                font.pointSize: 9
-//                color: "#75719B"
-//            }
             TextInput {
-                id: masklinkcontent
+                id: txt_15
                 text: qsTr("Mass link change")
-                width: 101
+                width: 450
                 height: 15
                 x: 12
                 y: 8
@@ -609,16 +414,16 @@ Window {
             }
         }
 
-        Image {
-            id: confimborder
+        Rectangle {
+            id: rec_3_2
             width: 98
             height: 30
             x: 720
             y: 63
-            source: "qrc:/image/confirm_border.png"
+            color: "#FFFFFF"
 
             Text {
-                id: confimbordercontent
+                id: txt_16
                 text: qsTr("Confirm")
                 width: 47
                 height: 15
@@ -629,12 +434,12 @@ Window {
                 color: "#2E2C50"
             }
             Image {
-                id: arrowConfirm
+                id: img_26
                 width: 3.5
                 height: 8
                 x: 74
                 y: 12
-                source: "qrc:/image/arrow_confirm.png"
+                source: "qrc:/image/TaskScreen/arrow_confirm.png"
             }
 
             MouseArea {
@@ -646,16 +451,16 @@ Window {
         }
 
         Image {
-            id: line
+            id: img_27
             width: 851
             height: 1
             x: 0
             y: 115.5
-            source: "qrc:/image/line.png"
+            source: "qrc:/image/TaskScreen/line.png"
         }
 
         Text {
-            id: tasktxt
+            id: txt_17
             text: qsTr("Tasks")
             width: 44
             height: 19
@@ -667,7 +472,7 @@ Window {
         }
 
         Image {
-            id: addTaskIcon
+            id: img_28
             width: 9.6
             height: 9.6
             x: 96.4
@@ -675,12 +480,12 @@ Window {
             source: "qrc:/image/add_icon2.png"
         }
         Image {
-            id: addtaskIconBorder
+            id: img_29
             width: 21
             height: 21
             x: 91
             y: 139
-            source: "qrc:/image/add_icon1.png"
+            source: "qrc:/image/0.Common/Add_inactive_icon.png"
 
             MouseArea {
                 anchors.fill: parent
@@ -691,24 +496,24 @@ Window {
         }
 
         Image {
-            id: startAllbtn
+            id: img_30
             width: 104
             height: 30
             x: 490
             y: 134
-            source: "qrc:/image/white_border.png"
+            source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: startAllIcon
+                id: img_31
                 width: 7.7
                 height: 9.9
                 x: 75
                 y: 10
-                source: "qrc:/image/starAll_icon.png"
+                source: "qrc:/image/TaskScreen/starAll_icon.png"
             }
 
             Text {
-                id: startAlltxt
+                id: txt_18
                 text: qsTr("Start All")
                 width: 47
                 height: 15
@@ -728,24 +533,24 @@ Window {
         }
 
         Image {
-            id: stopAllbtn
+            id: img_32
             width: 104
             height: 30
             x: 602
             y: 134
-            source: "qrc:/image/white_border.png"
+            source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: stopAllIcon
+                id: img_33
                 width: 8
                 height: 8
                 x: 75
                 y: 11
-                source: "qrc:/image/stopAll_icon.png"
+                source: "qrc:/image/TaskScreen/stopAll_icon.png"
             }
 
             Text {
-                id: stopAlltxt
+                id: txt_19
                 text: qsTr("Stop All")
                 width: 45
                 height: 15
@@ -765,23 +570,23 @@ Window {
         }
 
         Image {
-            id: deleteAllbtn
+            id: img_34
             width: 104
             height: 30
             x: 714
             y: 134
-            source: "qrc:/image/white_border.png"
+            source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: deleteAllIcon
+                id: img_35
                 width: 9.6
                 height: 9.6
                 x: 77.96
                 y: 9.96
-                source: "qrc:/image/deleteAll_icon.png"
+                source: "qrc:/image/TaskScreen/deleteAll_icon.png"
             }
             Text {
-                id: deleteAlltxt
+                id: txt_20
                 text: qsTr("Delete All")
                 width: 56
                 height: 15
@@ -800,16 +605,16 @@ Window {
             }
         }
 
-        Image {
-            id: listviewTitleBorder
+        Rectangle {
+            id: rec_3_3
             width: 791
             height: 30
             x: 27
             y: 183
-            source: "qrc:/image/listviewTitleBorder.png"
+            color: "#907DE2"
 
             Text {
-                id: idtxt
+                id: txt_21
                 text: qsTr("ID")
                 width: 10
                 height: 12
@@ -821,7 +626,7 @@ Window {
             }
 
             Text {
-                id: producttxt
+                id: txt_22
                 text: qsTr("PRODUCT")
                 width: 50
                 height: 12
@@ -833,7 +638,7 @@ Window {
             }
 
             Text {
-                id: sizetxt
+                id: txt_23
                 text: qsTr("SIZE")
                 width: 22
                 height: 12
@@ -845,7 +650,7 @@ Window {
             }
 
             Text {
-                id: sitetxt
+                id: txt_24
                 text: qsTr("SITE")
                 width: 22
                 height: 12
@@ -857,7 +662,7 @@ Window {
             }
 
             Text {
-                id: profiletxt
+                id: txt_25
                 text: qsTr("PROFILE")
                 width: 42
                 height: 12
@@ -869,7 +674,7 @@ Window {
             }
 
             Text {
-                id: proxytxt
+                id: txt_26
                 text: qsTr("PROXY")
                 width: 35
                 height: 12
@@ -881,7 +686,7 @@ Window {
             }
 
             Text {
-                id: statustxt
+                id: txt_27
                 text: qsTr("STATUS")
                 width: 40
                 height: 12
@@ -893,7 +698,7 @@ Window {
             }
 
             Text {
-                id: actiontxt
+                id: txt_28
                 text: qsTr("ACTION")
                 width: 46
                 height: 12
@@ -906,15 +711,15 @@ Window {
         }
         //List item
         Image {
-            id: taskScrollBorder
+            id: img_36
             width: 9
             height: 480
             x: 809
             y: 229
-            source: "qrc:/image/task_scroll_border.png"
+            source: "qrc:/image/TaskScreen/task_scroll_border.png"
         }
         ListView {
-            id: listTaskItem
+            id: list_2
             width: 793.2
             height: 498
             x: 27
@@ -933,5 +738,69 @@ Window {
                 }
             }
         }
+    }
+
+    Component.onCompleted: {
+        console.log("complete")
+        listIMG_ID.push(img_1)
+        listIMG_ID.push(img_2)
+        listIMG_ID.push(img_3_1)
+        listIMG_ID.push(img_3)
+        listIMG_ID.push(img_4)
+        listIMG_ID.push(img_5)
+        listIMG_ID.push(img_6)
+        listIMG_ID.push(img_7)
+        listIMG_ID.push(img_8)
+        listIMG_ID.push(img_9)
+        listIMG_ID.push(img_10)
+        listIMG_ID.push(img_19)
+        listIMG_ID.push(img_20)
+        listIMG_ID.push(img_21)
+        listIMG_ID.push(img_22)
+        listIMG_ID.push(img_23)
+        listIMG_ID.push(img_24)
+        listIMG_ID.push(img_25)
+        listIMG_ID.push(img_26)
+        listIMG_ID.push(img_27)
+        listIMG_ID.push(img_28)
+        listIMG_ID.push(img_29)
+        listIMG_ID.push(img_30)
+        listIMG_ID.push(img_31)
+        listIMG_ID.push(img_32)
+        listIMG_ID.push(img_33)
+        listIMG_ID.push(img_34)
+        listIMG_ID.push(img_35)
+        listIMG_ID.push(img_36)
+
+        listREC_ID.push(rec_1)
+        listREC_ID.push(rec_2)
+        listREC_ID.push(rec_3)
+        listREC_ID.push(rec_3_1)
+        listREC_ID.push(rec_3_2)
+        listREC_ID.push(rec_3_3)
+    }
+
+    onWidthChanged: {
+        var rate = width/currentWidth
+        for (var i = 0; i < listIMG_ID.length; i++) {
+            listIMG_ID[i].x = listIMG_ID[i].x * rate
+            listIMG_ID[i].width = listIMG_ID[i].width * rate
+        }
+
+        for (var j = 0; j < listREC_ID.length; j++) {
+            listREC_ID[j].x = listREC_ID[j].x * rate
+            listREC_ID[j].width = listREC_ID[j].width * rate
+        }
+        list_2.width = list_2.width * rate
+
+//        for (var a = 0; a < listTextID.length; a++) {
+//            listTextID[a].x = listTextID[a].x * rate
+//            listTextID[a].width = listTextID[a].width * rate
+//        }
+//        for (var b = 0; b < listTextID_18.length; b++) {
+//            listTextID_18[b].x = listTextID_18[b].x * rate
+//            listTextID_18[b].width = listTextID_18[b].width * rate
+//        }
+
     }
 }

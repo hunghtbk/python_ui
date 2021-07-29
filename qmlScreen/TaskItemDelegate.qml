@@ -4,19 +4,31 @@ import QtQuick 2.5
 //productContent
 
 Rectangle {
-    width: 770
+    property int widthDelegate : parent.width
+
+    width: widthDelegate
     height: 38
     color: "transparent"
-
-    Image {
-        id: bacgroundItem
+    property int itemWid: 0
+    Rectangle {
+        id: rec_3_4
         width: 770
         height: 30
-        source: "qrc:/image/task_item_border.png"
+        color: "#37345E"
+
+        MouseArea {
+            anchors.fill: parent
+            onPressed: {
+                rec_3_4.color = "#907DE2"
+            }
+            onReleased: {
+                rec_3_4.color = "#37345E"
+            }
+        }
     }
 
     Text {
-        id: idtxt
+        id: txt_29
         width: 5
         height: 12
         x: 12
@@ -28,7 +40,7 @@ Rectangle {
     }
 
     Text {
-        id: productxt
+        id: txt_30
         width: 97
         height: 12
         x: 40
@@ -40,7 +52,7 @@ Rectangle {
     }
 
     Text {
-        id: sizetxt
+        id: txt_31
         width: 16
         height: 12
         x: 235
@@ -52,7 +64,7 @@ Rectangle {
     }
 
     Text {
-        id: sitetxt
+        id: txt_32
         width: 52
         height: 12
         x: 280
@@ -64,7 +76,7 @@ Rectangle {
     }
 
     Text {
-        id: profiletxt
+        id: txt_33
         width: 45
         height: 12
         x: 377
@@ -76,7 +88,7 @@ Rectangle {
     }
 
     Text {
-        id: proxytxt
+        id: txt_35
         width: 57
         height: 12
         x: 468
@@ -88,7 +100,7 @@ Rectangle {
     }
 
     Text {
-        id: statustxt
+        id: txt_36
         width: 69
         height: 12
         x: 575
@@ -100,57 +112,55 @@ Rectangle {
     }
 
     Image {
-        id: action1
-        x: mouseAction1.x + 6
-        y: mouseAction1.y + 6
-        source: action1Source
-    }
-
-    MouseArea {
-        id: mouseAction1
+        id: img_37
         width: 20
         height: 20
         x: 696
         y: 5
-        onClicked: {
-            console.log("action1")
+        source: action1Source
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("action1")
+            }
         }
     }
 
     Image {
-        id: action2
-        x: mouseAction2.x + 6
-        y: mouseAction2.y + 6
-        source: action2Source
-    }
-
-    MouseArea {
-        id: mouseAction2
+        id: img_38
         width: 20
         height: 20
         x: 720
         y: 5
-        onClicked: {
-            console.log("action2")
+        source: action2Source
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("action2")
+            }
         }
     }
 
     Image {
-        id: action3
-        x: mouseAction3.x + 6
-        y: mouseAction3.y + 6
-        source: action3Source
-    }
-
-    MouseArea {
-        id: mouseAction3
+        id: img_39
         width: 20
         height: 20
         x: 744
         y: 5
-        onClicked: {
-            console.log("action3")
+        source: action3Source
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("action3")
+            }
         }
     }
 
+    onWidthDelegateChanged: {
+        console.log("width change to " + widthDelegate)
+        rec_3_4.width = widthDelegate
+    }
 }
