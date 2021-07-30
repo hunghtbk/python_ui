@@ -9,7 +9,6 @@ Rectangle {
 
     property var listIMG_ID_DetailItem: []
     property var listTEXT_ID_DetailItem: []
-    property int currentWidth_DetailItem: rect_1_1.width
     property int currentDetaiItemWidth: rect_1_1.width
 
     width: widthDelegate

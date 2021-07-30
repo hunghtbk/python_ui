@@ -5,7 +5,8 @@ import QtQuick 2.5
 //property whiteIndex
 Rectangle {
     id: rec_2_1
-    width: parent.width
+    property int widthItem : parent.width
+    width: widthItem
     height: 106
     color: "transparent"
 
@@ -13,12 +14,12 @@ Rectangle {
     property var listTEXT_ID_Item: []
 
     property int currentWidth_Item: rec_2_1.width
-    property int currentParentHeight: parent.height
-    property int tmpHeight: currentParentHeight
+//    property int currentParentHeight: parent.height
+//    property int tmpHeight: currentParentHeight
 
     Rectangle {
         id: rec_2_2
-        width: parent.width
+        width: widthItem
         height: 98
         color: "#37345E"
     }
@@ -224,23 +225,23 @@ Rectangle {
         }
     }
 
-    onCurrentParentHeightChanged: {
-        var rate = currentParentHeight/tmpHeight
-        for (var a = 0; a < listIMG_ID_Item.length; a++) {
-            listIMG_ID_Item[a].y = listIMG_ID_Item[a].y * rate
-            listIMG_ID_Item[a].height = listIMG_ID_Item[a].height * rate
-        }
+//    onCurrentParentHeightChanged: {
+//        var rate = currentParentHeight/tmpHeight
+//        for (var a = 0; a < listIMG_ID_Item.length; a++) {
+//            listIMG_ID_Item[a].y = listIMG_ID_Item[a].y * rate
+//            listIMG_ID_Item[a].height = listIMG_ID_Item[a].height * rate
+//        }
 
-        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
-            listTEXT_ID_Item[b].y = listTEXT_ID_Item[b].y * rate
-            listTEXT_ID_Item[b].height = listTEXT_ID_Item[b].height * rate
-        }
-        txt_2.textSize = 7 *rate
-        txt_3.textSize = 9 * rate
-        txt_4.textSize = 5 * 1.5
-        txt_5.textSize = 5 * 1.5
-        txt_6.textSize = 5 * 1.5
-        tmpHeight = currentParentHeight
-    }
+//        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
+//            listTEXT_ID_Item[b].y = listTEXT_ID_Item[b].y * rate
+//            listTEXT_ID_Item[b].height = listTEXT_ID_Item[b].height * rate
+//        }
+//        txt_2.textSize = 7 *rate
+//        txt_3.textSize = 9 * rate
+//        txt_4.textSize = 5 * 1.5
+//        txt_5.textSize = 5 * 1.5
+//        txt_6.textSize = 5 * 1.5
+//        tmpHeight = currentParentHeight
+//    }
 }
 
