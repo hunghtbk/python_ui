@@ -125,5 +125,7 @@
         <file>image/TaskScreen/delete_icon_item.png</file>
         <file>image/TaskScreen/edit_icon_item.png</file>
         <file>image/TaskScreen/stop_icon_item.png</file>
+        <file>image/TaskScreen/arrow-down-5.png</file>
+        <file>qmlScreen/TaskScreenCombobox.qml</file>
     </qresource>
 </RCC>
