@@ -127,5 +127,18 @@
         <file>image/TaskScreen/stop_icon_item.png</file>
         <file>image/TaskScreen/arrow-down-5.png</file>
         <file>qmlScreen/TaskScreenCombobox.qml</file>
+        <file>qmlScreen/ProfileScreen.qml</file>
+        <file>qmlScreen/ProfileGroupDelegate.qml</file>
+        <file>image/Profile/arrow-right.png</file>
+        <file>image/Profile/edit-icon.png</file>
+        <file>image/Profile/oval-visa-logo.png</file>
+        <file>image/Profile/trash-outline.png</file>
+        <file>image/Profile/trash-outline-red.png</file>
+        <file>image/Profile/visa-seeklogo.com copy.png</file>
+        <file>qmlScreen/ProfileGroupModel.qml</file>
+        <file>qmlScreen/ProfileItemDeletegate.qml</file>
+        <file>qmlScreen/ProfileItemModel.qml</file>
+        <file>image/Profile/delete-icon.png</file>
+        <file>qmlScreen/ProfileShippingScreen.qml</file>
     </qresource>
 </RCC>
