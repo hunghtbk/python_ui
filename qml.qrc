@@ -141,5 +141,6 @@
         <file>image/Profile/delete-icon.png</file>
         <file>qmlScreen/ProfileShippingScreen.qml</file>
         <file>qmlScreen/ProfileBillingScreen.qml</file>
+        <file>qmlScreen/ProfilePaymentScreen.qml</file>
     </qresource>
 </RCC>
