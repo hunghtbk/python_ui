@@ -3,16 +3,16 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
 Window {
-    id: m_profileShippingScreen
+    id: m_profileBillingScreen
     visible: true
-    title: qsTr("Create Profile Shipping Screen")
+    title: qsTr("Create Profile Billing Screen")
     //    flags:Qt.FramelessWindowHint
     width: 582
-    height: 633
+    height: 609
     color: "#37345E"
 
-    property int currentWidth: m_profileShippingScreen.width
-    property int currentHeight: m_profileShippingScreen.height
+    property int currentWidth: m_profileBillingScreen.width
+    property int currentHeight: m_profileBillingScreen.height
 
     property var listItemID: []
     property var listCBBID: []
@@ -57,7 +57,7 @@ Window {
         text: qsTr("Shipping")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: "#626477"
     }
 
     Text {
@@ -70,7 +70,7 @@ Window {
         text: qsTr("Billing")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#626477"
+        color: "#FFFFFF"
     }
 
     Text {
@@ -88,49 +88,100 @@ Window {
 
     Rectangle {
         id: item_3
-        width: 52
+        width: 35
         height: 1
-        x: 40
+        x: 117
         y: 121.07
         color: "#907DE2"
 
     }
 
 
-    Text {
-        id: txt_5
-        property int txtSize: 9
-        width: 75
-        height: 15
-        x: 40
-        y: 145
-        text: qsTr("Profile Name")
-        font.family: "Inter"
-        font.pointSize: txtSize
-        color: "#FFFFFF"
-    }
+//    Text {
+//        id: txt_5
+//        property int txtSize: 9
+//        width: 75
+//        height: 15
+//        x: 40
+//        y: 145
+//        text: qsTr("Profile Name")
+//        font.family: "Inter"
+//        font.pointSize: txtSize
+//        color: "#FFFFFF"
+//    }
+
+//    Rectangle {
+//        id: item_4
+//        width: 502
+//        height: 30
+//        x: 40
+//        y: 169
+//        color: "#3F3C68"
+//        clip: true
+
+//        TextInput {
+//            id: txt_6
+//            property int txtSize: 9
+//            width: 470
+//            height: 15
+//            x: 12
+//            y: 8
+//            font.family: "Inter"
+//            font.pointSize: txtSize
+//            color: "#75719B"
+//            text: qsTr("Enter Name")
+//        }
+//    }
 
     Rectangle {
         id: item_4
-        width: 502
-        height: 30
+        property bool activeState: true
+        width: 34
+        height: 18
         x: 40
-        y: 169
-        color: "#3F3C68"
-        clip: true
+        y: 146
+        radius: 10
+        color: activeState ? "#907DE2" : "#3F3C68"
 
-        TextInput {
-            id: txt_6
-            property int txtSize: 9
-            width: 470
-            height: 15
-            x: 12
-            y: 8
-            font.family: "Inter"
-            font.pointSize: txtSize
-            color: "#75719B"
-            text: qsTr("Enter Name")
+        Rectangle {
+            id: item_4_1
+            property int activeX: 17
+            property int inactiveX: 3
+            width: 14
+            height: 14
+            x: item_4.activeState ? activeX : inactiveX
+            y: 2
+            color: "#FFFFFF"
+            radius: width * 0.5
         }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (item_4.activeState) {
+                    item_4.activeState = false
+                } else {
+                    item_4.activeState = true
+                }
+            }
+        }
+
+        onActiveStateChanged: {
+            item_4_1.x = item_4.activeState ? item_4_1.activeX : item_4_1.inactiveX
+        }
+    }
+
+    TextInput {
+        id: txt_6
+        property int txtSize: 9
+        width: 103
+        height: 15
+        x: 86
+        y: 147
+        font.family: "Inter"
+        font.pointSize: txtSize
+        color: item_4.activeState ? "#FFFFFF" : "#626477"
+        text: qsTr("Same as shipping")
     }
 
     Text {
@@ -139,7 +190,7 @@ Window {
         width: 63
         height: 15
         x: 40
-        y: 215
+        y: 188
         text: qsTr("First Name")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -151,7 +202,7 @@ Window {
         width: 243
         height: 30
         x: 40
-        y: 239
+        y: 212
         color: "#3F3C68"
         clip: true
 
@@ -175,7 +226,7 @@ Window {
         width: 62
         height: 15
         x: 299
-        y: 215
+        y: 188
         text: qsTr("Last Name")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -187,7 +238,7 @@ Window {
         width: 243
         height: 30
         x: 299
-        y: 239
+        y: 212
         color: "#3F3C68"
         clip: true
 
@@ -211,7 +262,7 @@ Window {
         width: 32
         height: 15
         x: 40
-        y: 285
+        y: 258
         text: qsTr("Email")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -223,7 +274,7 @@ Window {
         width: 243
         height: 30
         x: 40
-        y: 309
+        y: 282
         color: "#3F3C68"
         clip: true
 
@@ -247,7 +298,7 @@ Window {
         width: 39
         height: 15
         x: 299
-        y: 285
+        y: 258
         text: qsTr("Phone")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -259,7 +310,7 @@ Window {
         width: 243
         height: 30
         x: 299
-        y: 309
+        y: 282
         color: "#3F3C68"
         clip: true
 
@@ -283,7 +334,7 @@ Window {
         width: 58
         height: 15
         x: 40
-        y: 355
+        y: 328
         text: qsTr("Address 1")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -295,7 +346,7 @@ Window {
         width: 343
         height: 30
         x: 40
-        y: 379
+        y: 352
         color: "#3F3C68"
         clip: true
 
@@ -319,7 +370,7 @@ Window {
         width: 59
         height: 15
         x: 399
-        y: 355
+        y: 328
         text: qsTr("Address 2")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -331,7 +382,7 @@ Window {
         width: 143
         height: 30
         x: 399
-        y: 379
+        y: 352
         color: "#3F3C68"
         clip: true
 
@@ -355,7 +406,7 @@ Window {
         width: 48
         height: 15
         x: 40
-        y: 425
+        y: 398
         text: qsTr("Country")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -372,7 +423,7 @@ Window {
         width: 243
         height: 30
         x: 40
-        y: 449
+        y: 422
         model: listModelItem
         delegate: ItemDelegate {
             width: control_1.width
@@ -462,7 +513,7 @@ Window {
         width: 31
         height: 15
         x: 299
-        y: 425
+        y: 398
         text: qsTr("State")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -479,7 +530,7 @@ Window {
         width: 243
         height: 30
         x: 299
-        y: 449
+        y: 422
         model: listModelItem
         delegate: ItemDelegate {
             width: control_2.width
@@ -569,7 +620,7 @@ Window {
         width: 24
         height: 15
         x: 40
-        y: 495
+        y: 468
         text: qsTr("City")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -581,7 +632,7 @@ Window {
         width: 243
         height: 30
         x: 40
-        y: 519
+        y: 492
         color: "#3F3C68"
         clip: true
 
@@ -605,7 +656,7 @@ Window {
         width: 48
         height: 15
         x: 299
-        y: 495
+        y: 468
         text: qsTr("Zipcode")
         font.family: "Inter"
         font.pointSize: txtSize
@@ -617,7 +668,7 @@ Window {
         width: 243
         height: 30
         x: 299
-        y: 519
+        y: 492
         color: "#3F3C68"
         clip: true
 
@@ -641,7 +692,7 @@ Window {
         width: 118
         height: 30
         x: 299
-        y: 570
+        y: 543
         color: "transparent"
         border.color: "#3F3C68"
         radius: 5
@@ -676,7 +727,7 @@ Window {
         width: 118
         height: 30
         x: 424
-        y: 570
+        y: 543
         color: "#FFFFFF"
         border.color: "#3F3C68"
         radius: 5
@@ -714,6 +765,7 @@ Window {
         listItemID.push(item_2)
         listItemID.push(item_3)
         listItemID.push(item_4)
+//        listItemID.push(item_4_1)
         listItemID.push(item_5)
         listItemID.push(item_6)
         listItemID.push(item_7)
@@ -736,7 +788,7 @@ Window {
         listTXTID.push(txt_2)
         listTXTID.push(txt_3)
         listTXTID.push(txt_4)
-        listTXTID.push(txt_5)
+//        listTXTID.push(txt_5)
         listTXTID.push(txt_6)
         listTXTID.push(txt_7)
         listTXTID.push(txt_8)
@@ -766,6 +818,10 @@ Window {
             listItemID[i].x = listItemID[i].x * rate
             listItemID[i].width = listItemID[i].width * rate
         }
+        item_4_1.x = item_4_1.x * rate
+        item_4_1.width = item_4_1.width * rate
+        item_4_1.activeX = item_4_1.activeX * rate
+        item_4_1.inactiveX = item_4_1.inactiveX * rate
 
         for (var j = 0; j < listCBBID.length; j++) {
             listCBBID[j].x = listCBBID[j].x * rate
@@ -780,11 +836,14 @@ Window {
 
     onHeightChanged: {
         var rate = height/currentHeight
-        var rateTextSize = height/633
+        var rateTextSize = height/609
         for (var i = 0; i < listItemID.length; i++) {
             listItemID[i].y = listItemID[i].y * rate
             listItemID[i].height = listItemID[i].height * rate
         }
+
+        item_4_1.y = item_4_1.y * rate
+        item_4_1.height = item_4_1.height * rate
 
         for (var j = 0; j < listCBBID.length; j++) {
             listCBBID[j].y = listCBBID[j].y * rate
