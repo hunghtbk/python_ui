@@ -170,5 +170,14 @@
         <file>image/Account/visa-seeklogo.com copy.png</file>
         <file>qmlScreen/AccountItemDeletegate.qml</file>
         <file>qmlScreen/AccountItemModel.qml</file>
+        <file>qmlScreen/SettingScreen.qml</file>
+        <file>image/Setting/arrow-right.png</file>
+        <file>image/Setting/big_lotus.png</file>
+        <file>image/Setting/expired_rate.png</file>
+        <file>image/Setting/full-rate.png</file>
+        <file>image/Setting/grey_oval.png</file>
+        <file>image/Setting/normal_lotus.png</file>
+        <file>image/Setting/save-outline.png</file>
+        <file>image/Setting/white_oval.png</file>
     </qresource>
 </RCC>
