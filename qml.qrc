@@ -157,5 +157,18 @@
         <file>qmlScreen/ProxyItemDeletegate.qml</file>
         <file>qmlScreen/ProxyItemModel.qml</file>
         <file>qmlScreen/CreateProxyGroupScreen.qml</file>
+        <file>qmlScreen/AccountScreen.qml</file>
+        <file>qmlScreen/AccountGroupDelegate.qml</file>
+        <file>qmlScreen/AccountGroupModel.qml</file>
+        <file>image/Account/arrow-right.png</file>
+        <file>image/Account/delete-icon.png</file>
+        <file>image/Account/edit-icon.png</file>
+        <file>image/Account/oval-visa-logo.png</file>
+        <file>image/Account/save-outline.png</file>
+        <file>image/Account/trash-outline.png</file>
+        <file>image/Account/trash-outline-red.png</file>
+        <file>image/Account/visa-seeklogo.com copy.png</file>
+        <file>qmlScreen/AccountItemDeletegate.qml</file>
+        <file>qmlScreen/AccountItemModel.qml</file>
     </qresource>
 </RCC>

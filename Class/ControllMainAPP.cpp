@@ -7,7 +7,7 @@ void ControllMainAPP::initControlMainApp()
     m_uiBridge = new UIBridge(this);
     m_qmlEngine.rootContext()->setContextProperty("UIBridge", m_uiBridge);
 
-    m_qmlEngine.load(QUrl(QStringLiteral("qrc:/qmlScreen/CreateProxyGroupScreen.qml")));
+    m_qmlEngine.load(QUrl(QStringLiteral("qrc:/qmlScreen/AccountScreen.qml")));
 }
 
 ControllMainAPP *ControllMainAPP::getInstance()
