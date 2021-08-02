@@ -142,5 +142,6 @@
         <file>qmlScreen/ProfileShippingScreen.qml</file>
         <file>qmlScreen/ProfileBillingScreen.qml</file>
         <file>qmlScreen/ProfilePaymentScreen.qml</file>
+        <file>qmlScreen/ProxyScreen.qml</file>
     </qresource>
 </RCC>

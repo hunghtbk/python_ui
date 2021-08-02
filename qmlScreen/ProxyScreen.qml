@@ -3,7 +3,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
 Window {
-    id: m_profoleScreen
+    id: m_proxyScreen
     visible: true
     width: 1200
     height: 730
@@ -11,8 +11,8 @@ Window {
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
-    property int currentWidth: m_profoleScreen.width
-    property int currentHeight: m_profoleScreen.height
+    property int currentWidth: m_proxyScreen.width
+    property int currentHeight: m_proxyScreen.height
 
     property var listItemID: []
     property var listListViewID: []
@@ -82,7 +82,7 @@ Window {
             width: 8
             height: 8
             x: 61
-            y: 132
+            y: 166
             color: "#907DE2"
             radius: 100
         }
@@ -94,7 +94,17 @@ Window {
             height: 18
             x: 24
             y: 127
-            source: "qrc:/image/0.Common/credit-card-outline-active.png"
+            source: "qrc:/image/0.Common/credit-card-outline-inactive.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    item5.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+                }
+                onReleased: {
+                    item5.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+                }
+            }
         }
 
         //Proxy icon
@@ -104,17 +114,7 @@ Window {
             height: 18
             x: 24
             y: 161
-            source: "qrc:/image/0.Common/flash-outline-2-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item6.source = "qrc:/image/0.Common/flash-outline-2-active.png"
-                }
-                onReleased: {
-                    item6.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-                }
-            }
+            source: "qrc:/image/0.Common/flash-outline-2-active.png"
         }
 
         //Account Icon
@@ -233,7 +233,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Minimize")
-                    m_profoleScreen.showMinimized();
+                    m_proxyScreen.showMinimized();
                 }
             }
         }
@@ -250,7 +250,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Close icon")
-                    m_profoleScreen.close()
+                    m_proxyScreen.close()
                 }
             }
         }
