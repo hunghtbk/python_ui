@@ -180,7 +180,7 @@ Window {
         Text {
             id: txt_1
             property int textSize: 13
-            text: qsTr("Profile Groups")
+            text: qsTr("Proxy Groups")
             width: 108
             height: 19
             x: 33
@@ -206,8 +206,8 @@ Window {
             height: 660
             x: 33
             y: 64
-            model: ProfileGroupModel {}
-            delegate: ProfileGroupDelegate {}
+            model: ProxyGroupModel {}
+            delegate: ProxyGroupDelegate {}
             clip: true
         }
 
@@ -258,7 +258,7 @@ Window {
         Text {
             id: txt_2
             property int textSize: 13
-            text: qsTr("Profiles")
+            text: qsTr("Proxy")
             width: 57
             height: 19
             x: 27
@@ -334,7 +334,7 @@ Window {
                 height: 7
                 x: 74
                 y: 12
-                source: "qrc:/image/Profile/arrow-right.png"
+                source: "qrc:/image/Proxy/arrow-right.png"
             }
             MouseArea {
                 anchors.fill: parent
@@ -372,7 +372,7 @@ Window {
                 height: 12
                 x: 77
                 y: 9
-                source: "qrc:/image/Profile/trash-outline-red.png"
+                source: "qrc:/image/Proxy/trash-outline-red.png"
             }
             MouseArea {
                 anchors.fill: parent
@@ -384,45 +384,81 @@ Window {
 
         Rectangle {
             id: item21
-            width: 791
-            height: 30
+            width: 363
+            height: 546
             x: 27
             y: 102
-            color: "#907DE2"
+            color: "#37345E"
 
             Text {
                 id: txt_6
-                property int textSize: 8
-                text: qsTr("ID")
-                width: 10
-                height: 12
-                x: 12
-                y: 9
+                property int textSize: 9
+                width: 101
+                height: 15
+                x: 20
+                y: 17
                 font.family: "Inter"
                 font.pointSize: textSize
-                color: "#FFFFFF"
+                color: "#75719B"
+                text: qsTr("ip:auth:user:pass")
             }
+        }
+
+        Rectangle {
+            id: item211
+            width: 104
+            height: 30
+            x: 286
+            y: 664
+            color: "#FFFFFF"
+            radius: 5
 
             Text {
                 id: txt_7
-                property int textSize: 8
-                text: qsTr("PROFILE NAME")
-                width: 74
-                height: 12
-                x: 40
-                y: 9
+                property int textSize: 9
+                text: qsTr("Save List")
+                width: 53
+                height: 15
+                x: 17
+                y: 8
                 font.family: "Inter"
                 font.pointSize: textSize
-                color: "#FFFFFF"
+                color: "#2AE182"
             }
+
+            Image {
+                id: item212
+                width: 12
+                height: 12
+                x: 74
+                y: 9
+                source: "qrc:/image/Proxy/save-outline.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Save button")
+                }
+            }
+        }
+
+        Rectangle {
+            id: item213
+            width: 406
+            height: 30
+            x: 412
+            y: 102
+            color: "#907DE2"
+            radius: 3
 
             Text {
                 id: txt_8
                 property int textSize: 8
-                text: qsTr("NAME ON CARD")
-                width: 79
+                text: qsTr("PROXY")
+                width: 35
                 height: 12
-                x: 210
+                x: 19
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -432,10 +468,10 @@ Window {
             Text {
                 id: txt_9
                 property int textSize: 8
-                text: qsTr("CARD")
-                width: 22
+                text: qsTr("STATUS")
+                width: 40
                 height: 12
-                x: 490
+                x: 271
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -445,10 +481,10 @@ Window {
             Text {
                 id: txt_10
                 property int textSize: 8
-                text: qsTr("ACTION")
+                text: qsTr("ACTIONS")
                 width: 46
                 height: 12
-                x: 720
+                x: 335
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -462,16 +498,16 @@ Window {
             height: 558
             x: 807
             y: 148
-            source: "qrc:/image/TaskScreen/task_scroll_border.png"
+            source: "qrc:/image/0.Common/task_scroll_border.png"
         }
         ListView {
             id: list_2
-            width: 791
+            width: 406
             height: 558
-            x: 27
-            y: 148
-            model: ProfileItemModel {}
-            delegate: ProfileItemDeletegate {}
+            x: 412
+            y: 144
+            model: ProxyItemModel {}
+            delegate: ProxyItemDeletegate {}
             clip: true
             flickableDirection: Flickable.VerticalFlick
             boundsBehavior: Flickable.StopAtBounds
@@ -511,6 +547,9 @@ Window {
         listItemID.push(item19)
         listItemID.push(item20)
         listItemID.push(item21)
+        listItemID.push(item211)
+        listItemID.push(item212)
+        listItemID.push(item213)
         listItemID.push(item22)
 
         listTXT_9.push(txt_3)

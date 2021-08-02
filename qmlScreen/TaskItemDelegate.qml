@@ -17,7 +17,7 @@ Rectangle {
     property int itemWid: 0
     Rectangle {
         id: rec_3_4
-        width: widthDelegate
+        width: 770
         height: 30
         color: "#37345E"
 
@@ -168,6 +168,7 @@ Rectangle {
         listIMG_ID_DetailItem.push(img_37)
         listIMG_ID_DetailItem.push(img_38)
         listIMG_ID_DetailItem.push(img_39)
+        listIMG_ID_DetailItem.push(rec_3_4)
 
         listTEXT_ID_DetailItem.push(txt_29)
         listTEXT_ID_DetailItem.push(txt_30)

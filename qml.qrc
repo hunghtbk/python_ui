@@ -143,5 +143,18 @@
         <file>qmlScreen/ProfileBillingScreen.qml</file>
         <file>qmlScreen/ProfilePaymentScreen.qml</file>
         <file>qmlScreen/ProxyScreen.qml</file>
+        <file>qmlScreen/ProxyGroupDelegate.qml</file>
+        <file>qmlScreen/ProxyGroupModel.qml</file>
+        <file>image/Proxy/arrow-right.png</file>
+        <file>image/Proxy/delete-icon.png</file>
+        <file>image/Proxy/edit-icon.png</file>
+        <file>image/Proxy/oval-visa-logo.png</file>
+        <file>image/Proxy/trash-outline.png</file>
+        <file>image/Proxy/trash-outline-red.png</file>
+        <file>image/Proxy/visa-seeklogo.com copy.png</file>
+        <file>image/Proxy/save-outline.png</file>
+        <file>image/0.Common/task_scroll_border.png</file>
+        <file>qmlScreen/ProxyItemDeletegate.qml</file>
+        <file>qmlScreen/ProxyItemModel.qml</file>
     </qresource>
 </RCC>

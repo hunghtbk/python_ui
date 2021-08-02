@@ -7,7 +7,7 @@ void ControllMainAPP::initControlMainApp()
     m_uiBridge = new UIBridge(this);
     m_qmlEngine.rootContext()->setContextProperty("UIBridge", m_uiBridge);
 
-    m_qmlEngine.load(QUrl(QStringLiteral("qrc:/qmlScreen/ProfileScreen.qml")));
+    m_qmlEngine.load(QUrl(QStringLiteral("qrc:/qmlScreen/ProxyScreen.qml")));
 }
 
 ControllMainAPP *ControllMainAPP::getInstance()

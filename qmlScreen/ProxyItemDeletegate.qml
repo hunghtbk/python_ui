@@ -17,9 +17,10 @@ Rectangle {
     property int itemWid: 0
     Rectangle {
         id: cItem1
-        width: 770
+        width: 385
         height: 30
         color: "#37345E"
+        radius: 3
 
         MouseArea {
             anchors.fill: parent
@@ -34,73 +35,33 @@ Rectangle {
 
     Text {
         id: ctxt1
-        width: 5
+        width: 209
         height: 12
-        x: 12
+        x: 19
         y: 9
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
-        text: idtxtContent
+        text: proxyTxtContent
     }
 
     Text {
         id: ctxt2
-        width: 44
+        width: 32
         height: 12
-        x: 40
+        x: 271
         y: 9
         font.family: "Inter"
         font.pointSize: 8
-        color: "#FFFFFF"
-        text: profileNameContent
-    }
-
-    Text {
-        id: ctxt3
-        width: 46
-        height: 12
-        x: 210
-        y: 9
-        font.family: "Inter"
-        font.pointSize: 8
-        color: "#FFFFFF"
-        text: nameOnCard
-    }
-
-    Image {
-        id: cItem2
-        width: 29
-        height: 10
-        x: 489.25
-        y: 9.75
-        source: cardImage
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                console.log("cardImage")
-            }
-        }
-    }
-
-    Text {
-        id: ctxt4
-        width: 27
-        height: 12
-        x: 530
-        y: 9
-        font.family: "Inter"
-        font.pointSize: 8
-        color: "#FFFFFF"
-        text: cardNumber
+        color: statusColorTxt
+        text: statusContent
     }
 
     Image {
         id: cItem3
         width: 20
         height: 20
-        x: 720
+        x: 335
         y: 5
         source: action1Source
 
@@ -116,7 +77,7 @@ Rectangle {
         id: cItem4
         width: 20
         height: 20
-        x: 744
+        x: 359
         y: 5
         source: action2Source
 
@@ -130,14 +91,11 @@ Rectangle {
 
     Component.onCompleted: {
         listChildrentItem.push(cItem1)
-        listChildrentItem.push(cItem2)
         listChildrentItem.push(cItem3)
         listChildrentItem.push(cItem4)
 
         listChildrentTXT.push(ctxt1)
         listChildrentTXT.push(ctxt2)
-        listChildrentTXT.push(ctxt3)
-        listChildrentTXT.push(ctxt4)
     }
 
     onWidthChanged: {
