@@ -393,11 +393,12 @@ Window {
             Text {
                 id: txt_6
                 property int textSize: 9
-                width: 101
+                width: 323
                 height: 15
                 x: 20
                 y: 17
                 font.family: "Inter"
+                wrapMode: Text.WrapAnywhere
                 font.pointSize: textSize
                 color: "#75719B"
                 text: qsTr("ip:auth:user:pass")
