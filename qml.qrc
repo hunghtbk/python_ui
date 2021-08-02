@@ -156,5 +156,6 @@
         <file>image/0.Common/task_scroll_border.png</file>
         <file>qmlScreen/ProxyItemDeletegate.qml</file>
         <file>qmlScreen/ProxyItemModel.qml</file>
+        <file>qmlScreen/CreateProxyGroupScreen.qml</file>
     </qresource>
 </RCC>
