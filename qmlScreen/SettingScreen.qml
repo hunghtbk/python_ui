@@ -15,11 +15,12 @@ Window {
     property int currentHeight: m_settingScreen.height
 
     property var listItemID: []
-    property var listListViewID: []
     property var listTXT_7: []
     property var listTXT_8: []
     property var listTXT_9: []
+    property var listTXT_11: []
     property var listTXT_13: []
+    property var listTXT_15: []
 
     Rectangle {
         id: item0
@@ -507,6 +508,343 @@ Window {
                 text: qsTr("0")
             }
         }
+
+        Rectangle {
+            id: item22
+            width: 91
+            height: 30
+            x: 637
+            y: 200
+            color: "#FFFFFF"
+            radius: 5
+
+            TextInput {
+                id: txt_17
+                property int textSize: 9
+                width: 29
+                height: 15
+                x: 22
+                y: 8
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#2AE182"
+                text: qsTr("Save")
+            }
+
+            Image {
+                id: item23
+                width: 12
+                height: 12
+                x: 56
+                y: 9
+                source: "qrc:/image/Setting/save-outline.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Save 1 button")
+                }
+            }
+        }
+
+        Rectangle {
+            id: item24
+            width: 91
+            height: 30
+            x: 1011
+            y: 200
+            color: "#FFFFFF"
+            radius: 5
+
+            TextInput {
+                id: txt_18
+                property int textSize: 9
+                width: 29
+                height: 15
+                x: 22
+                y: 8
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#2AE182"
+                text: qsTr("Save")
+            }
+
+            Image {
+                id: item25
+                width: 12
+                height: 12
+                x: 56
+                y: 9
+                source: "qrc:/image/Setting/save-outline.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Save 2 button")
+                }
+            }
+        }
+
+        Text {
+            id: txt_19
+            property int textSize: 11
+            width: 70
+            height: 17
+            x: 33
+            y: 257
+            font.family: "Inter"
+            font.pointSize: textSize
+            color: "#FFFFFF"
+            text: qsTr("Webhooks")
+        }
+
+        Text {
+            id: txt_20
+            property int textSize: 9
+            width: 70
+            height: 17
+            x: 33
+            y: 286
+            font.family: "Inter"
+            font.pointSize: textSize
+            color: "#FFFFFF"
+            text: qsTr("Discord Webhook")
+        }
+
+        Rectangle {
+            id: item26
+            width: 695
+            height: 30
+            x: 33
+            y: 310
+            color: "#37345E"
+            radius: 3
+
+            TextInput {
+                id: txt_21
+                property int textSize: 9
+                width: 600
+                height: 15
+                x: 12
+                y: 8
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#75719B"
+                text: qsTr("Enter webhook")
+            }
+        }
+
+        Rectangle {
+            id: item27
+            width: 91
+            height: 30
+            x: 637
+            y: 352
+            color: "#FFFFFF"
+            radius: 5
+
+            TextInput {
+                id: txt_22
+                property int textSize: 9
+                width: 29
+                height: 15
+                x: 22
+                y: 8
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#2AE182"
+                text: qsTr("Save")
+            }
+
+            Image {
+                id: item28
+                width: 12
+                height: 12
+                x: 56
+                y: 9
+                source: "qrc:/image/Setting/save-outline.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Save 3 button")
+                }
+            }
+        }
+
+        Rectangle {
+            id: item29
+            width: 91
+            height: 30
+            x: 536
+            y: 352
+            color: "#FFFFFF"
+            radius: 5
+
+            TextInput {
+                id: txt_23
+                property int textSize: 9
+                width: 29
+                height: 15
+                x: 22
+                y: 8
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#2E2C50"
+                text: qsTr("Test")
+            }
+
+            Image {
+                id: item30
+                width: 4
+                height: 7
+                x: 59
+                y: 12
+                source: "qrc:/image/Setting/arrow-right.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Test button")
+                }
+            }
+        }
+
+        Rectangle {
+            id: item31
+            width: 352
+            height: 123
+            x: 750
+            y: 259
+            radius: 3
+            color: "#37345E"
+
+            Text {
+                id: txt_24
+                property int textSize: 11
+                width: 57
+                height: 17
+                x: 21
+                y: 16
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#FFFFFF"
+                text: qsTr("Updates")
+            }
+
+            Text {
+                id: txt_25
+                property int textSize: 9
+                width: 111
+                height: 15
+                x: 21
+                y: 43
+                font.family: "Inter"
+                font.pointSize: textSize
+                color: "#907DE2"
+                text: qsTr("Latest Version 1.0.2")
+            }
+
+            Rectangle {
+                id: item32
+                width: 161
+                height: 30
+                x: 21
+                y: 73
+                color: "#FFFFFF"
+                radius: 5
+
+                TextInput {
+                    id: txt_26
+                    property int textSize: 9
+                    width: 107
+                    height: 15
+                    x: 22
+                    y: 8
+                    font.family: "Inter"
+                    font.pointSize: textSize
+                    color: "#2E2C50"
+                    text: qsTr("Check for updates")
+                }
+
+                Image {
+                    id: item33
+                    width: 4
+                    height: 7
+                    x: 135
+                    y: 12
+                    source: "qrc:/image/Setting/arrow-right.png"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        console.log("Check for updates button")
+                    }
+                }
+            }
+        }
+
+        Image {
+            id: item34
+            width: 260
+            height: 300
+            x: -64
+            y: 430
+            source: "qrc:/image/Setting/grey_oval.png"
+        }
+
+        Rectangle {
+            id: item35
+            width: 65
+            height: 300
+            x: -65
+            y: 300
+            color: "#37345E"
+        }
+
+        Image {
+            id: item36
+            width: 239
+            height: 235
+            x: 99.25
+            y: 466.44
+            source: "qrc:/image/Setting/normal_lotus.png"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log(width + "-" + height)
+                }
+            }
+        }
+
+        Image {
+            id: item37
+            width: 424
+            height: 381
+            x: 711.44
+            y: 349.51
+            source: "qrc:/image/Setting/big_lotus.png"
+        }
+
+        Image {
+            id: item38
+            width: 621
+            height: 165
+            x: 343
+            y: 565
+            source: "qrc:/image/Setting/white_oval.png"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log(width + "-" + height)
+                }
+            }
+        }
     }
 
     Component.onCompleted: {
@@ -533,26 +871,53 @@ Window {
         listItemID.push(item19)
         listItemID.push(item20)
         listItemID.push(item21)
-        listItemID.push(item211)
-        listItemID.push(item212)
-        listItemID.push(item213)
         listItemID.push(item22)
+        listItemID.push(item23)
+        listItemID.push(item24)
+        listItemID.push(item25)
+        listItemID.push(item26)
+        listItemID.push(item27)
+        listItemID.push(item28)
+        listItemID.push(item29)
+        listItemID.push(item30)
+        listItemID.push(item31)
+        listItemID.push(item32)
+        listItemID.push(item33)
+        listItemID.push(item34)
+        listItemID.push(item35)
+        listItemID.push(item36)
+        listItemID.push(item37)
+        listItemID.push(item38)
 
-        listTXT_9.push(txt_3)
-        listTXT_9.push(txt_4)
-        listTXT_9.push(txt_5)
-
-        listTXT_8.push(txt_6)
-        listTXT_8.push(txt_7)
-        listTXT_8.push(txt_8)
-        listTXT_8.push(txt_9)
-        listTXT_8.push(txt_10)
 
         listTXT_13.push(txt_1)
-        listTXT_13.push(txt_2)
+        listTXT_11.push(txt_2)
 
-        listListViewID.push(list_1)
-        listListViewID.push(list_2)
+        listTXT_15.push(txt_3)
+        listTXT_9.push(txt_4)
+        listTXT_15.push(txt_5)
+
+        listTXT_7.push(txt_6)
+        listTXT_11.push(txt_7)
+        listTXT_11.push(txt_8)
+        listTXT_9.push(txt_9)
+        listTXT_9.push(txt_10)
+        listTXT_9.push(txt_11)
+        listTXT_9.push(txt_12)
+        listTXT_9.push(txt_13)
+        listTXT_9.push(txt_14)
+        listTXT_9.push(txt_15)
+        listTXT_9.push(txt_16)
+        listTXT_9.push(txt_17)
+        listTXT_9.push(txt_18)
+        listTXT_11.push(txt_19)
+        listTXT_9.push(txt_20)
+        listTXT_9.push(txt_21)
+        listTXT_9.push(txt_22)
+        listTXT_9.push(txt_23)
+        listTXT_11.push(txt_24)
+        listTXT_9.push(txt_25)
+        listTXT_9.push(txt_26)
     }
     onHeightChanged: {
         var rate = height/currentHeight
@@ -560,6 +925,12 @@ Window {
         for (var i = 0; i < listItemID.length; i++) {
             listItemID[i].y = listItemID[i].y * rate
             listItemID[i].height = listItemID[i].height * rate
+        }
+
+        for (var j = 0; j < listTXT_7.length; j++) {
+            listTXT_7[j].y = listTXT_7[j].y * rate
+            listTXT_7[j].height = listTXT_7[j].height * rate
+            listTXT_7[j].textSize = 7 * rateTextSize
         }
 
         for (var l = 0; l < listTXT_8.length; l++) {
@@ -572,16 +943,23 @@ Window {
             listTXT_9[m].height = listTXT_9[m].height * rate
             listTXT_9[m].textSize = 9 * rateTextSize
         }
+
+        for (var k = 0; k < listTXT_11.length; k++) {
+            listTXT_11[k].y = listTXT_11[k].y * rate
+            listTXT_11[k].height = listTXT_11[k].height * rate
+            listTXT_11[k].textSize = 11 * rateTextSize
+        }
+
         for (var n = 0; n < listTXT_13.length; n++) {
             listTXT_13[n].y = listTXT_13[n].y * rate
             listTXT_13[n].height = listTXT_13[n].height * rate
             listTXT_13[n].textSize = 13 * rateTextSize
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].y = listListViewID[p].y * rate
-            listListViewID[p].height = listListViewID[p].height * rate
+        for (var p = 0; p < listTXT_15.length; p++) {
+            listTXT_15[p].y = listTXT_15[p].y * rate
+            listTXT_15[p].height = listTXT_15[p].height * rate
+            listTXT_15[p].textSize = 15 * rateTextSize
         }
-        rec_4.implicitHeight = rec_4.implicitHeight * rate
     }
 
     onWidthChanged: {
@@ -603,14 +981,19 @@ Window {
             listTXT_9[m].x = listTXT_9[m].x * rate
             listTXT_9[m].width = listTXT_9[m].width * rate
         }
+
+        for (var k = 0; k < listTXT_11.length; k++) {
+            listTXT_11[k].x = listTXT_11[k].x * rate
+            listTXT_11[k].width = listTXT_11[k].width * rate
+        }
+
         for (var n = 0; n < listTXT_13.length; n++) {
             listTXT_13[n].x = listTXT_13[n].x * rate
             listTXT_13[n].width = listTXT_13[n].width * rate
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].x = listListViewID[p].x * rate
-            listListViewID[p].width = listListViewID[p].width * rate
+        for (var p = 0; p < listTXT_15.length; p++) {
+            listTXT_15[p].x= listTXT_15[p].x * rate
+            listTXT_15[p].width = listTXT_15[p].width * rate
         }
-        rec_4.implicitWidth = rec_4.implicitWidth *rate
     }
 }
