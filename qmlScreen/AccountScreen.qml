@@ -292,6 +292,7 @@ Rectangle {
             y: 56
             color: "#37345E"
             clip: true
+            radius: 3
             TextInput {
                 id: txt_3
                 property int textSize: 9
@@ -389,6 +390,7 @@ Rectangle {
             x: 27
             y: 102
             color: "#37345E"
+            radius: 3
 
             Text {
                 id: txt_6
