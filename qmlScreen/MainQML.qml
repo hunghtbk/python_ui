@@ -291,6 +291,14 @@ Window {
         source: ""
     }
 
+    Connections {
+        target: loaderSubItem.item
+        onCreateTaskScreenSignal: {
+            console.log(msg)
+            loaderSubItem.source = ""
+        }
+    }
+
     onSelectedAppChanged: {
         if (selectedApp == 0) {
             img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
