@@ -100,7 +100,7 @@ Rectangle {
 
     onWidthChanged: {
         var rate = width/currentDetaiItemWidth
-        console.log(rate)
+//        console.log(rate)
         for (var a = 0; a < listChildrentItem.length; a++) {
             listChildrentItem[a].x = listChildrentItem[a].x * rate
             listChildrentItem[a].width = listChildrentItem[a].width * rate

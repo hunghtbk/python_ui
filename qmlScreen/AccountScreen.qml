@@ -10,7 +10,7 @@ Rectangle {
 //    title: qsTr("Account Screen")
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
-
+    signal message(string msg)
     property int currentWidth: m_accountScreen.width
     property int currentHeight: m_accountScreen.height
 
@@ -541,8 +541,8 @@ Rectangle {
         listItemID.push(item10)
         listItemID.push(item11)
         listItemID.push(item12)
-        listItemID.push(item13)
-        listItemID.push(item14)
+//        listItemID.push(item13)
+//        listItemID.push(item14)
         listItemID.push(item15)
         listItemID.push(item16)
         listItemID.push(item17)

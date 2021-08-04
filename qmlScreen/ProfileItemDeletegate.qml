@@ -16,7 +16,7 @@ Rectangle {
     color: "transparent"
     property int itemWid: 0
     Rectangle {
-        id: cItem1
+        id: profileItem1
         width: 770
         height: 30
         color: "#37345E"
@@ -25,16 +25,16 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                cItem1.color = "#907DE2"
+                profileItem1.color = "#907DE2"
             }
             onReleased: {
-                cItem1.color = "#37345E"
+                profileItem1.color = "#37345E"
             }
         }
     }
 
     Text {
-        id: ctxt1
+        id: profileTxt1
         width: 5
         height: 12
         x: 12
@@ -46,7 +46,7 @@ Rectangle {
     }
 
     Text {
-        id: ctxt2
+        id: profileTxt2
         width: 44
         height: 12
         x: 40
@@ -58,7 +58,7 @@ Rectangle {
     }
 
     Text {
-        id: ctxt3
+        id: profileTxt3
         width: 46
         height: 12
         x: 210
@@ -70,7 +70,7 @@ Rectangle {
     }
 
     Image {
-        id: cItem2
+        id: profileItem2
         width: 29
         height: 10
         x: 489.25
@@ -86,7 +86,7 @@ Rectangle {
     }
 
     Text {
-        id: ctxt4
+        id: profileTxt4
         width: 27
         height: 12
         x: 530
@@ -98,7 +98,7 @@ Rectangle {
     }
 
     Image {
-        id: cItem3
+        id: profileItem3
         width: 20
         height: 20
         x: 720
@@ -114,7 +114,7 @@ Rectangle {
     }
 
     Image {
-        id: cItem4
+        id: profileItem4
         width: 20
         height: 20
         x: 744
@@ -130,20 +130,20 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        listChildrentItem.push(cItem1)
-        listChildrentItem.push(cItem2)
-        listChildrentItem.push(cItem3)
-        listChildrentItem.push(cItem4)
+        listChildrentItem.push(profileItem1)
+        listChildrentItem.push(profileItem2)
+        listChildrentItem.push(profileItem3)
+        listChildrentItem.push(profileItem4)
 
-        listChildrentTXT.push(ctxt1)
-        listChildrentTXT.push(ctxt2)
-        listChildrentTXT.push(ctxt3)
-        listChildrentTXT.push(ctxt4)
+        listChildrentTXT.push(profileTxt1)
+        listChildrentTXT.push(profileTxt2)
+        listChildrentTXT.push(profileTxt3)
+        listChildrentTXT.push(profileTxt4)
     }
 
     onWidthChanged: {
         var rate = width/currentDetaiItemWidth
-        console.log(rate)
+//        console.log(rate)
         for (var a = 0; a < listChildrentItem.length; a++) {
             listChildrentItem[a].x = listChildrentItem[a].x * rate
             listChildrentItem[a].width = listChildrentItem[a].width * rate

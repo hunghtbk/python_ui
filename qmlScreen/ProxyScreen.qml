@@ -11,6 +11,7 @@ Rectangle {
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
+    signal message(string msg)
     property int currentWidth: m_proxyScreen.width
     property int currentHeight: m_proxyScreen.height
 
@@ -221,39 +222,39 @@ Rectangle {
         height: 730
         color: "transparent"
 
-        Image {
-            id: item13
-            width: 18
-            height: 18
-            x: 794
-            y: 14
-            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+//        Image {
+//            id: item13
+//            width: 18
+//            height: 18
+//            x: 794
+//            y: 14
+//            source: "qrc:/image/0.Common/minus-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Minimize")
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Minimize")
 //                    m_proxyScreen.showMinimized();
-                }
-            }
-        }
+//                }
+//            }
+//        }
 
-        Image {
-            id: item14
-            width: 18
-            height: 18
-            x: 814
-            y: 14
-            source: "qrc:/image/0.Common/close-outline-inactive.png"
+//        Image {
+//            id: item14
+//            width: 18
+//            height: 18
+//            x: 814
+//            y: 14
+//            source: "qrc:/image/0.Common/close-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Close icon")
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Close icon")
 //                    m_proxyScreen.close()
-                }
-            }
-        }
+//                }
+//            }
+//        }
 
         Text {
             id: txt_2
@@ -541,8 +542,8 @@ Rectangle {
         listItemID.push(item10)
         listItemID.push(item11)
         listItemID.push(item12)
-        listItemID.push(item13)
-        listItemID.push(item14)
+//        listItemID.push(item13)
+//        listItemID.push(item14)
         listItemID.push(item15)
         listItemID.push(item16)
         listItemID.push(item17)

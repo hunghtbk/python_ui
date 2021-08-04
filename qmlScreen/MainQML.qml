@@ -38,7 +38,7 @@ Window {
 
         //Define small lotus
         Image {
-            id: img_1
+            id: main_img_1
             width: 31
             height: 30
             x: 17
@@ -47,7 +47,7 @@ Window {
         }
         //Dashboard icon
         Image {
-            id: img_2
+            id: main_img_2
             width: 18
             height: 18
             x: 24
@@ -57,17 +57,20 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
+                    main_img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
                 }
                 onReleased: {
-                    img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                    main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                }
+                onClicked: {
+                    console.log("Dash Board Screen")
                 }
             }
         }
 
         //task group icon
         Image {
-            id: img_3
+            id: main_img_3
             width: 18
             height: 18
             x: 24
@@ -78,15 +81,15 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onPressed: {
-                        if (selectedApp != 1) img_3.source = "qrc:/image/0.Common/cube-outline-active.png"
+                        if (selectedApp != 1) main_img_3.source = "qrc:/image/0.Common/cube-outline-active.png"
                     }
                     onReleased: {
-                        if (selectedApp != 1) img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+                        if (selectedApp != 1) main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
                     }
                     onClicked: {
                         console.log("Task Group Screen")
                         selectedApp = 1
-                        loaderItem.source = "TaskScreen.qml"
+                        main_loaderItem.source = "TaskScreen.qml"
                     }
                 }
             }
@@ -94,7 +97,7 @@ Window {
 
         //Selected Icon
         Rectangle {
-            id: img_3_1
+            id: main_img_3_1
             width: 8
             height: 8
             x: 61
@@ -118,7 +121,7 @@ Window {
         //End Selected Icon
         //Profile Icon
         Image {
-            id: img_4
+            id: main_img_4
             width: 18
             height: 18
             x: 24
@@ -128,21 +131,22 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 2) img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+                    if (selectedApp != 2) main_img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
                 }
                 onReleased: {
-                    if (selectedApp != 2) img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+                    if (selectedApp != 2) main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
                 }
                 onClicked: {
+                    console.log("Profile Screen")
                     selectedApp = 2
-                    loaderItem.source = "ProfileScreen.qml"
+                    main_loaderItem.source = "ProfileScreen.qml"
                 }
             }
         }
 
         //Proxy icon
         Image {
-            id: img_5
+            id: main_img_5
             width: 18
             height: 18
             x: 24
@@ -152,21 +156,22 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 3) img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
+                    if (selectedApp != 3) main_img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
                 }
                 onReleased: {
-                    if (selectedApp != 3) img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+                    if (selectedApp != 3) main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
                 }
                 onClicked: {
+                    console.log("Proxy Screen")
                     selectedApp = 3
-                    loaderItem.source = "ProxyScreen.qml"
+                    main_loaderItem.source = "ProxyScreen.qml"
                 }
             }
         }
 
         //Account Icon
         Image {
-            id: img_6
+            id: main_img_6
             width: 18
             height: 18
             x: 24
@@ -176,21 +181,22 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 4) img_6.source = "qrc:/image/0.Common/person-outline-active.png"
+                    if (selectedApp != 4) main_img_6.source = "qrc:/image/0.Common/person-outline-active.png"
                 }
                 onReleased: {
-                    if (selectedApp != 4) img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+                    if (selectedApp != 4) main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
                 }
                 onClicked: {
+                    console.log("Account Screen")
                     selectedApp = 4
-                    loaderItem.source = "AccountScreen.qml"
+                    main_loaderItem.source = "AccountScreen.qml"
                 }
             }
         }
 
         //Setting Icon
         Image {
-            id: img_7
+            id: main_img_7
             width: 18
             height: 18
             x: 24
@@ -200,23 +206,24 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 5) img_7.source = "qrc:/image/0.Common/settings-2-outline-active.png"
+                    if (selectedApp != 5) main_img_7.source = "qrc:/image/0.Common/settings-2-outline-active.png"
                 }
 
                 onReleased: {
-                    if (selectedApp != 5) img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+                    if (selectedApp != 5) main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
                 }
 
                 onClicked: {
+                    console.log("Setting Screen")
                     selectedApp = 5
-                    loaderItem.source = "SettingScreen.qml"
+                    main_loaderItem.source = "SettingScreen.qml"
                 }
             }
         }
 
         //Change Theme icon
         Image {
-            id: img_8
+            id: main_img_8
             width: 24
             height: 24
             x: 21
@@ -226,15 +233,15 @@ Window {
     }
 
     Loader {
-        id: loaderItem
+        id: main_loaderItem
         width: 1135
         height: 730
         x: 65
         y: 0
-        source: "TaskScreen.qml"
+        source: ""
     }
     Connections {
-        target: loaderItem.item
+        target: main_loaderItem.item
         onMessage: {
             console.log(msg)
             loaderSubItem.source = "CreateTaskScreen.qml"
@@ -242,7 +249,7 @@ Window {
     }
 
     Image {
-        id: item13
+        id: main_itemMinimize
         width: 18
         height: 18
         x: 1146
@@ -259,7 +266,7 @@ Window {
     }
 
     Image {
-        id: item14
+        id: main_itemClose
         width: 18
         height: 18
         x: 1163
@@ -301,71 +308,88 @@ Window {
 
     onSelectedAppChanged: {
         if (selectedApp == 0) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 1) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-active.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-active.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 2) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 3) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 4) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-active.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-active.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 5) {
-            img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-            img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
-            img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
-            img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
-            img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
-            img_7.source = "qrc:/image/0.Common/settings-2-outline-active.png"
+            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+            main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+            main_img_7.source = "qrc:/image/0.Common/settings-2-outline-active.png"
         } else {
             console.log("incorrect slected app")
         }
     }
 
     Component.onCompleted: {
+        if (selectedApp == 0) {
+            main_loaderItem.source = "DashboardScreen.qml"
+        } else if (selectedApp == 1) {
+            main_loaderItem.source = "TaskScreen.qml"
+        } else if (selectedApp == 2) {
+            main_loaderItem.source = "ProfileScreen.qml"
+        } else if (selectedApp == 3) {
+            main_loaderItem.source = "ProxyScreen.qml"
+        } else if (selectedApp == 4) {
+            main_loaderItem.source = "AccountScreen.qml"
+        } else if (selectedApp == 5) {
+            main_loaderItem.source = "SettingScreen.qml"
+        } else {
+            console.log("Incorrect value")
+        }
+
         console.log("complete")
-        listIMG_ID.push(img_1)
-        listIMG_ID.push(img_2)
-        listIMG_ID.push(img_3_1)
-        listIMG_ID.push(img_3)
-        listIMG_ID.push(img_4)
-        listIMG_ID.push(img_5)
-        listIMG_ID.push(img_6)
-        listIMG_ID.push(img_7)
-        listIMG_ID.push(img_8)
-        listIMG_ID.push(item13)
-        listIMG_ID.push(item14)
-        listIMG_ID.push(loaderItem)
+        listIMG_ID.push(main_img_1)
+        listIMG_ID.push(main_img_2)
+        listIMG_ID.push(main_img_3_1)
+        listIMG_ID.push(main_img_3)
+        listIMG_ID.push(main_img_4)
+        listIMG_ID.push(main_img_5)
+        listIMG_ID.push(main_img_6)
+        listIMG_ID.push(main_img_7)
+        listIMG_ID.push(main_img_8)
+        listIMG_ID.push(main_itemMinimize)
+        listIMG_ID.push(main_itemClose)
+        listIMG_ID.push(main_loaderItem)
         listIMG_ID.push(loaderSubItem)
 
         listREC_ID.push(rec_1)
     }
     onHeightChanged: {
+        console.log("hunght H " + height)
         var rate = height/currentHeight
         var rateTextSize = height/730
         for (var i = 0; i < listIMG_ID.length; i++) {
@@ -404,6 +428,11 @@ Window {
     }
 
     onWidthChanged: {
+        console.log("hunght w" + width)
+        if (width < 1140) {
+            width = 1140
+        }
+
         var rate = width/currentWidth
         for (var i = 0; i < listIMG_ID.length; i++) {
             listIMG_ID[i].x = listIMG_ID[i].x * rate

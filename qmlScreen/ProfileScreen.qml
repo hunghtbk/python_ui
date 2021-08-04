@@ -11,6 +11,7 @@ Rectangle {
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
+    signal message(string msg)
     property int currentWidth: m_profoleScreen.width
     property int currentHeight: m_profoleScreen.height
 
@@ -457,21 +458,21 @@ Rectangle {
 
     Component.onCompleted: {
         console.log("complete")
-        listItemID.push(item0)
-        listItemID.push(item1)
-        listItemID.push(item2)
-        listItemID.push(item3)
-        listItemID.push(item4)
-        listItemID.push(item5)
-        listItemID.push(item6)
-        listItemID.push(item7)
-        listItemID.push(item8)
-        listItemID.push(item9)
+//        listItemID.push(item0)
+//        listItemID.push(item1)
+//        listItemID.push(item2)
+//        listItemID.push(item3)
+//        listItemID.push(item4)
+//        listItemID.push(item5)
+//        listItemID.push(item6)
+//        listItemID.push(item7)
+//        listItemID.push(item8)
+//        listItemID.push(item9)
         listItemID.push(item10)
         listItemID.push(item11)
         listItemID.push(item12)
-        listItemID.push(item13)
-        listItemID.push(item14)
+//        listItemID.push(item13)
+//        listItemID.push(item14)
         listItemID.push(item15)
         listItemID.push(item16)
         listItemID.push(item17)

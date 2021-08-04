@@ -11,7 +11,7 @@ Window {
     title: qsTr("Task Screen")
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
-
+    signal message(string msg)
     property int currentWidth: m_dashboardScreen.width
     property int currentHeight: m_dashboardScreen.height
 
@@ -178,39 +178,39 @@ Window {
         height: 730
         color: "transparent"
 
-        Image {
-            id: item13
-            width: 18
-            height: 18
-            x: 794
-            y: 14
-            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+//        Image {
+//            id: item13
+//            width: 18
+//            height: 18
+//            x: 794
+//            y: 14
+//            source: "qrc:/image/0.Common/minus-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Minimize")
-                    m_dashboardScreen.showMinimized();
-                }
-            }
-        }
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Minimize")
+//                    m_dashboardScreen.showMinimized();
+//                }
+//            }
+//        }
 
-        Image {
-            id: item14
-            width: 18
-            height: 18
-            x: 814
-            y: 14
-            source: "qrc:/image/0.Common/close-outline-inactive.png"
+//        Image {
+//            id: item14
+//            width: 18
+//            height: 18
+//            x: 814
+//            y: 14
+//            source: "qrc:/image/0.Common/close-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Close icon")
-                    m_dashboardScreen.close()
-                }
-            }
-        }
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Close icon")
+//                    m_dashboardScreen.close()
+//                }
+//            }
+//        }
 
         ChartView {
             title: "Line"

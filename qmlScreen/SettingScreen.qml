@@ -11,6 +11,7 @@ Rectangle {
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
+    signal message(string msg)
     property int currentWidth: m_settingScreen.width
     property int currentHeight: m_settingScreen.height
 
