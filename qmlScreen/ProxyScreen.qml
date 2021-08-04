@@ -2,12 +2,12 @@ import QtQuick 2.5
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
+Rectangle {
     id: m_proxyScreen
     visible: true
-    width: 1200
+    width: 1135
     height: 730
-    title: qsTr("Task Screen")
+//    title: qsTr("Task Screen")
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
@@ -20,7 +20,7 @@ Window {
     property var listTXT_8: []
     property var listTXT_9: []
     property var listTXT_13: []
-
+/*
     Rectangle {
         id: item0
         width: 65
@@ -168,10 +168,10 @@ Window {
             source: "qrc:/image/0.Common/sun-outline-inactive.png"
         }
     }
-
+*/
     Rectangle {
         id: item10
-        x: 65
+        x: 0
         y: 0
         width: 284
         height: 730
@@ -215,7 +215,7 @@ Window {
 
     Rectangle {
         id: item12
-        x: 349
+        x: 284
         y: 0
         width: 851
         height: 730
@@ -233,7 +233,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Minimize")
-                    m_proxyScreen.showMinimized();
+//                    m_proxyScreen.showMinimized();
                 }
             }
         }
@@ -250,7 +250,7 @@ Window {
                 anchors.fill: parent
                 onClicked: {
                     console.log("Close icon")
-                    m_proxyScreen.close()
+//                    m_proxyScreen.close()
                 }
             }
         }
@@ -526,16 +526,16 @@ Window {
 
     Component.onCompleted: {
         console.log("complete")
-        listItemID.push(item0)
-        listItemID.push(item1)
-        listItemID.push(item2)
-        listItemID.push(item3)
-        listItemID.push(item4)
-        listItemID.push(item5)
-        listItemID.push(item6)
-        listItemID.push(item7)
-        listItemID.push(item8)
-        listItemID.push(item9)
+//        listItemID.push(item0)
+//        listItemID.push(item1)
+//        listItemID.push(item2)
+//        listItemID.push(item3)
+//        listItemID.push(item4)
+//        listItemID.push(item5)
+//        listItemID.push(item6)
+//        listItemID.push(item7)
+//        listItemID.push(item8)
+//        listItemID.push(item9)
         listItemID.push(item10)
         listItemID.push(item11)
         listItemID.push(item12)

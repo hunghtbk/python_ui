@@ -2,15 +2,15 @@ import QtQuick 2.5
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
+Rectangle {
     id: m_taskScreen
     visible: true
-    width: 1200
+    width: 1135
     height: 730
-    title: qsTr("Task Screen")
+//    title: qsTr("Task Screen")
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
-
+    signal message(string msg)
     property int currentWidth: m_taskScreen.width
     property int currentHeight: m_taskScreen.height
 
@@ -21,7 +21,7 @@ Window {
     property var listTXT_8: []
     property var listTXT_9: []
     property var listTXT_13: []
-
+/*
     Rectangle {
         id: rec_1
         width: 65
@@ -169,10 +169,10 @@ Window {
             source: "qrc:/image/0.Common/sun-outline-inactive.png"
         }
     }
-
+*/
     Rectangle {
         id: rec_2
-        x: 65
+        x: 0
         y: 0
         width: 284
         height: 730
@@ -198,6 +198,13 @@ Window {
             x: 158
             y: 19
             source: "qrc:/image/0.Common/Add_inactive_icon.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                   m_taskScreen.message("clicked!")
+                }
+            }
         }
 
         //List task group
@@ -216,7 +223,7 @@ Window {
 
     Rectangle {
         id: rec_3
-        x: 349
+        x: 284
         y: 0
         width: 851
         height: 730
@@ -367,39 +374,39 @@ Window {
             }
         }
 
-        Image {
-            id: img_24
-            width: 18
-            height: 18
-            x: 794
-            y: 14
-            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+//        Image {
+//            id: img_24
+//            width: 18
+//            height: 18
+//            x: 794
+//            y: 14
+//            source: "qrc:/image/0.Common/minus-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Minimize")
-                    m_taskScreen.showMinimized();
-                }
-            }
-        }
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Minimize")
+//                    m_taskScreen.showMinimized();
+//                }
+//            }
+//        }
 
-        Image {
-            id: img_25
-            width: 18
-            height: 18
-            x: 814
-            y: 14
-            source: "qrc:/image/0.Common/close-outline-inactive.png"
+//        Image {
+//            id: img_25
+//            width: 18
+//            height: 18
+//            x: 814
+//            y: 14
+//            source: "qrc:/image/0.Common/close-outline-inactive.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Close icon")
-                    m_taskScreen.close()
-                }
-            }
-        }
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    console.log("Close icon")
+//                    m_taskScreen.close()
+//                }
+//            }
+//        }
 
         Rectangle {
             id: rec_3_1
@@ -489,6 +496,13 @@ Window {
             x: 96.4
             y: 144.4
             source: "qrc:/image/add_icon2.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("hunght")
+                }
+            }
         }
         Image {
             id: img_29
@@ -781,8 +795,8 @@ Window {
         listIMG_ID.push(img_21)
         listIMG_ID.push(img_22)
         listIMG_ID.push(img_23)
-        listIMG_ID.push(img_24)
-        listIMG_ID.push(img_25)
+//        listIMG_ID.push(img_24)
+//        listIMG_ID.push(img_25)
         listIMG_ID.push(img_26)
         listIMG_ID.push(img_27)
         listIMG_ID.push(img_28)

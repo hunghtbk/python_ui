@@ -1,11 +1,12 @@
-#include <QGuiApplication>
+#include <QApplication>
+//#include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "Class/ControllMainAPP.h"
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication app(argc, argv);
-
+    QApplication app(argc, argv);
+//    QGuiApplication app(argc, argv);
 
     ControllMainAPP::getInstance()->initControlMainApp();
 //    QQmlApplicationEngine engine;

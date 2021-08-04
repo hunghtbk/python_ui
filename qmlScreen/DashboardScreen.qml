@@ -1,18 +1,19 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
+import QtCharts 2.0
 
-Rectangle {
-    id: m_profoleScreen
+Window {
+    id: m_dashboardScreen
     visible: true
-    width: 1135
+    width: 1200
     height: 730
-//    title: qsTr("Task Screen")
+    title: qsTr("Task Screen")
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
 
-    property int currentWidth: m_profoleScreen.width
-    property int currentHeight: m_profoleScreen.height
+    property int currentWidth: m_dashboardScreen.width
+    property int currentHeight: m_dashboardScreen.height
 
     property var listItemID: []
     property var listListViewID: []
@@ -20,7 +21,7 @@ Rectangle {
     property var listTXT_8: []
     property var listTXT_9: []
     property var listTXT_13: []
-/*
+
     Rectangle {
         id: item0
         width: 65
@@ -43,17 +44,7 @@ Rectangle {
             height: 18
             x: 24
             y: 59
-            source: "qrc:/image/0.Common/grid-outline-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item2.source = "qrc:/image/0.Common/grid-outline-active.png"
-                }
-                onReleased: {
-                    item2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
-                }
-            }
+            source: "qrc:/image/0.Common/grid-outline-active.png"
         }
 
         //task group icon
@@ -82,7 +73,7 @@ Rectangle {
             width: 8
             height: 8
             x: 61
-            y: 132
+            y: 63
             color: "#907DE2"
             radius: 100
         }
@@ -94,7 +85,17 @@ Rectangle {
             height: 18
             x: 24
             y: 127
-            source: "qrc:/image/0.Common/credit-card-outline-active.png"
+            source: "qrc:/image/0.Common/credit-card-outline-inactive.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onPressed: {
+                    item5.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+                }
+                onReleased: {
+                    item5.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+                }
+            }
         }
 
         //Proxy icon
@@ -168,227 +169,82 @@ Rectangle {
             source: "qrc:/image/0.Common/sun-outline-inactive.png"
         }
     }
-*/
-    Rectangle {
-        id: item10
-        x: 0
-        y: 0
-        width: 284
-        height: 730
-        color: "#282645"
-
-        Text {
-            id: txt_1
-            property int textSize: 13
-            text: qsTr("Profile Groups")
-            width: 108
-            height: 19
-            x: 33
-            y: 19
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
-        }
-
-        Image {
-            id: item11
-            width: 21
-            height: 21
-            x: 158
-            y: 19
-            source: "qrc:/image/0.Common/Add_inactive_icon.png"
-        }
-
-        //List profile group
-        ListView {
-            id: list_1
-            width: 221
-            height: 660
-            x: 33
-            y: 64
-            model: ProfileGroupModel {}
-            delegate: ProfileGroupDelegate {}
-            clip: true
-        }
-
-    }
 
     Rectangle {
         id: item12
-        x: 284
+        x: 349
         y: 0
         width: 851
         height: 730
         color: "transparent"
 
-        Text {
-            id: txt_2
-            property int textSize: 13
-            text: qsTr("Profiles")
-            width: 57
-            height: 19
-            x: 27
-            y: 19
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
+        Image {
+            id: item13
+            width: 18
+            height: 18
+            x: 794
+            y: 14
+            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    console.log("Minimize")
+                    m_dashboardScreen.showMinimized();
+                }
+            }
         }
 
         Image {
-            id: item15
-            width: 21
-            height: 21
-            x: 100
-            y: 19
-            source: "qrc:/image/0.Common/Add_inactive_icon.png"
+            id: item14
+            width: 18
+            height: 18
+            x: 814
+            y: 14
+            source: "qrc:/image/0.Common/close-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("Add new Profile Item")
+                    console.log("Close icon")
+                    m_dashboardScreen.close()
                 }
             }
         }
 
-        Rectangle {
-            id: item16
-            width: 196
-            height: 30
-            x: 27
-            y: 56
-            color: "#37345E"
-            clip: true
-            TextInput {
-                id: txt_3
-                property int textSize: 9
-                width: 170
-                height: 15
-                x: 12
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-                text: qsTr("Privacy")
+        ChartView {
+            title: "Line"
+            anchors.fill: parent
+            antialiasing: true
+
+            LineSeries {
+                name: "LineSeries"
+                XYPoint { x: 0; y: 0 }
+                XYPoint { x: 1.1; y: 2.1 }
+                XYPoint { x: 1.9; y: 3.3 }
+                XYPoint { x: 2.1; y: 2.1 }
+                XYPoint { x: 2.9; y: 4.9 }
+                XYPoint { x: 3.4; y: 3.0 }
+                XYPoint { x: 4.1; y: 3.3 }
             }
         }
 
         Rectangle {
-            id: item17
-            width: 98
+            id: item213
+            width: 406
             height: 30
-            x: 235
-            y: 56
-            color: "#FFFFFF"
-            radius: 5
-
-            Text {
-                id: txt_4
-                property int textSize: 9
-                width: 47
-                height: 15
-                x: 20
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#2E2C50"
-                text: qsTr("Confirm")
-            }
-
-            Image {
-                id: item18
-                width: 3.5
-                height: 7
-                x: 74
-                y: 12
-                source: "qrc:/image/Profile/arrow-right.png"
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Confirm button")
-                }
-            }
-        }
-
-        Rectangle {
-            id: item19
-            width: 104
-            height: 30
-            x: 714
-            y: 56
-            color: "#FFFFFF"
-            radius: 5
-
-            Text {
-                id: txt_5
-                property int textSize: 9
-                width: 56
-                height: 15
-                x: 14
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FA5B79"
-                text: qsTr("Delete All")
-            }
-
-            Image {
-                id: item20
-                width: 12
-                height: 12
-                x: 77
-                y: 9
-                source: "qrc:/image/Profile/trash-outline-red.png"
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Delete All button")
-                }
-            }
-        }
-
-        Rectangle {
-            id: item21
-            width: 791
-            height: 30
-            x: 27
+            x: 412
             y: 102
             color: "#907DE2"
-
-            Text {
-                id: txt_6
-                property int textSize: 8
-                text: qsTr("ID")
-                width: 10
-                height: 12
-                x: 12
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: txt_7
-                property int textSize: 8
-                text: qsTr("PROFILE NAME")
-                width: 74
-                height: 12
-                x: 40
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
+            radius: 3
 
             Text {
                 id: txt_8
                 property int textSize: 8
-                text: qsTr("NAME ON CARD")
-                width: 79
+                text: qsTr("PROXY")
+                width: 35
                 height: 12
-                x: 210
+                x: 19
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -398,10 +254,10 @@ Rectangle {
             Text {
                 id: txt_9
                 property int textSize: 8
-                text: qsTr("CARD")
-                width: 22
+                text: qsTr("STATUS")
+                width: 40
                 height: 12
-                x: 490
+                x: 271
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -411,10 +267,10 @@ Rectangle {
             Text {
                 id: txt_10
                 property int textSize: 8
-                text: qsTr("ACTION")
+                text: qsTr("ACTIONS")
                 width: 46
                 height: 12
-                x: 720
+                x: 335
                 y: 9
                 font.family: "Inter"
                 font.pointSize: textSize
@@ -428,16 +284,16 @@ Rectangle {
             height: 558
             x: 807
             y: 148
-            source: "qrc:/image/TaskScreen/task_scroll_border.png"
+            source: "qrc:/image/0.Common/task_scroll_border.png"
         }
         ListView {
             id: list_2
-            width: 791
+            width: 406
             height: 558
-            x: 27
-            y: 148
-            model: ProfileItemModel {}
-            delegate: ProfileItemDeletegate {}
+            x: 412
+            y: 144
+            model: ProxyItemModel {}
+            delegate: ProxyItemDeletegate {}
             clip: true
             flickableDirection: Flickable.VerticalFlick
             boundsBehavior: Flickable.StopAtBounds
@@ -465,8 +321,8 @@ Rectangle {
         listItemID.push(item7)
         listItemID.push(item8)
         listItemID.push(item9)
-        listItemID.push(item10)
-        listItemID.push(item11)
+//        listItemID.push(item10)
+//        listItemID.push(item11)
         listItemID.push(item12)
         listItemID.push(item13)
         listItemID.push(item14)
@@ -477,6 +333,9 @@ Rectangle {
         listItemID.push(item19)
         listItemID.push(item20)
         listItemID.push(item21)
+        listItemID.push(item211)
+        listItemID.push(item212)
+        listItemID.push(item213)
         listItemID.push(item22)
 
         listTXT_9.push(txt_3)

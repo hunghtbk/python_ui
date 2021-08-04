@@ -179,5 +179,7 @@
         <file>image/Setting/normal_lotus.png</file>
         <file>image/Setting/save-outline.png</file>
         <file>image/Setting/white_oval.png</file>
+        <file>qmlScreen/DashboardScreen.qml</file>
+        <file>qmlScreen/MainQML.qml</file>
     </qresource>
 </RCC>

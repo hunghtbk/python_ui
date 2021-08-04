@@ -2,10 +2,10 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
+Rectangle {
     id: m_createTask
     visible: true
-    title: qsTr("Create Task Screen")
+//    title: qsTr("Create Task Screen")
     //    flags:Qt.FramelessWindowHint
     width: 582
     height: 461
