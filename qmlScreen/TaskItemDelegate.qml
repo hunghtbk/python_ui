@@ -180,7 +180,6 @@ Rectangle {
     }
 
     onWidthChanged: {
-        console.log("width change 1234")
         var rate = width/currentDetaiItemWidth
         console.log(rate)
         for (var a = 0; a < listIMG_ID_DetailItem.length; a++) {

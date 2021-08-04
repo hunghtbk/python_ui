@@ -84,6 +84,7 @@ Window {
                         if (selectedApp != 1) img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
                     }
                     onClicked: {
+                        console.log("Task Group Screen")
                         selectedApp = 1
                         loaderItem.source = "TaskScreen.qml"
                     }
@@ -270,17 +271,16 @@ Window {
             onClicked: {
                 console.log("Close icon")
                 m_mainScreen.close()
-                border.visible = true
             }
         }
     }
 
-    Rectangle {
-        id: border
-        anchors.fill: parent
-        color: "green"
-        visible: false
-    }
+//    Rectangle {
+//        id: border
+//        anchors.fill: parent
+//        color: "green"
+//        visible: false
+//    }
 
     Loader {
         id: loaderSubItem
