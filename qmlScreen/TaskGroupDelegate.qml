@@ -21,7 +21,7 @@ Rectangle {
         id: rec_2_2
         width: widthItem
         height: 98
-        color: "#37345E"
+        color: itemMouseArea.containsMouse ? "#907DE2" : "#37345E"
         radius: 3
     }
 
@@ -181,16 +181,18 @@ Rectangle {
     }
 
     MouseArea {
+        id: itemMouseArea
         anchors.fill: parent
-        onPressed: {
-            rec_2_2.color = "#907DE2"
-        }
-        onReleased: {
-            rec_2_2.color = "#37345E"
-        }
-        onCanceled: {
-            rec_2_2.color = "#37345E"
-        }
+        hoverEnabled: true
+//        onPressed: {
+//            rec_2_2.color = "#907DE2"
+//        }
+//        onReleased: {
+//            rec_2_2.color = "#37345E"
+//        }
+//        onCanceled: {
+//            rec_2_2.color = "#37345E"
+//        }
     }
     Component.onCompleted: {
         listIMG_ID_Item.push(img_10)
