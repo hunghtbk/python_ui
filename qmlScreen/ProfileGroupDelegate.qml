@@ -20,6 +20,7 @@ Rectangle {
         width: widthItem
         height: 55
         color: "#37345E"
+        radius: 3
     }
 
     Text {

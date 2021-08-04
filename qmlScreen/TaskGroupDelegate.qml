@@ -22,6 +22,7 @@ Rectangle {
         width: widthItem
         height: 98
         color: "#37345E"
+        radius: 3
     }
 
     Image {

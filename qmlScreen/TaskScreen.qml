@@ -415,6 +415,7 @@ Rectangle {
             x: 512
             y: 63
             color:"#37345E"
+            radius: 3
 
             TextInput {
                 id: txt_15
@@ -437,6 +438,7 @@ Rectangle {
             x: 720
             y: 63
             color: "#FFFFFF"
+            radius: 5
 
             Text {
                 id: txt_16
@@ -640,6 +642,7 @@ Rectangle {
             x: 27
             y: 183
             color: "#907DE2"
+            radius: 3
 
             Text {
                 id: txt_21
