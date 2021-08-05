@@ -11,16 +11,16 @@ Rectangle {
     color: "#2E2C50"
 //    flags:Qt.FramelessWindowHint
     signal message(string msg)
-    property int currentWidth: m_taskScreen.width
-    property int currentHeight: m_taskScreen.height
+    property int taskScreenCurrentWidth: m_taskScreen.width
+    property int taskScreenCurrentHeight: m_taskScreen.height
 
-    property var listIMG_ID: []
-    property var listREC_ID: []
-    property var listListViewID: []
-    property var listTXT_7: []
-    property var listTXT_8: []
-    property var listTXT_9: []
-    property var listTXT_13: []
+    property var taskScreenListIMG_ID: []
+    property var taskScreenListREC_ID: []
+    property var taskScreenListListViewID: []
+    property var taskScreenListtaskScreen_txt_7: []
+    property var taskScreenListtaskScreen_txt_8: []
+    property var taskScreenListtaskScreen_txt_9: []
+    property var taskScreenListtaskScreenTxt_13: []
 /*
     Rectangle {
         id: rec_1
@@ -171,7 +171,7 @@ Rectangle {
     }
 */
     Rectangle {
-        id: rec_2
+        id: taskScreenRec_2
         x: 0
         y: 0
         width: 284
@@ -179,7 +179,7 @@ Rectangle {
         color: "#282645"
 
         Text {
-            id: txt_1
+            id: taskScreenTxt_1
             property int textSize: 13
             text: qsTr("Tasks Groups")
             width: 103
@@ -192,7 +192,7 @@ Rectangle {
         }
 
         Image {
-            id: img_9
+            id: taskScreenImg_9
             width: 21
             height: 21
             x: 158
@@ -209,7 +209,7 @@ Rectangle {
 
         //List task group
         ListView {
-            id: list_1
+            id: taskScreenList_1
             width: 221
             height: 660
             x: 33
@@ -222,7 +222,7 @@ Rectangle {
     }
 
     Rectangle {
-        id: rec_3
+        id: taskScreenRec_3
         x: 284
         y: 0
         width: 851
@@ -230,7 +230,7 @@ Rectangle {
         color: "transparent"
 
         Image {
-            id: img_19
+            id: taskScreen_img_19
             width: 70.4
             height: 70.4
             x: 27
@@ -238,7 +238,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/image_borde.png"
 
             Image {
-                id: img_20
+                id: taskScreen_img_20
                 width: 52
                 height: 56
                 x: 9
@@ -248,7 +248,7 @@ Rectangle {
         }
 
         Text {
-            id: txt_7
+            id: taskScreen_txt_7
             property int textSize: 7
             text: qsTr("Site")
             width: 19
@@ -261,7 +261,7 @@ Rectangle {
         }
 
         Text {
-            id: txt_8
+            id: taskScreen_txt_8
             property int textSize: 9
             text: qsTr("Bestbuy")
             width: 47
@@ -274,7 +274,7 @@ Rectangle {
         }
 
         Text {
-            id: txt_9
+            id: taskScreen_txt_9
             property int textSize: 7
             text: qsTr("Product")
             width: 39
@@ -287,7 +287,7 @@ Rectangle {
         }
 
         Text {
-            id: txt_10
+            id: taskScreenTxt_10
             property int textSize: 9
             text: qsTr("Playstation 5 Digital Console")
             width: 162
@@ -300,7 +300,7 @@ Rectangle {
         }
 
         Image {
-            id: img_10
+            id: taskScreen_img_10
             width: 246
             height: 30
             x: 512
@@ -308,7 +308,7 @@ Rectangle {
             source: "qrc:/image/border_2.png"
 
             Image {
-                id: img_21
+                id: taskScreen_img_21
                 width: 6
                 height: 11
                 x: 14
@@ -317,7 +317,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_12
+                id: taskScreenTxt_12
                 property int textSize: 9
                 text: qsTr("$2,309")
                 width: 43
@@ -330,7 +330,7 @@ Rectangle {
             }
 
             Image {
-                id: img_22
+                id: taskScreen_img_22
                 width: 12
                 height: 12
                 x: 107
@@ -339,7 +339,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_13
+                id: taskScreenTxt_13
                 property int textSize: 9
                 text: qsTr("78")
                 width: 43
@@ -352,7 +352,7 @@ Rectangle {
             }
 
             Image {
-                id: img_23
+                id: taskScreen_img_23
                 width: 12
                 height: 12
                 x: 189
@@ -361,7 +361,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_14
+                id: taskScreenTxt_14
                 property int textSize: 9
                 text: qsTr("28")
                 width: 43
@@ -409,7 +409,7 @@ Rectangle {
 //        }
 
         Rectangle {
-            id: rec_3_1
+            id: taskScreenRec_3_1
             width: 196
             height: 30
             x: 512
@@ -418,7 +418,7 @@ Rectangle {
             radius: 3
 
             TextInput {
-                id: txt_15
+                id: taskScreenTxt_15
                 property int textSize: 9
                 text: qsTr("Mass link change")
                 width: 450
@@ -432,7 +432,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: rec_3_2
+            id: taskScreenRec_3_2
             width: 98
             height: 30
             x: 720
@@ -441,7 +441,7 @@ Rectangle {
             radius: 5
 
             Text {
-                id: txt_16
+                id: taskScreenTxt_16
                 property int textSize: 9
                 text: qsTr("Confirm")
                 width: 47
@@ -453,7 +453,7 @@ Rectangle {
                 color: "#2E2C50"
             }
             Image {
-                id: img_26
+                id: taskScreen_img_26
                 width: 3.5
                 height: 8
                 x: 74
@@ -470,7 +470,7 @@ Rectangle {
         }
 
         Image {
-            id: img_27
+            id: taskScreen_img_27
             width: 851
             height: 1
             x: 0
@@ -479,7 +479,7 @@ Rectangle {
         }
 
         Text {
-            id: txt_17
+            id: taskScreenTxt_17
             property int textSize: 13
             text: qsTr("Tasks")
             width: 44
@@ -492,7 +492,7 @@ Rectangle {
         }
 
         Image {
-            id: img_28
+            id: taskScreen_img_28
             width: 9.6
             height: 9.6
             x: 96.4
@@ -507,7 +507,7 @@ Rectangle {
             }
         }
         Image {
-            id: img_29
+            id: taskScreen_img_29
             width: 21
             height: 21
             x: 91
@@ -523,7 +523,7 @@ Rectangle {
         }
 
         Image {
-            id: img_30
+            id: taskScreen_img_30
             width: 104
             height: 30
             x: 490
@@ -531,7 +531,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: img_31
+                id: taskScreen_img_31
                 width: 7.7
                 height: 9.9
                 x: 75
@@ -540,7 +540,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_18
+                id: taskScreenTxt_18
                 property int textSize: 9
                 text: qsTr("Start All")
                 width: 47
@@ -561,7 +561,7 @@ Rectangle {
         }
 
         Image {
-            id: img_32
+            id: taskScreen_img_32
             width: 104
             height: 30
             x: 602
@@ -569,7 +569,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: img_33
+                id: taskScreen_img_33
                 width: 8
                 height: 8
                 x: 75
@@ -578,7 +578,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_19
+                id: taskScreenTxt_19
                 property int textSize: 9
                 text: qsTr("Stop All")
                 width: 45
@@ -599,7 +599,7 @@ Rectangle {
         }
 
         Image {
-            id: img_34
+            id: taskScreen_img_34
             width: 104
             height: 30
             x: 714
@@ -607,7 +607,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/white_border.png"
 
             Image {
-                id: img_35
+                id: taskScreen_img_35
                 width: 9.6
                 height: 9.6
                 x: 77.96
@@ -615,7 +615,7 @@ Rectangle {
                 source: "qrc:/image/TaskScreen/deleteAll_icon.png"
             }
             Text {
-                id: txt_20
+                id: taskScreen_txt_20
                 property int textSize: 9
                 text: qsTr("Delete All")
                 width: 56
@@ -636,7 +636,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: rec_3_3
+            id: taskScreenRec_3_3
             width: 791
             height: 30
             x: 27
@@ -645,7 +645,7 @@ Rectangle {
             radius: 3
 
             Text {
-                id: txt_21
+                id: taskScreen_txt_21
                 property int textSize: 8
                 text: qsTr("ID")
                 width: 10
@@ -658,7 +658,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_22
+                id: taskScreen_txt_22
                 property int textSize: 8
                 text: qsTr("PRODUCT")
                 width: 50
@@ -671,7 +671,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_23
+                id: taskScreen_txt_23
                 property int textSize: 8
                 text: qsTr("SIZE")
                 width: 22
@@ -684,7 +684,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_24
+                id: taskScreen_txt_24
                 property int textSize: 8
                 text: qsTr("SITE")
                 width: 22
@@ -697,7 +697,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_25
+                id: taskScreen_txt_25
                 property int textSize: 8
                 text: qsTr("PROFILE")
                 width: 42
@@ -710,7 +710,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_26
+                id: taskScreen_txt_26
                 property int textSize: 8
                 text: qsTr("PROXY")
                 width: 35
@@ -723,7 +723,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_27
+                id: taskScreen_txt_27
                 property int textSize: 8
                 text: qsTr("STATUS")
                 width: 40
@@ -736,7 +736,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_28
+                id: taskScreen_txt_28
                 property int textSize: 8
                 text: qsTr("ACTION")
                 width: 46
@@ -758,7 +758,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/task_scroll_border.png"
         }
         ListView {
-            id: list_2
+            id: taskScreenList_2
             width: 793
             height: 498
             x: 27
@@ -777,146 +777,151 @@ Rectangle {
                     radius: 10
                 }
             }
+
+            onWidthChanged: {
+                console.log("taskScreenList_2 = " + width)
+            }
         }
     }
 
     Component.onCompleted: {
         console.log("complete")
-//        listIMG_ID.push(img_1)
-//        listIMG_ID.push(img_2)
-//        listIMG_ID.push(img_3_1)
-//        listIMG_ID.push(img_3)
-//        listIMG_ID.push(img_4)
-//        listIMG_ID.push(img_5)
-//        listIMG_ID.push(img_6)
-//        listIMG_ID.push(img_7)
-//        listIMG_ID.push(img_8)
-        listIMG_ID.push(img_9)
-        listIMG_ID.push(img_10)
-        listIMG_ID.push(img_19)
-        listIMG_ID.push(img_20)
-        listIMG_ID.push(img_21)
-        listIMG_ID.push(img_22)
-        listIMG_ID.push(img_23)
-//        listIMG_ID.push(img_24)
-//        listIMG_ID.push(img_25)
-        listIMG_ID.push(img_26)
-        listIMG_ID.push(img_27)
-        listIMG_ID.push(img_28)
-        listIMG_ID.push(img_29)
-        listIMG_ID.push(img_30)
-        listIMG_ID.push(img_31)
-        listIMG_ID.push(img_32)
-        listIMG_ID.push(img_33)
-        listIMG_ID.push(img_34)
-        listIMG_ID.push(img_35)
-        listIMG_ID.push(img_36)
+//        taskScreenListIMG_ID.push(img_1)
+//        taskScreenListIMG_ID.push(img_2)
+//        taskScreenListIMG_ID.push(img_3_1)
+//        taskScreenListIMG_ID.push(img_3)
+//        taskScreenListIMG_ID.push(img_4)
+//        taskScreenListIMG_ID.push(img_5)
+//        taskScreenListIMG_ID.push(img_6)
+//        taskScreenListIMG_ID.push(img_7)
+//        taskScreenListIMG_ID.push(img_8)
+        taskScreenListIMG_ID.push(taskScreenImg_9)
+        taskScreenListIMG_ID.push(taskScreen_img_10)
+        taskScreenListIMG_ID.push(taskScreen_img_19)
+        taskScreenListIMG_ID.push(taskScreen_img_20)
+        taskScreenListIMG_ID.push(taskScreen_img_21)
+        taskScreenListIMG_ID.push(taskScreen_img_22)
+        taskScreenListIMG_ID.push(taskScreen_img_23)
+//        taskScreenListIMG_ID.push(img_24)
+//        taskScreenListIMG_ID.push(img_25)
+        taskScreenListIMG_ID.push(taskScreen_img_26)
+        taskScreenListIMG_ID.push(taskScreen_img_27)
+        taskScreenListIMG_ID.push(taskScreen_img_28)
+        taskScreenListIMG_ID.push(taskScreen_img_29)
+        taskScreenListIMG_ID.push(taskScreen_img_30)
+        taskScreenListIMG_ID.push(taskScreen_img_31)
+        taskScreenListIMG_ID.push(taskScreen_img_32)
+        taskScreenListIMG_ID.push(taskScreen_img_33)
+        taskScreenListIMG_ID.push(taskScreen_img_34)
+        taskScreenListIMG_ID.push(taskScreen_img_35)
+        taskScreenListIMG_ID.push(img_36)
 
-//        listREC_ID.push(rec_1)
-        listREC_ID.push(rec_2)
-        listREC_ID.push(rec_3)
-        listREC_ID.push(rec_3_1)
-        listREC_ID.push(rec_3_2)
-        listREC_ID.push(rec_3_3)
+//        taskScreenListREC_ID.push(rec_1)
+        taskScreenListREC_ID.push(taskScreenRec_2)
+        taskScreenListREC_ID.push(taskScreenRec_3)
+        taskScreenListREC_ID.push(taskScreenRec_3_1)
+        taskScreenListREC_ID.push(taskScreenRec_3_2)
+        taskScreenListREC_ID.push(taskScreenRec_3_3)
 
-        listTXT_7.push(txt_7)
-        listTXT_7.push(txt_9)
+        taskScreenListtaskScreen_txt_7.push(taskScreen_txt_7)
+        taskScreenListtaskScreen_txt_7.push(taskScreen_txt_9)
 
-        listTXT_8.push(txt_21)
-        listTXT_8.push(txt_22)
-        listTXT_8.push(txt_23)
-        listTXT_8.push(txt_24)
-        listTXT_8.push(txt_25)
-        listTXT_8.push(txt_26)
-        listTXT_8.push(txt_27)
-        listTXT_8.push(txt_28)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_21)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_22)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_23)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_24)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_25)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_26)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_27)
+        taskScreenListtaskScreen_txt_8.push(taskScreen_txt_28)
 
-        listTXT_9.push(txt_8)
-        listTXT_9.push(txt_10)
-        listTXT_9.push(txt_12)
-        listTXT_9.push(txt_13)
-        listTXT_9.push(txt_14)
-        listTXT_9.push(txt_15)
-        listTXT_9.push(txt_16)
-        listTXT_9.push(txt_18)
-        listTXT_9.push(txt_19)
-        listTXT_9.push(txt_20)
+        taskScreenListtaskScreen_txt_9.push(taskScreen_txt_8)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_10)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_12)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_13)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_14)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_15)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_16)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_18)
+        taskScreenListtaskScreen_txt_9.push(taskScreenTxt_19)
+        taskScreenListtaskScreen_txt_9.push(taskScreen_txt_20)
 
-        listTXT_13.push(txt_1)
-        listTXT_13.push(txt_17)
+        taskScreenListtaskScreenTxt_13.push(taskScreenTxt_1)
+        taskScreenListtaskScreenTxt_13.push(taskScreenTxt_17)
 
-        listListViewID.push(list_1)
-        listListViewID.push(list_2)
+        taskScreenListListViewID.push(taskScreenList_1)
+        taskScreenListListViewID.push(taskScreenList_2)
     }
     onHeightChanged: {
-        var rate = height/currentHeight
+        var rate = height/taskScreenCurrentHeight
         var rateTextSize = height/730
-        for (var i = 0; i < listIMG_ID.length; i++) {
-            listIMG_ID[i].y = listIMG_ID[i].y * rate
-            listIMG_ID[i].height = listIMG_ID[i].height * rate
+        for (var i = 0; i < taskScreenListIMG_ID.length; i++) {
+            taskScreenListIMG_ID[i].y = taskScreenListIMG_ID[i].y * rate
+            taskScreenListIMG_ID[i].height = taskScreenListIMG_ID[i].height * rate
         }
 
-        for (var j = 0; j < listREC_ID.length; j++) {
-            listREC_ID[j].y = listREC_ID[j].y * rate
-            listREC_ID[j].height = listREC_ID[j].height * rate
+        for (var j = 0; j < taskScreenListREC_ID.length; j++) {
+            taskScreenListREC_ID[j].y = taskScreenListREC_ID[j].y * rate
+            taskScreenListREC_ID[j].height = taskScreenListREC_ID[j].height * rate
         }
-        for (var k = 0; k < listTXT_7.length; k++) {
-            listTXT_7[k].y = listTXT_7[k].y * rate
-            listTXT_7[k].height = listTXT_7[k].height * rate
-            listTXT_7[k].textSize = 7 * rateTextSize
+        for (var k = 0; k < taskScreenListtaskScreen_txt_7.length; k++) {
+            taskScreenListtaskScreen_txt_7[k].y = taskScreenListtaskScreen_txt_7[k].y * rate
+            taskScreenListtaskScreen_txt_7[k].height = taskScreenListtaskScreen_txt_7[k].height * rate
+            taskScreenListtaskScreen_txt_7[k].textSize = 7 * rateTextSize
         }
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].y = listTXT_8[l].y * rate
-            listTXT_8[l].height = listTXT_8[l].height * rate
-            listTXT_8[l].textSize = 8 * rateTextSize
+        for (var l = 0; l < taskScreenListtaskScreen_txt_8.length; l++) {
+            taskScreenListtaskScreen_txt_8[l].y = taskScreenListtaskScreen_txt_8[l].y * rate
+            taskScreenListtaskScreen_txt_8[l].height = taskScreenListtaskScreen_txt_8[l].height * rate
+            taskScreenListtaskScreen_txt_8[l].textSize = 8 * rateTextSize
         }
-        for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].y = listTXT_9[m].y * rate
-            listTXT_9[m].height = listTXT_9[m].height * rate
-            listTXT_9[m].textSize = 9 * rateTextSize
+        for (var m = 0; m < taskScreenListtaskScreen_txt_9.length; m++) {
+            taskScreenListtaskScreen_txt_9[m].y = taskScreenListtaskScreen_txt_9[m].y * rate
+            taskScreenListtaskScreen_txt_9[m].height = taskScreenListtaskScreen_txt_9[m].height * rate
+            taskScreenListtaskScreen_txt_9[m].textSize = 9 * rateTextSize
         }
-        for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].y = listTXT_13[n].y * rate
-            listTXT_13[n].height = listTXT_13[n].height * rate
-            listTXT_13[n].textSize = 13 * rateTextSize
+        for (var n = 0; n < taskScreenListtaskScreenTxt_13.length; n++) {
+            taskScreenListtaskScreenTxt_13[n].y = taskScreenListtaskScreenTxt_13[n].y * rate
+            taskScreenListtaskScreenTxt_13[n].height = taskScreenListtaskScreenTxt_13[n].height * rate
+            taskScreenListtaskScreenTxt_13[n].textSize = 13 * rateTextSize
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].y = listListViewID[p].y * rate
-            listListViewID[p].height = listListViewID[p].height * rate
+        for (var p = 0; p < taskScreenListListViewID.length; p++) {
+            taskScreenListListViewID[p].y = taskScreenListListViewID[p].y * rate
+            taskScreenListListViewID[p].height = taskScreenListListViewID[p].height * rate
         }
         rec_4.implicitHeight = rec_4.implicitHeight * rate
     }
 
     onWidthChanged: {
-        var rate = width/currentWidth
-        for (var i = 0; i < listIMG_ID.length; i++) {
-            listIMG_ID[i].x = listIMG_ID[i].x * rate
-            listIMG_ID[i].width = listIMG_ID[i].width * rate
+        console.log("Parent width changed = " + width)
+        var rate = width/taskScreenCurrentWidth
+        for (var i = 0; i < taskScreenListIMG_ID.length; i++) {
+            taskScreenListIMG_ID[i].x = taskScreenListIMG_ID[i].x * rate
+            taskScreenListIMG_ID[i].width = taskScreenListIMG_ID[i].width * rate
         }
 
-        for (var j = 0; j < listREC_ID.length; j++) {
-            listREC_ID[j].x = listREC_ID[j].x * rate
-            listREC_ID[j].width = listREC_ID[j].width * rate
+        for (var j = 0; j < taskScreenListREC_ID.length; j++) {
+            taskScreenListREC_ID[j].x = taskScreenListREC_ID[j].x * rate
+            taskScreenListREC_ID[j].width = taskScreenListREC_ID[j].width * rate
         }
-        for (var k = 0; k < listTXT_7.length; k++) {
-            listTXT_7[k].x = listTXT_7[k].x * rate
-            listTXT_7[k].width = listTXT_7[k].width * rate
+        for (var k = 0; k < taskScreenListtaskScreen_txt_7.length; k++) {
+            taskScreenListtaskScreen_txt_7[k].x = taskScreenListtaskScreen_txt_7[k].x * rate
+            taskScreenListtaskScreen_txt_7[k].width = taskScreenListtaskScreen_txt_7[k].width * rate
         }
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].x = listTXT_8[l].x * rate
-            listTXT_8[l].width = listTXT_8[l].width * rate
+        for (var l = 0; l < taskScreenListtaskScreen_txt_8.length; l++) {
+            taskScreenListtaskScreen_txt_8[l].x = taskScreenListtaskScreen_txt_8[l].x * rate
+            taskScreenListtaskScreen_txt_8[l].width = taskScreenListtaskScreen_txt_8[l].width * rate
         }
-        for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].x = listTXT_9[m].x * rate
-            listTXT_9[m].width = listTXT_9[m].width * rate
+        for (var m = 0; m < taskScreenListtaskScreen_txt_9.length; m++) {
+            taskScreenListtaskScreen_txt_9[m].x = taskScreenListtaskScreen_txt_9[m].x * rate
+            taskScreenListtaskScreen_txt_9[m].width = taskScreenListtaskScreen_txt_9[m].width * rate
         }
-        for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].x = listTXT_13[n].x * rate
-            listTXT_13[n].width = listTXT_13[n].width * rate
+        for (var n = 0; n < taskScreenListtaskScreenTxt_13.length; n++) {
+            taskScreenListtaskScreenTxt_13[n].x = taskScreenListtaskScreenTxt_13[n].x * rate
+            taskScreenListtaskScreenTxt_13[n].width = taskScreenListtaskScreenTxt_13[n].width * rate
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].x = listListViewID[p].x * rate
-            listListViewID[p].width = listListViewID[p].width * rate
+        for (var p = 0; p < taskScreenListListViewID.length; p++) {
+            taskScreenListListViewID[p].x = taskScreenListListViewID[p].x * rate
+            taskScreenListListViewID[p].width = taskScreenListListViewID[p].width * rate
         }
         rec_4.implicitWidth = rec_4.implicitWidth *rate
     }

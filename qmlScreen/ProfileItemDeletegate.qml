@@ -4,12 +4,12 @@ import QtQuick 2.5
 //productContent
 
 Rectangle {
-    id: rect_item
+    id: profileItem_rect_item
     property int widthDelegate : parent.width - 20
 
     property var listChildrentItem: []
     property var listChildrentTXT: []
-    property int currentDetaiItemWidth: rect_item.width
+    property int currentDetaiItemWidth: profileItem_rect_item.width
 
     width: widthDelegate
     height: 38
@@ -17,7 +17,7 @@ Rectangle {
     property int itemWid: 0
     Rectangle {
         id: profileItem1
-        width: 770
+        width: widthDelegate
         height: 30
         color: "#37345E"
         radius: 3
@@ -29,6 +29,9 @@ Rectangle {
             }
             onReleased: {
                 profileItem1.color = "#37345E"
+            }
+            onClicked: {
+                console.log("Profile item width" + profileItem1.width)
             }
         }
     }

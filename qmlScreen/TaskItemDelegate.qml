@@ -4,36 +4,46 @@ import QtQuick 2.5
 //productContent
 
 Rectangle {
-    id: rect_1_1
-    property int widthDelegate : parent.width - 20
+    id: taskItemrect_1_1
+    property int taskItemWidthDelegate : taskScreenList_2.width - 20
 
-    property var listIMG_ID_DetailItem: []
-    property var listTEXT_ID_DetailItem: []
-    property int currentDetaiItemWidth: rect_1_1.width
+    property var taskItemListIMG_ID_DetailItem: []
+    property var taskItemListTEXT_ID_DetailItem: []
+    property int taskItemCurrentDetaiItemWidth: taskItemrect_1_1.width
 
-    width: widthDelegate
+    onTaskItemWidthDelegateChanged: {
+        console.log("hunght WidthDelegate = " + taskItemWidthDelegate)
+    }
+
+    width: taskItemWidthDelegate
     height: 38
     color: "transparent"
     property int itemWid: 0
     Rectangle {
-        id: rec_3_4
-        width: 770
+        id: taskItemRec_3_4
+        width: taskItemWidthDelegate
         height: 30
         color: "#37345E"
 
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                rec_3_4.color = "#907DE2"
+                taskItemRec_3_4.color = "#907DE2"
             }
             onReleased: {
-                rec_3_4.color = "#37345E"
+                taskItemRec_3_4.color = "#37345E"
             }
+            onClicked: {
+                console.log(taskItemRec_3_4.width)
+            }
+        }
+        onWidthChanged: {
+//            console.log("hunght abcd " + width)
         }
     }
 
     Text {
-        id: txt_29
+        id: taskItemTxt_29
         width: 5
         height: 12
         x: 12
@@ -45,7 +55,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_30
+        id: taskItemTxt_30
         width: 97
         height: 12
         x: 40
@@ -57,7 +67,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_31
+        id: taskItemTxt_31
         width: 16
         height: 12
         x: 235
@@ -69,7 +79,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_32
+        id: taskItemTxt_32
         width: 52
         height: 12
         x: 280
@@ -81,7 +91,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_33
+        id: taskItemTxt_33
         width: 45
         height: 12
         x: 377
@@ -93,7 +103,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_35
+        id: taskItemTxt_35
         width: 57
         height: 12
         x: 468
@@ -105,7 +115,7 @@ Rectangle {
     }
 
     Text {
-        id: txt_36
+        id: taskItemTxt_36
         width: 69
         height: 12
         x: 575
@@ -117,7 +127,7 @@ Rectangle {
     }
 
     Image {
-        id: img_37
+        id: taskItemImg_37
         width: 20
         height: 20
         x: 696
@@ -133,7 +143,7 @@ Rectangle {
     }
 
     Image {
-        id: img_38
+        id: taskItemImg_38
         width: 20
         height: 20
         x: 720
@@ -149,7 +159,7 @@ Rectangle {
     }
 
     Image {
-        id: img_39
+        id: taskItemImg_39
         width: 20
         height: 20
         x: 744
@@ -165,31 +175,30 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        listIMG_ID_DetailItem.push(img_37)
-        listIMG_ID_DetailItem.push(img_38)
-        listIMG_ID_DetailItem.push(img_39)
-        listIMG_ID_DetailItem.push(rec_3_4)
+        taskItemListIMG_ID_DetailItem.push(taskItemImg_37)
+        taskItemListIMG_ID_DetailItem.push(taskItemImg_38)
+        taskItemListIMG_ID_DetailItem.push(taskItemImg_39)
+        taskItemListIMG_ID_DetailItem.push(taskItemRec_3_4)
 
-        listTEXT_ID_DetailItem.push(txt_29)
-        listTEXT_ID_DetailItem.push(txt_30)
-        listTEXT_ID_DetailItem.push(txt_31)
-        listTEXT_ID_DetailItem.push(txt_32)
-        listTEXT_ID_DetailItem.push(txt_33)
-        listTEXT_ID_DetailItem.push(txt_35)
-        listTEXT_ID_DetailItem.push(txt_36)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_29)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_30)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_31)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_32)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_33)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_35)
+        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_36)
     }
 
     onWidthChanged: {
-        var rate = width/currentDetaiItemWidth
-//        console.log(rate)
-        for (var a = 0; a < listIMG_ID_DetailItem.length; a++) {
-            listIMG_ID_DetailItem[a].x = listIMG_ID_DetailItem[a].x * rate
-            listIMG_ID_DetailItem[a].width = listIMG_ID_DetailItem[a].width * rate
+        var rate = width/taskItemCurrentDetaiItemWidth
+        for (var a = 0; a < taskItemListIMG_ID_DetailItem.length; a++) {
+            taskItemListIMG_ID_DetailItem[a].x = taskItemListIMG_ID_DetailItem[a].x * rate
+            taskItemListIMG_ID_DetailItem[a].width = taskItemListIMG_ID_DetailItem[a].width * rate
         }
 
-        for (var b = 0; b < listTEXT_ID_DetailItem.length; b++) {
-            listTEXT_ID_DetailItem[b].x = listTEXT_ID_DetailItem[b].x * rate
-            listTEXT_ID_DetailItem[b].width = listTEXT_ID_DetailItem[b].width * rate
+        for (var b = 0; b < taskItemListTEXT_ID_DetailItem.length; b++) {
+            taskItemListTEXT_ID_DetailItem[b].x = taskItemListTEXT_ID_DetailItem[b].x * rate
+            taskItemListTEXT_ID_DetailItem[b].width = taskItemListTEXT_ID_DetailItem[b].width * rate
         }
     }
 }
