@@ -5,19 +5,19 @@ import QtQuick 2.5
 
 Rectangle {
     id: profileItem_rect_item
-    property int widthDelegate : parent.width - 20
+    property int profileItem_widthDelegate : profileScreen_list_2.width - 20
 
-    property var listChildrentItem: []
-    property var listChildrentTXT: []
-    property int currentDetaiItemWidth: profileItem_rect_item.width
+    property var profileItem_listChildrentItem: []
+    property var profileItem_listChildrentTXT: []
+    property int profileItem_currentDetaiItemWidth: profileItem_rect_item.width
 
-    width: widthDelegate
+    width: profileItem_widthDelegate
     height: 38
     color: "transparent"
     property int itemWid: 0
     Rectangle {
         id: profileItem1
-        width: widthDelegate
+        width: profileItem_widthDelegate
         height: 30
         color: "#37345E"
         radius: 3
@@ -133,28 +133,28 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        listChildrentItem.push(profileItem1)
-        listChildrentItem.push(profileItem2)
-        listChildrentItem.push(profileItem3)
-        listChildrentItem.push(profileItem4)
+        profileItem_listChildrentItem.push(profileItem1)
+        profileItem_listChildrentItem.push(profileItem2)
+        profileItem_listChildrentItem.push(profileItem3)
+        profileItem_listChildrentItem.push(profileItem4)
 
-        listChildrentTXT.push(profileTxt1)
-        listChildrentTXT.push(profileTxt2)
-        listChildrentTXT.push(profileTxt3)
-        listChildrentTXT.push(profileTxt4)
+        profileItem_listChildrentTXT.push(profileTxt1)
+        profileItem_listChildrentTXT.push(profileTxt2)
+        profileItem_listChildrentTXT.push(profileTxt3)
+        profileItem_listChildrentTXT.push(profileTxt4)
     }
 
     onWidthChanged: {
-        var rate = width/currentDetaiItemWidth
+        var rate = width/profileItem_currentDetaiItemWidth
 //        console.log(rate)
-        for (var a = 0; a < listChildrentItem.length; a++) {
-            listChildrentItem[a].x = listChildrentItem[a].x * rate
-            listChildrentItem[a].width = listChildrentItem[a].width * rate
+        for (var a = 0; a < profileItem_listChildrentItem.length; a++) {
+            profileItem_listChildrentItem[a].x = profileItem_listChildrentItem[a].x * rate
+            profileItem_listChildrentItem[a].width = profileItem_listChildrentItem[a].width * rate
         }
 
-        for (var b = 0; b < listChildrentTXT.length; b++) {
-            listChildrentTXT[b].x = listChildrentTXT[b].x * rate
-            listChildrentTXT[b].width = listChildrentTXT[b].width * rate
+        for (var b = 0; b < profileItem_listChildrentTXT.length; b++) {
+            profileItem_listChildrentTXT[b].x = profileItem_listChildrentTXT[b].x * rate
+            profileItem_listChildrentTXT[b].width = profileItem_listChildrentTXT[b].width * rate
         }
     }
 }

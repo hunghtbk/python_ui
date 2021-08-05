@@ -3,7 +3,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
 Rectangle {
-    id: m_profoleScreen
+    id: m_profileScreen
     visible: true
     width: 1135
     height: 730
@@ -12,15 +12,15 @@ Rectangle {
 //    flags:Qt.FramelessWindowHint
 
     signal message(string msg)
-    property int currentWidth: m_profoleScreen.width
-    property int currentHeight: m_profoleScreen.height
+    property int currentWidth: m_profileScreen.width
+    property int currentHeight: m_profileScreen.height
 
-    property var listItemID: []
-    property var listListViewID: []
-    property var listTXT_7: []
-    property var listTXT_8: []
-    property var listTXT_9: []
-    property var listTXT_13: []
+    property var profileScreen_listItemID: []
+    property var profileScreen_listListViewID: []
+    property var profileScreen_listprofileScreen_txt_7: []
+    property var profileScreen_listprofileScreen_txt_8: []
+    property var profileScreen_listprofileScreen_txt_9: []
+    property var profileScreen_listprofileScreen_txt_13: []
 /*
     Rectangle {
         id: item0
@@ -171,7 +171,7 @@ Rectangle {
     }
 */
     Rectangle {
-        id: item10
+        id: profileScreen_item10
         x: 0
         y: 0
         width: 284
@@ -179,7 +179,7 @@ Rectangle {
         color: "#282645"
 
         Text {
-            id: txt_1
+            id: profileScreen_txt_1
             property int textSize: 13
             text: qsTr("Profile Groups")
             width: 108
@@ -192,7 +192,7 @@ Rectangle {
         }
 
         Image {
-            id: item11
+            id: profileScreen_item11
             width: 21
             height: 21
             x: 158
@@ -202,7 +202,7 @@ Rectangle {
 
         //List profile group
         ListView {
-            id: list_1
+            id: profileScreen_list_1
             width: 221
             height: 660
             x: 33
@@ -215,7 +215,7 @@ Rectangle {
     }
 
     Rectangle {
-        id: item12
+        id: profileScreen_item12
         x: 284
         y: 0
         width: 851
@@ -223,7 +223,7 @@ Rectangle {
         color: "transparent"
 
         Text {
-            id: txt_2
+            id: profileScreen_txt_2
             property int textSize: 13
             text: qsTr("Profiles")
             width: 57
@@ -236,7 +236,7 @@ Rectangle {
         }
 
         Image {
-            id: item15
+            id: profileScreen_item15
             width: 21
             height: 21
             x: 100
@@ -252,7 +252,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: item16
+            id: profileScreen_item16
             width: 196
             height: 30
             x: 27
@@ -261,7 +261,7 @@ Rectangle {
             clip: true
             radius: 3
             TextInput {
-                id: txt_3
+                id: profileScreen_txt_3
                 property int textSize: 9
                 width: 170
                 height: 15
@@ -275,7 +275,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: item17
+            id: profileScreen_item17
             width: 98
             height: 30
             x: 235
@@ -284,7 +284,7 @@ Rectangle {
             radius: 5
 
             Text {
-                id: txt_4
+                id: profileScreen_txt_4
                 property int textSize: 9
                 width: 47
                 height: 15
@@ -297,7 +297,7 @@ Rectangle {
             }
 
             Image {
-                id: item18
+                id: profileScreen_item18
                 width: 3.5
                 height: 7
                 x: 74
@@ -313,7 +313,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: item19
+            id: profileScreen_item19
             width: 104
             height: 30
             x: 714
@@ -322,7 +322,7 @@ Rectangle {
             radius: 5
 
             Text {
-                id: txt_5
+                id: profileScreen_txt_5
                 property int textSize: 9
                 width: 56
                 height: 15
@@ -335,7 +335,7 @@ Rectangle {
             }
 
             Image {
-                id: item20
+                id: profileScreen_item20
                 width: 12
                 height: 12
                 x: 77
@@ -351,7 +351,7 @@ Rectangle {
         }
 
         Rectangle {
-            id: item21
+            id: profileScreen_item21
             width: 791
             height: 30
             x: 27
@@ -360,7 +360,7 @@ Rectangle {
             radius: 3
 
             Text {
-                id: txt_6
+                id: profileScreen_txt_6
                 property int textSize: 8
                 text: qsTr("ID")
                 width: 10
@@ -373,7 +373,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_7
+                id: profileScreen_txt_7
                 property int textSize: 8
                 text: qsTr("PROFILE NAME")
                 width: 74
@@ -386,7 +386,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_8
+                id: profileScreen_txt_8
                 property int textSize: 8
                 text: qsTr("NAME ON CARD")
                 width: 79
@@ -399,7 +399,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_9
+                id: profileScreen_txt_9
                 property int textSize: 8
                 text: qsTr("CARD")
                 width: 22
@@ -412,7 +412,7 @@ Rectangle {
             }
 
             Text {
-                id: txt_10
+                id: profileScreen_txt_10
                 property int textSize: 8
                 text: qsTr("ACTION")
                 width: 46
@@ -426,7 +426,7 @@ Rectangle {
         }
         //List item
         Image {
-            id: item22
+            id: profileScreen_item22
             width: 9
             height: 558
             x: 807
@@ -434,7 +434,7 @@ Rectangle {
             source: "qrc:/image/TaskScreen/task_scroll_border.png"
         }
         ListView {
-            id: list_2
+            id: profileScreen_list_2
             width: 791
             height: 558
             x: 27
@@ -446,7 +446,7 @@ Rectangle {
             boundsBehavior: Flickable.StopAtBounds
             ScrollBar.vertical: ScrollBar {
                 contentItem: Rectangle {
-                    id: rec_4
+                    id: profileScreen_rec_4
                     implicitWidth: 9
                     implicitHeight: 221
                     color: "#423F6B"
@@ -458,103 +458,103 @@ Rectangle {
 
     Component.onCompleted: {
         console.log("complete")
-//        listItemID.push(item0)
-//        listItemID.push(item1)
-//        listItemID.push(item2)
-//        listItemID.push(item3)
-//        listItemID.push(item4)
-//        listItemID.push(item5)
-//        listItemID.push(item6)
-//        listItemID.push(item7)
-//        listItemID.push(item8)
-//        listItemID.push(item9)
-        listItemID.push(item10)
-        listItemID.push(item11)
-        listItemID.push(item12)
-//        listItemID.push(item13)
-//        listItemID.push(item14)
-        listItemID.push(item15)
-        listItemID.push(item16)
-        listItemID.push(item17)
-        listItemID.push(item18)
-        listItemID.push(item19)
-        listItemID.push(item20)
-        listItemID.push(item21)
-        listItemID.push(item22)
+//        profileScreen_listItemID.push(item0)
+//        profileScreen_listItemID.push(item1)
+//        profileScreen_listItemID.push(item2)
+//        profileScreen_listItemID.push(item3)
+//        profileScreen_listItemID.push(item4)
+//        profileScreen_listItemID.push(item5)
+//        profileScreen_listItemID.push(item6)
+//        profileScreen_listItemID.push(item7)
+//        profileScreen_listItemID.push(item8)
+//        profileScreen_listItemID.push(item9)
+        profileScreen_listItemID.push(profileScreen_item10)
+        profileScreen_listItemID.push(profileScreen_item11)
+        profileScreen_listItemID.push(profileScreen_item12)
+//        profileScreen_listItemID.push(item13)
+//        profileScreen_listItemID.push(item14)
+        profileScreen_listItemID.push(profileScreen_item15)
+        profileScreen_listItemID.push(profileScreen_item16)
+        profileScreen_listItemID.push(profileScreen_item17)
+        profileScreen_listItemID.push(profileScreen_item18)
+        profileScreen_listItemID.push(profileScreen_item19)
+        profileScreen_listItemID.push(profileScreen_item20)
+        profileScreen_listItemID.push(profileScreen_item21)
+        profileScreen_listItemID.push(profileScreen_item22)
 
-        listTXT_9.push(txt_3)
-        listTXT_9.push(txt_4)
-        listTXT_9.push(txt_5)
+        profileScreen_listprofileScreen_txt_9.push(profileScreen_txt_3)
+        profileScreen_listprofileScreen_txt_9.push(profileScreen_txt_4)
+        profileScreen_listprofileScreen_txt_9.push(profileScreen_txt_5)
 
-        listTXT_8.push(txt_6)
-        listTXT_8.push(txt_7)
-        listTXT_8.push(txt_8)
-        listTXT_8.push(txt_9)
-        listTXT_8.push(txt_10)
+        profileScreen_listprofileScreen_txt_8.push(profileScreen_txt_6)
+        profileScreen_listprofileScreen_txt_8.push(profileScreen_txt_7)
+        profileScreen_listprofileScreen_txt_8.push(profileScreen_txt_8)
+        profileScreen_listprofileScreen_txt_8.push(profileScreen_txt_9)
+        profileScreen_listprofileScreen_txt_8.push(profileScreen_txt_10)
 
-        listTXT_13.push(txt_1)
-        listTXT_13.push(txt_2)
+        profileScreen_listprofileScreen_txt_13.push(profileScreen_txt_1)
+        profileScreen_listprofileScreen_txt_13.push(profileScreen_txt_2)
 
-        listListViewID.push(list_1)
-        listListViewID.push(list_2)
+        profileScreen_listListViewID.push(profileScreen_list_1)
+        profileScreen_listListViewID.push(profileScreen_list_2)
     }
     onHeightChanged: {
         var rate = height/currentHeight
         var rateTextSize = height/730
-        for (var i = 0; i < listItemID.length; i++) {
-            listItemID[i].y = listItemID[i].y * rate
-            listItemID[i].height = listItemID[i].height * rate
+        for (var i = 0; i < profileScreen_listItemID.length; i++) {
+            profileScreen_listItemID[i].y = profileScreen_listItemID[i].y * rate
+            profileScreen_listItemID[i].height = profileScreen_listItemID[i].height * rate
         }
 
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].y = listTXT_8[l].y * rate
-            listTXT_8[l].height = listTXT_8[l].height * rate
-            listTXT_8[l].textSize = 8 * rateTextSize
+        for (var l = 0; l < profileScreen_listprofileScreen_txt_8.length; l++) {
+            profileScreen_listprofileScreen_txt_8[l].y = profileScreen_listprofileScreen_txt_8[l].y * rate
+            profileScreen_listprofileScreen_txt_8[l].height = profileScreen_listprofileScreen_txt_8[l].height * rate
+            profileScreen_listprofileScreen_txt_8[l].textSize = 8 * rateTextSize
         }
-        for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].y = listTXT_9[m].y * rate
-            listTXT_9[m].height = listTXT_9[m].height * rate
-            listTXT_9[m].textSize = 9 * rateTextSize
+        for (var m = 0; m < profileScreen_listprofileScreen_txt_9.length; m++) {
+            profileScreen_listprofileScreen_txt_9[m].y = profileScreen_listprofileScreen_txt_9[m].y * rate
+            profileScreen_listprofileScreen_txt_9[m].height = profileScreen_listprofileScreen_txt_9[m].height * rate
+            profileScreen_listprofileScreen_txt_9[m].textSize = 9 * rateTextSize
         }
-        for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].y = listTXT_13[n].y * rate
-            listTXT_13[n].height = listTXT_13[n].height * rate
-            listTXT_13[n].textSize = 13 * rateTextSize
+        for (var n = 0; n < profileScreen_listprofileScreen_txt_13.length; n++) {
+            profileScreen_listprofileScreen_txt_13[n].y = profileScreen_listprofileScreen_txt_13[n].y * rate
+            profileScreen_listprofileScreen_txt_13[n].height = profileScreen_listprofileScreen_txt_13[n].height * rate
+            profileScreen_listprofileScreen_txt_13[n].textSize = 13 * rateTextSize
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].y = listListViewID[p].y * rate
-            listListViewID[p].height = listListViewID[p].height * rate
+        for (var p = 0; p < profileScreen_listListViewID.length; p++) {
+            profileScreen_listListViewID[p].y = profileScreen_listListViewID[p].y * rate
+            profileScreen_listListViewID[p].height = profileScreen_listListViewID[p].height * rate
         }
-        rec_4.implicitHeight = rec_4.implicitHeight * rate
+        profileScreen_rec_4.implicitHeight = profileScreen_rec_4.implicitHeight * rate
     }
 
     onWidthChanged: {
         var rate = width/currentWidth
-        for (var i = 0; i < listItemID.length; i++) {
-            listItemID[i].x = listItemID[i].x * rate
-            listItemID[i].width = listItemID[i].width * rate
+        for (var i = 0; i < profileScreen_listItemID.length; i++) {
+            profileScreen_listItemID[i].x = profileScreen_listItemID[i].x * rate
+            profileScreen_listItemID[i].width = profileScreen_listItemID[i].width * rate
         }
 
-        for (var k = 0; k < listTXT_7.length; k++) {
-            listTXT_7[k].x = listTXT_7[k].x * rate
-            listTXT_7[k].width = listTXT_7[k].width * rate
+        for (var k = 0; k < profileScreen_listprofileScreen_txt_7.length; k++) {
+            profileScreen_listprofileScreen_txt_7[k].x = profileScreen_listprofileScreen_txt_7[k].x * rate
+            profileScreen_listprofileScreen_txt_7[k].width = profileScreen_listprofileScreen_txt_7[k].width * rate
         }
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].x = listTXT_8[l].x * rate
-            listTXT_8[l].width = listTXT_8[l].width * rate
+        for (var l = 0; l < profileScreen_listprofileScreen_txt_8.length; l++) {
+            profileScreen_listprofileScreen_txt_8[l].x = profileScreen_listprofileScreen_txt_8[l].x * rate
+            profileScreen_listprofileScreen_txt_8[l].width = profileScreen_listprofileScreen_txt_8[l].width * rate
         }
-        for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].x = listTXT_9[m].x * rate
-            listTXT_9[m].width = listTXT_9[m].width * rate
+        for (var m = 0; m < profileScreen_listprofileScreen_txt_9.length; m++) {
+            profileScreen_listprofileScreen_txt_9[m].x = profileScreen_listprofileScreen_txt_9[m].x * rate
+            profileScreen_listprofileScreen_txt_9[m].width = profileScreen_listprofileScreen_txt_9[m].width * rate
         }
-        for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].x = listTXT_13[n].x * rate
-            listTXT_13[n].width = listTXT_13[n].width * rate
+        for (var n = 0; n < profileScreen_listprofileScreen_txt_13.length; n++) {
+            profileScreen_listprofileScreen_txt_13[n].x = profileScreen_listprofileScreen_txt_13[n].x * rate
+            profileScreen_listprofileScreen_txt_13[n].width = profileScreen_listprofileScreen_txt_13[n].width * rate
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].x = listListViewID[p].x * rate
-            listListViewID[p].width = listListViewID[p].width * rate
+        for (var p = 0; p < profileScreen_listListViewID.length; p++) {
+            profileScreen_listListViewID[p].x = profileScreen_listListViewID[p].x * rate
+            profileScreen_listListViewID[p].width = profileScreen_listListViewID[p].width * rate
         }
-        rec_4.implicitWidth = rec_4.implicitWidth *rate
+        profileScreen_rec_4.implicitWidth = profileScreen_rec_4.implicitWidth *rate
     }
 }
