@@ -133,7 +133,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        profileItem_listChildrentItem.push(profileItem1)
+//        profileItem_listChildrentItem.push(profileItem1)
         profileItem_listChildrentItem.push(profileItem2)
         profileItem_listChildrentItem.push(profileItem3)
         profileItem_listChildrentItem.push(profileItem4)

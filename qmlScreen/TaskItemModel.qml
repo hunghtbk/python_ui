@@ -158,7 +158,7 @@ ListModel {
         action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
-        idtxtContent: "7"
+        idtxtContent: "13"
         productContent: "Jordan 13 Flint Grey"
         sizeContent: "9.5"
         siteContent: "Footlocker"
@@ -171,7 +171,7 @@ ListModel {
         action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
-        idtxtContent: "8"
+        idtxtContent: "14"
         productContent: "Jordan 13 Flint Grey"
         sizeContent: "9.5"
         siteContent: "Footlocker"
@@ -184,7 +184,7 @@ ListModel {
         action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
-        idtxtContent: "9"
+        idtxtContent: "15"
         productContent: "Jordan 13 Flint Grey"
         sizeContent: "9.5"
         siteContent: "Footlocker"
@@ -197,7 +197,7 @@ ListModel {
         action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
-        idtxtContent: "10"
+        idtxtContent: "16"
         productContent: "Jordan 13 Flint Grey"
         sizeContent: "9.5"
         siteContent: "Footlocker"
@@ -210,7 +210,90 @@ ListModel {
         action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
-        idtxtContent: "11"
+        idtxtContent: "17"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+    ListElement{
+        idtxtContent: "18"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+
+    ListElement{
+        idtxtContent: "19"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+
+    ListElement{
+        idtxtContent: "20"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+
+    ListElement{
+        idtxtContent: "21"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+
+    ListElement{
+        idtxtContent: "22"
+        productContent: "Jordan 13 Flint Grey"
+        sizeContent: "9.5"
+        siteContent: "Footlocker"
+        profileContent: "Privacy 3"
+        proxyContent: "Private Resi"
+        statusContent: "Adding to cart"
+        statusColor: "#FFA94F"
+        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
+        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
+        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+    }
+
+    ListElement{
+        idtxtContent: "23"
         productContent: "Jordan 13 Flint Grey"
         sizeContent: "9.5"
         siteContent: "Footlocker"

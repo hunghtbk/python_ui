@@ -12,7 +12,7 @@ Rectangle {
     property int taskItemCurrentDetaiItemWidth: taskItemrect_1_1.width
 
     onTaskItemWidthDelegateChanged: {
-        console.log("hunght WidthDelegate = " + taskItemWidthDelegate)
+        console.log("Task Item WidthDelegate " + index + " = " + taskItemWidthDelegate)
     }
 
     width: taskItemWidthDelegate
@@ -24,6 +24,7 @@ Rectangle {
         width: taskItemWidthDelegate
         height: 30
         color: "#37345E"
+        radius: 3
 
         MouseArea {
             anchors.fill: parent
@@ -43,22 +44,38 @@ Rectangle {
     }
 
     Text {
+        id: leftCorner
+        width: 0
+        height: 0
+        text: qsTr("")
+    }
+
+    Text {
         id: taskItemTxt_29
         width: 5
         height: 12
-        x: 12
+//        x: 12
+//        anchors.left : 40//(12/770)* parent.width
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (12/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
         text: idtxtContent
+        Component.onCompleted: {
+            var abcd = (12/770)* parent.width
+            console.log("huhuhuhuh " + abcd)
+        }
     }
 
     Text {
         id: taskItemTxt_30
         width: 97
         height: 12
-        x: 40
+//        x: 40
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (40/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
@@ -70,8 +87,10 @@ Rectangle {
         id: taskItemTxt_31
         width: 16
         height: 12
-        x: 235
+//        x: 235
         y: 9
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (235/770)* parent.width
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -82,7 +101,9 @@ Rectangle {
         id: taskItemTxt_32
         width: 52
         height: 12
-        x: 280
+//        x: 280
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (280/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
@@ -94,7 +115,9 @@ Rectangle {
         id: taskItemTxt_33
         width: 45
         height: 12
-        x: 377
+//        x: 377
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (377/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
@@ -106,7 +129,9 @@ Rectangle {
         id: taskItemTxt_35
         width: 57
         height: 12
-        x: 468
+//        x: 468
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (468/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
@@ -118,7 +143,9 @@ Rectangle {
         id: taskItemTxt_36
         width: 69
         height: 12
-        x: 575
+//        x: 575
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (575/770)* parent.width
         y: 9
         font.family: "Inter"
         font.pointSize: 8
@@ -130,7 +157,9 @@ Rectangle {
         id: taskItemImg_37
         width: 20
         height: 20
-        x: 696
+//        x: 696
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (696/770)* parent.width
         y: 5
         source: action1Source
 
@@ -146,7 +175,9 @@ Rectangle {
         id: taskItemImg_38
         width: 20
         height: 20
-        x: 720
+//        x: 720
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (720/770)* parent.width
         y: 5
         source: action2Source
 
@@ -162,7 +193,9 @@ Rectangle {
         id: taskItemImg_39
         width: 20
         height: 20
-        x: 744
+//        x: 744
+        anchors.left: leftCorner.right
+        anchors.leftMargin: (744/770)* parent.width
         y: 5
         source: action3Source
 
@@ -175,18 +208,18 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        taskItemListIMG_ID_DetailItem.push(taskItemImg_37)
-        taskItemListIMG_ID_DetailItem.push(taskItemImg_38)
-        taskItemListIMG_ID_DetailItem.push(taskItemImg_39)
-        taskItemListIMG_ID_DetailItem.push(taskItemRec_3_4)
+//        taskItemListIMG_ID_DetailItem.push(taskItemImg_37)
+//        taskItemListIMG_ID_DetailItem.push(taskItemImg_38)
+//        taskItemListIMG_ID_DetailItem.push(taskItemImg_39)
+//        taskItemListIMG_ID_DetailItem.push(taskItemRec_3_4)
 
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_29)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_30)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_31)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_32)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_33)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_35)
-        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_36)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_29)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_30)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_31)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_32)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_33)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_35)
+//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_36)
     }
 
     onWidthChanged: {

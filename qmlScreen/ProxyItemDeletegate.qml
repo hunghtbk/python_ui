@@ -17,7 +17,7 @@ Rectangle {
     property int itemWid: 0
     Rectangle {
         id: cItem1
-        width: 385
+        width: widthDelegate
         height: 30
         color: "#37345E"
         radius: 3
@@ -90,7 +90,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        listChildrentItem.push(cItem1)
+//        listChildrentItem.push(cItem1)
         listChildrentItem.push(cItem3)
         listChildrentItem.push(cItem4)
 

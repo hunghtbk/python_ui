@@ -428,7 +428,6 @@ Window {
     }
 
     onWidthChanged: {
-        console.log("hunght w" + width)
         if (width < 1140) {
             width = 1140
         }
