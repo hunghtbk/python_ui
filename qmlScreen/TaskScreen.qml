@@ -214,6 +214,7 @@ Rectangle {
             height: 660
             x: 33
             y: 64
+            spacing: 8
             model: TaskGroupModel {}
             delegate: TaskGroupDelegate {}
             clip: true
