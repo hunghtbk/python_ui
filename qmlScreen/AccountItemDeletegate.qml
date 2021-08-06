@@ -116,8 +116,8 @@ Rectangle {
 
     Component.onCompleted: {
 //        listChildrentItem.push(cItem1)
-        listChildrentItem.push(cItem3)
-        listChildrentItem.push(cItem4)
+//        listChildrentItem.push(cItem3)
+//        listChildrentItem.push(cItem4)
 
 //        listChildrentTXT.push(ctxt1)
 //        listChildrentTXT.push(ctxt2)
