@@ -12,7 +12,7 @@ Rectangle {
     property int currentDetaiItemWidth: rect_item.width
 
     width: widthDelegate
-    height: 38
+    height: 30
     color: "transparent"
     property int itemWid: 0
     Rectangle {
@@ -34,11 +34,24 @@ Rectangle {
     }
 
     Text {
+        id: proxyLeftCorner
+        width: 0
+        height: 0
+        text: qsTr("")
+    }
+
+    Text {
         id: ctxt1
         width: 209
         height: 12
-        x: 19
-        y: 9
+//        x: 19
+//        y: 9
+        anchors.left: proxyLeftCorner.right
+        anchors.leftMargin: (19/385)* parent.width
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -49,8 +62,14 @@ Rectangle {
         id: ctxt2
         width: 32
         height: 12
-        x: 271
-        y: 9
+//        x: 271
+//        y: 9
+        anchors.left: proxyLeftCorner.right
+        anchors.leftMargin: (271/385)* parent.width
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: statusColorTxt
@@ -61,8 +80,11 @@ Rectangle {
         id: cItem3
         width: 20
         height: 20
-        x: 335
-        y: 5
+//        x: 335
+//        y: 5
+        anchors.left: proxyLeftCorner.right
+        anchors.leftMargin: (335/385)* parent.width
+        anchors.verticalCenter: parent.verticalCenter
         source: action1Source
 
         MouseArea {
@@ -77,8 +99,11 @@ Rectangle {
         id: cItem4
         width: 20
         height: 20
-        x: 359
-        y: 5
+//        x: 359
+//        y: 5
+        anchors.left: proxyLeftCorner.right
+        anchors.leftMargin: (359/385)* parent.width
+        anchors.verticalCenter: parent.verticalCenter
         source: action2Source
 
         MouseArea {
@@ -91,11 +116,11 @@ Rectangle {
 
     Component.onCompleted: {
 //        listChildrentItem.push(cItem1)
-        listChildrentItem.push(cItem3)
-        listChildrentItem.push(cItem4)
+//        listChildrentItem.push(cItem3)
+//        listChildrentItem.push(cItem4)
 
-        listChildrentTXT.push(ctxt1)
-        listChildrentTXT.push(ctxt2)
+//        listChildrentTXT.push(ctxt1)
+//        listChildrentTXT.push(ctxt2)
     }
 
     onWidthChanged: {

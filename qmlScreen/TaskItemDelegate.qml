@@ -16,7 +16,7 @@ Rectangle {
     }
 
     width: taskItemWidthDelegate
-    height: 38
+    height: 30
     color: "transparent"
     property int itemWid: 0
     Rectangle {
@@ -55,10 +55,13 @@ Rectangle {
         width: 5
         height: 12
 //        x: 12
-//        anchors.left : 40//(12/770)* parent.width
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (12/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -74,9 +77,13 @@ Rectangle {
         width: 97
         height: 12
 //        x: 40
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (40/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -88,9 +95,13 @@ Rectangle {
         width: 16
         height: 12
 //        x: 235
-        y: 9
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (235/770)* parent.width
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -102,9 +113,13 @@ Rectangle {
         width: 52
         height: 12
 //        x: 280
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (280/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -116,9 +131,13 @@ Rectangle {
         width: 45
         height: 12
 //        x: 377
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (377/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -130,9 +149,13 @@ Rectangle {
         width: 57
         height: 12
 //        x: 468
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (468/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -144,9 +167,13 @@ Rectangle {
         width: 69
         height: 12
 //        x: 575
+//        y: 9
         anchors.left: leftCorner.right
         anchors.leftMargin: (575/770)* parent.width
-        y: 9
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: statusColor
@@ -158,9 +185,10 @@ Rectangle {
         width: 20
         height: 20
 //        x: 696
+//        y: 5
         anchors.left: leftCorner.right
         anchors.leftMargin: (696/770)* parent.width
-        y: 5
+        anchors.verticalCenter: parent.verticalCenter
         source: action1Source
 
         MouseArea {
@@ -176,9 +204,10 @@ Rectangle {
         width: 20
         height: 20
 //        x: 720
+//        y: 5
         anchors.left: leftCorner.right
         anchors.leftMargin: (720/770)* parent.width
-        y: 5
+        anchors.verticalCenter: parent.verticalCenter
         source: action2Source
 
         MouseArea {
@@ -194,9 +223,10 @@ Rectangle {
         width: 20
         height: 20
 //        x: 744
+//        y: 5
         anchors.left: leftCorner.right
         anchors.leftMargin: (744/770)* parent.width
-        y: 5
+        anchors.verticalCenter: parent.verticalCenter
         source: action3Source
 
         MouseArea {

@@ -498,9 +498,9 @@ Rectangle {
         Image {
             id: item22
             width: 9
-            height: 558
+            height: 555
             x: 807
-            y: 148
+            y: 145
             source: "qrc:/image/0.Common/task_scroll_border.png"
         }
         ListView {
@@ -509,6 +509,7 @@ Rectangle {
             height: 558
             x: 412
             y: 144
+            spacing: 8
             model: AccountItemModel {}
             delegate: AccountItemDeletegate {}
             clip: true

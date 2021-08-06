@@ -47,7 +47,7 @@ Window {
         }
         //Dashboard icon
         Image {
-            id: main_img_2
+            id: dashboardScreenId
             width: 18
             height: 18
             x: 24
@@ -57,10 +57,10 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    main_img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
+                    dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-active.png"
                 }
                 onReleased: {
-                    main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                    dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
                 }
                 onClicked: {
                     console.log("Dash Board Screen")
@@ -308,42 +308,42 @@ Window {
 
     onSelectedAppChanged: {
         if (selectedApp == 0) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-active.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
             main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
             main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 1) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-active.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
             main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
             main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 2) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
             main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
             main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 3) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
             main_img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
             main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 4) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
             main_img_6.source = "qrc:/image/0.Common/person-outline-active.png"
             main_img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
         } else if (selectedApp == 5) {
-            main_img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+            dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
             main_img_3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
             main_img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
             main_img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
@@ -373,7 +373,7 @@ Window {
 
         console.log("complete")
         listIMG_ID.push(main_img_1)
-        listIMG_ID.push(main_img_2)
+        listIMG_ID.push(dashboardScreenId)
         listIMG_ID.push(main_img_3_1)
         listIMG_ID.push(main_img_3)
         listIMG_ID.push(main_img_4)

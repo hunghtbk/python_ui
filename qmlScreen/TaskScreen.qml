@@ -752,7 +752,7 @@ Rectangle {
         Image {
             id: img_36
             width: 9
-            height: 480
+            height: 495
             x: 809
             y: 229
             source: "qrc:/image/TaskScreen/task_scroll_border.png"
@@ -763,6 +763,7 @@ Rectangle {
             height: 498
             x: 27
             y: 227
+            spacing: 8
             model: TaskItemModel {}
             delegate: TaskItemDelegate {}
             clip: true

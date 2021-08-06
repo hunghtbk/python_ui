@@ -12,7 +12,7 @@ Rectangle {
     property int currentDetaiItemWidth: rect_item.width
 
     width: widthDelegate
-    height: 38
+    height: 30
     color: "transparent"
     property int itemWid: 0
     Rectangle {
@@ -34,11 +34,24 @@ Rectangle {
     }
 
     Text {
+        id: accountLeftCorner
+        width: 0
+        height: 0
+        text: qsTr("")
+    }
+
+    Text {
         id: ctxt1
         width: 101
         height: 12
-        x: 19
-        y: 9
+//        x: 19
+//        y: 9
+        anchors.left: accountLeftCorner.right
+        anchors.leftMargin: (19/385)* parent.width
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -49,8 +62,14 @@ Rectangle {
         id: ctxt2
         width: 90
         height: 12
-        x: 181
-        y: 9
+//        x: 181
+//        y: 9
+        anchors.left: accountLeftCorner.right
+        anchors.leftMargin: (181/385)* parent.width
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: 8
         color: "#FFFFFF"
@@ -61,8 +80,11 @@ Rectangle {
         id: cItem3
         width: 20
         height: 20
-        x: 335
-        y: 5
+//        x: 335
+//        y: 5
+        anchors.left: accountLeftCorner.right
+        anchors.leftMargin: (335/385)* parent.width
+        anchors.verticalCenter: parent.verticalCenter
         source: action1Source
 
         MouseArea {
@@ -77,8 +99,11 @@ Rectangle {
         id: cItem4
         width: 20
         height: 20
-        x: 359
-        y: 5
+//        x: 359
+//        y: 5
+        anchors.left: accountLeftCorner.right
+        anchors.leftMargin: (359/385)* parent.width
+        anchors.verticalCenter: parent.verticalCenter
         source: action2Source
 
         MouseArea {
@@ -94,8 +119,8 @@ Rectangle {
         listChildrentItem.push(cItem3)
         listChildrentItem.push(cItem4)
 
-        listChildrentTXT.push(ctxt1)
-        listChildrentTXT.push(ctxt2)
+//        listChildrentTXT.push(ctxt1)
+//        listChildrentTXT.push(ctxt2)
     }
 
     onWidthChanged: {

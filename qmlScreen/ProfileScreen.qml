@@ -442,6 +442,7 @@ Rectangle {
             model: ProfileItemModel {}
             delegate: ProfileItemDeletegate {}
             clip: true
+            spacing: 8
             flickableDirection: Flickable.VerticalFlick
             boundsBehavior: Flickable.StopAtBounds
             ScrollBar.vertical: ScrollBar {
