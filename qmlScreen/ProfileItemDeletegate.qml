@@ -5,20 +5,21 @@ import QtQuick 2.5
 
 Rectangle {
     id: profileItem_rect_item
-    property int profileItem_widthDelegate : profileScreen_list_2.width - 20
+    property int profileItem_widthDelegate : 0
+    property int profileItem_heightDelegate : 0
 
     property var profileItem_listChildrentItem: []
     property var profileItem_listChildrentTXT: []
     property int profileItem_currentDetaiItemWidth: profileItem_rect_item.width
 
     width: profileItem_widthDelegate
-    height: 30
+    height: profileItem_heightDelegate
     color: "transparent"
     property int itemWid: 0
     Rectangle {
         id: profileItem1
         width: profileItem_widthDelegate
-        height: 30
+        height: profileItem_heightDelegate
         color: "#37345E"
         radius: 3
 

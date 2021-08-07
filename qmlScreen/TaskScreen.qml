@@ -978,8 +978,8 @@ Rectangle {
         ScrollBar.vertical: ScrollBar {
             contentItem: Rectangle {
                 id: rec_4
-                implicitWidth: 9
-                implicitHeight: 221
+                implicitWidth: (9/1135) * m_taskScreen.width
+                implicitHeight: (221/730) * m_taskScreen.height
                 color: "#423F6B"
                 radius: 10
             }
