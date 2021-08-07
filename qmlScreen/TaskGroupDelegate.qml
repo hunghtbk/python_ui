@@ -5,9 +5,10 @@ import QtQuick 2.5
 //property whiteIndex
 Rectangle {
     id: rec_2_1
-    property int widthItem : parent.width
+    property int widthItem : 0
+    property int heightItem: 0
     width: widthItem
-    height: 98
+    height: heightItem//106 //(106/424) * heightItem
     color: "transparent"
 
     property var listIMG_ID_Item: []
@@ -20,7 +21,7 @@ Rectangle {
     Rectangle {
         id: rec_2_2
         width: widthItem
-        height: 98
+        height: parent.height
         color: itemMouseArea.containsMouse ? "#907DE2" : "#37345E"
         radius: 3
     }
@@ -262,6 +263,7 @@ Rectangle {
 //        }
     }
     Component.onCompleted: {
+        console.log("parent height" + parent.height)
         listIMG_ID_Item.push(img_10)
         listIMG_ID_Item.push(img_11)
         listIMG_ID_Item.push(img_12)

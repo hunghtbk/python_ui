@@ -7,21 +7,18 @@ Rectangle {
     visible: true
     width: 1135
     height: 730
-//    title: qsTr("Task Screen")
+    //    title: qsTr("Task Screen")
     color: "#2E2C50"
-//    flags:Qt.FramelessWindowHint
+    //    flags:Qt.FramelessWindowHint
     signal message(string msg)
     property int taskScreenCurrentWidth: m_taskScreen.width
     property int taskScreenCurrentHeight: m_taskScreen.height
 
-    property var taskScreenListIMG_ID: []
-    property var taskScreenListREC_ID: []
-    property var taskScreenListListViewID: []
     property var taskScreenListtaskScreen_txt_7: []
     property var taskScreenListtaskScreen_txt_8: []
     property var taskScreenListtaskScreen_txt_9: []
     property var taskScreenListtaskScreenTxt_13: []
-/*
+    /*
     Rectangle {
         id: rec_1
         width: 65
@@ -170,661 +167,831 @@ Rectangle {
         }
     }
 */
-    Rectangle {
-        id: taskScreenRec_2
+
+    Text {
+        id: taskScreenborderLeftMain
         x: 0
         y: 0
-        width: 284
-        height: 730
+        width: 0
+        height: 0
+    }
+
+    Rectangle {
+        id: taskScreenRec_2
+        //        x: 0
+        //        y: 0
+        //        width: 284
+        //        height: 730
+
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (0/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (0/730)* parent.height //y
+        width: (284/1135) * m_taskScreen.width //width
+        height: (730/730) * m_taskScreen.height //height
+
         color: "#282645"
 
-        Text {
-            id: taskScreenTxt_1
-            property int textSize: 13
-            text: qsTr("Tasks Groups")
-            width: 103
-            height: 19
-            x: 33
-            y: 19
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
-        }
+    }
+    Text {
+        id: taskScreenTxt_1
+        property int textSize: 13
+        text: qsTr("Tasks Groups")
+        //        width: 103
+        //        height: 19
+        //        x: 33
+        //        y: 19
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (33/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (19/730)* parent.height //y
+        width: (103/1135) * m_taskScreen.width //width
+        height: (19/730) * m_taskScreen.height //height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
 
-        Image {
-            id: taskScreenImg_9
-            width: 21
-            height: 21
-            x: 158
-            y: 19
-            source: "qrc:/image/0.Common/Add_inactive_icon.png"
+    Image {
+        id: taskScreenImg_9
+        //        width: 21
+        //        height: 21
+        //        x: 158
+        //        y: 19
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (158/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (19/730)* parent.height //y
+        width: (21/1135) * m_taskScreen.width //width
+        height: (21/730) * m_taskScreen.height //height
+        source: "qrc:/image/0.Common/Add_inactive_icon.png"
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                   m_taskScreen.message("clicked!")
-                }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                m_taskScreen.message("clicked!")
             }
         }
+    }
 
-        //List task group
-        ListView {
-            id: taskScreenList_1
-            width: 221
-            height: 660
-            x: 33
-            y: 64
-            spacing: 8
-            model: TaskGroupModel {}
-            delegate: TaskGroupDelegate {}
-            clip: true
+    //List task group
+    ListView {
+        id: taskScreenList_1
+        //            x: 33
+        //            y: 64
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (33/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (64/730)* parent.height
+        width: (221/1135) * m_taskScreen.width
+        height: (666/730) * m_taskScreen.height
+        spacing: 8
+        model: TaskGroupModel {}
+        delegate: TaskGroupDelegate {
+            widthItem: (221/1135) * m_taskScreen.width
+            heightItem: (106/730) * m_taskScreen.height
         }
-
+        clip: true
     }
 
     Rectangle {
         id: taskScreenRec_3
-        x: 284
-        y: 0
-        width: 851
-        height: 730
+        //        x: 284
+        //        y: 0
+        //        width: 851
+        //        height: 730
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (284/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (0/730)* parent.height //y
+        width: (851/1135) * m_taskScreen.width //width
+        height: (730/730) * m_taskScreen.height //height
         color: "transparent"
+    }
 
-        Image {
-            id: taskScreen_img_19
-            width: 70.4
-            height: 70.4
-            x: 27
-            y: 22
-            source: "qrc:/image/TaskScreen/image_borde.png"
+    Image {
+        id: taskScreen_img_19
+//        width: 70.4
+//        height: 70.4
+//        x: 311
+//        y: 22
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (311/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (22/730)* parent.height //y
+        width: (70.4/1135) * m_taskScreen.width //width
+        height: (70.4/730) * m_taskScreen.height //heigh
+        source: "qrc:/image/TaskScreen/image_borde.png"
+    }
+    Image {
+        id: taskScreen_img_20
+//        width: 52
+//        height: 56
+//        x: 320
+//        y: 29
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (320/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (29/730)* parent.height //y
+        width: (52/1135) * m_taskScreen.width //width
+        height: (56/730) * m_taskScreen.height //heigh
+        source: "qrc:/image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
+    }
 
-            Image {
-                id: taskScreen_img_20
-                width: 52
-                height: 56
-                x: 9
-                y: 7
-                source: "qrc:/image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
+    Text {
+        id: taskScreen_txt_7
+        property int textSize: 7
+        text: qsTr("Site")
+//        width: 19
+//        height: 12
+//        x: 402
+//        y: 21
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (402/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (21/730)* parent.height //y
+        width: (19/1135) * m_taskScreen.width //width
+        height: (12/730) * m_taskScreen.height //heigh
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+
+    Text {
+        id: taskScreen_txt_8
+        property int textSize: 9
+        text: qsTr("Bestbuy")
+//        x: 402
+//        y: 37
+//        width: 47
+//        height: 15
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (402/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (37/730)* parent.height //y
+        width: (47/1135) * m_taskScreen.width //width
+        height: (15/730) * m_taskScreen.height //heigh
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: taskScreen_txt_9
+        property int textSize: 7
+        text: qsTr("Product")
+//        width: 39
+//        height: 12
+//        x: 402
+//        y: 62
+        width: (39/1135) * m_taskScreen.width //width
+        height: (12/730) * m_taskScreen.height //heigh
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (402/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (62/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+
+    Text {
+        id: taskScreenTxt_10
+        property int textSize: 9
+        text: qsTr("Playstation 5 Digital Console")
+//        width: 162
+//        height: 15
+//        x: 402
+//        y: 78
+        width: (162/1135) * m_taskScreen.width //width
+        height: (15/730) * m_taskScreen.height //heigh
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (402/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (78/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Image {
+        id: taskScreen_img_10
+//        width: 246
+//        height: 30
+//        x: 796
+//        y: 21
+        width: (246/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (796/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (21/730)* parent.height
+        source: "qrc:/image/border_2.png"
+    }
+    Image {
+        id: taskScreen_img_21
+//        width: 6
+//        height: 11
+//        x: 14
+//        y: 9
+        width: (6/1135) * m_taskScreen.width
+        height: (11/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (810/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (30/730)* parent.height
+        source: "qrc:/image/TaskScreen/dollar-sign-15.png"
+    }
+    Text {
+        id: taskScreenTxt_12
+        property int textSize: 9
+        text: qsTr("$2,309")
+//        width: 43
+//        height: 15
+//        x: 27
+//        y: 7
+        width: (43/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (823/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (28/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Image {
+        id: taskScreen_img_22
+//        width: 12
+//        height: 12
+//        x: 107
+//        y: 9
+        width: (12/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (903/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (30/730)* parent.height
+        source: "qrc:/image/TaskScreen/shopping-bag-outline-green.png"
+    }
+    Text {
+        id: taskScreenTxt_13
+        property int textSize: 9
+        text: qsTr("78")
+//        width: 43
+//        height: 15
+//        x: 125
+//        y: 7
+        width: (43/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (921/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (28/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Image {
+        id: taskScreen_img_23
+//        width: 12
+//        height: 12
+//        x: 189
+//        y: 9
+        width: (12/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (985/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (30/730)* parent.height
+        source: "qrc:/image/TaskScreen/shopping-bag-outline-red.png"
+    }
+    Text {
+        id: taskScreenTxt_14
+        property int textSize: 9
+        text: qsTr("28")
+//        width: 43
+//        height: 15
+//        x: 207
+//        y: 7
+        width: (43/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1003/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (28/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Rectangle {
+        id: taskScreenRec_3_1
+//        width: 196
+//        height: 30
+//        x: 796
+//        y: 63
+        width: (196/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (796/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (63/730)* parent.height
+        color:"#37345E"
+        radius: 3
+    }
+    TextInput {
+        id: taskScreenTxt_15
+        property int textSize: 9
+        text: qsTr("Mass link change")
+//        width: 450
+//        height: 15
+//        x: 12
+//        y: 8
+        width: (450/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (808/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (70/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+    Rectangle {
+        id: taskScreenRec_3_2
+//        width: 98
+//        height: 30
+//        x: 720
+//        y: 63
+        width: (98/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1004/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (63/730)* parent.height
+        color: "#FFFFFF"
+        radius: 5
+    }
+    Text {
+        id: taskScreenTxt_16
+        property int textSize: 9
+        text: qsTr("Confirm")
+//        width: 47
+//        height: 15
+//        x: 20
+//        y: 8
+        width: (47/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1024/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (70/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#2E2C50"
+    }
+    Image {
+        id: taskScreen_img_26
+//        width: 3.5
+//        height: 8
+//        x: 74
+//        y: 12
+        width: (3.5/1135) * m_taskScreen.width
+        height: (8/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1078/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (75/730)* parent.height
+        source: "qrc:/image/TaskScreen/arrow_confirm.png"
+    }
+    MouseArea {
+        anchors.fill: taskScreenRec_3_2
+        onClicked: {
+            console.log("Confirm button")
+        }
+    }
+    Image {
+        id: taskScreen_img_27
+//        width: 851
+//        height: 1
+//        x: 0
+//        y: 115.5
+        width: (851/1135) * m_taskScreen.width
+        height: (1/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (284/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (115.5/730)* parent.height
+        source: "qrc:/image/TaskScreen/line.png"
+    }
+    Text {
+        id: taskScreenTxt_17
+        property int textSize: 13
+        text: qsTr("Tasks")
+//        width: 44
+//        height: 19
+//        x: 27
+//        y: 139
+        width: (44/1135) * m_taskScreen.width
+        height: (19/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (311/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (139/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Image {
+        id: taskScreen_img_29
+//        width: 21
+//        height: 21
+//        x: 91
+//        y: 139
+        width: (21/1135) * m_taskScreen.width
+        height: (21/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (375/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (139/730)* parent.height
+        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("Add new Task Item")
+            }
+        }
+    }
+    Image {
+        id: taskScreen_img_30
+//        width: 104
+//        height: 30
+//        x: 490
+//        y: 134
+        width: (104/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (774/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (134/730)* parent.height
+        source: "qrc:/image/TaskScreen/white_border.png"
+
+    }
+    Image {
+        id: taskScreen_img_31
+//        width: 7.7
+//        height: 9.9
+//        x: 75
+//        y: 10
+        width: (7.7/1135) * m_taskScreen.width
+        height: (9.9/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (849/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (144/730)* parent.height
+        source: "qrc:/image/TaskScreen/starAll_icon.png"
+    }
+    Text {
+        id: taskScreenTxt_18
+        property int textSize: 9
+        text: qsTr("Start All")
+//        width: 47
+//        height: 15
+//        x: 21
+//        y: 8
+        width: (47/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (795/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (141/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#29E182"
+    }
+    MouseArea {
+        anchors.fill: taskScreen_img_30
+        onClicked: {
+            console.log("start all button")
+        }
+    }
+    Image {
+        id: taskScreen_img_32
+//        width: 104
+//        height: 30
+//        x: 602
+//        y: 134
+        width: (104/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (886/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (134/730)* parent.height
+        source: "qrc:/image/TaskScreen/white_border.png"
+    }
+    Image {
+        id: taskScreen_img_33
+//        width: 8
+//        height: 8
+//        x: 75
+//        y: 11
+        width: (8/1135) * m_taskScreen.width
+        height: (8/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (961/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (145/730)* parent.height
+        source: "qrc:/image/TaskScreen/stopAll_icon.png"
+    }
+    Text {
+        id: taskScreenTxt_19
+        property int textSize: 9
+        text: qsTr("Stop All")
+//        width: 45
+//        height: 15
+//        x: 22
+//        y: 8
+        width: (45/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (908/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (141/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFA94F"
+    }
+    MouseArea {
+        anchors.fill: taskScreen_img_32
+        onClicked: {
+            console.log("stop all button")
+        }
+    }
+    Image {
+        id: taskScreen_img_34
+//        width: 104
+//        height: 30
+//        x: 714
+//        y: 134
+        width: (104/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (998/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (134/730)* parent.height
+        source: "qrc:/image/TaskScreen/white_border.png"
+    }
+    Image {
+        id: taskScreen_img_35
+//        width: 9.6
+//        height: 9.6
+//        x: 77.96
+//        y: 9.96
+        width: (9.6/1135) * m_taskScreen.width
+        height: (9.6/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1075.96/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (143.96/730)* parent.height
+        source: "qrc:/image/TaskScreen/deleteAll_icon.png"
+    }
+    Text {
+        id: taskScreen_txt_20
+        property int textSize: 9
+        text: qsTr("Delete All")
+//        width: 56
+//        height: 15
+//        x: 14
+//        y: 8
+        width: (56/1135) * m_taskScreen.width
+        height: (15/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1012/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (141/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FA5B79"
+    }
+    MouseArea {
+        anchors.fill: taskScreen_img_34
+        onClicked: {
+            console.log("stop all button")
+        }
+    }
+    Rectangle {
+        id: taskScreenRec_3_3
+//            width: 791
+//            height: 30
+//            x: 27
+//            y: 183
+        width: (791/1135) * m_taskScreen.width
+        height: (30/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (311/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (183/730)* parent.height
+        color: "#907DE2"
+        radius: 3
+    }
+    Text {
+        id: taskScreen_txt_21
+        property int textSize: 8
+        text: qsTr("ID")
+//        width: 10
+//        height: 12
+//        x: 12
+//        y: 9
+        width: (10/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (323/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_22
+        property int textSize: 8
+        text: qsTr("PRODUCT")
+//        width: 50
+//        height: 12
+//        x: 40
+//        y: 9
+        width: (50/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (351/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_23
+        property int textSize: 8
+        text: qsTr("SIZE")
+//        width: 22
+//        height: 12
+//        x: 235
+//        y: 9
+        width: (22/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (546/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_24
+        property int textSize: 8
+        text: qsTr("SITE")
+//        width: 22
+//        height: 12
+//        x: 280
+//        y: 9
+        width: (22/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (591/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_25
+        property int textSize: 8
+        text: qsTr("PROFILE")
+//        width: 42
+//        height: 12
+//        x: 377
+//        y: 9
+        width: (42/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (688/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_26
+        property int textSize: 8
+        text: qsTr("PROXY")
+//        width: 35
+//        height: 12
+//        x: 468
+//        y: 9
+        width: (35/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (779/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_27
+        property int textSize: 8
+        text: qsTr("STATUS")
+//        width: 40
+//        height: 12
+//        x: 575
+//        y: 9
+        width: (40/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (886/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Text {
+        id: taskScreen_txt_28
+        property int textSize: 8
+        text: qsTr("ACTION")
+//        width: 46
+//        height: 12
+//        x: 696
+//        y: 9
+        width: (46/1135) * m_taskScreen.width
+        height: (12/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1030/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (192/730)* parent.height
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+    Image {
+        id: img_36
+//        width: 9
+//        height: 495
+//        x: 809
+//        y: 229
+        width: (9/1135) * m_taskScreen.width
+        height: (495/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (1093/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (229/730)* parent.height
+        source: "qrc:/image/TaskScreen/task_scroll_border.png"
+    }
+    //List item
+    ListView {
+        id: taskScreenList_2
+//        width: 793
+//        height: 498
+//        x: 27
+//        y: 227
+        width: (793/1135) * m_taskScreen.width
+        height: (498/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (311/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (225/730)* parent.height
+        spacing: 8
+        model: TaskItemModel {}
+        delegate: TaskItemDelegate {
+            taskItemWidthDelegate: (770/1135) * m_taskScreen.width
+            taskItemHeightDelegate: (30/730) * m_taskScreen.height
+        }
+        clip: true
+        flickableDirection: Flickable.VerticalFlick
+        boundsBehavior: Flickable.StopAtBounds
+        ScrollBar.vertical: ScrollBar {
+            contentItem: Rectangle {
+                id: rec_4
+                implicitWidth: 9
+                implicitHeight: 221
+                color: "#423F6B"
+                radius: 10
             }
         }
 
-        Text {
-            id: taskScreen_txt_7
-            property int textSize: 7
-            text: qsTr("Site")
-            width: 19
-            height: 12
-            x: 118
-            y: 21
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#75719B"
-        }
-
-        Text {
-            id: taskScreen_txt_8
-            property int textSize: 9
-            text: qsTr("Bestbuy")
-            width: 47
-            height: 15
-            x: 118
-            y: 37
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
-        }
-
-        Text {
-            id: taskScreen_txt_9
-            property int textSize: 7
-            text: qsTr("Product")
-            width: 39
-            height: 12
-            x: 118
-            y: 62
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#75719B"
-        }
-
-        Text {
-            id: taskScreenTxt_10
-            property int textSize: 9
-            text: qsTr("Playstation 5 Digital Console")
-            width: 162
-            height: 15
-            x: 118
-            y: 78
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
-        }
-
-        Image {
-            id: taskScreen_img_10
-            width: 246
-            height: 30
-            x: 512
-            y: 21
-            source: "qrc:/image/border_2.png"
-
-            Image {
-                id: taskScreen_img_21
-                width: 6
-                height: 11
-                x: 14
-                y: 9
-                source: "qrc:/image/TaskScreen/dollar-sign-15.png"
-            }
-
-            Text {
-                id: taskScreenTxt_12
-                property int textSize: 9
-                text: qsTr("$2,309")
-                width: 43
-                height: 15
-                x: 27
-                y: 7
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Image {
-                id: taskScreen_img_22
-                width: 12
-                height: 12
-                x: 107
-                y: 9
-                source: "qrc:/image/TaskScreen/shopping-bag-outline-green.png"
-            }
-
-            Text {
-                id: taskScreenTxt_13
-                property int textSize: 9
-                text: qsTr("78")
-                width: 43
-                height: 15
-                x: 125
-                y: 7
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Image {
-                id: taskScreen_img_23
-                width: 12
-                height: 12
-                x: 189
-                y: 9
-                source: "qrc:/image/TaskScreen/shopping-bag-outline-red.png"
-            }
-
-            Text {
-                id: taskScreenTxt_14
-                property int textSize: 9
-                text: qsTr("28")
-                width: 43
-                height: 15
-                x: 207
-                y: 7
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-        }
-
-//        Image {
-//            id: img_24
-//            width: 18
-//            height: 18
-//            x: 794
-//            y: 14
-//            source: "qrc:/image/0.Common/minus-outline-inactive.png"
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    console.log("Minimize")
-//                    m_taskScreen.showMinimized();
-//                }
-//            }
-//        }
-
-//        Image {
-//            id: img_25
-//            width: 18
-//            height: 18
-//            x: 814
-//            y: 14
-//            source: "qrc:/image/0.Common/close-outline-inactive.png"
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    console.log("Close icon")
-//                    m_taskScreen.close()
-//                }
-//            }
-//        }
-
-        Rectangle {
-            id: taskScreenRec_3_1
-            width: 196
-            height: 30
-            x: 512
-            y: 63
-            color:"#37345E"
-            radius: 3
-
-            TextInput {
-                id: taskScreenTxt_15
-                property int textSize: 9
-                text: qsTr("Mass link change")
-                width: 450
-                height: 15
-                x: 12
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#75719B"
-            }
-        }
-
-        Rectangle {
-            id: taskScreenRec_3_2
-            width: 98
-            height: 30
-            x: 720
-            y: 63
-            color: "#FFFFFF"
-            radius: 5
-
-            Text {
-                id: taskScreenTxt_16
-                property int textSize: 9
-                text: qsTr("Confirm")
-                width: 47
-                height: 15
-                x: 20
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#2E2C50"
-            }
-            Image {
-                id: taskScreen_img_26
-                width: 3.5
-                height: 8
-                x: 74
-                y: 12
-                source: "qrc:/image/TaskScreen/arrow_confirm.png"
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Confirm button")
-                }
-            }
-        }
-
-        Image {
-            id: taskScreen_img_27
-            width: 851
-            height: 1
-            x: 0
-            y: 115.5
-            source: "qrc:/image/TaskScreen/line.png"
-        }
-
-        Text {
-            id: taskScreenTxt_17
-            property int textSize: 13
-            text: qsTr("Tasks")
-            width: 44
-            height: 19
-            x: 27
-            y: 139
-            font.family: "Inter"
-            font.pointSize: textSize
-            color: "#FFFFFF"
-        }
-
-        Image {
-            id: taskScreen_img_28
-            width: 9.6
-            height: 9.6
-            x: 96.4
-            y: 144.4
-            source: "qrc:/image/add_icon2.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("hunght")
-                }
-            }
-        }
-        Image {
-            id: taskScreen_img_29
-            width: 21
-            height: 21
-            x: 91
-            y: 139
-            source: "qrc:/image/0.Common/Add_inactive_icon.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("Add new Task Item")
-                }
-            }
-        }
-
-        Image {
-            id: taskScreen_img_30
-            width: 104
-            height: 30
-            x: 490
-            y: 134
-            source: "qrc:/image/TaskScreen/white_border.png"
-
-            Image {
-                id: taskScreen_img_31
-                width: 7.7
-                height: 9.9
-                x: 75
-                y: 10
-                source: "qrc:/image/TaskScreen/starAll_icon.png"
-            }
-
-            Text {
-                id: taskScreenTxt_18
-                property int textSize: 9
-                text: qsTr("Start All")
-                width: 47
-                height: 15
-                x: 21
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#29E182"
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("start all button")
-                }
-            }
-        }
-
-        Image {
-            id: taskScreen_img_32
-            width: 104
-            height: 30
-            x: 602
-            y: 134
-            source: "qrc:/image/TaskScreen/white_border.png"
-
-            Image {
-                id: taskScreen_img_33
-                width: 8
-                height: 8
-                x: 75
-                y: 11
-                source: "qrc:/image/TaskScreen/stopAll_icon.png"
-            }
-
-            Text {
-                id: taskScreenTxt_19
-                property int textSize: 9
-                text: qsTr("Stop All")
-                width: 45
-                height: 15
-                x: 22
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFA94F"
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("stop all button")
-                }
-            }
-        }
-
-        Image {
-            id: taskScreen_img_34
-            width: 104
-            height: 30
-            x: 714
-            y: 134
-            source: "qrc:/image/TaskScreen/white_border.png"
-
-            Image {
-                id: taskScreen_img_35
-                width: 9.6
-                height: 9.6
-                x: 77.96
-                y: 9.96
-                source: "qrc:/image/TaskScreen/deleteAll_icon.png"
-            }
-            Text {
-                id: taskScreen_txt_20
-                property int textSize: 9
-                text: qsTr("Delete All")
-                width: 56
-                height: 15
-                x: 14
-                y: 8
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FA5B79"
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    console.log("stop all button")
-                }
-            }
-        }
-
-        Rectangle {
-            id: taskScreenRec_3_3
-            width: 791
-            height: 30
-            x: 27
-            y: 183
-            color: "#907DE2"
-            radius: 3
-
-            Text {
-                id: taskScreen_txt_21
-                property int textSize: 8
-                text: qsTr("ID")
-                width: 10
-                height: 12
-                x: 12
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_22
-                property int textSize: 8
-                text: qsTr("PRODUCT")
-                width: 50
-                height: 12
-                x: 40
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_23
-                property int textSize: 8
-                text: qsTr("SIZE")
-                width: 22
-                height: 12
-                x: 235
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_24
-                property int textSize: 8
-                text: qsTr("SITE")
-                width: 22
-                height: 12
-                x: 280
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_25
-                property int textSize: 8
-                text: qsTr("PROFILE")
-                width: 42
-                height: 12
-                x: 377
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_26
-                property int textSize: 8
-                text: qsTr("PROXY")
-                width: 35
-                height: 12
-                x: 468
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_27
-                property int textSize: 8
-                text: qsTr("STATUS")
-                width: 40
-                height: 12
-                x: 575
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-
-            Text {
-                id: taskScreen_txt_28
-                property int textSize: 8
-                text: qsTr("ACTION")
-                width: 46
-                height: 12
-                x: 696
-                y: 9
-                font.family: "Inter"
-                font.pointSize: textSize
-                color: "#FFFFFF"
-            }
-        }
-        //List item
-        Image {
-            id: img_36
-            width: 9
-            height: 495
-            x: 809
-            y: 229
-            source: "qrc:/image/TaskScreen/task_scroll_border.png"
-        }
-        ListView {
-            id: taskScreenList_2
-            width: 793
-            height: 498
-            x: 27
-            y: 227
-            spacing: 8
-            model: TaskItemModel {}
-            delegate: TaskItemDelegate {}
-            clip: true
-            flickableDirection: Flickable.VerticalFlick
-            boundsBehavior: Flickable.StopAtBounds
-            ScrollBar.vertical: ScrollBar {
-                contentItem: Rectangle {
-                    id: rec_4
-                    implicitWidth: 9
-                    implicitHeight: 221
-                    color: "#423F6B"
-                    radius: 10
-                }
-            }
-
-            onWidthChanged: {
-                console.log("taskScreenList_2 = " + width)
-            }
+        onWidthChanged: {
+            console.log("taskScreenList_2 = " + width)
         }
     }
 
     Component.onCompleted: {
         console.log("complete")
-//        taskScreenListIMG_ID.push(img_1)
-//        taskScreenListIMG_ID.push(img_2)
-//        taskScreenListIMG_ID.push(img_3_1)
-//        taskScreenListIMG_ID.push(img_3)
-//        taskScreenListIMG_ID.push(img_4)
-//        taskScreenListIMG_ID.push(img_5)
-//        taskScreenListIMG_ID.push(img_6)
-//        taskScreenListIMG_ID.push(img_7)
-//        taskScreenListIMG_ID.push(img_8)
-        taskScreenListIMG_ID.push(taskScreenImg_9)
-        taskScreenListIMG_ID.push(taskScreen_img_10)
-        taskScreenListIMG_ID.push(taskScreen_img_19)
-        taskScreenListIMG_ID.push(taskScreen_img_20)
-        taskScreenListIMG_ID.push(taskScreen_img_21)
-        taskScreenListIMG_ID.push(taskScreen_img_22)
-        taskScreenListIMG_ID.push(taskScreen_img_23)
-//        taskScreenListIMG_ID.push(img_24)
-//        taskScreenListIMG_ID.push(img_25)
-        taskScreenListIMG_ID.push(taskScreen_img_26)
-        taskScreenListIMG_ID.push(taskScreen_img_27)
-        taskScreenListIMG_ID.push(taskScreen_img_28)
-        taskScreenListIMG_ID.push(taskScreen_img_29)
-        taskScreenListIMG_ID.push(taskScreen_img_30)
-        taskScreenListIMG_ID.push(taskScreen_img_31)
-        taskScreenListIMG_ID.push(taskScreen_img_32)
-        taskScreenListIMG_ID.push(taskScreen_img_33)
-        taskScreenListIMG_ID.push(taskScreen_img_34)
-        taskScreenListIMG_ID.push(taskScreen_img_35)
-        taskScreenListIMG_ID.push(img_36)
-
-//        taskScreenListREC_ID.push(rec_1)
-        taskScreenListREC_ID.push(taskScreenRec_2)
-        taskScreenListREC_ID.push(taskScreenRec_3)
-        taskScreenListREC_ID.push(taskScreenRec_3_1)
-        taskScreenListREC_ID.push(taskScreenRec_3_2)
-        taskScreenListREC_ID.push(taskScreenRec_3_3)
-
         taskScreenListtaskScreen_txt_7.push(taskScreen_txt_7)
         taskScreenListtaskScreen_txt_7.push(taskScreen_txt_9)
 
@@ -850,81 +1017,20 @@ Rectangle {
 
         taskScreenListtaskScreenTxt_13.push(taskScreenTxt_1)
         taskScreenListtaskScreenTxt_13.push(taskScreenTxt_17)
-
-        taskScreenListListViewID.push(taskScreenList_1)
-        taskScreenListListViewID.push(taskScreenList_2)
     }
     onHeightChanged: {
-        var rate = height/taskScreenCurrentHeight
         var rateTextSize = height/730
-        for (var i = 0; i < taskScreenListIMG_ID.length; i++) {
-            taskScreenListIMG_ID[i].y = taskScreenListIMG_ID[i].y * rate
-            taskScreenListIMG_ID[i].height = taskScreenListIMG_ID[i].height * rate
-        }
-
-        for (var j = 0; j < taskScreenListREC_ID.length; j++) {
-            taskScreenListREC_ID[j].y = taskScreenListREC_ID[j].y * rate
-            taskScreenListREC_ID[j].height = taskScreenListREC_ID[j].height * rate
-        }
         for (var k = 0; k < taskScreenListtaskScreen_txt_7.length; k++) {
-            taskScreenListtaskScreen_txt_7[k].y = taskScreenListtaskScreen_txt_7[k].y * rate
-            taskScreenListtaskScreen_txt_7[k].height = taskScreenListtaskScreen_txt_7[k].height * rate
             taskScreenListtaskScreen_txt_7[k].textSize = 7 * rateTextSize
         }
         for (var l = 0; l < taskScreenListtaskScreen_txt_8.length; l++) {
-            taskScreenListtaskScreen_txt_8[l].y = taskScreenListtaskScreen_txt_8[l].y * rate
-            taskScreenListtaskScreen_txt_8[l].height = taskScreenListtaskScreen_txt_8[l].height * rate
             taskScreenListtaskScreen_txt_8[l].textSize = 8 * rateTextSize
         }
         for (var m = 0; m < taskScreenListtaskScreen_txt_9.length; m++) {
-            taskScreenListtaskScreen_txt_9[m].y = taskScreenListtaskScreen_txt_9[m].y * rate
-            taskScreenListtaskScreen_txt_9[m].height = taskScreenListtaskScreen_txt_9[m].height * rate
             taskScreenListtaskScreen_txt_9[m].textSize = 9 * rateTextSize
         }
         for (var n = 0; n < taskScreenListtaskScreenTxt_13.length; n++) {
-            taskScreenListtaskScreenTxt_13[n].y = taskScreenListtaskScreenTxt_13[n].y * rate
-            taskScreenListtaskScreenTxt_13[n].height = taskScreenListtaskScreenTxt_13[n].height * rate
             taskScreenListtaskScreenTxt_13[n].textSize = 13 * rateTextSize
         }
-        for (var p = 0; p < taskScreenListListViewID.length; p++) {
-            taskScreenListListViewID[p].y = taskScreenListListViewID[p].y * rate
-            taskScreenListListViewID[p].height = taskScreenListListViewID[p].height * rate
-        }
-        rec_4.implicitHeight = rec_4.implicitHeight * rate
-    }
-
-    onWidthChanged: {
-        console.log("Parent width changed = " + width)
-        var rate = width/taskScreenCurrentWidth
-        for (var i = 0; i < taskScreenListIMG_ID.length; i++) {
-            taskScreenListIMG_ID[i].x = taskScreenListIMG_ID[i].x * rate
-            taskScreenListIMG_ID[i].width = taskScreenListIMG_ID[i].width * rate
-        }
-
-        for (var j = 0; j < taskScreenListREC_ID.length; j++) {
-            taskScreenListREC_ID[j].x = taskScreenListREC_ID[j].x * rate
-            taskScreenListREC_ID[j].width = taskScreenListREC_ID[j].width * rate
-        }
-        for (var k = 0; k < taskScreenListtaskScreen_txt_7.length; k++) {
-            taskScreenListtaskScreen_txt_7[k].x = taskScreenListtaskScreen_txt_7[k].x * rate
-            taskScreenListtaskScreen_txt_7[k].width = taskScreenListtaskScreen_txt_7[k].width * rate
-        }
-        for (var l = 0; l < taskScreenListtaskScreen_txt_8.length; l++) {
-            taskScreenListtaskScreen_txt_8[l].x = taskScreenListtaskScreen_txt_8[l].x * rate
-            taskScreenListtaskScreen_txt_8[l].width = taskScreenListtaskScreen_txt_8[l].width * rate
-        }
-        for (var m = 0; m < taskScreenListtaskScreen_txt_9.length; m++) {
-            taskScreenListtaskScreen_txt_9[m].x = taskScreenListtaskScreen_txt_9[m].x * rate
-            taskScreenListtaskScreen_txt_9[m].width = taskScreenListtaskScreen_txt_9[m].width * rate
-        }
-        for (var n = 0; n < taskScreenListtaskScreenTxt_13.length; n++) {
-            taskScreenListtaskScreenTxt_13[n].x = taskScreenListtaskScreenTxt_13[n].x * rate
-            taskScreenListtaskScreenTxt_13[n].width = taskScreenListtaskScreenTxt_13[n].width * rate
-        }
-        for (var p = 0; p < taskScreenListListViewID.length; p++) {
-            taskScreenListListViewID[p].x = taskScreenListListViewID[p].x * rate
-            taskScreenListListViewID[p].width = taskScreenListListViewID[p].width * rate
-        }
-        rec_4.implicitWidth = rec_4.implicitWidth *rate
     }
 }

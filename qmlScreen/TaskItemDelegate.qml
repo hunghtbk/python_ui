@@ -5,24 +5,21 @@ import QtQuick 2.5
 
 Rectangle {
     id: taskItemrect_1_1
-    property int taskItemWidthDelegate : taskScreenList_2.width - 20
+    property int taskItemWidthDelegate : 0
+    property int taskItemHeightDelegate : 0
 
     property var taskItemListIMG_ID_DetailItem: []
     property var taskItemListTEXT_ID_DetailItem: []
     property int taskItemCurrentDetaiItemWidth: taskItemrect_1_1.width
 
-    onTaskItemWidthDelegateChanged: {
-        console.log("Task Item WidthDelegate " + index + " = " + taskItemWidthDelegate)
-    }
-
     width: taskItemWidthDelegate
-    height: 30
+    height: taskItemHeightDelegate
     color: "transparent"
     property int itemWid: 0
     Rectangle {
         id: taskItemRec_3_4
         width: taskItemWidthDelegate
-        height: 30
+        height: taskItemHeightDelegate
         color: "#37345E"
         radius: 3
 
@@ -66,10 +63,6 @@ Rectangle {
         font.pointSize: 8
         color: "#FFFFFF"
         text: idtxtContent
-        Component.onCompleted: {
-            var abcd = (12/770)* parent.width
-            console.log("huhuhuhuh " + abcd)
-        }
     }
 
     Text {
