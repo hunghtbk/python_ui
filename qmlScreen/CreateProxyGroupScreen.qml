@@ -2,15 +2,16 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
+Rectangle {
     id: m_createProxyGroupScreen
     visible: true
-    title: qsTr("Create Proxy Group Screen")
+//    title: qsTr("Create Proxy Group Screen")
     //    flags:Qt.FramelessWindowHint
-    width: 582
-    height: 247
+//    width: 582
+//    height: 300
     color: "#37345E"
 
+    signal signalFromCreateScreen(string msg)
     property int currentWidth: m_createProxyGroupScreen.width
     property int currentHeight: m_createProxyGroupScreen.height
 
@@ -82,12 +83,47 @@ Window {
         }
     }
 
+    Text {
+        id: txt_2_1
+        property int txtSize: 9
+        width: 73
+        height: 15
+        x: 40
+        y: 174
+        text: qsTr("Group Description")
+        font.family: "Inter"
+        font.pointSize: txtSize
+        color: "#FFFFFF"
+    }
+
+    Rectangle {
+        id: item_3_1
+        width: 502
+        height: 30
+        x: 40
+        y: 198
+        color: "#3F3C68"
+
+        TextInput {
+            id: txt_3_1
+            property int txtSize: 9
+            width: 470
+            height: 15
+            x: 12
+            y: 8
+            font.family: "Inter"
+            font.pointSize: txtSize
+            color: "#75719B"
+            text: qsTr("Enter Group Description")
+        }
+    }
+
     Rectangle {
         id: item_4
         width: 118
         height: 30
         x: 299
-        y: 179
+        y: 260
         color: "transparent"
         border.color: "#3F3C68"
         radius: 5
@@ -122,7 +158,7 @@ Window {
         width: 118
         height: 30
         x: 424
-        y: 179
+        y: 260
         color: "#FFFFFF"
         border.color: "#3F3C68"
         radius: 5
@@ -159,6 +195,7 @@ Window {
         listItemID.push(item_1)
         listItemID.push(item_2)
         listItemID.push(item_3)
+        listItemID.push(item_3_1)
         listItemID.push(item_4)
         listItemID.push(item_5)
         listItemID.push(item_6)
@@ -166,6 +203,8 @@ Window {
         listTXTID.push(txt_1)
         listTXTID.push(txt_2)
         listTXTID.push(txt_3)
+        listTXTID.push(txt_2_1)
+        listTXTID.push(txt_3_1)
         listTXTID.push(txt_10)
         listTXTID.push(txt_11)
     }

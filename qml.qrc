@@ -181,5 +181,7 @@
         <file>image/Setting/white_oval.png</file>
         <file>qmlScreen/DashboardScreen.qml</file>
         <file>qmlScreen/MainQML.qml</file>
+        <file>qmlScreen/CreateTaskGroupScreen.qml</file>
+        <file>qmlScreen/CreateProfileGroupScreen.qml</file>
     </qresource>
 </RCC>

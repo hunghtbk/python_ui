@@ -75,6 +75,14 @@ Rectangle {
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
         source: "qrc:/image/0.Common/Add_inactive_icon.png"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("Add group profile")
+                m_profileScreen.message("profile_screen_add_group")
+            }
+        }
     }
 
     //List profile group

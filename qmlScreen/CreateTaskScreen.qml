@@ -10,7 +10,7 @@ Rectangle {
     width: 582
     height: 461
     color: "#37345E"
-    signal createTaskScreenSignal(string msg)
+    signal signalFromCreateScreen(string msg)
 
     property int currentWidth: m_createTask.width
     property int currentHeight: m_createTask.height
@@ -755,8 +755,7 @@ Rectangle {
                 item_4.color = "transparent"
             }
             onClicked: {
-                console.log("Cancle button")
-                m_createTask.createTaskScreenSignal("Cancel button")
+                m_createTask.signalFromCreateScreen("create_task_cancel")
             }
         }
     }

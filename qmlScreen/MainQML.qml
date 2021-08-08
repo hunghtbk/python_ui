@@ -244,7 +244,11 @@ Window {
         target: main_loaderItem.item
         onMessage: {
             console.log(msg)
-            loaderSubItem.source = "CreateTaskScreen.qml"
+            if (msg === "task_screen_add_group") {
+                loaderSubItem.source = "CreateTaskGroupScreen.qml"
+            } else if (msg === "profile_screen_add_group") {
+                loaderSubItem.source = "CreateProfileGroupScreen.qml"
+            }
         }
     }
 
@@ -292,7 +296,7 @@ Window {
     Loader {
         id: loaderSubItem
         width: 582
-        height: 461
+        height: 300
         x: 309
         y: 135
         source: ""
@@ -300,9 +304,14 @@ Window {
 
     Connections {
         target: loaderSubItem.item
-        onCreateTaskScreenSignal: {
+        onSignalFromCreateScreen: {
             console.log(msg)
-            loaderSubItem.source = ""
+            if (msg === "create_task_group_cancel") {
+                loaderSubItem.source = ""
+            } else if (msg == "create_profile_group_cancel") {
+                loaderSubItem.source = ""
+            }
+
         }
     }
 

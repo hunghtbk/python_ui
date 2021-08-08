@@ -229,7 +229,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                m_taskScreen.message("clicked!")
+                m_taskScreen.message("task_screen_add_group")
             }
         }
     }
