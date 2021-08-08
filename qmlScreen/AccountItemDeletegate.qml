@@ -5,20 +5,21 @@ import QtQuick 2.5
 
 Rectangle {
     id: rect_item
-    property int widthDelegate : parent.width - 20
+    property int accountItemWidthItem : 0
+    property int accountItemHeightItem: 0
 
     property var listChildrentItem: []
     property var listChildrentTXT: []
     property int currentDetaiItemWidth: rect_item.width
 
-    width: widthDelegate
-    height: 30
+    width: accountItemWidthItem
+    height: accountItemHeightItem
     color: "transparent"
     property int itemWid: 0
     Rectangle {
         id: cItem1
-        width: widthDelegate
-        height: 30
+        width: accountItemWidthItem
+        height: accountItemHeightItem
         color: "#37345E"
         radius: 3
 
