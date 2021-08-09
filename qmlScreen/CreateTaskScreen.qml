@@ -755,7 +755,8 @@ Rectangle {
                 item_4.color = "transparent"
             }
             onClicked: {
-                m_createTask.signalFromCreateScreen("create_task_cancel")
+                console.log("Create Task Screen")
+                m_createTask.signalFromCreateScreen("evG_Cancel")
             }
         }
     }

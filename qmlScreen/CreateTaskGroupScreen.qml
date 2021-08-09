@@ -240,8 +240,8 @@ Rectangle {
             item_4.color = "transparent"
         }
         onClicked: {
-            console.log(" Create Task Cancel button")
-            m_createTaskGroupScreen.signalFromCreateScreen("create_task_group_cancel");
+            console.log(" Create Task Group Screen")
+            m_createTaskGroupScreen.signalFromCreateScreen("evG_Cancel");
         }
     }
 

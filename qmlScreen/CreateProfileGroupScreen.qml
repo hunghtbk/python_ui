@@ -240,8 +240,8 @@ Rectangle {
             item_4.color = "transparent"
         }
         onClicked: {
-            console.log("Cancle button")
-            m_createProfileGroupScreen.signalFromCreateScreen("create_profile_group_cancel");
+            console.log("Create Profile Group Screen")
+            m_createProfileGroupScreen.signalFromCreateScreen("evG_Cancel");
         }
     }
 

@@ -354,15 +354,21 @@ Window {
         target: loaderSubItem.item
         onSignalFromCreateScreen: {
             console.log(msg)
-            if (msg === "create_task_group_cancel" || msg === "create_task_group_create_group") {
+            if (msg === "evG_Cancel") {
                 loaderSubItem.source = ""
-            } else if (msg === "create_profile_group_cancel" || msg === "create_profile_group_create") {
+            } else if (msg === "create_task_group_create_group") {
+                loaderSubItem.source = ""
+            } else if (msg === "create_profile_group_create") {
                 loaderSubItem.source = ""
             } else if (msg === "create_task_group_create_group" ) {
 
-            } else if (msg === "create_task_cancel" || msg === "create_task_create") {
+            } else if (msg === "create_task_create") {
                 loaderSubItem.source = ""
-            } else if (msg === "profile_shipping_screen_cancel" || msg === "profile_shipping_screen_create") {
+            } else if (msg === "profile_shipping_screen_create") {
+                loaderSubItem.source = ""
+            } else if (msg === "profile_payment_screen_create") {
+                loaderSubItem.source = ""
+            } else if (msg === "profile_billing_screen_create") {
                 loaderSubItem.source = ""
             } else if (msg === "profile_shipping_screen_billing") {
                 setLoaderSize(582, 609, 309, 61)

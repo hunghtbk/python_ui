@@ -63,7 +63,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("call billing")
+                console.log("call shipping")
                 m_profileBillingScreen.signalFromCreateScreen("profile_shipping_screen_shipping")
             }
         }
@@ -105,7 +105,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("call billing")
+                console.log("call payment")
                 m_profileBillingScreen.signalFromCreateScreen("profile_shipping_screen_payment")
             }
         }
@@ -742,7 +742,8 @@ Rectangle {
                 item_13.color = "transparent"
             }
             onClicked: {
-                console.log("Cancle button")
+                console.log("Profile Billing Screen")
+                m_profileBillingScreen.signalFromCreateScreen("evG_Cancel")
             }
         }
     }
@@ -782,6 +783,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("Create task button")
+                m_profileBillingScreen.signalFromCreateScreen("profile_billing_screen_create")
             }
         }
     }

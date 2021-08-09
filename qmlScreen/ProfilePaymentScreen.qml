@@ -63,7 +63,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("call billing")
+                console.log("call shipping")
                 m_profilePaymentScreen.signalFromCreateScreen("profile_shipping_screen_shipping")
             }
         }
@@ -472,7 +472,8 @@ Rectangle {
                 item_13.color = "transparent"
             }
             onClicked: {
-                console.log("Cancle button")
+                console.log("Profile Payment Screen")
+                m_profilePaymentScreen.signalFromCreateScreen("evG_Cancel")
             }
         }
     }
@@ -512,6 +513,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("Create task button")
+                m_profilePaymentScreen.signalFromCreateScreen("profile_payment_screen_create")
             }
         }
     }
