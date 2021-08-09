@@ -30,6 +30,14 @@ Window {
     property var listTXT_9: []
     property var listTXT_13: []
 
+    Text {
+        id: mainScreenborderLeftMain
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+    }
+
     Rectangle {
         id: rec_1
         width: 65
@@ -243,13 +251,30 @@ Window {
     Connections {
         target: main_loaderItem.item
         onMessage: {
-            console.log(msg)
-            if (msg === "task_screen_add_group") {
-                loaderSubItem.source = "CreateTaskGroupScreen.qml"
-            } else if (msg === "profile_screen_add_group") {
-                loaderSubItem.source = "CreateProfileGroupScreen.qml"
-            }
+            abcd(msg)
         }
+    }
+    function abcd(m_msg) {
+        console.log(m_msg)
+        if (m_msg === "task_screen_add_group") {
+            setLoaderSize(582, 300, 309, 135)
+            loaderSubItem.source = "CreateTaskGroupScreen.qml"
+        } else if (m_msg === "profile_screen_add_group") {
+            setLoaderSize(582, 300, 309, 135)
+            loaderSubItem.source = "CreateProfileGroupScreen.qml"
+        } else if (m_msg === "task_screen_add_item") {
+            setLoaderSize(582, 461, 309, 135)
+            loaderSubItem.source = "CreateTaskScreen.qml"
+        }
+    }
+
+    function setLoaderSize(w, h, positionX, positionY) {
+        loaderSubItem.width = (w/1200) * m_mainScreen.width //width
+        loaderSubItem.height = (h/730) * m_mainScreen.height //height
+        loaderSubItem.anchors.left = mainScreenborderLeftMain.right
+        loaderSubItem.anchors.leftMargin = (positionX/1200)* m_mainScreen.width //x
+        loaderSubItem.anchors.top = mainScreenborderLeftMain.bottom
+        loaderSubItem.anchors.topMargin = (positionY/730)* m_mainScreen.height //y
     }
 
     Image {
@@ -295,10 +320,16 @@ Window {
 
     Loader {
         id: loaderSubItem
-        width: 582
-        height: 300
-        x: 309
-        y: 135
+//        width: 582
+//        height: 300
+//        x: 309
+//        y: 135
+        width: (582/1200) * parent.width //width
+        height: (300/730) * parent.height //height
+        anchors.left: mainScreenborderLeftMain.right
+        anchors.leftMargin: (309/1200)* parent.width //x
+        anchors.top: mainScreenborderLeftMain.bottom
+        anchors.topMargin: (135/730)* parent.height //y
         source: ""
     }
 
@@ -306,9 +337,13 @@ Window {
         target: loaderSubItem.item
         onSignalFromCreateScreen: {
             console.log(msg)
-            if (msg === "create_task_group_cancel") {
+            if (msg === "create_task_group_cancel" || msg === "create_task_group_create_group") {
                 loaderSubItem.source = ""
-            } else if (msg == "create_profile_group_cancel") {
+            } else if (msg === "create_profile_group_cancel" || msg === "create_profile_group_create") {
+                loaderSubItem.source = ""
+            } else if (msg === "create_task_group_create_group" ) {
+
+            } else if (msg === "create_task_cancel" || msg === "create_task_create") {
                 loaderSubItem.source = ""
             }
 
@@ -399,7 +434,7 @@ Window {
         listIMG_ID.push(main_itemMinimize)
         listIMG_ID.push(main_itemClose)
         listIMG_ID.push(main_loaderItem)
-        listIMG_ID.push(loaderSubItem)
+//        listIMG_ID.push(loaderSubItem)
 
         listREC_ID.push(rec_1)
     }

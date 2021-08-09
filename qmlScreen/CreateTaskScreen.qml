@@ -785,7 +785,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("Create task button")
+                m_createTask.signalFromCreateScreen("create_task_create")
             }
         }
     }

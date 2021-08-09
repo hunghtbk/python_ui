@@ -283,6 +283,7 @@ Rectangle {
         anchors.fill: item_5
         onClicked: {
             console.log("Create group button")
+            m_createProfileGroupScreen.signalFromCreateScreen("create_profile_group_create");
         }
     }
     Image {

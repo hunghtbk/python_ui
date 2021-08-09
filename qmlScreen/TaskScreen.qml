@@ -620,6 +620,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("Add new Task Item")
+                m_taskScreen.message("task_screen_add_item")
             }
         }
     }
