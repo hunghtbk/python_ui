@@ -2,17 +2,18 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
-    id: m_profileBillingScreen
+Rectangle {
+    id: m_profilePaymentScreen
     visible: true
-    title: qsTr("Create Profile Billing Screen")
+//    title: qsTr("Create Profile Billing Screen")
     //    flags:Qt.FramelessWindowHint
     width: 582
     height: 453
     color: "#37345E"
 
-    property int currentWidth: m_profileBillingScreen.width
-    property int currentHeight: m_profileBillingScreen.height
+    signal signalFromCreateScreen(string msg)
+    property int currentWidth: m_profilePaymentScreen.width
+    property int currentHeight: m_profilePaymentScreen.height
 
     property var listItemID: []
     property var listCBBID: []
@@ -58,6 +59,14 @@ Window {
         font.family: "Inter"
         font.pointSize: txtSize
         color: "#626477"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("call billing")
+                m_profilePaymentScreen.signalFromCreateScreen("profile_shipping_screen_shipping")
+            }
+        }
     }
 
     Text {
@@ -71,6 +80,14 @@ Window {
         font.family: "Inter"
         font.pointSize: txtSize
         color: "#626477"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("call billing")
+                m_profilePaymentScreen.signalFromCreateScreen("profile_shipping_screen_billing")
+            }
+        }
     }
 
     Text {

@@ -143,6 +143,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("Add new Profile Item")
+                m_profileScreen.message("profile_screen_add_item")
             }
         }
     }

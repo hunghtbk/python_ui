@@ -2,15 +2,16 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
-Window {
+Rectangle {
     id: m_profileShippingScreen
     visible: true
-    title: qsTr("Create Profile Shipping Screen")
+//    title: qsTr("Create Profile Shipping Screen")
     //    flags:Qt.FramelessWindowHint
     width: 582
     height: 633
     color: "#37345E"
 
+    signal signalFromCreateScreen(string msg)
     property int currentWidth: m_profileShippingScreen.width
     property int currentHeight: m_profileShippingScreen.height
 
@@ -71,6 +72,14 @@ Window {
         font.family: "Inter"
         font.pointSize: txtSize
         color: "#626477"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("call billing")
+                m_profileShippingScreen.signalFromCreateScreen("profile_shipping_screen_billing")
+            }
+        }
     }
 
     Text {
@@ -84,6 +93,14 @@ Window {
         font.family: "Inter"
         font.pointSize: txtSize
         color: "#626477"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("call billing")
+                m_profileShippingScreen.signalFromCreateScreen("profile_shipping_screen_payment")
+            }
+        }
     }
 
     Rectangle {
@@ -666,7 +683,8 @@ Window {
                 item_13.color = "transparent"
             }
             onClicked: {
-                console.log("Cancle button")
+                console.log("Cancel button")
+                m_profileShippingScreen.signalFromCreateScreen("profile_shipping_screen_cancel")
             }
         }
     }
@@ -706,6 +724,7 @@ Window {
             anchors.fill: parent
             onClicked: {
                 console.log("Create task button")
+                m_profileShippingScreen.signalFromCreateScreen("profile_shipping_screen_create")
             }
         }
     }

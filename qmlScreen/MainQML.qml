@@ -14,6 +14,12 @@ Window {
     property int currentWidth: m_mainScreen.width
     property int currentHeight: m_mainScreen.height
 
+    //For loadersize
+    property int loaderW: 0
+    property int loaderH: 0
+    property int loaderX: 0
+    property int loaderY: 0
+
     property int selectedApp: 1
     //0 DashboardScreen
     //1 TaskScreen
@@ -265,16 +271,27 @@ Window {
         } else if (m_msg === "task_screen_add_item") {
             setLoaderSize(582, 461, 309, 135)
             loaderSubItem.source = "CreateTaskScreen.qml"
+        } else if (m_msg === "profile_screen_add_item") {
+            setLoaderSize(582, 633, 309, 49)
+            loaderSubItem.source = "ProfileShippingScreen.qml"
         }
     }
 
     function setLoaderSize(w, h, positionX, positionY) {
-        loaderSubItem.width = (w/1200) * m_mainScreen.width //width
-        loaderSubItem.height = (h/730) * m_mainScreen.height //height
+        loaderW = w
+        loaderH = h
+        loaderX = positionX
+        loaderY = positionY
+        reSizeLoaderSize();
+    }
+
+    function reSizeLoaderSize() {
+        loaderSubItem.width = (loaderW/1200) * m_mainScreen.width //width
+        loaderSubItem.height = (loaderH/730) * m_mainScreen.height //height
         loaderSubItem.anchors.left = mainScreenborderLeftMain.right
-        loaderSubItem.anchors.leftMargin = (positionX/1200)* m_mainScreen.width //x
+        loaderSubItem.anchors.leftMargin = (loaderX/1200)* m_mainScreen.width //x
         loaderSubItem.anchors.top = mainScreenborderLeftMain.bottom
-        loaderSubItem.anchors.topMargin = (positionY/730)* m_mainScreen.height //y
+        loaderSubItem.anchors.topMargin = (loaderY/730)* m_mainScreen.height //y
     }
 
     Image {
@@ -345,6 +362,17 @@ Window {
 
             } else if (msg === "create_task_cancel" || msg === "create_task_create") {
                 loaderSubItem.source = ""
+            } else if (msg === "profile_shipping_screen_cancel" || msg === "profile_shipping_screen_create") {
+                loaderSubItem.source = ""
+            } else if (msg === "profile_shipping_screen_billing") {
+                setLoaderSize(582, 609, 309, 61)
+                loaderSubItem.source = "ProfileBillingScreen.qml"
+            } else if (msg === "profile_shipping_screen_payment") {
+                setLoaderSize(582, 453, 309, 139)
+                loaderSubItem.source = "ProfilePaymentScreen.qml"
+            } else if (msg === "profile_shipping_screen_shipping") {
+                setLoaderSize(582, 633, 309, 49)
+                loaderSubItem.source = "ProfileShippingScreen.qml"
             }
 
         }
@@ -439,6 +467,7 @@ Window {
         listREC_ID.push(rec_1)
     }
     onHeightChanged: {
+        reSizeLoaderSize();
         console.log("hunght H " + height)
         var rate = height/currentHeight
         var rateTextSize = height/730
@@ -481,7 +510,7 @@ Window {
         if (width < 1140) {
             width = 1140
         }
-
+        reSizeLoaderSize();
         var rate = width/currentWidth
         for (var i = 0; i < listIMG_ID.length; i++) {
             listIMG_ID[i].x = listIMG_ID[i].x * rate
