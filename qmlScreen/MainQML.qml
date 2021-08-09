@@ -78,6 +78,8 @@ Window {
                 }
                 onClicked: {
                     console.log("Dash Board Screen")
+                    selectedApp = 0
+                    main_loaderItem.source = "DashboardScreen.qml"
                 }
             }
         }
@@ -274,6 +276,12 @@ Window {
         } else if (m_msg === "profile_screen_add_item") {
             setLoaderSize(582, 633, 309, 49)
             loaderSubItem.source = "ProfileShippingScreen.qml"
+        } else if (m_msg === "proxy_screen_add_group") {
+            setLoaderSize(582, 300, 309, 135)
+            loaderSubItem.source = "CreateProxyGroupScreen.qml"
+        } else if (m_msg === "account_screen_add_group") {
+            setLoaderSize(582, 300, 309, 135)
+            loaderSubItem.source = "CreateAccountGroupScreen.qml"
         }
     }
 
@@ -360,9 +368,11 @@ Window {
                 loaderSubItem.source = ""
             } else if (msg === "create_profile_group_create") {
                 loaderSubItem.source = ""
-            } else if (msg === "create_task_group_create_group" ) {
-
+            } else if (msg === "create_proxy_group_create" ) {
+                loaderSubItem.source = ""
             } else if (msg === "create_task_create") {
+                loaderSubItem.source = ""
+            } else if (msg === "create_account_group_create") {
                 loaderSubItem.source = ""
             } else if (msg === "profile_shipping_screen_create") {
                 loaderSubItem.source = ""

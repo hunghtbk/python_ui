@@ -74,6 +74,14 @@ Rectangle {
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
         source: "qrc:/image/0.Common/Add_inactive_icon.png"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log("Add group proxy")
+                m_accountScreen.message("account_screen_add_group")
+            }
+        }
     }
     //List profile group
     ListView {

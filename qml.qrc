@@ -183,5 +183,6 @@
         <file>qmlScreen/MainQML.qml</file>
         <file>qmlScreen/CreateTaskGroupScreen.qml</file>
         <file>qmlScreen/CreateProfileGroupScreen.qml</file>
+        <file>qmlScreen/CreateAccountGroupScreen.qml</file>
     </qresource>
 </RCC>

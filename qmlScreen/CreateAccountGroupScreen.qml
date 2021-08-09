@@ -3,17 +3,17 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 
 Rectangle {
-    id: m_createProxyGroupScreen
+    id: m_createAccountGroupScreen
     visible: true
-//    title: qsTr("Create Proxy Group Screen")
+//    title: qsTr("Create Account Group Screen")
     //    flags:Qt.FramelessWindowHint
 //    width: 582
 //    height: 300
     color: "#37345E"
 
     signal signalFromCreateScreen(string msg)
-    property int currentWidth: m_createProxyGroupScreen.width
-    property int currentHeight: m_createProxyGroupScreen.height
+    property int currentWidth: m_createAccountGroupScreen.width
+    property int currentHeight: m_createAccountGroupScreen.height
 
     property int defaultWidth: 582
     property int defaultHeight: 300
@@ -23,7 +23,7 @@ Rectangle {
     property var listTXTID: []
 
     Text {
-        id: createProxyScreenborderLeftMain
+        id: createAccountScreenborderLeftMain
         x: 0
         y: 0
         width: 0
@@ -38,9 +38,9 @@ Rectangle {
 //        y: 16
         width: (552/defaultWidth) * parent.width //width
         height: (62/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (15/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (16/defaultHeight)* parent.height //y
         color: "#907DE2"
     }
@@ -53,11 +53,11 @@ Rectangle {
 //        y: 21
         width: (149/defaultWidth) * parent.width //width
         height: (19/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (36/defaultHeight)* parent.height //y
-        text: qsTr("Create Proxy Group")
+        text: qsTr("Create Account Group")
         font.family: "Inter"
         font.pointSize: txtSize
         color: "#FFFFFF"
@@ -70,9 +70,9 @@ Rectangle {
 //        y: 18
         width: (240/defaultWidth) * parent.width //width
         height: (44/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (312/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (34/defaultHeight)* parent.height //y
         source: "qrc:/image/create_task_donw_oval.png"
     }
@@ -86,9 +86,9 @@ Rectangle {
 //        y: 106
         width: (73/defaultWidth) * parent.width //width
         height: (15/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (106/defaultHeight)* parent.height //y
         text: qsTr("Group Name")
         font.family: "Inter"
@@ -104,9 +104,9 @@ Rectangle {
 //        y: 130
         width: (502/defaultWidth) * parent.width //width
         height: (30/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (130/defaultHeight)* parent.height //y
         color: "#3F3C68"
 
@@ -146,9 +146,9 @@ Rectangle {
 //        y: 174
         width: (73/defaultWidth) * parent.width //width
         height: (15/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (174/defaultHeight)* parent.height //y
         text: qsTr("Group Description")
         font.family: "Inter"
@@ -164,9 +164,9 @@ Rectangle {
 //        y: 198
         width: (502/defaultWidth) * parent.width //width
         height: (30/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (198/defaultHeight)* parent.height //y
         color: "#3F3C68"
 
@@ -205,9 +205,9 @@ Rectangle {
 //        y: 260
         width: (118/defaultWidth) * parent.width //width
         height: (30/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (299/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (260/defaultHeight)* parent.height //y
         color: "transparent"
         border.color: "#3F3C68"
@@ -222,9 +222,9 @@ Rectangle {
 //        y: 7
         width: (41/defaultWidth) * parent.width //width
         height: (15/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (338/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (268/defaultHeight)* parent.height //y
         text: qsTr("Cancel")
         font.family: "Inter"
@@ -240,8 +240,8 @@ Rectangle {
             item_4.color = "transparent"
         }
         onClicked: {
-            console.log("Create Proxy Group Screen")
-            m_createProxyGroupScreen.signalFromCreateScreen("evG_Cancel");
+            console.log("Create Account Group Screen")
+            m_createAccountGroupScreen.signalFromCreateScreen("evG_Cancel");
         }
     }
 
@@ -253,9 +253,9 @@ Rectangle {
 //        y: 260
         width: (118/defaultWidth) * parent.width //width
         height: (30/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (424/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (260/defaultHeight)* parent.height //y
         color: "#FFFFFF"
         border.color: "#3F3C68"
@@ -270,9 +270,9 @@ Rectangle {
 //        y: 8
         width: (70/defaultWidth) * parent.width //width
         height: (15/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (439/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (268/defaultHeight)* parent.height //y
         text: qsTr("Create Group")
         font.family: "Inter"
@@ -283,7 +283,7 @@ Rectangle {
         anchors.fill: item_5
         onClicked: {
             console.log("Create group button")
-            m_createProxyGroupScreen.signalFromCreateScreen("create_proxy_group_create");
+            m_createAccountGroupScreen.signalFromCreateScreen("create_account_group_create");
         }
     }
     Image {
@@ -294,11 +294,11 @@ Rectangle {
 //        y: 12
         width: (4/defaultWidth) * parent.width //width
         height: (7/defaultHeight) * parent.height //height
-        anchors.left: createProxyScreenborderLeftMain.right
+        anchors.left: createAccountScreenborderLeftMain.right
         anchors.leftMargin: (528/defaultWidth)* parent.width //x
-        anchors.top: createProxyScreenborderLeftMain.bottom
+        anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (272/defaultHeight)* parent.height //y
-        source: "qrc:/image/Proxy/arrow-right.png"
+        source: "qrc:/image/Account/arrow-right.png"
     }
     Component.onCompleted: {
 //        listItemID.push(item_1)
