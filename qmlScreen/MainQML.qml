@@ -66,15 +66,15 @@ Window {
             height: 18
             x: 24
             y: 59
-            source: "qrc:/image/0.Common/grid-outline-inactive.png"
+            source: "qrc:/image/0.Common/grid-outline-active.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-active.png"
+                    if(selectedApp != 0) dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-active.png"
                 }
                 onReleased: {
-                    dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                    if(selectedApp != 0) dashboardScreenId.source = "qrc:/image/0.Common/grid-outline-inactive.png"
                 }
                 onClicked: {
                     console.log("Dash Board Screen")
@@ -91,7 +91,7 @@ Window {
             height: 18
             x: 24
             y: 93
-            source: "qrc:/image/0.Common/cube-outline-active.png"
+            source: "qrc:/image/0.Common/cube-outline-inactive.png"
             MouseArea {
                 anchors.fill: parent
                 MouseArea {
