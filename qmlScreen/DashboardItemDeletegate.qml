@@ -155,25 +155,18 @@ Rectangle {
 
 
     Component.onCompleted: {
-//        listChildrentItem.push(cItem1)
-//        listChildrentItem.push(cItem3)
-//        listChildrentItem.push(cItem4)
-
-//        listChildrentTXT.push(ctxt1)
-//        listChildrentTXT.push(ctxt2)
+        listChildrentTXT.push(txt_name)
+        listChildrentTXT.push(txt_size)
+        listChildrentTXT.push(txt_target)
+        listChildrentTXT.push(txt_targetContent)
+        listChildrentTXT.push(txt_day)
+        listChildrentTXT.push(txt_time)
     }
 
-//    onWidthChanged: {
-//        var rate = width/currentDetaiItemWidth
-////        console.log(rate)
-//        for (var a = 0; a < listChildrentItem.length; a++) {
-//            listChildrentItem[a].x = listChildrentItem[a].x * rate
-//            listChildrentItem[a].width = listChildrentItem[a].width * rate
-//        }
-
-//        for (var b = 0; b < listChildrentTXT.length; b++) {
-//            listChildrentTXT[b].x = listChildrentTXT[b].x * rate
-//            listChildrentTXT[b].width = listChildrentTXT[b].width * rate
-//        }
-//    }
+    onHeightChanged: {
+        var rateTextSize = height/50
+        for (var l = 0; l < listChildrentTXT.length; l++) {
+            listChildrentTXT[l].textSize = 7 * rateTextSize
+        }
+    }
 }
