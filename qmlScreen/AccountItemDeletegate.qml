@@ -8,10 +8,6 @@ Rectangle {
     property int accountItemWidthItem : 0
     property int accountItemHeightItem: 0
 
-    property var listChildrentItem: []
-    property var listChildrentTXT: []
-    property int currentDetaiItemWidth: rect_item.width
-
     width: accountItemWidthItem
     height: accountItemHeightItem
     color: "transparent"
@@ -43,10 +39,9 @@ Rectangle {
 
     Text {
         id: ctxt1
-        width: 101
-        height: 12
-//        x: 19
-//        y: 9
+        property int textSize: 8
+        width: (101/385) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (19/385)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -54,17 +49,16 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: emailTxtContent
     }
 
     Text {
         id: ctxt2
-        width: 90
-        height: 12
-//        x: 181
-//        y: 9
+        property int textSize: 8
+        width: (90/385) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (181/385)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -72,17 +66,15 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: passWordContent
     }
 
     Image {
         id: cItem3
-        width: 20
-        height: 20
-//        x: 335
-//        y: 5
+        width: (20/385) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (335/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -98,10 +90,8 @@ Rectangle {
 
     Image {
         id: cItem4
-        width: 20
-        height: 20
-//        x: 359
-//        y: 5
+        width: (20/385) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (359/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -114,27 +104,9 @@ Rectangle {
             }
         }
     }
-
-    Component.onCompleted: {
-//        listChildrentItem.push(cItem1)
-//        listChildrentItem.push(cItem3)
-//        listChildrentItem.push(cItem4)
-
-//        listChildrentTXT.push(ctxt1)
-//        listChildrentTXT.push(ctxt2)
-    }
-
-    onWidthChanged: {
-        var rate = width/currentDetaiItemWidth
-//        console.log(rate)
-        for (var a = 0; a < listChildrentItem.length; a++) {
-            listChildrentItem[a].x = listChildrentItem[a].x * rate
-            listChildrentItem[a].width = listChildrentItem[a].width * rate
-        }
-
-        for (var b = 0; b < listChildrentTXT.length; b++) {
-            listChildrentTXT[b].x = listChildrentTXT[b].x * rate
-            listChildrentTXT[b].width = listChildrentTXT[b].width * rate
-        }
+    onHeightChanged: {
+        var rateTextSize = height/30
+        ctxt1.textSize = 8 * rateTextSize
+        ctxt1.textSize = 8 * rateTextSize
     }
 }

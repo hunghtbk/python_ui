@@ -233,5 +233,6 @@
         <file>appIMG/6.Common/sun-outline-4x.png</file>
         <file>appIMG/6.Common/close-outline-4x.png</file>
         <file>appIMG/6.Common/minus-outline-4x.png</file>
+        <file>appIMG/6.Common/settings-2-outline-active-4x.png</file>
     </qresource>
 </RCC>
