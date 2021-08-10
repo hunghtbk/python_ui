@@ -66,7 +66,7 @@ Item {
             height: 6
             x: 219
             y: 12
-            source: "qrc:/image/TaskScreen/arrow-down-5.png"
+            source: "../image/TaskScreen/arrow-down-5.png"
         }
 
         contentItem: Text {

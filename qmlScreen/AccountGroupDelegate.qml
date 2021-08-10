@@ -105,7 +105,7 @@ Rectangle {
         anchors.leftMargin: (186.5/221)* parent.width //x
         anchors.top: accountLeftCorner.bottom
         anchors.topMargin: (26/63)* parent.height //y
-        source: "qrc:/image/Proxy/trash-outline.png"
+        source: "../image/Proxy/trash-outline.png"
 
         MouseArea {
             anchors.fill: parent

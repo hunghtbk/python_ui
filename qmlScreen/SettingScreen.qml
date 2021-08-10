@@ -36,7 +36,7 @@ Rectangle {
             height: 30
             x: 17
             y: 13
-            source: "qrc:/image/0.Common/Small_lotus.png"
+            source: "../image/0.Common/Small_lotus.png"
         }
         //Dashboard icon
         Image {
@@ -45,15 +45,15 @@ Rectangle {
             height: 18
             x: 24
             y: 59
-            source: "qrc:/image/0.Common/grid-outline-inactive.png"
+            source: "../image/0.Common/grid-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    item2.source = "qrc:/image/0.Common/grid-outline-active.png"
+                    item2.source = "../image/0.Common/grid-outline-active.png"
                 }
                 onReleased: {
-                    item2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                    item2.source = "../image/0.Common/grid-outline-inactive.png"
                 }
             }
         }
@@ -65,15 +65,15 @@ Rectangle {
             height: 18
             x: 24
             y: 93
-            source: "qrc:/image/0.Common/cube-outline-inactive.png"
+            source: "../image/0.Common/cube-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    item3.source = "qrc:/image/0.Common/cube-outline-active.png"
+                    item3.source = "../image/0.Common/cube-outline-active.png"
                 }
                 onReleased: {
-                    item3.source = "qrc:/image/0.Common/cube-outline-inactive.png"
+                    item3.source = "../image/0.Common/cube-outline-inactive.png"
                 }
             }
         }
@@ -96,15 +96,15 @@ Rectangle {
             height: 18
             x: 24
             y: 127
-            source: "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            source: "../image/0.Common/credit-card-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    item5.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+                    item5.source = "../image/0.Common/credit-card-outline-active.png"
                 }
                 onReleased: {
-                    item5.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+                    item5.source = "../image/0.Common/credit-card-outline-inactive.png"
                 }
             }
         }
@@ -116,15 +116,15 @@ Rectangle {
             height: 18
             x: 24
             y: 161
-            source: "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            source: "../image/0.Common/flash-outline-2-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    item6.source = "qrc:/image/0.Common/flash-outline-2-active.png"
+                    item6.source = "../image/0.Common/flash-outline-2-active.png"
                 }
                 onReleased: {
-                    item6.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+                    item6.source = "../image/0.Common/flash-outline-2-inactive.png"
                 }
             }
         }
@@ -136,15 +136,15 @@ Rectangle {
             height: 18
             x: 24
             y: 193
-            source: "qrc:/image/0.Common/person-outline-inactive.png"
+            source: "../image/0.Common/person-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    item7.source = "qrc:/image/0.Common/person-outline-active.png"
+                    item7.source = "../image/0.Common/person-outline-active.png"
                 }
                 onReleased: {
-                    item7.source = "qrc:/image/0.Common/person-outline-inactive.png"
+                    item7.source = "../image/0.Common/person-outline-inactive.png"
                 }
             }
         }
@@ -156,7 +156,7 @@ Rectangle {
             height: 18
             x: 24
             y: 225
-            source: "qrc:/image/0.Common/settings-2-outline-active.png"
+            source: "../image/0.Common/settings-2-outline-active.png"
         }
 
         //Change Theme icon
@@ -166,7 +166,7 @@ Rectangle {
             height: 24
             x: 21
             y: 686
-            source: "qrc:/image/0.Common/sun-outline-inactive.png"
+            source: "../image/0.Common/sun-outline-inactive.png"
         }
     }
 */
@@ -254,7 +254,7 @@ Rectangle {
                     height: 7
                     x: 91
                     y: 12
-                    source: "qrc:/image/Setting/arrow-right.png"
+                    source: "../image/Setting/arrow-right.png"
                 }
 
                 MouseArea {
@@ -271,7 +271,7 @@ Rectangle {
                 height: 82
                 x: 200
                 y: 42
-                source: "qrc:/image/Setting/full-rate.png"
+                source: "../image/Setting/full-rate.png"
             }
 
             Image {
@@ -280,7 +280,7 @@ Rectangle {
                 height: 78.69
                 x: 200
                 y: 42
-                source: "qrc:/image/Setting/expired_rate.png"
+                source: "../image/Setting/expired_rate.png"
             }
 
             Text {
@@ -342,7 +342,7 @@ Rectangle {
 //            height: 18
 //            x: 1078
 //            y: 14
-//            source: "qrc:/image/0.Common/minus-outline-inactive.png"
+//            source: "../image/0.Common/minus-outline-inactive.png"
 
 //            MouseArea {
 //                anchors.fill: parent
@@ -359,7 +359,7 @@ Rectangle {
 //            height: 18
 //            x: 1098
 //            y: 14
-//            source: "qrc:/image/0.Common/close-outline-inactive.png"
+//            source: "../image/0.Common/close-outline-inactive.png"
 
 //            MouseArea {
 //                anchors.fill: parent
@@ -542,7 +542,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "qrc:/image/Setting/save-outline.png"
+                source: "../image/Setting/save-outline.png"
             }
 
             MouseArea {
@@ -581,7 +581,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "qrc:/image/Setting/save-outline.png"
+                source: "../image/Setting/save-outline.png"
             }
 
             MouseArea {
@@ -669,7 +669,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "qrc:/image/Setting/save-outline.png"
+                source: "../image/Setting/save-outline.png"
             }
 
             MouseArea {
@@ -708,7 +708,7 @@ Rectangle {
                 height: 7
                 x: 59
                 y: 12
-                source: "qrc:/image/Setting/arrow-right.png"
+                source: "../image/Setting/arrow-right.png"
             }
 
             MouseArea {
@@ -782,7 +782,7 @@ Rectangle {
                     height: 7
                     x: 135
                     y: 12
-                    source: "qrc:/image/Setting/arrow-right.png"
+                    source: "../image/Setting/arrow-right.png"
                 }
 
                 MouseArea {
@@ -800,7 +800,7 @@ Rectangle {
             height: 300
             x: -64
             y: 430
-            source: "qrc:/image/Setting/grey_oval.png"
+            source: "../image/Setting/grey_oval.png"
         }
 
         Rectangle {
@@ -818,7 +818,7 @@ Rectangle {
             height: 235
             x: 99.25
             y: 466.44
-            source: "qrc:/image/Setting/normal_lotus.png"
+            source: "../image/Setting/normal_lotus.png"
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -833,7 +833,7 @@ Rectangle {
             height: 381
             x: 711.44
             y: 349.51
-            source: "qrc:/image/Setting/big_lotus.png"
+            source: "../image/Setting/big_lotus.png"
         }
 
         Image {
@@ -842,7 +842,7 @@ Rectangle {
             height: 165
             x: 343
             y: 565
-            source: "qrc:/image/Setting/white_oval.png"
+            source: "../image/Setting/white_oval.png"
             MouseArea {
                 anchors.fill: parent
                 onClicked: {

@@ -43,7 +43,7 @@ Rectangle {
         anchors.leftMargin: (17/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (15/106)* parent.height
-        source: "qrc:/image/TaskScreen/image_borde.png"
+        source: "../image/TaskScreen/image_borde.png"
 
     }
     Image {
@@ -103,7 +103,7 @@ Rectangle {
         anchors.leftMargin: (17/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "qrc:/image/TaskScreen/border_50_21.png"
+        source: "../image/TaskScreen/border_50_21.png"
 
     }
     Image {
@@ -116,7 +116,7 @@ Rectangle {
         anchors.leftMargin: (25/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "qrc:/image/TaskScreen/white_oval.png"
+        source: "../image/TaskScreen/white_oval.png"
     }
 
     Text {
@@ -146,7 +146,7 @@ Rectangle {
         anchors.leftMargin: (72/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "qrc:/image/TaskScreen/border_50_21.png"
+        source: "../image/TaskScreen/border_50_21.png"
 
     }
     Image {
@@ -159,7 +159,7 @@ Rectangle {
         anchors.leftMargin: (80/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "qrc:/image/TaskScreen/green_oval.png"
+        source: "../image/TaskScreen/green_oval.png"
     }
 
     Text {
@@ -189,7 +189,7 @@ Rectangle {
         anchors.leftMargin: (127/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "qrc:/image/TaskScreen/border_50_21.png"
+        source: "../image/TaskScreen/border_50_21.png"
 
     }
     Image {
@@ -202,7 +202,7 @@ Rectangle {
         anchors.leftMargin: (135/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "qrc:/image/TaskScreen/red_oval.png"
+        source: "../image/TaskScreen/red_oval.png"
     }
 
     Text {
@@ -232,7 +232,7 @@ Rectangle {
         anchors.leftMargin: (182/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "qrc:/image/TaskScreen/border_50_21.png"
+        source: "../image/TaskScreen/border_50_21.png"
 
     }
     Image {
@@ -245,7 +245,7 @@ Rectangle {
         anchors.leftMargin: (187.46/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (76.46/106)* parent.height
-        source: "qrc:/image/TaskScreen/delete_icon.png"
+        source: "../image/TaskScreen/delete_icon.png"
     }
 
     MouseArea {

@@ -74,7 +74,7 @@ Rectangle {
         anchors.leftMargin: (158/1135)* parent.width //x
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -137,7 +137,7 @@ Rectangle {
         anchors.leftMargin: (384/1135)* parent.width //x
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -226,7 +226,7 @@ Rectangle {
         anchors.leftMargin: (593/1135)* parent.width //x
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (68/730)* parent.height //y
-        source: "qrc:/image/Profile/arrow-right.png"
+        source: "../image/Profile/arrow-right.png"
     }
     MouseArea {
         anchors.fill: profileScreen_item17
@@ -279,7 +279,7 @@ Rectangle {
         anchors.leftMargin: (1075/1135)* parent.width //x
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (65/730)* parent.height //y
-        source: "qrc:/image/Profile/trash-outline-red.png"
+        source: "../image/Profile/trash-outline-red.png"
     }
     MouseArea {
         anchors.fill: profileScreen_item19
@@ -404,7 +404,7 @@ Rectangle {
         anchors.leftMargin: (1093/1135)* parent.width //x
         anchors.top: profileScreenborderLeftMain.bottom
         anchors.topMargin: (148/730)* parent.height //y
-        source: "qrc:/image/TaskScreen/task_scroll_border.png"
+        source: "../image/TaskScreen/task_scroll_border.png"
     }
     //List item
     ListView {

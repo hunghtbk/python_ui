@@ -32,7 +32,7 @@ Rectangle {
             height: 30
             x: 17
             y: 13
-            source: "qrc:/image/0.Common/Small_lotus.png"
+            source: "../image/0.Common/Small_lotus.png"
         }
         //Dashboard icon
         Image {
@@ -41,15 +41,15 @@ Rectangle {
             height: 18
             x: 24
             y: 59
-            source: "qrc:/image/0.Common/grid-outline-inactive.png"
+            source: "../image/0.Common/grid-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_2.source = "qrc:/image/0.Common/grid-outline-active.png"
+                    img_2.source = "../image/0.Common/grid-outline-active.png"
                 }
                 onReleased: {
-                    img_2.source = "qrc:/image/0.Common/grid-outline-inactive.png"
+                    img_2.source = "../image/0.Common/grid-outline-inactive.png"
                 }
             }
         }
@@ -61,7 +61,7 @@ Rectangle {
             height: 18
             x: 24
             y: 93
-            source: "qrc:/image/0.Common/cube-outline-active.png"
+            source: "../image/0.Common/cube-outline-active.png"
         }
 
         //Selected Icon
@@ -82,15 +82,15 @@ Rectangle {
             height: 18
             x: 24
             y: 127
-            source: "qrc:/image/0.Common/credit-card-outline-inactive.png"
+            source: "../image/0.Common/credit-card-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_4.source = "qrc:/image/0.Common/credit-card-outline-active.png"
+                    img_4.source = "../image/0.Common/credit-card-outline-active.png"
                 }
                 onReleased: {
-                    img_4.source = "qrc:/image/0.Common/credit-card-outline-inactive.png"
+                    img_4.source = "../image/0.Common/credit-card-outline-inactive.png"
                 }
             }
         }
@@ -102,15 +102,15 @@ Rectangle {
             height: 18
             x: 24
             y: 161
-            source: "qrc:/image/0.Common/flash-outline-2-inactive.png"
+            source: "../image/0.Common/flash-outline-2-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_5.source = "qrc:/image/0.Common/flash-outline-2-active.png"
+                    img_5.source = "../image/0.Common/flash-outline-2-active.png"
                 }
                 onReleased: {
-                    img_5.source = "qrc:/image/0.Common/flash-outline-2-inactive.png"
+                    img_5.source = "../image/0.Common/flash-outline-2-inactive.png"
                 }
             }
         }
@@ -122,15 +122,15 @@ Rectangle {
             height: 18
             x: 24
             y: 193
-            source: "qrc:/image/0.Common/person-outline-inactive.png"
+            source: "../image/0.Common/person-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_6.source = "qrc:/image/0.Common/person-outline-active.png"
+                    img_6.source = "../image/0.Common/person-outline-active.png"
                 }
                 onReleased: {
-                    img_6.source = "qrc:/image/0.Common/person-outline-inactive.png"
+                    img_6.source = "../image/0.Common/person-outline-inactive.png"
                 }
             }
         }
@@ -142,16 +142,16 @@ Rectangle {
             height: 18
             x: 24
             y: 225
-            source: "qrc:/image/0.Common/settings-2-outline-inactive.png"
+            source: "../image/0.Common/settings-2-outline-inactive.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    img_7.source = "qrc:/image/0.Common/settings-2-outline-active.png"
+                    img_7.source = "../image/0.Common/settings-2-outline-active.png"
                 }
 
                 onReleased: {
-                    img_7.source = "qrc:/image/0.Common/settings-2-outline-inactive.png"
+                    img_7.source = "../image/0.Common/settings-2-outline-inactive.png"
                 }
             }
         }
@@ -163,7 +163,7 @@ Rectangle {
             height: 24
             x: 21
             y: 686
-            source: "qrc:/image/0.Common/sun-outline-inactive.png"
+            source: "../image/0.Common/sun-outline-inactive.png"
         }
     }
 */
@@ -224,7 +224,7 @@ Rectangle {
         anchors.topMargin: (19/730)* parent.height //y
         width: (21/1135) * m_taskScreen.width //width
         height: (21/730) * m_taskScreen.height //height
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -281,7 +281,7 @@ Rectangle {
         anchors.topMargin: (22/730)* parent.height //y
         width: (70.4/1135) * m_taskScreen.width //width
         height: (70.4/730) * m_taskScreen.height //heigh
-        source: "qrc:/image/TaskScreen/image_borde.png"
+        source: "../image/TaskScreen/image_borde.png"
     }
     Image {
         id: taskScreen_img_20
@@ -295,7 +295,7 @@ Rectangle {
         anchors.topMargin: (29/730)* parent.height //y
         width: (52/1135) * m_taskScreen.width //width
         height: (56/730) * m_taskScreen.height //heigh
-        source: "qrc:/image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
+        source: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
     }
 
     Text {
@@ -386,7 +386,7 @@ Rectangle {
         anchors.leftMargin: (796/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (21/730)* parent.height
-        source: "qrc:/image/border_2.png"
+        source: "../image/border_2.png"
     }
     Image {
         id: taskScreen_img_21
@@ -400,7 +400,7 @@ Rectangle {
         anchors.leftMargin: (810/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "qrc:/image/TaskScreen/dollar-sign-15.png"
+        source: "../image/TaskScreen/dollar-sign-15.png"
     }
     Text {
         id: taskScreenTxt_12
@@ -432,7 +432,7 @@ Rectangle {
         anchors.leftMargin: (903/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "qrc:/image/TaskScreen/shopping-bag-outline-green.png"
+        source: "../image/TaskScreen/shopping-bag-outline-green.png"
     }
     Text {
         id: taskScreenTxt_13
@@ -464,7 +464,7 @@ Rectangle {
         anchors.leftMargin: (985/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "qrc:/image/TaskScreen/shopping-bag-outline-red.png"
+        source: "../image/TaskScreen/shopping-bag-outline-red.png"
     }
     Text {
         id: taskScreenTxt_14
@@ -562,7 +562,7 @@ Rectangle {
         anchors.leftMargin: (1078/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (75/730)* parent.height
-        source: "qrc:/image/TaskScreen/arrow_confirm.png"
+        source: "../image/TaskScreen/arrow_confirm.png"
     }
     MouseArea {
         anchors.fill: taskScreenRec_3_2
@@ -582,7 +582,7 @@ Rectangle {
         anchors.leftMargin: (284/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (115.5/730)* parent.height
-        source: "qrc:/image/TaskScreen/line.png"
+        source: "../image/TaskScreen/line.png"
     }
     Text {
         id: taskScreenTxt_17
@@ -614,7 +614,7 @@ Rectangle {
         anchors.leftMargin: (375/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (139/730)* parent.height
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -636,7 +636,7 @@ Rectangle {
         anchors.leftMargin: (774/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "qrc:/image/TaskScreen/white_border.png"
+        source: "../image/TaskScreen/white_border.png"
 
     }
     Image {
@@ -651,7 +651,7 @@ Rectangle {
         anchors.leftMargin: (849/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (144/730)* parent.height
-        source: "qrc:/image/TaskScreen/starAll_icon.png"
+        source: "../image/TaskScreen/starAll_icon.png"
     }
     Text {
         id: taskScreenTxt_18
@@ -689,7 +689,7 @@ Rectangle {
         anchors.leftMargin: (886/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "qrc:/image/TaskScreen/white_border.png"
+        source: "../image/TaskScreen/white_border.png"
     }
     Image {
         id: taskScreen_img_33
@@ -703,7 +703,7 @@ Rectangle {
         anchors.leftMargin: (961/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (145/730)* parent.height
-        source: "qrc:/image/TaskScreen/stopAll_icon.png"
+        source: "../image/TaskScreen/stopAll_icon.png"
     }
     Text {
         id: taskScreenTxt_19
@@ -741,7 +741,7 @@ Rectangle {
         anchors.leftMargin: (998/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "qrc:/image/TaskScreen/white_border.png"
+        source: "../image/TaskScreen/white_border.png"
     }
     Image {
         id: taskScreen_img_35
@@ -755,7 +755,7 @@ Rectangle {
         anchors.leftMargin: (1075.96/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (143.96/730)* parent.height
-        source: "qrc:/image/TaskScreen/deleteAll_icon.png"
+        source: "../image/TaskScreen/deleteAll_icon.png"
     }
     Text {
         id: taskScreen_txt_20
@@ -952,7 +952,7 @@ Rectangle {
         anchors.leftMargin: (1093/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (229/730)* parent.height
-        source: "qrc:/image/TaskScreen/task_scroll_border.png"
+        source: "../image/TaskScreen/task_scroll_border.png"
     }
     //List item
     ListView {

@@ -104,7 +104,7 @@ Rectangle {
         anchors.leftMargin: (186.5/221)* parent.width //x
         anchors.top: profileGroupLeftCorner.bottom
         anchors.topMargin: (26/63)* parent.height //y
-        source: "qrc:/image/Profile/trash-outline.png"
+        source: "../image/Profile/trash-outline.png"
     }
 
 //    Component.onCompleted: {

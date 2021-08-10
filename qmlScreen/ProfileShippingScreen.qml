@@ -44,7 +44,7 @@ Rectangle {
             height: 44
             x: 297
             y: 18
-            source: "qrc:/image/create_task_donw_oval.png"
+            source: "../image/create_task_donw_oval.png"
         }
     }
 
@@ -414,7 +414,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "qrc:/image/TaskScreen/arrow-down-5.png"
+            source: "../image/TaskScreen/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -521,7 +521,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "qrc:/image/TaskScreen/arrow-down-5.png"
+            source: "../image/TaskScreen/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -717,7 +717,7 @@ Rectangle {
             height: 7
             x: 103
             y: 12
-            source: "qrc:/image/Profile/arrow-right.png"
+            source: "../image/Profile/arrow-right.png"
         }
 
         MouseArea {

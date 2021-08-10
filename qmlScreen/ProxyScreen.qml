@@ -73,7 +73,7 @@ Rectangle {
         anchors.leftMargin: (152/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -135,7 +135,7 @@ Rectangle {
         anchors.leftMargin: (384/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "qrc:/image/0.Common/Add_inactive_icon.png"
+        source: "../image/0.Common/Add_inactive_icon.png"
 
         MouseArea {
             anchors.fill: parent
@@ -223,7 +223,7 @@ Rectangle {
         anchors.leftMargin: (650/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (68/730)* parent.height //y
-        source: "qrc:/image/Proxy/arrow-right.png"
+        source: "../image/Proxy/arrow-right.png"
     }
     MouseArea {
         anchors.fill: item17
@@ -276,7 +276,7 @@ Rectangle {
         anchors.leftMargin: (1075/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (65/730)* parent.height //y
-        source: "qrc:/image/Proxy/trash-outline-red.png"
+        source: "../image/Proxy/trash-outline-red.png"
     }
     MouseArea {
         anchors.fill: item19
@@ -364,7 +364,7 @@ Rectangle {
         anchors.leftMargin: (644/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (673/730)* parent.height //y
-        source: "qrc:/image/Proxy/save-outline.png"
+        source: "../image/Proxy/save-outline.png"
     }
     MouseArea {
         anchors.fill: item211
@@ -453,7 +453,7 @@ Rectangle {
         anchors.leftMargin: (1091.5/1135)* parent.width //x
         anchors.top: proxyScreenborderLeftMain.bottom
         anchors.topMargin: (148/730)* parent.height //y
-        source: "qrc:/image/0.Common/task_scroll_border.png"
+        source: "../image/0.Common/task_scroll_border.png"
     }
     //List item
     ListView {

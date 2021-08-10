@@ -10,9 +10,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "2"
@@ -23,9 +23,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "3"
@@ -36,9 +36,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "4"
@@ -49,9 +49,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "5"
@@ -62,9 +62,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "6"
@@ -75,9 +75,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "7"
@@ -88,9 +88,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "8"
@@ -101,9 +101,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "9"
@@ -114,9 +114,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "10"
@@ -127,9 +127,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "11"
@@ -140,9 +140,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "12"
@@ -153,9 +153,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "13"
@@ -166,9 +166,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "14"
@@ -179,9 +179,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "15"
@@ -192,9 +192,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "16"
@@ -205,9 +205,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "17"
@@ -218,9 +218,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
     ListElement{
         idtxtContent: "18"
@@ -231,9 +231,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 
     ListElement{
@@ -245,9 +245,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 
     ListElement{
@@ -259,9 +259,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 
     ListElement{
@@ -273,9 +273,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 
     ListElement{
@@ -287,9 +287,9 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 
     ListElement{
@@ -301,8 +301,8 @@ ListModel {
         proxyContent: "Private Resi"
         statusContent: "Adding to cart"
         statusColor: "#FFA94F"
-        action1Source: "qrc:/image/TaskScreen/stop_icon_item.png"
-        action2Source: "qrc:/image/TaskScreen/edit_icon_item.png"
-        action3Source: "qrc:/image/TaskScreen/delete_icon_item.png"
+        action1Source: "../image/TaskScreen/stop_icon_item.png"
+        action2Source: "../image/TaskScreen/edit_icon_item.png"
+        action3Source: "../image/TaskScreen/delete_icon_item.png"
     }
 }

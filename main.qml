@@ -20,7 +20,7 @@ Window {
             anchors.centerIn: parent.Center
             width: 9.01
             height: 9.01
-            source: "qrc:/image/close.png"
+            source: "../image/close.png"
         }
         MouseArea {
             anchors.fill: parent
@@ -43,7 +43,7 @@ Window {
             y: 5
             width: 12
             height: 1.5
-            source: "qrc:/image/minimize.png"
+            source: "../image/minimize.png"
         }
         MouseArea {
             anchors.fill: parent
@@ -59,7 +59,7 @@ Window {
         height: 127
         x: 338
         y: 0
-        source: "qrc:/image/oval_up.png"
+        source: "../image/oval_up.png"
     }
 
     Text {
@@ -103,7 +103,7 @@ Window {
         y: 215
         width: 448
         height: 30
-        source: "qrc:/image/text_input_bgr.png"
+        source: "../image/text_input_bgr.png"
 
         TextInput {
             x: 10
@@ -119,7 +119,7 @@ Window {
         y: 263
         width: 160
         height: 30
-        source: "qrc:/image/authen_bgr.png"
+        source: "../image/authen_bgr.png"
 
         Text {
             id: authentxt
@@ -138,7 +138,7 @@ Window {
             y: 12
             width: 5
             height: 10
-            source: "qrc:/image/authen_arrow.png"
+            source: "../image/authen_arrow.png"
         }
 
         MouseArea {
@@ -156,7 +156,7 @@ Window {
         height: 9.1
         x: 85
         y: 97.63
-        source: "qrc:/image/small_lotus/small_1.png"
+        source: "../image/small_lotus/small_1.png"
     }
     Image {
         id: lotus2
@@ -164,7 +164,7 @@ Window {
         height: 7.97
         x: 85
         y: 94.45
-        source: "qrc:/image/small_lotus/small_2.png"
+        source: "../image/small_lotus/small_2.png"
     }
     Image {
         id: lotus3
@@ -172,7 +172,7 @@ Window {
         height: 15.53
         x: 97.58
         y: 84.01
-        source: "qrc:/image/small_lotus/small_3.png"
+        source: "../image/small_lotus/small_3.png"
     }
     Image {
         id: lotus4
@@ -180,7 +180,7 @@ Window {
         height: 15.53
         x: 102.47
         y: 84
-        source: "qrc:/image/small_lotus/small_4.png"
+        source: "../image/small_lotus/small_4.png"
     }
 
     Image {
@@ -189,7 +189,7 @@ Window {
         height: 7.97
         x: 107.33
         y: 94.46
-        source: "qrc:/image/small_lotus/small_5.png"
+        source: "../image/small_lotus/small_5.png"
     }
 
     Image {
@@ -198,7 +198,7 @@ Window {
         height: 9.1
         x: 107.72
         y: 97.63
-        source: "qrc:/image/small_lotus/small_6.png"
+        source: "../image/small_lotus/small_6.png"
     }
 
     Image {
@@ -207,7 +207,7 @@ Window {
         height: 13.84
         x: 106.21
         y: 105.83
-        source: "qrc:/image/small_lotus/small_7.png"
+        source: "../image/small_lotus/small_7.png"
     }
 
     Image {
@@ -216,7 +216,7 @@ Window {
         height: 12.74
         x: 104.18
         y: 106.97
-        source: "qrc:/image/small_lotus/small_8.png"
+        source: "../image/small_lotus/small_8.png"
     }
 
     Image {
@@ -225,7 +225,7 @@ Window {
         height: 12.74
         x: 92.16
         y: 106.97
-        source: "qrc:/image/small_lotus/small_9.png"
+        source: "../image/small_lotus/small_9.png"
     }
 
     Image {
@@ -234,7 +234,7 @@ Window {
         height: 13.84
         x: 91.15
         y: 105.83
-        source: "qrc:/image/small_lotus/small_10.png"
+        source: "../image/small_lotus/small_10.png"
     }
 
     //BigLotus
@@ -242,13 +242,13 @@ Window {
         id: big_lotus1
         x: 338.5
         y: 383.45
-        source: "qrc:/image/big_lostus/big_1.png"
+        source: "../image/big_lostus/big_1.png"
     }
     Image {
         id: big_lotus2
         x: 325
         y: 359.45
-        source: "qrc:/image/big_lostus/big_2.png"
+        source: "../image/big_lostus/big_2.png"
     }
 
     Image {
@@ -257,7 +257,7 @@ Window {
 //        height: 141.580
         x: 361.46
         y: 260.85
-        source: "qrc:/image/big_lostus/big_3.png"
+        source: "../image/big_lostus/big_3.png"
     }
     Image {
         id: big_lotus4
@@ -265,31 +265,31 @@ Window {
 //        height: 141.6
         x: 393.76
         y: 238.26
-        source: "qrc:/image/big_lostus/big_4.png"
+        source: "../image/big_lostus/big_4.png"
     }
     Image {
         id: big_lotus5
         x: 475.8
         y: 251.79
-        source: "qrc:/image/big_lostus/big_5.png"
+        source: "../image/big_lostus/big_5.png"
     }
     Image {
         id: big_lotus6
         x: 493.24
         y: 273.67
-        source: "qrc:/image/big_lostus/big_6.png"
+        source: "../image/big_lostus/big_6.png"
     }
     Image {
         id: big_lotus7
         x: 519
         y: 364
-        source: "qrc:/image/big_lostus/big_7.png"
+        source: "../image/big_lostus/big_7.png"
     }
     Image {
         id: big_lotus8
         x: 511.61
         y: 376.79
-        source: "qrc:/image/big_lostus/big_8.png"
+        source: "../image/big_lostus/big_8.png"
     }
     //////////////////
     Image {
@@ -298,6 +298,6 @@ Window {
         height: 88
         x: 0
         y: 348
-        source: "qrc:/image/oval_down.png"
+        source: "../image/oval_down.png"
     }
 }
