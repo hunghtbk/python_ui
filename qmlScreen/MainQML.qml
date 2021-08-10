@@ -20,7 +20,7 @@ Window {
     property int loaderX: 0
     property int loaderY: 0
 
-    property int selectedApp: 1
+    property int selectedApp: 0
     //0 DashboardScreen
     //1 TaskScreen
     //2 ProfileScreen

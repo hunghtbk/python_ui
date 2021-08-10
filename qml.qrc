@@ -184,5 +184,39 @@
         <file>qmlScreen/CreateTaskGroupScreen.qml</file>
         <file>qmlScreen/CreateProfileGroupScreen.qml</file>
         <file>qmlScreen/CreateAccountGroupScreen.qml</file>
+        <file>appIMG/0.Dashboard/arrow-right-4x.png</file>
+        <file>appIMG/0.Dashboard/arrow-right-512w.png</file>
+        <file>appIMG/0.Dashboard/lotus_4x.png</file>
+        <file>appIMG/0.Dashboard/lotus_512w.png</file>
+        <file>appIMG/0.Dashboard/arrow-right-512.png</file>
+        <file>appIMG/0.Dashboard/arrow-right-1.5.png</file>
+        <file>appIMG/0.Dashboard/arrow-right-2.png</file>
+        <file>appIMG/0.Dashboard/arrow-right-3.png</file>
+        <file>appIMG/0.Dashboard/lotus_1.5x.png</file>
+        <file>appIMG/0.Dashboard/lotus_1x.png</file>
+        <file>appIMG/0.Dashboard/lotus_2x.png</file>
+        <file>appIMG/0.Dashboard/lotus_3x.png</file>
+        <file>appIMG/0.Dashboard/dollar-sign-15.png</file>
+        <file>appIMG/0.Dashboard/dollar-sign-15-1.png</file>
+        <file>appIMG/0.Dashboard/dollar-sign-15@2x.png</file>
+        <file>appIMG/0.Dashboard/Path 3.png</file>
+        <file>appIMG/0.Dashboard/Path 3-1.png</file>
+        <file>appIMG/0.Dashboard/Path 3@2x.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy 2.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy 2-1.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy 2@2x.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy-1.png</file>
+        <file>appIMG/0.Dashboard/Path 3 Copy@2x.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline-1.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline@2x.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline copy.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline copy-1.png</file>
+        <file>appIMG/0.Dashboard/shopping-bag-outline copy@2x.png</file>
+        <file>appIMG/0.Dashboard/Path 4.png</file>
+        <file>qmlScreen/DashboardItemDeletegate.qml</file>
+        <file>qmlScreen/DashboardItemModel.qml</file>
+        <file>appIMG/0.Dashboard/Sony-Playstation-5-Blu-Ray-Edition-Console-White.jpg.png</file>
     </qresource>
 </RCC>

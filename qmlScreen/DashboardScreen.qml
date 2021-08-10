@@ -6,7 +6,7 @@ import QtCharts 2.0
 Rectangle {
     id: m_dashboardScreen
     visible: true
-    width: 1200
+    width: 1135
     height: 730
     //    title: qsTr("Task Screen")
     color: "#2E2C50"
@@ -15,19 +15,344 @@ Rectangle {
     property int currentWidth: m_dashboardScreen.width
     property int currentHeight: m_dashboardScreen.height
 
-    property var listItemID: []
-    property var listListViewID: []
-    property var listTXT_7: []
-    property var listTXT_8: []
     property var listTXT_9: []
+    property var listTXT_11: []
     property var listTXT_13: []
+    property var listTXT_15: []
+    property var listTXT_17: []
+
+    Text {
+        id: dashboardScreenborderLeftMain
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+    }
+
+    Text {
+        id: txt_1
+        property int textSize: 13
+        text: qsTr("Dashboard")
+        width: (83/1135) * m_dashboardScreen.width //width
+        height: (19/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (33/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (19/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+
+    Rectangle {
+        id: rectWelcomeback
+        width: (507/1135) * m_dashboardScreen.width //width
+        height: (149/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (33/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (64/730)* parent.height //y
+        color: "#907DE2"
+        radius: 3
+    }
+
+    Text {
+        id: txt_2
+        property int textSize: 11
+        text: qsTr("Welcome back,")
+        width: (104/1135) * m_dashboardScreen.width //width
+        height: (17/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (69/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (89/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: txt_3
+        property int textSize: 15
+        text: qsTr("Bob")
+        width: (34/1135) * m_dashboardScreen.width //width
+        height: (22/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (69/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (113/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Rectangle {
+        id: rectCreateSomeTask
+        width: (160/1135) * m_dashboardScreen.width //width
+        height: (30/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (69/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (155/730)* parent.height //y
+        color: "#FFFFFF"
+        radius: 3
+    }
+
+    Text {
+        id: txt_4
+        property int textSize: 9
+        text: qsTr("Create some tasks")
+        width: (109/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (90/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (163/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#2E2C50"
+    }
+
+    Image {
+        id: rigth_arrow
+        width: (5/1135) * m_dashboardScreen.width //width
+        height: (8/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (205/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (167/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/arrow-right-2.png"
+    }
+
+    Image {
+        id: img_lotus
+        width: (205/1135) * m_dashboardScreen.width //width
+        height: (149/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (335/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (64/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/lotus_512w.png"
+    }
+
+    Rectangle {
+        id: recTotalInfo
+        width: (539/1135) * m_dashboardScreen.width //width
+        height: (149/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (563/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (64/730)* parent.height //y
+        color: "#282645"
+        radius: 3
+    }
+
+    Image {
+        id: img_dola
+        width: (12/1135) * m_dashboardScreen.width //width
+        height: (22/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (597/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (96/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/dollar-sign-15@2x.png"
+    }
+
+    Image {
+        id: img_dola_line
+        width: (93.77/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (620/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (106.5/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/Path 3-1.png"
+    }
+
+    Image {
+        id: img_shopping_bag
+        width: (24/1135) * m_dashboardScreen.width //width
+        height: (24/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (771/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (95/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/shopping-bag-outline@2x.png"
+    }
+
+    Image {
+        id: img_shopping_bag_line
+        width: (87.21/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (803.56/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (106.5/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/Path 3 Copy@2x.png"
+    }
+
+    Image {
+        id: img_shopping_bag_outline
+        width: (24/1135) * m_dashboardScreen.width //width
+        height: (24/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (950/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (95/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/shopping-bag-outline copy@2x.png"
+    }
+
+    Image {
+        id: img_path4
+        width: (18/1135) * m_dashboardScreen.width //width
+        height: (19.44/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (953/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (97.37/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/Path 4.png"
+    }
+
+    Image {
+        id: img_shopping_bag_outline_line
+        width: (87.21/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (982.56/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (106.5/730)* parent.height //y
+        source: "../appIMG/0.Dashboard/Path 3 Copy 2@2x.png"
+    }
+
+    Text {
+        id: txt_5
+        property int textSize: 17
+        text: qsTr("$12,235")
+        width: (81/1135) * m_dashboardScreen.width //width
+        height: (25/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (597/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (129/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: txt_6
+        property int textSize: 17
+        text: qsTr("281")
+        width: (36/1135) * m_dashboardScreen.width //width
+        height: (25/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (774/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (129/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: txt_7
+        property int textSize: 17
+        text: qsTr("42")
+        width: (27/1135) * m_dashboardScreen.width //width
+        height: (25/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (953/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (129/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: txt_8
+        property int textSize: 9
+        text: qsTr("Total Spent")
+        width: (67/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (597/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (165/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+
+    Text {
+        id: txt_9
+        property int textSize: 9
+        text: qsTr("Total Checkouts")
+        width: (95/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (774/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (165/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+
+    Text {
+        id: txt_10
+        property int textSize: 9
+        text: qsTr("Total Declines")
+        width: (82/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (953/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (165/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#75719B"
+    }
+
+    Text {
+        id: txt_11
+        property int textSize: 13
+        text: qsTr("Checkouts")
+        width: (81/1135) * m_dashboardScreen.width //width
+        height: (19/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (33/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (238/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
+
+    Text {
+        id: txt_12
+        property int textSize: 13
+        text: qsTr("Previous Checkouts")
+        width: (150/1135) * m_dashboardScreen.width //width
+        height: (19/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (673/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (238/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#FFFFFF"
+    }
 
     ChartView {
 //        title: "Spline"
-        width: 617
-        height: 414
-        x: 33
-        y: 273
+        width: (620/1135) * m_dashboardScreen.width //width
+        height: (420/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (28/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (271/730)* parent.height //y
         antialiasing: true
         backgroundColor: "#37345E"
         theme: ChartView.ChartThemeDark
@@ -52,30 +377,37 @@ Rectangle {
     }
 
     Image {
-        id: item22
-        width: 9
-        height: 558
-        x: 807
-        y: 148
-        source: "qrc:/image/0.Common/task_scroll_border.png"
+        id: img_border
+        width: (9/1135) * m_dashboardScreen.width //width
+        height: (405/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (1093/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (279/730)* parent.height //y
+        source: "../image/0.Common/task_scroll_border.png"
     }
     ListView {
-        id: list_2
-        width: 406
-        height: 558
-        x: 412
-        y: 144
-        model: ProxyItemModel {}
-        delegate: ProxyItemDeletegate {}
+        id: listItem
+        width: (431/1135) * m_dashboardScreen.width //width
+        height: (405/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (673/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (279/730)* parent.height //y
+        model: DashboardItemModel {}
+        delegate: DashboardItemDeletegate {
+            dashboardItemWidthItem: (405/1135) * m_dashboardScreen.width
+            dashboardItemHeightItem: (50/730) * m_dashboardScreen.height
+        }
+        spacing: 8
         clip: true
         flickableDirection: Flickable.VerticalFlick
         boundsBehavior: Flickable.StopAtBounds
         ScrollBar.vertical: ScrollBar {
             contentItem: Rectangle {
                 id: rec_4
-                implicitWidth: 9
-                implicitHeight: 221
-                color: "#423F6B"
+                implicitWidth: (9/1135) * m_dashboardScreen.width
+                implicitHeight: (200/730) * m_dashboardScreen.height
                 radius: 10
             }
         }
@@ -83,102 +415,36 @@ Rectangle {
 
     Component.onCompleted: {
         console.log("complete")
-        //        listItemID.push(item0)
-        //        listItemID.push(item1)
-        //        listItemID.push(item2)
-        //        listItemID.push(item3)
-        //        listItemID.push(item4)
-        //        listItemID.push(item5)
-        //        listItemID.push(item6)
-        //        listItemID.push(item7)
-        //        listItemID.push(item8)
-        //        listItemID.push(item9)
-        //        listItemID.push(item10)
-        //        listItemID.push(item11)
-//        listItemID.push(item12)
-        //        listItemID.push(item13)
-        //        listItemID.push(item14)
-        //        listItemID.push(item15)
-        //        listItemID.push(item16)
-        //        listItemID.push(item17)
-        //        listItemID.push(item18)
-        //        listItemID.push(item19)
-        //        listItemID.push(item20)
-        //        listItemID.push(item21)
-        //        listItemID.push(item211)
-        //        listItemID.push(item212)
-//        listItemID.push(item213)
-        listItemID.push(item22)
+        listTXT_13.push(txt_1)
+        listTXT_11.push(txt_2)
+        listTXT_15.push(txt_3)
+        listTXT_9.push(txt_4)
+        listTXT_17.push(txt_5)
 
-        //        listTXT_9.push(txt_3)
-        //        listTXT_9.push(txt_4)
-        //        listTXT_9.push(txt_5)
-
-        //        listTXT_8.push(txt_6)
-        //        listTXT_8.push(txt_7)
-//        listTXT_8.push(txt_8)
-//        listTXT_8.push(txt_9)
-//        listTXT_8.push(txt_10)
-
-        listListViewID.push(list_2)
+        listTXT_17.push(txt_6)
+        listTXT_17.push(txt_7)
+        listTXT_9.push(txt_8)
+        listTXT_9.push(txt_9)
+        listTXT_9.push(txt_10)
+        listTXT_13.push(txt_11)
+        listTXT_13.push(txt_12)
     }
     onHeightChanged: {
-        var rate = height/currentHeight
         var rateTextSize = height/730
-        for (var i = 0; i < listItemID.length; i++) {
-            listItemID[i].y = listItemID[i].y * rate
-            listItemID[i].height = listItemID[i].height * rate
-        }
-
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].y = listTXT_8[l].y * rate
-            listTXT_8[l].height = listTXT_8[l].height * rate
-            listTXT_8[l].textSize = 8 * rateTextSize
-        }
         for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].y = listTXT_9[m].y * rate
-            listTXT_9[m].height = listTXT_9[m].height * rate
             listTXT_9[m].textSize = 9 * rateTextSize
         }
+        for (var l = 0; l < listTXT_11.length; l++) {
+            listTXT_11[l].textSize = 11 * rateTextSize
+        }
         for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].y = listTXT_13[n].y * rate
-            listTXT_13[n].height = listTXT_13[n].height * rate
             listTXT_13[n].textSize = 13 * rateTextSize
         }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].y = listListViewID[p].y * rate
-            listListViewID[p].height = listListViewID[p].height * rate
+        for (var n = 0; n < listTXT_15.length; n++) {
+            listTXT_15[n].textSize = 15 * rateTextSize
         }
-        rec_4.implicitHeight = rec_4.implicitHeight * rate
-    }
-
-    onWidthChanged: {
-        var rate = width/currentWidth
-        for (var i = 0; i < listItemID.length; i++) {
-            listItemID[i].x = listItemID[i].x * rate
-            listItemID[i].width = listItemID[i].width * rate
+        for (var p = 0; p < listTXT_17.length; p++) {
+            listTXT_17[p].textSize = 17 * rateTextSize
         }
-
-        for (var k = 0; k < listTXT_7.length; k++) {
-            listTXT_7[k].x = listTXT_7[k].x * rate
-            listTXT_7[k].width = listTXT_7[k].width * rate
-        }
-        for (var l = 0; l < listTXT_8.length; l++) {
-            listTXT_8[l].x = listTXT_8[l].x * rate
-            listTXT_8[l].width = listTXT_8[l].width * rate
-        }
-        for (var m = 0; m < listTXT_9.length; m++) {
-            listTXT_9[m].x = listTXT_9[m].x * rate
-            listTXT_9[m].width = listTXT_9[m].width * rate
-        }
-        for (var n = 0; n < listTXT_13.length; n++) {
-            listTXT_13[n].x = listTXT_13[n].x * rate
-            listTXT_13[n].width = listTXT_13[n].width * rate
-        }
-        for (var p = 0; p < listListViewID.length; p++) {
-            listListViewID[p].x = listListViewID[p].x * rate
-            listListViewID[p].width = listListViewID[p].width * rate
-        }
-        rec_4.implicitWidth = rec_4.implicitWidth *rate
     }
 }
