@@ -54,7 +54,7 @@ Rectangle {
         width: (5/770) * parent.width //width
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
-        anchors.leftMargin: (12/770)* parent.width
+        anchors.leftMargin: (14/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
