@@ -35,9 +35,6 @@ Rectangle {
                 console.log(taskItemRec_3_4.width)
             }
         }
-        onWidthChanged: {
-//            console.log("hunght abcd " + width)
-        }
     }
 
     Text {
@@ -49,10 +46,13 @@ Rectangle {
 
     Text {
         id: taskItemTxt_29
-        width: 5
-        height: 12
+        property int textSize: 8
+//        width: 5
+//        height: 12
 //        x: 12
 //        y: 9
+        width: (5/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (12/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -60,17 +60,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: idtxtContent
     }
 
     Text {
         id: taskItemTxt_30
-        width: 97
-        height: 12
+        property int textSize: 8
+//        width: 97
+//        height: 12
 //        x: 40
 //        y: 9
+        width: (97/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (40/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -78,17 +81,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: productContent
     }
 
     Text {
         id: taskItemTxt_31
-        width: 16
-        height: 12
+        property int textSize: 8
+//        width: 16
+//        height: 12
 //        x: 235
 //        y: 9
+        width: (16/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (235/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -96,17 +102,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: sizeContent
     }
 
     Text {
         id: taskItemTxt_32
-        width: 52
-        height: 12
+        property int textSize: 8
+//        width: 52
+//        height: 12
 //        x: 280
 //        y: 9
+        width: (52/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (280/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -114,17 +123,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: siteContent
     }
 
     Text {
         id: taskItemTxt_33
-        width: 45
-        height: 12
+        property int textSize: 8
+//        width: 45
+//        height: 12
 //        x: 377
 //        y: 9
+        width: (45/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (377/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -132,17 +144,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: profileContent
     }
 
     Text {
         id: taskItemTxt_35
-        width: 57
-        height: 12
+        property int textSize: 8
+//        width: 57
+//        height: 12
 //        x: 468
 //        y: 9
+        width: (57/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (468/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -150,17 +165,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: proxyContent
     }
 
     Text {
         id: taskItemTxt_36
-        width: 69
-        height: 12
+        property int textSize: 8
+//        width: 69
+//        height: 12
 //        x: 575
 //        y: 9
+        width: (69/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (575/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -168,17 +186,19 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: statusColor
         text: statusContent
     }
 
     Image {
         id: taskItemImg_37
-        width: 20
-        height: 20
+//        width: 20
+//        height: 20
 //        x: 696
 //        y: 5
+        width: (20/770) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (696/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -194,10 +214,12 @@ Rectangle {
 
     Image {
         id: taskItemImg_38
-        width: 20
-        height: 20
+//        width: 20
+//        height: 20
 //        x: 720
 //        y: 5
+        width: (20/770) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (720/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -213,10 +235,12 @@ Rectangle {
 
     Image {
         id: taskItemImg_39
-        width: 20
-        height: 20
+//        width: 20
+//        height: 20
 //        x: 744
 //        y: 5
+        width: (20/770) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (744/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -230,31 +254,14 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: {
-//        taskItemListIMG_ID_DetailItem.push(taskItemImg_37)
-//        taskItemListIMG_ID_DetailItem.push(taskItemImg_38)
-//        taskItemListIMG_ID_DetailItem.push(taskItemImg_39)
-//        taskItemListIMG_ID_DetailItem.push(taskItemRec_3_4)
-
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_29)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_30)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_31)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_32)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_33)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_35)
-//        taskItemListTEXT_ID_DetailItem.push(taskItemTxt_36)
-    }
-
-    onWidthChanged: {
-        var rate = width/taskItemCurrentDetaiItemWidth
-        for (var a = 0; a < taskItemListIMG_ID_DetailItem.length; a++) {
-            taskItemListIMG_ID_DetailItem[a].x = taskItemListIMG_ID_DetailItem[a].x * rate
-            taskItemListIMG_ID_DetailItem[a].width = taskItemListIMG_ID_DetailItem[a].width * rate
-        }
-
-        for (var b = 0; b < taskItemListTEXT_ID_DetailItem.length; b++) {
-            taskItemListTEXT_ID_DetailItem[b].x = taskItemListTEXT_ID_DetailItem[b].x * rate
-            taskItemListTEXT_ID_DetailItem[b].width = taskItemListTEXT_ID_DetailItem[b].width * rate
-        }
+    onHeightChanged: {
+        var rateTextSize = height/30
+        taskItemTxt_29.textSize = 8 *rateTextSize
+        taskItemTxt_30.textSize = 8 *rateTextSize
+        taskItemTxt_31.textSize = 8 *rateTextSize
+        taskItemTxt_32.textSize = 8 *rateTextSize
+        taskItemTxt_33.textSize = 8 *rateTextSize
+        taskItemTxt_35.textSize = 8 *rateTextSize
+        taskItemTxt_36.textSize = 8 *rateTextSize
     }
 }

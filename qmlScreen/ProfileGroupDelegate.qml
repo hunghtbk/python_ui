@@ -12,11 +12,6 @@ Rectangle {
     height: profileGroupHeightItem
     color: "transparent"
 
-    property var listIMG_ID_Item: []
-    property var listTEXT_ID_Item: []
-
-    property int currentWidth_Item: rec_2_1.width
-
     Rectangle {
         id: rec_2_2
         width: profileGroupWidthItem
@@ -106,46 +101,10 @@ Rectangle {
         anchors.topMargin: (26/63)* parent.height //y
         source: "../image/Profile/trash-outline.png"
     }
-
-//    Component.onCompleted: {
-//        listIMG_ID_Item.push(rec_2_2)
-//        listIMG_ID_Item.push(rec_border)
-//        listIMG_ID_Item.push(img_2)
-
-//        listTEXT_ID_Item.push(txt_1)
-//        listTEXT_ID_Item.push(txt_2)
-//    }
-
-//    onWidthChanged: {
-//        var rate = width/currentWidth_Item
-//        for (var a = 0; a < listIMG_ID_Item.length; a++) {
-//            listIMG_ID_Item[a].x = listIMG_ID_Item[a].x * rate
-//            listIMG_ID_Item[a].width = listIMG_ID_Item[a].width * rate
-//        }
-
-//        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
-//            listTEXT_ID_Item[b].x = listTEXT_ID_Item[b].x * rate
-//            listTEXT_ID_Item[b].width = listTEXT_ID_Item[b].width * rate
-//        }
-//    }
-
-//    onCurrentParentHeightChanged: {
-//        var rate = currentParentHeight/tmpHeight
-//        for (var a = 0; a < listIMG_ID_Item.length; a++) {
-//            listIMG_ID_Item[a].y = listIMG_ID_Item[a].y * rate
-//            listIMG_ID_Item[a].height = listIMG_ID_Item[a].height * rate
-//        }
-
-//        for (var b = 0; b < listTEXT_ID_Item.length; b++) {
-//            listTEXT_ID_Item[b].y = listTEXT_ID_Item[b].y * rate
-//            listTEXT_ID_Item[b].height = listTEXT_ID_Item[b].height * rate
-//        }
-//        txt_2.textSize = 7 *rate
-//        txt_3.textSize = 9 * rate
-//        txt_4.textSize = 5 * 1.5
-//        txt_5.textSize = 5 * 1.5
-//        txt_6.textSize = 5 * 1.5
-//        tmpHeight = currentParentHeight
-//    }
+    onHeightChanged: {
+        var rateTextSize = height/63
+        txt_1.textSize = 7 * rateTextSize
+        txt_2.textSize = 9 * rateTextSize
+    }
 }
 

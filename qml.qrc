@@ -218,5 +218,20 @@
         <file>qmlScreen/DashboardItemDeletegate.qml</file>
         <file>qmlScreen/DashboardItemModel.qml</file>
         <file>appIMG/0.Dashboard/Sony-Playstation-5-Blu-Ray-Edition-Console-White.jpg.png</file>
+        <file>appIMG/6.Common/Small_lotus_4x.png</file>
+        <file>appIMG/6.Common/credit-card-outline-active-4x.png</file>
+        <file>appIMG/6.Common/credit-card-outline-inactive-4x.png</file>
+        <file>appIMG/6.Common/cube-outline-active-4x.png</file>
+        <file>appIMG/6.Common/cube-outline-inactive-4x.png</file>
+        <file>appIMG/6.Common/flash-outline-2-active-4x.png</file>
+        <file>appIMG/6.Common/flash-outline-2-inactive-4x.png</file>
+        <file>appIMG/6.Common/grid-outline-active-4x.png</file>
+        <file>appIMG/6.Common/grid-outline-inactive-4x.png</file>
+        <file>appIMG/6.Common/person-outline-active-4x.png</file>
+        <file>appIMG/6.Common/person-outline-inactive-4x.png</file>
+        <file>appIMG/6.Common/settings-2-outline-inactive-4x.png</file>
+        <file>appIMG/6.Common/sun-outline-4x.png</file>
+        <file>appIMG/6.Common/close-outline-4x.png</file>
+        <file>appIMG/6.Common/minus-outline-4x.png</file>
     </qresource>
 </RCC>

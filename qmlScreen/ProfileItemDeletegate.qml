@@ -46,10 +46,9 @@ Rectangle {
 
     Text {
         id: profileTxt1
-        width: 5
-        height: 12
-//        x: 12
-//        y: 9
+        property int textSize: 8
+        width: (5/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (12/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -57,17 +56,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: idtxtContent
     }
 
     Text {
         id: profileTxt2
-        width: 44
-        height: 12
+//        width: 44
+//        height: 12
 //        x: 40
 //        y: 9
+        property int textSize: 8
+        width: (44/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (40/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -75,17 +77,20 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: profileNameContent
     }
 
     Text {
         id: profileTxt3
-        width: 46
-        height: 12
+//        width: 46
+//        height: 12
 //        x: 210
 //        y: 9
+        property int textSize: 8
+        width: (46/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (210/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -93,17 +98,19 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: nameOnCard
     }
 
     Image {
         id: profileItem2
-        width: 29
-        height: 10
+//        width: 29
+//        height: 10
 //        x: 489.25
 //        y: 9.75
+        width: (29/770) * parent.width //width
+        height: (10/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (489.25/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -119,10 +126,13 @@ Rectangle {
 
     Text {
         id: profileTxt4
-        width: 27
-        height: 12
+//        width: 27
+//        height: 12
 //        x: 530
 //        y: 9
+        property int textSize: 8
+        width: (27/770) * parent.width //width
+        height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (530/770)* parent.width
         horizontalAlignment: Text.AlignHCenter
@@ -130,17 +140,19 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
-        font.pointSize: 8
+        font.pointSize: textSize
         color: "#FFFFFF"
         text: cardNumber
     }
 
     Image {
         id: profileItem3
-        width: 20
-        height: 20
+//        width: 20
+//        height: 20
 //        x: 720
 //        y: 5
+        width: (20/770) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (720/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -156,10 +168,12 @@ Rectangle {
 
     Image {
         id: profileItem4
-        width: 20
-        height: 20
+//        width: 20
+//        height: 20
 //        x: 744
 //        y: 5
+        width: (20/770) * parent.width //width
+        height: (20/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (744/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
@@ -185,17 +199,11 @@ Rectangle {
 //        profileItem_listChildrentTXT.push(profileTxt4)
     }
 
-    onWidthChanged: {
-        var rate = width/profileItem_currentDetaiItemWidth
-//        console.log(rate)
-        for (var a = 0; a < profileItem_listChildrentItem.length; a++) {
-            profileItem_listChildrentItem[a].x = profileItem_listChildrentItem[a].x * rate
-            profileItem_listChildrentItem[a].width = profileItem_listChildrentItem[a].width * rate
-        }
-
-        for (var b = 0; b < profileItem_listChildrentTXT.length; b++) {
-            profileItem_listChildrentTXT[b].x = profileItem_listChildrentTXT[b].x * rate
-            profileItem_listChildrentTXT[b].width = profileItem_listChildrentTXT[b].width * rate
-        }
+    onHeightChanged: {
+        var rateTextSize = height/30
+        profileTxt1.textSize = 8 * rateTextSize
+        profileTxt2.textSize = 8 * rateTextSize
+        profileTxt3.textSize = 8 * rateTextSize
+        profileTxt4.textSize = 8 * rateTextSize
     }
 }
