@@ -7,6 +7,10 @@ Rectangle {
     id: rect_item
     property int accountItemWidthItem : 0
     property int accountItemHeightItem: 0
+    property string colorItem: ""
+    onColorItemChanged: {
+        cItem1.color = colorItem
+    }
 
     width: accountItemWidthItem
     height: accountItemHeightItem
@@ -16,8 +20,8 @@ Rectangle {
         id: cItem1
         width: accountItemWidthItem
         height: accountItemHeightItem
-        color: "#37345E"
-        radius: 3
+        color: colorItem
+        radius: 5
 
         MouseArea {
             anchors.fill: parent
@@ -25,7 +29,7 @@ Rectangle {
                 cItem1.color = "#907DE2"
             }
             onReleased: {
-                cItem1.color = "#37345E"
+                cItem1.color = colorItem
             }
         }
     }
@@ -44,13 +48,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (19/385)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: emailTxtContent
     }
 
@@ -61,13 +65,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (181/385)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: passWordContent
     }
 
@@ -78,7 +82,7 @@ Rectangle {
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (335/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action1Source
+        source: (colorItem ==="#37345E")?"../appIMG/4.AccountScreen/item_edit_all_4x.png":"../appIMG/7.LightMode/edit-icon-4x.png"//action1Source
 
         MouseArea {
             anchors.fill: parent
@@ -95,7 +99,7 @@ Rectangle {
         anchors.left: accountLeftCorner.right
         anchors.leftMargin: (359/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action2Source
+        source: (colorItem ==="#37345E")?"../appIMG/4.AccountScreen/item_delete_all_4x.png":"../appIMG/7.LightMode/item_delete_all_4x.png"//action2Source
 
         MouseArea {
             anchors.fill: parent

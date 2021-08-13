@@ -9,8 +9,14 @@ Rectangle {
     //    flags:Qt.FramelessWindowHint
     width: 582
     height: 453
-    color: "#37345E"
+    property bool dashboardNormalTheme: true
+    function changeTheme(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
 
+    color: dashboardNormalTheme?"#37345E":"#FFFFFF"
+    radius: 5
     signal signalFromCreateScreen(string msg)
     property int currentWidth: m_profilePaymentScreen.width
     property int currentHeight: m_profilePaymentScreen.height
@@ -26,6 +32,7 @@ Rectangle {
         x: 15
         y: 16
         color: "#907DE2"
+        radius: 5
         Text {
             id: txt_1
             property int txtSize: 13
@@ -58,7 +65,7 @@ Rectangle {
         text: qsTr("Shipping")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#626477"
+        color: dashboardNormalTheme?"#626477":"#BDBDC7"
 
         MouseArea {
             anchors.fill: parent
@@ -79,7 +86,7 @@ Rectangle {
         text: qsTr("Billing")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#626477"
+        color: dashboardNormalTheme?"#626477":"#BDBDC7"
 
         MouseArea {
             anchors.fill: parent
@@ -100,7 +107,7 @@ Rectangle {
         text: qsTr("Payment")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -110,7 +117,7 @@ Rectangle {
         x: 178
         y: 121.07
         color: "#907DE2"
-
+        radius: 5
     }
 
     Rectangle {
@@ -119,9 +126,9 @@ Rectangle {
         height: 30
         x: 40
         y: 169
-        color: "#3F3C68"
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         clip: true
-
+        radius: 5
         TextInput {
             id: txt_6
             property int txtSize: 9
@@ -132,7 +139,15 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
-            text: qsTr("Enter Cardholder")
+//            text: qsTr("Enter Cardholder")
+            property string placeholderText: "Enter Cardholder"
+
+            Text {
+                text: txt_6.placeholderText
+                color: "#6a687d"
+                visible: !txt_6.text
+                font: txt_6.font
+            }
         }
     }
 
@@ -146,7 +161,7 @@ Rectangle {
         text: qsTr("Cardholder")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Text {
@@ -159,7 +174,7 @@ Rectangle {
         text: qsTr("Card Number")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -168,9 +183,9 @@ Rectangle {
         height: 30
         x: 40
         y: 239
-        color: "#3F3C68"
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         clip: true
-
+        radius: 5
         TextInput {
             id: txt_8
             property int txtSize: 9
@@ -181,7 +196,15 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
-            text: qsTr("Enter Card Number")
+//            text: qsTr("Enter Card Number")
+            property string placeholderText: "Enter Card Number"
+
+            Text {
+                text: txt_8.placeholderText
+                color: "#6a687d"
+                visible: !txt_8.text
+                font: txt_8.font
+            }
         }
     }
 
@@ -195,7 +218,7 @@ Rectangle {
         text: qsTr("Expiry Month")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -221,7 +244,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -233,7 +256,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -250,12 +273,12 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_0.pressed ? "#17a81a" : "#37345E"
+            border.color: control_0.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#F7F8FC"
             border.width: control_0.visualFocus ? 2 : 1
-            radius: 2
+            radius: 5
         }
 
         popup: Popup {
@@ -274,8 +297,8 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
-                radius: 2
+                border.color: dashboardNormalTheme?"#37345E":"#F7F8FC"
+                radius: 5
             }
         }
 
@@ -309,7 +332,7 @@ Rectangle {
         text: qsTr("Expiry Year")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -335,7 +358,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -347,7 +370,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -364,12 +387,12 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_1.pressed ? "#17a81a" : "#37345E"
+            border.color: control_1.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#F7F8FC"
             border.width: control_1.visualFocus ? 2 : 1
-            radius: 2
+            radius: 5
         }
 
         popup: Popup {
@@ -388,8 +411,8 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
-                radius: 2
+                border.color: dashboardNormalTheme?"#37345E":"#F7F8FC"
+                radius: 5
             }
         }
 
@@ -416,7 +439,7 @@ Rectangle {
         text: qsTr("CVV")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -425,9 +448,9 @@ Rectangle {
         height: 30
         x: 40
         y: 386
-        color: "#3F3C68"
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         clip: true
-
+        radius: 5
         TextInput {
             id: txt_22
             property int txtSize: 9
@@ -438,7 +461,15 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
-            text: qsTr("Enter CVV")
+//            text: qsTr("Enter CVV")
+            property string placeholderText: "Enter CVV"
+
+            Text {
+                text: txt_22.placeholderText
+                color: "#6a687d"
+                visible: !txt_22.text
+                font: txt_22.font
+            }
         }
     }
 
@@ -449,7 +480,7 @@ Rectangle {
         x: 299
         y: 386
         color: "transparent"
-        border.color: "#3F3C68"
+        border.color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         radius: 5
         Text {
             id: txt_25
@@ -461,12 +492,12 @@ Rectangle {
             text: qsTr("Cancel")
             font.family: "Inter"
             font.pointSize: txtSize
-            color: "#FFFFFF"
+            color: dashboardNormalTheme?"#FFFFFF":"#000000"
         }
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                item_13.color = "#3F3C68"
+                item_13.color = dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             }
             onReleased: {
                 item_13.color = "transparent"
@@ -484,8 +515,8 @@ Rectangle {
         height: 30
         x: 424
         y: 386
-        color: "#FFFFFF"
-        border.color: "#3F3C68"
+        color: dashboardNormalTheme?"#FFFFFF":"#F7F8FC"
+        border.color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         radius: 5
         Text {
             id: txt_26

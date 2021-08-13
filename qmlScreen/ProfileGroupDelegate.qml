@@ -7,6 +7,7 @@ Rectangle {
     id: rec_2_1
     property int profileGroupWidthItem : 0
     property int profileGroupHeightItem : 0
+    property string colorItem: ""
 
     width: profileGroupWidthItem
     height: profileGroupHeightItem
@@ -16,8 +17,8 @@ Rectangle {
         id: rec_2_2
         width: profileGroupWidthItem
         height: profileGroupHeightItem
-        color: itemMouseArea.containsMouse ? "#907DE2" : "#37345E"
-        radius: 3
+        color: itemMouseArea.containsMouse ? "#907DE2" : colorItem
+        radius: 5
     }
 
     Text {
@@ -43,7 +44,7 @@ Rectangle {
         anchors.topMargin: (15/63)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
     }
 
     Text {
@@ -62,7 +63,7 @@ Rectangle {
         anchors.topMargin: (31/63)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
     }
 
     MouseArea {
@@ -84,7 +85,9 @@ Rectangle {
         anchors.top: profileGroupLeftCorner.bottom
         anchors.topMargin: (21/63)* parent.height //y
         color: "transparent"
-        border.color: "#3E3A68"
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        radius: 3
+        border.width: 0.5
     }
 
     Image {
@@ -99,7 +102,7 @@ Rectangle {
         anchors.leftMargin: (186.5/221)* parent.width //x
         anchors.top: profileGroupLeftCorner.bottom
         anchors.topMargin: (26/63)* parent.height //y
-        source: "../image/Profile/trash-outline.png"
+        source: (colorItem ==="#37345E")?"../appIMG/2.ProfileScreen/trash-outline-4x.png":"../appIMG/7.LightMode/trash-outline-4x.png"
     }
     onHeightChanged: {
         var rateTextSize = height/63

@@ -7,17 +7,20 @@ Rectangle {
     id: rect_item
     property int proxyItemWidthItem : 0
     property int proxyItemHeightItem : 0
+    property string colorItem: ""
+    onColorItemChanged: {
+        cItem1.color = colorItem
+    }
 
     width: proxyItemWidthItem
     height: proxyItemHeightItem
     color: "transparent"
-    property int itemWid: 0
     Rectangle {
         id: cItem1
         width: proxyItemWidthItem
         height: proxyItemHeightItem
-        color: "#37345E"
-        radius: 3
+        color: colorItem
+        radius: 5
 
         MouseArea {
             anchors.fill: parent
@@ -25,7 +28,7 @@ Rectangle {
                 cItem1.color = "#907DE2"
             }
             onReleased: {
-                cItem1.color = "#37345E"
+                cItem1.color = colorItem
             }
         }
     }
@@ -40,12 +43,12 @@ Rectangle {
     Text {
         id: ctxt1
         property int textSize: 8
-
+//        x: 33
         width: (209/385) * parent.width //width
         height: (12/30) * parent.height //height
         anchors.left: proxyLeftCorner.right
         anchors.leftMargin: (19/385)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -53,7 +56,7 @@ Rectangle {
 
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: proxyTxtContent
     }
 
@@ -64,7 +67,7 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: proxyLeftCorner.right
         anchors.leftMargin: (271/385)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -87,7 +90,7 @@ Rectangle {
         anchors.left: proxyLeftCorner.right
         anchors.leftMargin: (335/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action1Source
+        source: (colorItem ==="#37345E")?"../appIMG/3.ProxyScreen/item_edit_all_4x.png":"../appIMG/7.LightMode/edit-icon-4x.png"//action1Source
 
         MouseArea {
             anchors.fill: parent
@@ -108,7 +111,7 @@ Rectangle {
         anchors.left: proxyLeftCorner.right
         anchors.leftMargin: (359/385)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action2Source
+        source: (colorItem ==="#37345E")?"../appIMG/3.ProxyScreen/item_delete_all_4x.png":"../appIMG/7.LightMode/item_delete_all_4x.png"//action2Source
 
         MouseArea {
             anchors.fill: parent
@@ -119,7 +122,6 @@ Rectangle {
     }
 
     onHeightChanged: {
-        console.log(height)
         var rateTextSize = height/30
         ctxt1.textSize = 8 * rateTextSize
         ctxt1.textSize = 8 * rateTextSize

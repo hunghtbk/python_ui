@@ -11,6 +11,12 @@ Rectangle {
     property var taskItemListIMG_ID_DetailItem: []
     property var taskItemListTEXT_ID_DetailItem: []
     property int taskItemCurrentDetaiItemWidth: taskItemrect_1_1.width
+    property string colorItem: ""
+    onColorItemChanged: {
+        taskItemRec_3_4.color = colorItem
+    }
+
+    signal taskItemTrigger(string msg, int itemIndex)
 
     width: taskItemWidthDelegate
     height: taskItemHeightDelegate
@@ -20,8 +26,8 @@ Rectangle {
         id: taskItemRec_3_4
         width: taskItemWidthDelegate
         height: taskItemHeightDelegate
-        color: "#37345E"
-        radius: 3
+        color: colorItem
+        radius: 5
 
         MouseArea {
             anchors.fill: parent
@@ -29,7 +35,7 @@ Rectangle {
                 taskItemRec_3_4.color = "#907DE2"
             }
             onReleased: {
-                taskItemRec_3_4.color = "#37345E"
+                taskItemRec_3_4.color = colorItem
             }
             onClicked: {
                 console.log(taskItemRec_3_4.width)
@@ -55,13 +61,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (14/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: idtxtContent
     }
 
@@ -76,13 +82,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (40/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: productContent
     }
 
@@ -97,13 +103,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (235/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: sizeContent
     }
 
@@ -118,13 +124,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (280/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: siteContent
     }
 
@@ -139,13 +145,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (377/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: profileContent
     }
 
@@ -160,13 +166,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (468/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: proxyContent
     }
 
@@ -181,7 +187,7 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: leftCorner.right
         anchors.leftMargin: (575/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -202,7 +208,7 @@ Rectangle {
         anchors.left: leftCorner.right
         anchors.leftMargin: (696/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action1Source
+        source: (colorItem ==="#37345E")?"../appIMG/1.TaskScren/item_stop_all_4x.png":"../appIMG/7.LightMode/item_stop_all_4x.png"//action1Source
 
         MouseArea {
             anchors.fill: parent
@@ -223,12 +229,13 @@ Rectangle {
         anchors.left: leftCorner.right
         anchors.leftMargin: (720/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action2Source
+        source: (colorItem ==="#37345E")?"../appIMG/1.TaskScren/item_edit_all_4x.png":"../appIMG/7.LightMode/edit-icon-4x.png"//action2Source
 
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("action2")
+                console.log("action2 - event from item")
+                taskItemrect_1_1.taskItemTrigger("task_item_delegate_edit", index)
             }
         }
     }
@@ -244,7 +251,7 @@ Rectangle {
         anchors.left: leftCorner.right
         anchors.leftMargin: (744/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action3Source
+        source: (colorItem ==="#37345E")?"../appIMG/1.TaskScren/item_delete_all_4x.png":"../appIMG/7.LightMode/item_delete_all_4x.png"//action3Source
 
         MouseArea {
             anchors.fill: parent

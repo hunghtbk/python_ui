@@ -11,6 +11,10 @@ Rectangle {
     property var profileItem_listChildrentItem: []
     property var profileItem_listChildrentTXT: []
     property int profileItem_currentDetaiItemWidth: profileItem_rect_item.width
+    property string colorItem: ""
+    onColorItemChanged: {
+        profileItem1.color = colorItem
+    }
 
     width: profileItem_widthDelegate
     height: profileItem_heightDelegate
@@ -20,8 +24,8 @@ Rectangle {
         id: profileItem1
         width: profileItem_widthDelegate
         height: profileItem_heightDelegate
-        color: "#37345E"
-        radius: 3
+        color: colorItem
+        radius: 5
 
         MouseArea {
             anchors.fill: parent
@@ -29,10 +33,10 @@ Rectangle {
                 profileItem1.color = "#907DE2"
             }
             onReleased: {
-                profileItem1.color = "#37345E"
+                profileItem1.color = colorItem
             }
             onClicked: {
-                console.log("Profile item width" + profileItem1.width)
+                console.log("Profile item width " + profileItem1.width)
             }
         }
     }
@@ -51,13 +55,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (12/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: idtxtContent
     }
 
@@ -72,13 +76,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (40/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: profileNameContent
     }
 
@@ -93,13 +97,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (210/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: nameOnCard
     }
 
@@ -135,13 +139,13 @@ Rectangle {
         height: (12/30) * parent.height //height
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (530/770)* parent.width
-        horizontalAlignment: Text.AlignHCenter
+//        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: cardNumber
     }
 
@@ -156,7 +160,7 @@ Rectangle {
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (720/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action1Source
+        source: (colorItem ==="#37345E")?"../appIMG/3.ProxyScreen/item_edit_all_4x.png":"../appIMG/7.LightMode/edit-icon-4x.png"//action1Source
 
         MouseArea {
             anchors.fill: parent
@@ -177,7 +181,7 @@ Rectangle {
         anchors.left: profileLeftCorner.right
         anchors.leftMargin: (744/770)* parent.width
         anchors.verticalCenter: parent.verticalCenter
-        source: action2Source
+        source: (colorItem ==="#37345E")?"../appIMG/3.ProxyScreen/item_delete_all_4x.png":"../appIMG/7.LightMode/item_delete_all_4x.png"//action2Source
 
         MouseArea {
             anchors.fill: parent

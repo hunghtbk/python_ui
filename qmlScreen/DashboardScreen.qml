@@ -1,7 +1,7 @@
 import QtQuick 2.5
-import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
-import QtCharts 2.0
+import QtCharts 2.2
+import QtGraphicalEffects 1.0
 
 Rectangle {
     id: m_dashboardScreen
@@ -9,7 +9,7 @@ Rectangle {
     width: 1135
     height: 730
     //    title: qsTr("Task Screen")
-    color: "#2E2C50"
+    color: "transparent"
     //    flags:Qt.FramelessWindowHint
     signal message(string msg)
     property int currentWidth: m_dashboardScreen.width
@@ -20,6 +20,13 @@ Rectangle {
     property var listTXT_13: []
     property var listTXT_15: []
     property var listTXT_17: []
+
+    property bool dashboardNormalTheme: true
+
+    function changeTheme(abcd) {
+        console.log("dashboard " + abcd)
+        dashboardNormalTheme = abcd
+    }
 
     Text {
         id: dashboardScreenborderLeftMain
@@ -41,7 +48,7 @@ Rectangle {
         anchors.topMargin: (19/730)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme ? "#FFFFFF" : "#000000"
     }
 
 
@@ -54,7 +61,7 @@ Rectangle {
         anchors.top: dashboardScreenborderLeftMain.bottom
         anchors.topMargin: (64/730)* parent.height //y
         color: "#907DE2"
-        radius: 3
+        radius: 5
     }
 
     Text {
@@ -96,7 +103,7 @@ Rectangle {
         anchors.top: dashboardScreenborderLeftMain.bottom
         anchors.topMargin: (155/730)* parent.height //y
         color: "#FFFFFF"
-        radius: 3
+        radius: 5
     }
 
     Text {
@@ -145,7 +152,7 @@ Rectangle {
         anchors.top: dashboardScreenborderLeftMain.bottom
         anchors.topMargin: (64/730)* parent.height //y
         color: "#282645"
-        radius: 3
+        radius: 5
     }
 
     Image {
@@ -345,26 +352,237 @@ Rectangle {
         color: "#FFFFFF"
     }
 
-    ChartView {
-//        title: "Spline"
+    Rectangle {
+        id: backgroundChartView
         width: (620/1135) * m_dashboardScreen.width //width
-        height: (420/730) * m_dashboardScreen.height //height
+        height: (415/730) * m_dashboardScreen.height //height
         anchors.left: dashboardScreenborderLeftMain.right
         anchors.leftMargin: (28/1135)* parent.width //x
         anchors.top: dashboardScreenborderLeftMain.bottom
         anchors.topMargin: (271/730)* parent.height //y
+        color: "#37345E"
+        radius: 5
+    }
+
+    Rectangle {
+        id: selectedYear
+        width: (32/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (56/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (307.07/730)* parent.height //y
+        color: "#907DE2"
+        visible: false
+    }
+
+    Rectangle {
+        id: selectedMonth
+        width: (32/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (109/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (307.07/730)* parent.height //y
+        color: "#907DE2"
+        visible: false
+    }
+
+    Rectangle {
+        id: selectedWeek
+        width: (32/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (172/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (307.07/730)* parent.height //y
+        color: "#907DE2"
+        visible: true
+    }
+
+    Rectangle {
+        id: selectedDay
+        width: (32/1135) * m_dashboardScreen.width //width
+        height: (1/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (231/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (307.07/730)* parent.height //y
+        color: "#907DE2"
+        visible: false
+    }
+
+    Text {
+        id: txt_13
+        property int textSize: 9
+        text: qsTr("Year")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (56/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (287/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (dashboardNormalTheme) {
+                    txt_13.color = "#FFFFFF"
+                } else {
+                    txt_13.color = "#000000"
+                }
+
+                txt_14.color = "#5D5984"
+                txt_15.color = "#5D5984"
+                txt_16.color = "#5D5984"
+                selectedYear.visible = true
+                selectedMonth.visible = false
+                selectedWeek.visible = false
+                selectedDay.visible = false
+            }
+        }
+    }
+
+    Text {
+        id: txt_14
+        property int textSize: 9
+        text: qsTr("Month")
+        width: (38/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (109/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (287/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                txt_13.color = "#5D5984"
+                if (dashboardNormalTheme) {
+                    txt_14.color = "#FFFFFF"
+                } else {
+                    txt_14.color = "#000000"
+                }
+
+                txt_15.color = "#5D5984"
+                txt_16.color = "#5D5984"
+                selectedYear.visible = false
+                selectedMonth.visible = true
+                selectedWeek.visible = false
+                selectedDay.visible = false
+            }
+        }
+    }
+
+    Text {
+        id: txt_15
+        property int textSize: 9
+        text: qsTr("Week")
+        width: (38/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (172/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (287/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: dashboardNormalTheme ? "#FFFFFF" : "#000000"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                txt_13.color = "#5D5984"
+                txt_14.color = "#5D5984"
+                if (dashboardNormalTheme) {
+                    txt_15.color = "#FFFFFF"
+                } else {
+                    txt_15.color = "#000000"
+                }
+
+                txt_16.color = "#5D5984"
+                selectedYear.visible = false
+                selectedMonth.visible = false
+                selectedWeek.visible = true
+                selectedDay.visible = false
+            }
+        }
+    }
+
+    Text {
+        id: txt_16
+        property int textSize: 9
+        text: qsTr("Day")
+        width: (38/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (231/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (287/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                txt_13.color = "#5D5984"
+                txt_14.color = "#5D5984"
+                txt_15.color = "#5D5984"
+                if (dashboardNormalTheme) {
+                    txt_16.color = "#FFFFFF"
+                } else {
+                    txt_16.color = "#000000"
+                }
+
+                selectedYear.visible = false
+                selectedMonth.visible = false
+                selectedWeek.visible = false
+                selectedDay.visible = true
+            }
+        }
+    }
+
+    ChartView {
+        //        title: "Spline"
+        id: chartID
+        width: (600/1135) * m_dashboardScreen.width //width
+        height: (370/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (28/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (320/730)* parent.height //y
         antialiasing: true
-        backgroundColor: "#37345E"
+        backgroundColor: "transparent"
+        legend.visible: false
         theme: ChartView.ChartThemeDark
-        axes: xAxis
+        //        axes: xAxis
 
         ValueAxis {
-                id: xAxis
-                min: 0
-                max: 10
-            }
+            id: xAxis
+            min: 0
+            max: 10
+            color: "#4B486E"
+            gridLineColor: "#4B486E"
+            labelsColor: "#5D5984"
+        }
+
+        ValueAxis {
+            id: yAxis
+            min: 0
+            max: 15
+            color: "#4B486E"
+            gridLineColor: "#4B486E"
+            labelsColor: "#5D5984"
+        }
         SplineSeries {
-//            name: "SplineSeries"
+            id: splineSeries
+            //            name: "SplineSeries"
             XYPoint { x: 0; y: 0.0 }
             XYPoint { x: 1.1; y: 3.2 }
             XYPoint { x: 1.9; y: 2.4 }
@@ -372,20 +590,85 @@ Rectangle {
             XYPoint { x: 2.9; y: 2.6 }
             XYPoint { x: 3.4; y: 2.3 }
             XYPoint { x: 4.1; y: 3.1 }
+            XYPoint { x: 4.5; y: 6.2 }
+            XYPoint { x: 9.1; y: 10.0 }
+            XYPoint { x: 10.0; y: 11.3 }
             color: "#907DE2"
+            width: (2/730) * m_dashboardScreen.height
+            axisX: xAxis
+            axisY: yAxis
         }
+
+        //        Glow {
+        //            id:glow
+        //            anchors.fill: splineSeries
+        //            radius: 18
+        //            samples: 168
+        //            color: "purple"
+        //            source: splineSeries
+
+        //        }
+
+        //        LinearGradient {
+        //            id:gradient
+        //            // 200 is length of gamut
+        //            start:Qt.point(200,0)
+        //            end:Qt.point(0,0)
+        //            gradient: Gradient {
+        //                GradientStop {
+        //                    position: 1;
+        //                    color: "#312c36";
+        //                }
+
+        //                GradientStop {
+        //                    position: 0.5;
+        //                    color: "#5f4a69";
+        //                }
+
+
+        //                GradientStop {
+        //                    position: 0.2;
+        //                    color: "#a600ff";
+        //                }
+        //            }
+        //            anchors.fill: splineSeries
+        //            source : splineSeries
+        //        }
+
+
+        //        AreaSeries {
+        //                name: "Label for Chart"
+        //                axisX: xAxis
+        //                axisY: yAxis
+        //                color: "#37345E"
+        //                opacity: 0.75
+        //                upperSeries: LineSeries {
+        //                    XYPoint { x: 0; y: 0.0 }
+        //                    XYPoint { x: 1.1; y: 3.2 }
+        //                    XYPoint { x: 1.9; y: 2.4 }
+        //                    XYPoint { x: 2.1; y: 2.1 }
+        //                    XYPoint { x: 2.9; y: 2.6 }
+        //                    XYPoint { x: 3.4; y: 2.3 }
+        //                    XYPoint { x: 4.1; y: 3.1 }
+        //                    XYPoint { x: 4.1; y: 3.1 }
+        //                    XYPoint { x: 4.5; y: 6.2 }
+        //                    XYPoint { x: 10; y: 10.0 }
+        //                }
+        //            }
     }
 
-    Image {
-        id: img_border
+    Rectangle {
+        id: img_border_rect
         width: (9/1135) * m_dashboardScreen.width //width
-        height: (405/730) * m_dashboardScreen.height //height
+        height: (402/730) * m_dashboardScreen.height //height
         anchors.left: dashboardScreenborderLeftMain.right
         anchors.leftMargin: (1093/1135)* parent.width //x
         anchors.top: dashboardScreenborderLeftMain.bottom
-        anchors.topMargin: (279/730)* parent.height //y
-        source: "../image/0.Common/task_scroll_border.png"
+        anchors.topMargin: (273/730)* parent.height //y
+        color: dashboardNormalTheme?"#282645":"#d7d6de"
+        radius: 5
     }
+
     ListView {
         id: listItem
         width: (431/1135) * m_dashboardScreen.width //width
@@ -393,11 +676,12 @@ Rectangle {
         anchors.left: dashboardScreenborderLeftMain.right
         anchors.leftMargin: (673/1135)* parent.width //x
         anchors.top: dashboardScreenborderLeftMain.bottom
-        anchors.topMargin: (279/730)* parent.height //y
+        anchors.topMargin: (271/730)* parent.height //y
         model: DashboardItemModel {}
         delegate: DashboardItemDeletegate {
             dashboardItemWidthItem: (405/1135) * m_dashboardScreen.width
             dashboardItemHeightItem: (50/730) * m_dashboardScreen.height
+            colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
         }
         spacing: 8
         clip: true
@@ -408,13 +692,55 @@ Rectangle {
                 id: rec_4
                 implicitWidth: (9/1135) * m_dashboardScreen.width
                 implicitHeight: (200/730) * m_dashboardScreen.height
+                color: dashboardNormalTheme?"#423F6B":"#FFFFFF"
                 radius: 10
             }
         }
     }
+    function updateTheme() {
+        if (selectedYear.visible) {
+            txt_13.color = dashboardNormalTheme ? "#FFFFFF" : "#000000"
+        }
+        if (selectedMonth.visible) {
+            txt_14.color = dashboardNormalTheme ? "#FFFFFF" : "#000000"
+        }
+        if (selectedWeek.visible) {
+            txt_15.color = dashboardNormalTheme ? "#FFFFFF" : "#000000"
+        }
+
+        if (selectedDay.visible) {
+            txt_16.color = dashboardNormalTheme ? "#FFFFFF" : "#000000"
+        }
+
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_1.color = nColor
+            txt_11.color = nColor
+            txt_12.color = nColor
+            txt_5.color = nColor
+            txt_6.color = nColor
+            txt_7.color = nColor
+            recTotalInfo.color = "#282645"
+            backgroundChartView.color = "#37345E"
+        } else {
+            txt_1.color = abnColor
+            txt_11.color = abnColor
+            txt_12.color = abnColor
+            txt_5.color = abnColor
+            txt_6.color = abnColor
+            txt_7.color = abnColor
+            recTotalInfo.color = nColor
+            backgroundChartView.color = "#FFFFFF"
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
 
     Component.onCompleted: {
-        console.log("complete")
+        updateTheme()
         listTXT_13.push(txt_1)
         listTXT_11.push(txt_2)
         listTXT_15.push(txt_3)
@@ -428,6 +754,10 @@ Rectangle {
         listTXT_9.push(txt_10)
         listTXT_13.push(txt_11)
         listTXT_13.push(txt_12)
+        listTXT_9.push(txt_13)
+        listTXT_9.push(txt_14)
+        listTXT_9.push(txt_15)
+        listTXT_9.push(txt_16)
     }
     onHeightChanged: {
         var rateTextSize = height/730

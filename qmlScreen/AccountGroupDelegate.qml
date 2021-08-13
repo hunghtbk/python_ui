@@ -7,11 +7,12 @@ Rectangle {
     id: rec_2_1
     property int accountGroupWidthItem : 0
     property int accountGroupHeightItem : 0
+    property string colorItem: ""
 
     width: accountGroupWidthItem
     height: accountGroupHeightItem
     color: "transparent"
-    radius: 3
+    radius: 5
 
     property var listIMG_ID_Item: []
     property var listTEXT_ID_Item: []
@@ -22,8 +23,8 @@ Rectangle {
         id: rec_2_2
         width: accountGroupWidthItem
         height: accountGroupHeightItem
-        color: itemMouseArea.containsMouse ? "#907DE2" : "#37345E"
-        radius: 3
+        color: itemMouseArea.containsMouse ? "#907DE2" : colorItem
+        radius: 5
     }
 
     Text {
@@ -49,7 +50,7 @@ Rectangle {
         anchors.topMargin: (15/63)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
     }
 
     Text {
@@ -68,7 +69,7 @@ Rectangle {
         anchors.topMargin: (31/63)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
     }
 
     MouseArea {
@@ -90,7 +91,9 @@ Rectangle {
         anchors.top: accountLeftCorner.bottom
         anchors.topMargin: (21/63)* parent.height //y
         color: "transparent"
-        border.color: "#3E3A68"
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        radius: 3
+        border.width: 0.5
     }
 
     Image {
@@ -105,7 +108,7 @@ Rectangle {
         anchors.leftMargin: (186.5/221)* parent.width //x
         anchors.top: accountLeftCorner.bottom
         anchors.topMargin: (26/63)* parent.height //y
-        source: "../image/Proxy/trash-outline.png"
+        source: (colorItem ==="#37345E")?"../appIMG/4.AccountScreen/trash-outline-4x.png":"../appIMG/7.LightMode/trash-outline-4x.png"
 
         MouseArea {
             anchors.fill: parent

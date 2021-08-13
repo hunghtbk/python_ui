@@ -2,7 +2,7 @@ import QtQuick 2.5
 
 ListModel {
     ListElement{
-        itemSource: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png"
+        itemSource: "../appIMG/1.TaskScren/Sony-Playstation-5-Blu-Ray-Edition-Console-White-4x.png"
         itemStatus: "Bestbuy"
         itemName: "Playstation 5 Digital…"
         whiteIndex: "281"
@@ -11,7 +11,7 @@ ListModel {
     }
 
     ListElement{
-        itemSource: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png"
+        itemSource: "../appIMG/1.TaskScren/Sony-Playstation-5-Blu-Ray-Edition-Console-White-4x.png"
         itemStatus: "Bestbuy"
         itemName: "Playstation 5 Digital…"
         whiteIndex: "281"
@@ -20,7 +20,7 @@ ListModel {
     }
 
     ListElement{
-        itemSource: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png"
+        itemSource: "../appIMG/1.TaskScren/Sony-Playstation-5-Blu-Ray-Edition-Console-White-4x.png"
         itemStatus: "Bestbuy"
         itemName: "Playstation 5 Digital…"
         whiteIndex: "281"
@@ -29,7 +29,7 @@ ListModel {
     }
 
     ListElement{
-        itemSource: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png"
+        itemSource: "../appIMG/1.TaskScren/Sony-Playstation-5-Blu-Ray-Edition-Console-White-4x.png"
         itemStatus: "Bestbuy"
         itemName: "Playstation 5 Digital…"
         whiteIndex: "281"

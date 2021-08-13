@@ -9,10 +9,14 @@ Window {
     height: 730
     title: qsTr("Task Screen")
     color: "#2E2C50"
-//    flags:Qt.FramelessWindowHint
+    flags:Qt.FramelessWindowHint
 
     property int currentWidth: m_mainScreen.width
     property int currentHeight: m_mainScreen.height
+
+    property bool normalTheme: true
+    signal sendThemeValueToSubScreen(bool value)
+    signal sendThemeValueToPopup(bool value)
 
     //For loadersize
     property int loaderW: 0
@@ -44,42 +48,55 @@ Window {
         height: 0
     }
 
+    MouseArea {
+        anchors.fill: parent
+        onPressed: { pos = Qt.point(mouse.x, mouse.y) }
+        onPositionChanged: {
+            var diff = Qt.point(mouse.x - pos.x, mouse.y - pos.y)
+            m_mainScreen.x += diff.x
+            m_mainScreen.y += diff.y
+        }
+        property point pos
+    }
+
     Rectangle {
         id: rec_1
         width: 65
         height: 730
-        color: "#37345E"
+        color: (normalTheme)? "#37345E" : "#FFFFFF"
+        border.color: (normalTheme)? "#37345E" : "#EFF0F6"
 
         //Define small lotus
         Image {
             id: main_img_1
-            width: 31
-            height: 30
-            x: 17
+            width: 45
+            height: 44
+            x: 10
             y: 13
             source: "../appIMG/6.Common/Small_lotus_4x.png"
         }
         //Dashboard icon
         Image {
             id: dashboardScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 59
+            width: 25
+            height: 25
+            x: 20
+            y: 69
             source: "../appIMG/6.Common/grid-outline-active-4x.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if(selectedApp != 0) dashboardScreenId.source = "../appIMG/6.Common/grid-outline-active-4x.png"
+                    if(selectedApp != 0) dashboardScreenId.source = (normalTheme)?"../appIMG/6.Common/grid-outline-active-4x.png":"../appIMG/7.LightMode/grid-outline-active-4x.png"
                 }
                 onReleased: {
-                    if(selectedApp != 0) dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                    if(selectedApp != 0) dashboardScreenId.source = (normalTheme)?"../appIMG/6.Common/grid-outline-inactive-4x.png":"../appIMG/7.LightMode/grid-outline-inactive-4x.png"
                 }
                 onClicked: {
                     console.log("Dash Board Screen")
                     selectedApp = 0
                     main_loaderItem.source = "DashboardScreen.qml"
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                 }
             }
         }
@@ -87,25 +104,26 @@ Window {
         //task group icon
         Image {
             id: taskScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 93
+            width: 25
+            height: 25
+            x: 20
+            y: 113
             source: "../appIMG/6.Common/cube-outline-inactive-4x.png"
             MouseArea {
                 anchors.fill: parent
                 MouseArea {
                     anchors.fill: parent
                     onPressed: {
-                        if (selectedApp != 1) taskScreenId.source = "../appIMG/6.Common/cube-outline-active-4x.png"
+                        if (selectedApp != 1) taskScreenId.source = normalTheme?"../appIMG/6.Common/cube-outline-active-4x.png":"../appIMG/7.LightMode/cube-outline-active-4x.png"
                     }
                     onReleased: {
-                        if (selectedApp != 1) taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                        if (selectedApp != 1) taskScreenId.source = normalTheme?"../appIMG/6.Common/cube-outline-inactive-4x.png":"../appIMG/7.LightMode/cube-outline-inactive-4x.png"
                     }
                     onClicked: {
                         console.log("Task Group Screen")
                         selectedApp = 1
                         main_loaderItem.source = "TaskScreen.qml"
+                        m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                     }
                 }
             }
@@ -138,24 +156,25 @@ Window {
         //Profile Icon
         Image {
             id: profileScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 127
+            width: 25
+            height: 25
+            x: 20
+            y: 151
             source: "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 2) profileScreenId.source = "../appIMG/6.Common/credit-card-outline-active-4x.png"
+                    if (selectedApp != 2) profileScreenId.source = normalTheme?"../appIMG/6.Common/credit-card-outline-active-4x.png":"../appIMG/7.LightMode/credit-card-outline-active-4x.png"
                 }
                 onReleased: {
-                    if (selectedApp != 2) profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                    if (selectedApp != 2) profileScreenId.source = normalTheme?"../appIMG/6.Common/credit-card-outline-inactive-4x.png":"../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
                 }
                 onClicked: {
                     console.log("Profile Screen")
                     selectedApp = 2
                     main_loaderItem.source = "ProfileScreen.qml"
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                 }
             }
         }
@@ -163,24 +182,25 @@ Window {
         //Proxy icon
         Image {
             id: proxyScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 161
+            width: 25
+            height: 25
+            x: 20
+            y: 193
             source: "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 3) proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-active-4x.png"
+                    if (selectedApp != 3) proxyScreenId.source = normalTheme?"../appIMG/6.Common/flash-outline-2-active-4x.png":"../appIMG/7.LightMode/flash-outline-2-active-4x.png"
                 }
                 onReleased: {
-                    if (selectedApp != 3) proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                    if (selectedApp != 3) proxyScreenId.source = normalTheme?"../appIMG/6.Common/flash-outline-2-inactive-4x.png":"../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
                 }
                 onClicked: {
                     console.log("Proxy Screen")
                     selectedApp = 3
                     main_loaderItem.source = "ProxyScreen.qml"
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                 }
             }
         }
@@ -188,24 +208,25 @@ Window {
         //Account Icon
         Image {
             id: accountScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 193
+            width: 25
+            height: 25
+            x: 20
+            y: 233
             source: "../appIMG/6.Common/person-outline-inactive-4x.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 4) accountScreenId.source = "../appIMG/6.Common/person-outline-active-4x.png"
+                    if (selectedApp != 4) accountScreenId.source = normalTheme?"../appIMG/6.Common/person-outline-active-4x.png":"../appIMG/7.LightMode/person-outline-active-4x.png"
                 }
                 onReleased: {
-                    if (selectedApp != 4) accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                    if (selectedApp != 4) accountScreenId.source = normalTheme?"../appIMG/6.Common/person-outline-inactive-4x.png":"../appIMG/7.LightMode/person-outline-inactive-4x.png"
                 }
                 onClicked: {
                     console.log("Account Screen")
                     selectedApp = 4
                     main_loaderItem.source = "AccountScreen.qml"
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                 }
             }
         }
@@ -213,26 +234,27 @@ Window {
         //Setting Icon
         Image {
             id: settingScreenId
-            width: 18
-            height: 18
-            x: 24
-            y: 225
+            width: 25
+            height: 25
+            x: 20
+            y: 273
             source: "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
 
             MouseArea {
                 anchors.fill: parent
                 onPressed: {
-                    if (selectedApp != 5) settingScreenId.source = "../appIMG/6.Common/settings-2-outline-active-4x.png"
+                    if (selectedApp != 5) settingScreenId.source = normalTheme?"../appIMG/6.Common/settings-2-outline-active-4x.png":"../appIMG/7.LightMode/settings-2-outline-active-4x.png"
                 }
 
                 onReleased: {
-                    if (selectedApp != 5) settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+                    if (selectedApp != 5) settingScreenId.source = normalTheme?"../appIMG/6.Common/settings-2-outline-inactive-4x.png":"../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
                 }
 
                 onClicked: {
                     console.log("Setting Screen")
                     selectedApp = 5
                     main_loaderItem.source = "SettingScreen.qml"
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
                 }
             }
         }
@@ -240,14 +262,44 @@ Window {
         //Change Theme icon
         Image {
             id: changeThemeId
-            width: 24
-            height: 24
-            x: 21
+            width: 26
+            height: 26
+            x: 20
             y: 686
             source: "../appIMG/6.Common/sun-outline-4x.png"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (normalTheme) {
+                        changeThemeId.source = "../appIMG/7.LightMode/moon-outline-4x.png"
+                        normalTheme = false
+                    } else {
+                        changeThemeId.source = "../appIMG/6.Common/sun-outline-4x.png"
+                        normalTheme = true
+                    }
+                    m_mainScreen.sendThemeValueToSubScreen(normalTheme)
+                }
+            }
+
+//            source: "../appIMG/6.Common/moon-icon.png"
         }
     }
+    Rectangle {
+        id: rectComponent
+        //        x: 0
+        //        y: 0
+        //        width: 284
+        //        height: 730
 
+        anchors.left: mainScreenborderLeftMain.right
+        anchors.leftMargin: (65/1200)* m_mainScreen.width //x
+        anchors.top: mainScreenborderLeftMain.bottom
+        anchors.topMargin: (0/730)* m_mainScreen.height //y
+        width: (284/1200) * m_mainScreen.width //width
+        height: (730/730) * m_mainScreen.height //height
+        color: "#282645"
+    }
     Loader {
         id: main_loaderItem
         width: 1135
@@ -255,6 +307,7 @@ Window {
         x: 65
         y: 0
         source: ""
+        onLoaded: m_mainScreen.sendThemeValueToSubScreen.connect(main_loaderItem.item.changeTheme)
     }
     Connections {
         target: main_loaderItem.item
@@ -263,6 +316,7 @@ Window {
         }
     }
     function abcd(m_msg) {
+        bacgroundForLoaderSubItem.visible = true
         console.log(m_msg)
         if (m_msg === "task_screen_add_group") {
             setLoaderSize(582, 300, 309, 135)
@@ -283,6 +337,7 @@ Window {
             setLoaderSize(582, 300, 309, 135)
             loaderSubItem.source = "CreateAccountGroupScreen.qml"
         }
+        m_mainScreen.sendThemeValueToPopup(normalTheme)
     }
 
     function setLoaderSize(w, h, positionX, positionY) {
@@ -314,7 +369,7 @@ Window {
     Image {
         id: main_itemMinimize
         anchors.fill: border_main_itemMinimize
-        source: "../appIMG/6.Common/minus-outline-4x.png"
+        source: normalTheme?"../appIMG/6.Common/minus-outline-4x.png":"../appIMG/7.LightMode/minus-outline.png"
     }
     MouseArea {
         id: minimumBtn
@@ -338,7 +393,7 @@ Window {
     Image {
         id: main_itemClose
         anchors.fill: border_main_itemClose
-        source: "../appIMG/6.Common/close-outline-4x.png"
+        source: normalTheme?"../appIMG/6.Common/close-outline-4x.png":"../appIMG/7.LightMode/close-outline.png"
     }
     MouseArea {
         id: mcloseBtn
@@ -350,6 +405,28 @@ Window {
         }
     }
 
+    Rectangle {
+        id: bacgroundForLoaderSubItem
+        anchors.fill: parent
+        color: normalTheme?"#000000":"#F2F2F2"
+        opacity: 0.5
+        visible: false
+
+        Text {
+            id: leftMarginBackground
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        MouseArea {
+            width: parent.width
+            height: (670/730)* m_mainScreen.height
+            anchors.top: leftMarginBackground.bottom
+            anchors.topMargin: (60/730)* m_mainScreen.height
+        }
+    }
 
     Loader {
         id: loaderSubItem
@@ -360,11 +437,13 @@ Window {
         anchors.top: mainScreenborderLeftMain.bottom
         anchors.topMargin: (135/730)* parent.height //y
         source: ""
+        onLoaded: m_mainScreen.sendThemeValueToPopup.connect(loaderSubItem.item.changeTheme)
     }
 
     Connections {
         target: loaderSubItem.item
         onSignalFromCreateScreen: {
+            bacgroundForLoaderSubItem.visible = false
             console.log(msg)
             if (msg === "evG_Cancel") {
                 loaderSubItem.source = ""
@@ -387,72 +466,171 @@ Window {
             } else if (msg === "profile_shipping_screen_billing") {
                 setLoaderSize(582, 609, 309, 61)
                 loaderSubItem.source = "ProfileBillingScreen.qml"
+                m_mainScreen.sendThemeValueToPopup(normalTheme)
+                bacgroundForLoaderSubItem.visible = true
             } else if (msg === "profile_shipping_screen_payment") {
                 setLoaderSize(582, 453, 309, 139)
                 loaderSubItem.source = "ProfilePaymentScreen.qml"
+                m_mainScreen.sendThemeValueToPopup(normalTheme)
+                bacgroundForLoaderSubItem.visible = true
             } else if (msg === "profile_shipping_screen_shipping") {
                 setLoaderSize(582, 633, 309, 49)
                 loaderSubItem.source = "ProfileShippingScreen.qml"
+                m_mainScreen.sendThemeValueToPopup(normalTheme)
+                bacgroundForLoaderSubItem.visible = true
             }
 
         }
     }
 
     onSelectedAppChanged: {
+        updateTheme();
+        updateIcon();
+
+    }
+    function updateIcon() {
+        main_itemClose.source = normalTheme?"../appIMG/6.Common/close-outline-4x.png":"../appIMG/7.LightMode/close-outline.png"
+        main_itemMinimize.source = normalTheme?"../appIMG/6.Common/minus-outline-4x.png":"../appIMG/7.LightMode/minus-outline.png"
         if (selectedApp == 0) {
             selectIconId.y = (dashboardScreenId.y + dashboardScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-active-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            if (normalTheme) {
+                dashboardScreenId.source = "../appIMG/6.Common/grid-outline-active-4x.png"
+                taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            } else {
+                dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-active-4x.png"
+                taskScreenId.source = "../appIMG/7.LightMode/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/7.LightMode/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
+            }
+
         } else if (selectedApp == 1) {
             selectIconId.y = (taskScreenId.y + taskScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-active-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+             if (normalTheme) {
+                 dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                 taskScreenId.source = "../appIMG/6.Common/cube-outline-active-4x.png"
+                 profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                 proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                 accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                 settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+             } else {
+                 dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-inactive-4x.png"
+                 taskScreenId.source = "../appIMG/7.LightMode/cube-outline-active-4x.png"
+                 profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
+                 proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
+                 accountScreenId.source = "../appIMG/7.LightMode/person-outline-inactive-4x.png"
+                 settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
+             }
+
+
         } else if (selectedApp == 2) {
             selectIconId.y = (profileScreenId.y + profileScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-active-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            if (normalTheme) {
+                dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/6.Common/credit-card-outline-active-4x.png"
+                proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            } else {
+                dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/7.LightMode/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-active-4x.png"
+                proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/7.LightMode/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
+            }
+
         } else if (selectedApp == 3) {
             selectIconId.y = (proxyScreenId.y + proxyScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-active-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            if (normalTheme) {
+                dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-active-4x.png"
+                accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            } else {
+                dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/7.LightMode/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-active-4x.png"
+                accountScreenId.source = "../appIMG/7.LightMode/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
+            }
+
         } else if (selectedApp == 4) {
             selectIconId.y = (accountScreenId.y + accountScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-active-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            if (normalTheme) {
+                dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/6.Common/person-outline-active-4x.png"
+                settingScreenId.source = "../appIMG/6.Common/settings-2-outline-inactive-4x.png"
+            } else {
+                dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/7.LightMode/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/7.LightMode/person-outline-active-4x.png"
+                settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-inactive-4x.png"
+            }
+
         } else if (selectedApp == 5) {
             selectIconId.y = (settingScreenId.y + settingScreenId.width/2 - selectIconId.width/2)
-            dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
-            taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
-            profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
-            proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
-            accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
-            settingScreenId.source = "../appIMG/6.Common/settings-2-outline-active-4x.png"
+            if (normalTheme) {
+                dashboardScreenId.source = "../appIMG/6.Common/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/6.Common/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/6.Common/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/6.Common/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/6.Common/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/6.Common/settings-2-outline-active-4x.png"
+            } else {
+                dashboardScreenId.source = "../appIMG/7.LightMode/grid-outline-inactive-4x.png"
+                taskScreenId.source = "../appIMG/7.LightMode/cube-outline-inactive-4x.png"
+                profileScreenId.source = "../appIMG/7.LightMode/credit-card-outline-inactive-4x.png"
+                proxyScreenId.source = "../appIMG/7.LightMode/flash-outline-2-inactive-4x.png"
+                accountScreenId.source = "../appIMG/7.LightMode/person-outline-inactive-4x.png"
+                settingScreenId.source = "../appIMG/7.LightMode/settings-2-outline-active-4x.png"
+            }
         } else {
             console.log("incorrect slected app")
         }
     }
 
+    onNormalThemeChanged: {
+        console.log("Change Theme + " + normalTheme)
+        updateTheme()
+        updateIcon()
+    }
+
+    function updateTheme() {
+        if (normalTheme) {
+            m_mainScreen.color = "#2E2C50"
+            if (selectedApp != 0 && selectedApp != 5) {
+                rectComponent.color = "#282645"
+            } else {
+                rectComponent.color = "#2E2C50"
+            }
+        } else {
+            m_mainScreen.color = "#F7F8FC"
+            if (selectedApp != 0 && selectedApp != 5) {
+                rectComponent.color = "#EFF0F6"
+            } else {
+                rectComponent.color = "#F7F8FC"
+            }
+
+        }
+    }
+
     Component.onCompleted: {
+        updateTheme()
         if (selectedApp == 0) {
             main_loaderItem.source = "DashboardScreen.qml"
         } else if (selectedApp == 1) {
@@ -469,7 +647,6 @@ Window {
             console.log("Incorrect value")
         }
 
-        console.log("complete")
         listIMG_ID.push(main_img_1)
         listIMG_ID.push(dashboardScreenId)
         listIMG_ID.push(selectIconId)
@@ -488,6 +665,9 @@ Window {
         listREC_ID.push(rec_1)
     }
     onHeightChanged: {
+        if (height < 710) {
+            height = 710
+        }
         reSizeLoaderSize();
         console.log("hunght H " + height)
         var rate = height/currentHeight

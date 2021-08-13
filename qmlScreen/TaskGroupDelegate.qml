@@ -7,6 +7,8 @@ Rectangle {
     id: rec_2_1
     property int widthItem : 0
     property int heightItem: 0
+    property string colorItem: ""
+
     width: widthItem
     height: heightItem//106 //(106/424) * heightItem
     color: "transparent"
@@ -15,8 +17,8 @@ Rectangle {
         id: rec_2_2
         width: widthItem
         height: parent.height
-        color: itemMouseArea.containsMouse ? "#907DE2" : "#37345E"
-        radius: 3
+        color: itemMouseArea.containsMouse ? "#907DE2" : colorItem
+        radius: 5
     }
 
     Text {
@@ -59,7 +61,7 @@ Rectangle {
         anchors.topMargin: (15/106)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: itemStatus
     }
 
@@ -74,11 +76,11 @@ Rectangle {
         anchors.topMargin: (31/106)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: itemName
     }
 
-    Image {
+    Rectangle {
         id: img_12
         width: (50/221) * parent.width //width
         height: (21/106) * parent.height //height
@@ -86,7 +88,11 @@ Rectangle {
         anchors.leftMargin: (17/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "../image/TaskScreen/border_50_21.png"
+//        source: "../appIMG/1.TaskScren/group_item_border_4x.png"
+        color: "transparent"
+        radius: 3
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        border.width: 0.5
 
     }
     Image {
@@ -97,12 +103,12 @@ Rectangle {
         anchors.leftMargin: (25/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "../image/TaskScreen/white_oval.png"
+        source: "../appIMG/1.TaskScren/White-Oval-4x.png"
     }
 
     Text {
         id: txt_4
-        property int textSize: 5
+        property int textSize: 7
         width: (14/221) * parent.width //width
         height: (10/106) * parent.height //height
         anchors.left: taskGroupLeftCorner.right
@@ -111,11 +117,11 @@ Rectangle {
         anchors.topMargin: (76/106)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: whiteIndex
     }
 
-    Image {
+    Rectangle {
         id: img_13
         width: (50/221) * parent.width //width
         height: (21/106) * parent.height //height
@@ -123,8 +129,11 @@ Rectangle {
         anchors.leftMargin: (72/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "../image/TaskScreen/border_50_21.png"
-
+//        source: "../appIMG/1.TaskScren/group_item_border_4x.png"
+        color: "transparent"
+        radius: 3
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        border.width: 0.5
     }
     Image {
         id: img_14
@@ -134,12 +143,12 @@ Rectangle {
         anchors.leftMargin: (80/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "../image/TaskScreen/green_oval.png"
+        source: "../appIMG/1.TaskScren/Green-Oval-4x.png"
     }
 
     Text {
         id: txt_5
-        property int textSize: 5
+        property int textSize: 7
         width: (14/221) * parent.width //width
         height: (10/106) * parent.height //height
         anchors.left: taskGroupLeftCorner.right
@@ -148,11 +157,11 @@ Rectangle {
         anchors.topMargin: (76/106)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: greenIndex
     }
 
-    Image {
+    Rectangle {
         id: img_15
         width: (50/221) * parent.width //width
         height: (21/106) * parent.height //height
@@ -160,8 +169,11 @@ Rectangle {
         anchors.leftMargin: (127/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "../image/TaskScreen/border_50_21.png"
-
+//        source: "../appIMG/1.TaskScren/group_item_border_4x.png"
+        color: "transparent"
+        radius: 3
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        border.width: 0.5
     }
     Image {
         id: img_16
@@ -171,12 +183,12 @@ Rectangle {
         anchors.leftMargin: (135/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (79/106)* parent.height
-        source: "../image/TaskScreen/red_oval.png"
+        source: "../appIMG/1.TaskScren/Red-Oval-4x.png"
     }
 
     Text {
         id: txt_6
-        property int textSize: 5
+        property int textSize: 7
         width: (14/221) * parent.width //width
         height: (10/106) * parent.height //height
         anchors.left: taskGroupLeftCorner.right
@@ -185,11 +197,11 @@ Rectangle {
         anchors.topMargin: (76/106)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: redIndex
     }
 
-    Image {
+    Rectangle {
         id: img_17
         width: (21/221) * parent.width //width
         height: (21/106) * parent.height //height
@@ -197,7 +209,11 @@ Rectangle {
         anchors.leftMargin: (182/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (71/106)* parent.height
-        source: "../image/TaskScreen/border_50_21.png"
+//        source: "../appIMG/1.TaskScren/delele_border_icon-4x.png"
+        color: "transparent"
+        radius: 3
+        border.color: (colorItem ==="#37345E")?"#3E3A68":"#EEF0F6"
+        border.width: 0.5
 
     }
     Image {
@@ -208,7 +224,7 @@ Rectangle {
         anchors.leftMargin: (187.46/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (76.46/106)* parent.height
-        source: "../image/TaskScreen/delete_icon.png"
+        source: (colorItem ==="#37345E")?"../appIMG/1.TaskScren/trash-outline-4x.png":"../appIMG/7.LightMode/trash-outline-4x.png"
     }
 
     MouseArea {
@@ -216,17 +232,14 @@ Rectangle {
         anchors.fill: parent
         hoverEnabled: true
     }
-    Component.onCompleted: {
-        console.log("parent height" + parent.height)
-    }
 
     onHeightChanged: {
         var rateTextSize = height/105
         txt_2.textSize = 7 * rateTextSize
         txt_3.textSize = 9 * rateTextSize
-        txt_4.textSize = 5 * rateTextSize
-        txt_5.textSize = 5 * rateTextSize
-        txt_6.textSize = 5 * rateTextSize
+        txt_4.textSize = 7 * rateTextSize
+        txt_5.textSize = 7 * rateTextSize
+        txt_6.textSize = 7 * rateTextSize
     }
 }
 

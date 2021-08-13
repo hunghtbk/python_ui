@@ -12,6 +12,11 @@ Rectangle {
     property var listChildrentTXT: []
     property int currentDetaiItemWidth: rect_item.width
 
+    property string colorItem: ""
+    onColorItemChanged: {
+        cItem1.color = colorItem
+    }
+
     width: dashboardItemWidthItem
     height: dashboardItemHeightItem
     color: "transparent"
@@ -20,8 +25,8 @@ Rectangle {
         id: cItem1
         width: dashboardItemWidthItem
         height: dashboardItemHeightItem
-        color: "#37345E"
-        radius: 3
+        color: colorItem
+        radius: 5
 
         MouseArea {
             anchors.fill: parent
@@ -29,7 +34,7 @@ Rectangle {
                 cItem1.color = "#907DE2"
             }
             onReleased: {
-                cItem1.color = "#37345E"
+                cItem1.color = colorItem
             }
         }
     }
@@ -74,7 +79,7 @@ Rectangle {
         anchors.topMargin: (11/50)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: txtName
     }
 
@@ -104,7 +109,7 @@ Rectangle {
         anchors.topMargin: (11/50)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: txtTarget
     }
 
@@ -134,7 +139,7 @@ Rectangle {
         anchors.topMargin: (11/50)* parent.height //y
         font.family: "Inter"
         font.pointSize: textSize
-        color: "#FFFFFF"
+        color: (colorItem ==="#37345E")?"#FFFFFF":"#000000"
         text: txtDay
     }
 

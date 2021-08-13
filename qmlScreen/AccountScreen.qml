@@ -8,9 +8,10 @@ Rectangle {
     width: 1135
     height: 730
 //    title: qsTr("Account Screen")
-    color: "#2E2C50"
+    color: "transparent"
 //    flags:Qt.FramelessWindowHint
     signal message(string msg)
+    signal sendThemeValueToPopup(bool value)
     property int currentWidth: m_accountScreen.width
     property int currentHeight: m_accountScreen.height
 
@@ -21,6 +22,31 @@ Rectangle {
     property var listTXT_9: []
     property var listTXT_13: []
 
+    property bool dashboardNormalTheme: true
+
+    function changeTheme(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
+
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_1.color = nColor
+            txt_2.color = nColor
+            txt_3.color = nColor
+        } else {
+            txt_1.color = abnColor
+            txt_2.color = abnColor
+            txt_3.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
     Text {
         id: accountScreenborderLeftMain
         x: 0
@@ -29,20 +55,20 @@ Rectangle {
         height: 0
     }
 
-    Rectangle {
-        id: item10
-//        x: 0
-//        y: 0
-//        width: 284
-//        height: 730
-        width: (284/1135) * m_accountScreen.width //width
-        height: (730/730) * m_accountScreen.height //height
-        anchors.left: accountScreenborderLeftMain.right
-        anchors.leftMargin: (0/1135)* parent.width //x
-        anchors.top: accountScreenborderLeftMain.bottom
-        anchors.topMargin: (0/730)* parent.height //y
-        color: "#282645"
-    }
+//    Rectangle {
+//        id: item10
+////        x: 0
+////        y: 0
+////        width: 284
+////        height: 730
+//        width: (284/1135) * m_accountScreen.width //width
+//        height: (730/730) * m_accountScreen.height //height
+//        anchors.left: accountScreenborderLeftMain.right
+//        anchors.leftMargin: (0/1135)* parent.width //x
+//        anchors.top: accountScreenborderLeftMain.bottom
+//        anchors.topMargin: (0/730)* parent.height //y
+//        color: "#282645"
+//    }
     Text {
         id: txt_1
         property int textSize: 13
@@ -73,7 +99,7 @@ Rectangle {
         anchors.leftMargin: (173/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "../image/0.Common/Add_inactive_icon.png"
+        source: dashboardNormalTheme?"../appIMG/4.AccountScreen/Add_item_4x.png":"../appIMG/7.LightMode/Add-icon-4x.png"
 
         MouseArea {
             anchors.fill: parent
@@ -101,6 +127,7 @@ Rectangle {
         delegate: AccountGroupDelegate {
             accountGroupWidthItem: (221/1135) * m_accountScreen.width
             accountGroupHeightItem: (63/730) * m_accountScreen.height
+            colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
         }
         clip: true
     }
@@ -135,7 +162,7 @@ Rectangle {
         anchors.leftMargin: (399/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (19/730)* parent.height //y
-        source: "../image/0.Common/Add_inactive_icon.png"
+        source: dashboardNormalTheme?"../appIMG/4.AccountScreen/Add_item_4x.png":"../appIMG/7.LightMode/Add-icon-4x.png"
 
     }
     MouseArea {
@@ -156,27 +183,44 @@ Rectangle {
         anchors.leftMargin: (311/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (56/730)* parent.height //y
-        color: "#37345E"
+        color: dashboardNormalTheme?"#37345E":"#EFF0F6"
         clip: true
-        radius: 3
-    }
-    TextInput {
-        id: txt_3
-        property int textSize: 9
-//        width: 170
-//        height: 15
-//        x: 12
-//        y: 9
-        width: (170/1135) * m_accountScreen.width //width
-        height: (15/730) * m_accountScreen.height //height
-        anchors.left: accountScreenborderLeftMain.right
-        anchors.leftMargin: (323/1135)* parent.width //x
-        anchors.top: accountScreenborderLeftMain.bottom
-        anchors.topMargin: (63/730)* parent.height //y
-        font.family: "Inter"
-        font.pointSize: textSize
-        color: "#FFFFFF"
-        text: qsTr("Footlocker")
+        radius: 5
+
+        Text {
+            id: leftMagrin
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        TextInput {
+            id: txt_3
+            property int textSize: 9
+    //        width: 170
+    //        height: 15
+    //        x: 12
+    //        y: 9
+            width: (170/196) * parent.width //width
+            height: (15/30) * parent.height //height
+            anchors.left: leftMagrin.right
+            anchors.leftMargin: (12/196)* parent.width //x
+            anchors.top: leftMagrin.bottom
+            anchors.topMargin: (9/30)* parent.height //y
+            font.family: "Inter"
+            font.pointSize: textSize
+            color: "#FFFFFF"
+    //        text: qsTr("Footlocker")
+            property string placeholderText: "Enter Account Name..."
+
+            Text {
+                text: txt_3.placeholderText
+                color: "#6a687d"
+                visible: !txt_3.text
+                font: txt_3.font
+            }
+        }
     }
     Rectangle {
         id: item17
@@ -223,7 +267,7 @@ Rectangle {
         anchors.leftMargin: (650/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (68/730)* parent.height //y
-        source: "../image/Proxy/arrow-right.png"
+        source: "../appIMG/4.AccountScreen/arrow-right-4x.png"
     }
     MouseArea {
         anchors.fill: item17
@@ -276,12 +320,15 @@ Rectangle {
         anchors.leftMargin: (1076/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (65/730)* parent.height //y
-        source: "../image/Proxy/trash-outline-red.png"
+        source: "../appIMG/4.AccountScreen/item_trash_outline_4x.png"
     }
     MouseArea {
         anchors.fill: item19
         onClicked: {
             console.log("Delete All button")
+            loader_notification.source = "DeleteAllAccountNotification.qml"
+            bacgroundForLoaderpopup.visible = true
+            m_accountScreen.sendThemeValueToPopup(dashboardNormalTheme)
         }
     }
     Rectangle {
@@ -296,27 +343,44 @@ Rectangle {
         anchors.leftMargin: (311/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (102/730)* parent.height //y
-        color: "#37345E"
-        radius: 3
-    }
-    Text {
-        id: txt_6
-        property int textSize: 9
-//        width: 323
-//        height: 15
-//        x: 20
-//        y: 17
-        width: (323/1135) * m_accountScreen.width //width
-        height: (15/730) * m_accountScreen.height //height
-        anchors.left: accountScreenborderLeftMain.right
-        anchors.leftMargin: (331/1135)* parent.width //x
-        anchors.top: accountScreenborderLeftMain.bottom
-        anchors.topMargin: (119/730)* parent.height //y
-        font.family: "Inter"
-        wrapMode: Text.WrapAnywhere
-        font.pointSize: textSize
-        color: "#75719B"
-        text: qsTr("email:pass")
+        color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+        radius: 5
+
+        Text {
+            id: leftMarginTextInput
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        TextInput {
+            id: txt_6
+            property int textSize: 9
+    //        width: 323
+    //        height: 15
+    //        x: 20
+    //        y: 17
+            width: (323/363) * parent.width //width
+            height: (500/546) * parent.height //height
+            anchors.left: leftMarginTextInput.right
+            anchors.leftMargin: (20/363)* parent.width //x
+            anchors.top: leftMarginTextInput.bottom
+            anchors.topMargin: (17/546)* parent.height //y
+            font.family: "Inter"
+            wrapMode: Text.WrapAnywhere
+            font.pointSize: textSize
+            color: "#75719B"
+    //        text: qsTr("email:pass")
+            property string placeholderText: "email:pass"
+
+            Text {
+                text: txt_6.placeholderText
+                color: "#6a687d"
+                visible: !txt_6.text
+                font: txt_6.font
+            }
+        }
     }
     Rectangle {
         id: item211
@@ -363,7 +427,7 @@ Rectangle {
         anchors.leftMargin: (644/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (673/730)* parent.height //y
-        source: "../image/Account/save-outline.png"
+        source: "../appIMG/4.AccountScreen/save-outline-4x.png"
     }
     MouseArea {
         anchors.fill: item211
@@ -384,7 +448,7 @@ Rectangle {
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (102/730)* parent.height //y
         color: "#907DE2"
-        radius: 3
+        radius: 5
     }
     Text {
         id: txt_8
@@ -440,7 +504,7 @@ Rectangle {
         font.pointSize: textSize
         color: "#FFFFFF"
     }
-    Image {
+    Rectangle {
         id: item22
 //        width: 9
 //        height: 555
@@ -452,7 +516,8 @@ Rectangle {
         anchors.leftMargin: (1091.5/1135)* parent.width //x
         anchors.top: accountScreenborderLeftMain.bottom
         anchors.topMargin: (148/730)* parent.height //y
-        source: "../image/0.Common/task_scroll_border.png"
+        color: dashboardNormalTheme?"#282645":"#d7d6de"
+        radius: 5
     }
     //List item
     ListView {
@@ -472,6 +537,7 @@ Rectangle {
         delegate: AccountItemDeletegate {
             accountItemWidthItem: (385/1135) * m_accountScreen.width
             accountItemHeightItem: (30/730) * m_accountScreen.height
+            colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
         }
         clip: true
         flickableDirection: Flickable.VerticalFlick
@@ -481,13 +547,73 @@ Rectangle {
                 id: rec_4
                 implicitWidth: (9/1135) * m_accountScreen.width
                 implicitHeight: (221/730) * m_accountScreen.height
-                color: "#423F6B"
+                color: dashboardNormalTheme?"#423F6B":"#FFFFFF"
                 radius: 10
             }
         }
     }
 
+    Rectangle {
+        id: bacgroundForLoaderpopup
+        x: -65
+        y: 0
+        width: (1200/1135) * m_accountScreen.width
+        height: (730/730) * m_accountScreen.height
+        anchors.left: accountScreenborderLeftMain.right
+        anchors.leftMargin: (-65/1135)* parent.width
+        anchors.top: accountScreenborderLeftMain.bottom
+        anchors.topMargin: (0/730)* parent.height
+        color: dashboardNormalTheme?"#000000":"#F2F2F2"
+        opacity: 0.5
+        visible: false
+
+        Text {
+            id: leftMarginBackground
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        MouseArea {
+            width: parent.width
+            height: (670/730)* m_accountScreen.height
+            anchors.top: leftMarginBackground.bottom
+            anchors.topMargin: (60/730)* m_accountScreen.height
+        }
+    }
+
+    Loader {
+        id: loader_notification
+        width: (500/1135) * parent.width //width
+        height: (150/730) * parent.height //height
+        anchors.left: accountScreenborderLeftMain.right
+        anchors.leftMargin: (309/1135)* parent.width //x
+        anchors.top: accountScreenborderLeftMain.bottom
+        anchors.topMargin: (215/730)* parent.height //y
+        source: ""
+        onLoaded: m_accountScreen.sendThemeValueToPopup.connect(loader_notification.item.changeThemePopup)
+    }
+
+    Connections {
+        target: loader_notification.item
+        onDeleteAllAccountsMessage: {
+            handleMsg(msg)
+        }
+    }
+
+    function handleMsg(msg) {
+        console.log(msg)
+        if (msg === "delete_all_accounts_cancel") {
+            loader_notification.source = ""
+        } else if (msg === "delete_all_accounts_ok") {
+            loader_notification.source = ""
+        }
+        bacgroundForLoaderpopup.visible = false
+    }
+
     Component.onCompleted: {
+        updateTheme()
         listTXT_9.push(txt_3)
         listTXT_9.push(txt_4)
         listTXT_9.push(txt_5)

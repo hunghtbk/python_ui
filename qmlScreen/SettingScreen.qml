@@ -8,7 +8,7 @@ Rectangle {
     width: 1135
     height: 730
 //    title: qsTr("Account Screen")
-    color: "#2E2C50"
+    color: "transparent"
 //    flags:Qt.FramelessWindowHint
 
     signal message(string msg)
@@ -22,161 +22,51 @@ Rectangle {
     property var listTXT_11: []
     property var listTXT_13: []
     property var listTXT_15: []
-/*
-    Rectangle {
-        id: item0
-        width: 65
-        height: 730
-        color: "#37345E"
 
-        //Define small lotus
-        Image {
-            id: item1
-            width: 31
-            height: 30
-            x: 17
-            y: 13
-            source: "../image/0.Common/Small_lotus.png"
-        }
-        //Dashboard icon
-        Image {
-            id: item2
-            width: 18
-            height: 18
-            x: 24
-            y: 59
-            source: "../image/0.Common/grid-outline-inactive.png"
+    property bool dashboardNormalTheme: true
 
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item2.source = "../image/0.Common/grid-outline-active.png"
-                }
-                onReleased: {
-                    item2.source = "../image/0.Common/grid-outline-inactive.png"
-                }
-            }
-        }
+    function changeTheme(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
 
-        //task group icon
-        Image {
-            id: item3
-            width: 18
-            height: 18
-            x: 24
-            y: 93
-            source: "../image/0.Common/cube-outline-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item3.source = "../image/0.Common/cube-outline-active.png"
-                }
-                onReleased: {
-                    item3.source = "../image/0.Common/cube-outline-inactive.png"
-                }
-            }
-        }
-
-        //Selected Icon
-        Rectangle {
-            id: item4
-            width: 8
-            height: 8
-            x: 61
-            y: 230
-            color: "#907DE2"
-            radius: 100
-        }
-        //End Selected Icon
-        //Profile Icon
-        Image {
-            id: item5
-            width: 18
-            height: 18
-            x: 24
-            y: 127
-            source: "../image/0.Common/credit-card-outline-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item5.source = "../image/0.Common/credit-card-outline-active.png"
-                }
-                onReleased: {
-                    item5.source = "../image/0.Common/credit-card-outline-inactive.png"
-                }
-            }
-        }
-
-        //Proxy icon
-        Image {
-            id: item6
-            width: 18
-            height: 18
-            x: 24
-            y: 161
-            source: "../image/0.Common/flash-outline-2-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item6.source = "../image/0.Common/flash-outline-2-active.png"
-                }
-                onReleased: {
-                    item6.source = "../image/0.Common/flash-outline-2-inactive.png"
-                }
-            }
-        }
-
-        //Account Icon
-        Image {
-            id: item7
-            width: 18
-            height: 18
-            x: 24
-            y: 193
-            source: "../image/0.Common/person-outline-inactive.png"
-
-            MouseArea {
-                anchors.fill: parent
-                onPressed: {
-                    item7.source = "../image/0.Common/person-outline-active.png"
-                }
-                onReleased: {
-                    item7.source = "../image/0.Common/person-outline-inactive.png"
-                }
-            }
-        }
-
-        //Setting Icon
-        Image {
-            id: item8
-            width: 18
-            height: 18
-            x: 24
-            y: 225
-            source: "../image/0.Common/settings-2-outline-active.png"
-        }
-
-        //Change Theme icon
-        Image {
-            id: item9
-            width: 24
-            height: 24
-            x: 21
-            y: 686
-            source: "../image/0.Common/sun-outline-inactive.png"
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_1.color = nColor
+            txt_7.color = nColor
+            txt_8.color = nColor
+            txt_9.color = nColor
+            txt_11.color = nColor
+            txt_13.color = nColor
+            txt_15.color = nColor
+            txt_19.color = nColor
+            txt_20.color = nColor
+        } else {
+            txt_1.color = abnColor
+            txt_7.color = abnColor
+            txt_8.color = abnColor
+            txt_9.color = abnColor
+            txt_11.color = abnColor
+            txt_13.color = abnColor
+            txt_15.color = abnColor
+            txt_19.color = abnColor
+            txt_20.color = abnColor
         }
     }
-*/
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
     Rectangle {
         id: item10
         width: 1130
         height: 730
         x: 0
         y: 0
-        color: "#2E2C50"
+        color: "transparent"
 
         Text {
             id: txt_1
@@ -198,7 +88,7 @@ Rectangle {
             x: 33
             y: 64
             color: "#907DE2"
-            radius: 3
+            radius: 5
 
             Text {
                 id: txt_2
@@ -233,7 +123,7 @@ Rectangle {
                 x: 36
                 y: 105
                 color: "#FFFFFF"
-                radius: 3
+                radius: 5
 
                 Text {
                     id: txt_4
@@ -254,7 +144,7 @@ Rectangle {
                     height: 7
                     x: 91
                     y: 12
-                    source: "../image/Setting/arrow-right.png"
+                    source: "../appIMG/5.SettingScreen/arrow-right-4x.png"
                 }
 
                 MouseArea {
@@ -271,7 +161,7 @@ Rectangle {
                 height: 82
                 x: 200
                 y: 42
-                source: "../image/Setting/full-rate.png"
+                source: "../appIMG/5.SettingScreen/full-rate.png"
             }
 
             Image {
@@ -280,7 +170,7 @@ Rectangle {
                 height: 78.69
                 x: 200
                 y: 42
-                source: "../image/Setting/expired_rate.png"
+                source: "../appIMG/5.SettingScreen/expired-rate.png"
             }
 
             Text {
@@ -336,40 +226,6 @@ Rectangle {
             text: qsTr("Delays")
         }
 
-//        Image {
-//            id: item16
-//            width: 18
-//            height: 18
-//            x: 1078
-//            y: 14
-//            source: "../image/0.Common/minus-outline-inactive.png"
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    console.log("Minimize")
-//                    m_settingScreen.showMinimized();
-//                }
-//            }
-//        }
-
-//        Image {
-//            id: item17
-//            width: 18
-//            height: 18
-//            x: 1098
-//            y: 14
-//            source: "../image/0.Common/close-outline-inactive.png"
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    console.log("Close icon")
-//                    m_settingScreen.close()
-//                }
-//            }
-//        }
-
         Text {
             id: txt_9
             property int textSize: 9
@@ -389,8 +245,9 @@ Rectangle {
             height: 30
             x: 376
             y: 88
-            color: "#37345E"
-            radius: 3
+            color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+            radius: 5
+            clip: true
 
             TextInput {
                 id: txt_10
@@ -402,7 +259,15 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
-                text: qsTr("Enter token")
+//                text: qsTr("Enter token")
+                property string placeholderText: "Enter token"
+
+                Text {
+                    text: txt_10.placeholderText
+                    color: "#6a687d"
+                    visible: !txt_10.text
+                    font: txt_10.font
+                }
             }
         }
 
@@ -425,8 +290,9 @@ Rectangle {
             height: 30
             x: 750
             y: 88
-            color: "#37345E"
-            radius: 3
+            color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+            radius: 5
+            clip: true
 
             TextInput {
                 id: txt_12
@@ -438,7 +304,15 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
-                text: qsTr("0")
+//                text: qsTr("0")
+                property string placeholderText: "Enter value..."
+
+                Text {
+                    text: txt_12.placeholderText
+                    color: "#6a687d"
+                    visible: !txt_12.text
+                    font: txt_12.font
+                }
             }
         }
 
@@ -461,8 +335,9 @@ Rectangle {
             height: 30
             x: 376
             y: 165
-            color: "#37345E"
-            radius: 3
+            color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+            radius: 5
+            clip: true
 
             TextInput {
                 id: txt_14
@@ -474,7 +349,15 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
-                text: qsTr("Enter key")
+//                text: qsTr("Enter key")
+                property string placeholderText: "Enter Key"
+
+                Text {
+                    text: txt_14.placeholderText
+                    color: "#6a687d"
+                    visible: !txt_14.text
+                    font: txt_14.font
+                }
             }
         }
 
@@ -497,8 +380,9 @@ Rectangle {
             height: 30
             x: 750
             y: 165
-            color: "#37345E"
-            radius: 3
+            color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+            radius: 5
+            clip: true
 
             TextInput {
                 id: txt_16
@@ -510,8 +394,17 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
-                text: qsTr("0")
+//                text: qsTr("0")
+                property string placeholderText: "Enter value..."
+
+                Text {
+                    text: txt_16.placeholderText
+                    color: "#6a687d"
+                    visible: !txt_16.text
+                    font: txt_16.font
+                }
             }
+
         }
 
         Rectangle {
@@ -523,7 +416,7 @@ Rectangle {
             color: "#FFFFFF"
             radius: 5
 
-            TextInput {
+            Text {
                 id: txt_17
                 property int textSize: 9
                 width: 29
@@ -542,7 +435,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "../image/Setting/save-outline.png"
+                source: "../appIMG/5.SettingScreen/save-outline-4x.png"
             }
 
             MouseArea {
@@ -562,7 +455,7 @@ Rectangle {
             color: "#FFFFFF"
             radius: 5
 
-            TextInput {
+            Text {
                 id: txt_18
                 property int textSize: 9
                 width: 29
@@ -581,7 +474,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "../image/Setting/save-outline.png"
+                source: "../appIMG/5.SettingScreen/save-outline-4x.png"
             }
 
             MouseArea {
@@ -624,8 +517,9 @@ Rectangle {
             height: 30
             x: 33
             y: 310
-            color: "#37345E"
-            radius: 3
+            color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+            radius: 5
+            clip: true
 
             TextInput {
                 id: txt_21
@@ -637,7 +531,16 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
-                text: qsTr("Enter webhook")
+//                text: qsTr("Enter webhook")
+
+                property string placeholderText: "Enter webhook"
+
+                Text {
+                    text: txt_21.placeholderText
+                    color: "#6a687d"
+                    visible: !txt_21.text
+                    font: txt_21.font
+                }
             }
         }
 
@@ -650,7 +553,7 @@ Rectangle {
             color: "#FFFFFF"
             radius: 5
 
-            TextInput {
+            Text {
                 id: txt_22
                 property int textSize: 9
                 width: 29
@@ -669,7 +572,7 @@ Rectangle {
                 height: 12
                 x: 56
                 y: 9
-                source: "../image/Setting/save-outline.png"
+                source: "../appIMG/5.SettingScreen/save-outline-4x.png"
             }
 
             MouseArea {
@@ -689,7 +592,7 @@ Rectangle {
             color: "#FFFFFF"
             radius: 5
 
-            TextInput {
+            Text {
                 id: txt_23
                 property int textSize: 9
                 width: 29
@@ -708,7 +611,7 @@ Rectangle {
                 height: 7
                 x: 59
                 y: 12
-                source: "../image/Setting/arrow-right.png"
+                source: "../appIMG/5.SettingScreen/arrow-right-4x.png"
             }
 
             MouseArea {
@@ -725,8 +628,8 @@ Rectangle {
             height: 123
             x: 750
             y: 259
-            radius: 3
-            color: "#37345E"
+            radius: 5
+            color: dashboardNormalTheme?"#37345E":"#FFFFFF"
 
             Text {
                 id: txt_24
@@ -737,7 +640,7 @@ Rectangle {
                 y: 16
                 font.family: "Inter"
                 font.pointSize: textSize
-                color: "#FFFFFF"
+                color: dashboardNormalTheme?"#FFFFFF":"#000000"
                 text: qsTr("Updates")
             }
 
@@ -760,10 +663,10 @@ Rectangle {
                 height: 30
                 x: 21
                 y: 73
-                color: "#FFFFFF"
+                color: dashboardNormalTheme?"#FFFFFF":"#EFF0F6"
                 radius: 5
 
-                TextInput {
+                Text {
                     id: txt_26
                     property int textSize: 9
                     width: 107
@@ -782,7 +685,7 @@ Rectangle {
                     height: 7
                     x: 135
                     y: 12
-                    source: "../image/Setting/arrow-right.png"
+                    source: "../appIMG/5.SettingScreen/arrow-right-4x.png"
                 }
 
                 MouseArea {
@@ -798,19 +701,19 @@ Rectangle {
             id: item34
             width: 260
             height: 300
-            x: -64
-            y: 430
-            source: "../image/Setting/grey_oval.png"
+            x: 0
+            y: 555
+            source: "../appIMG/5.SettingScreen/grey_ovel.png"
         }
 
-        Rectangle {
-            id: item35
-            width: 65
-            height: 300
-            x: -65
-            y: 300
-            color: "#37345E"
-        }
+//        Rectangle {
+//            id: item35
+//            width: 65
+//            height: 300
+//            x: -65
+//            y: 300
+//            color: "#37345E"
+//        }
 
         Image {
             id: item36
@@ -818,7 +721,7 @@ Rectangle {
             height: 235
             x: 99.25
             y: 466.44
-            source: "../image/Setting/normal_lotus.png"
+            source: "../appIMG/5.SettingScreen/normal_lotus.png"
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -833,7 +736,7 @@ Rectangle {
             height: 381
             x: 711.44
             y: 349.51
-            source: "../image/Setting/big_lotus.png"
+            source: "../appIMG/5.SettingScreen/big_lotus.png"
         }
 
         Image {
@@ -842,7 +745,7 @@ Rectangle {
             height: 165
             x: 343
             y: 565
-            source: "../image/Setting/white_oval.png"
+            source: "../appIMG/5.SettingScreen/white_oval.png"
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
@@ -853,7 +756,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        console.log("complete")
+        updateTheme()
 //        listItemID.push(item0)
 //        listItemID.push(item1)
 //        listItemID.push(item2)
@@ -889,7 +792,7 @@ Rectangle {
         listItemID.push(item32)
         listItemID.push(item33)
         listItemID.push(item34)
-        listItemID.push(item35)
+//        listItemID.push(item35)
         listItemID.push(item36)
         listItemID.push(item37)
         listItemID.push(item38)

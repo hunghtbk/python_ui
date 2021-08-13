@@ -9,8 +9,14 @@ Rectangle {
     //    flags:Qt.FramelessWindowHint
 //    width: 582
 //    height: 300
-    color: "#37345E"
+    property bool dashboardNormalTheme: true
+    function changeTheme(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
 
+    color: dashboardNormalTheme?"#37345E":"#FFFFFF"
+    radius: 5
     signal signalFromCreateScreen(string msg)
     property int currentWidth: m_createAccountGroupScreen.width
     property int currentHeight: m_createAccountGroupScreen.height
@@ -43,6 +49,7 @@ Rectangle {
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (16/defaultHeight)* parent.height //y
         color: "#907DE2"
+        radius: 5
     }
     Text {
         id: txt_1
@@ -93,7 +100,7 @@ Rectangle {
         text: qsTr("Group Name")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -108,8 +115,9 @@ Rectangle {
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (130/defaultHeight)* parent.height //y
-        color: "#3F3C68"
-
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
+        radius: 5
+        clip: true
         Text {
             id: item_left_margin
             x: 0
@@ -133,7 +141,15 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
-            text: qsTr("Enter Name")
+//            text: qsTr("Enter Name")
+            property string placeholderText: "Enter Name"
+
+            Text {
+                text: txt_3.placeholderText
+                color: "#6a687d"
+                visible: !txt_3.text
+                font: txt_3.font
+            }
         }
     }
 
@@ -153,7 +169,7 @@ Rectangle {
         text: qsTr("Group Description")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -168,8 +184,9 @@ Rectangle {
         anchors.leftMargin: (40/defaultWidth)* parent.width //x
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (198/defaultHeight)* parent.height //y
-        color: "#3F3C68"
-
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
+        radius: 5
+        clip: true
         Text {
             id: item_left_margin2
             x: 0
@@ -193,7 +210,15 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
-            text: qsTr("Enter Group Description")
+//            text: qsTr("Enter Group Description")
+            property string placeholderText: "Enter Group Description"
+
+            Text {
+                text: txt_3_1.placeholderText
+                color: "#6a687d"
+                visible: !txt_3_1.text
+                font: txt_3_1.font
+            }
         }
     }
 
@@ -210,7 +235,7 @@ Rectangle {
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (260/defaultHeight)* parent.height //y
         color: "transparent"
-        border.color: "#3F3C68"
+        border.color: dashboardNormalTheme?"#3F3C68":"#EEF0F6"
         radius: 5
     }
     Text {
@@ -229,7 +254,7 @@ Rectangle {
         text: qsTr("Cancel")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
     MouseArea {
         anchors.fill: item_4
@@ -257,8 +282,8 @@ Rectangle {
         anchors.leftMargin: (424/defaultWidth)* parent.width //x
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (260/defaultHeight)* parent.height //y
-        color: "#FFFFFF"
-        border.color: "#3F3C68"
+        color: dashboardNormalTheme?"#FFFFFF":"#F7F8FC"
+        border.color: dashboardNormalTheme?"#3F3C68":"#EEF0F6"
         radius: 5
     }
     Text {

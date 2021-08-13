@@ -8,9 +8,10 @@ Rectangle {
     width: 1135
     height: 730
     //    title: qsTr("Task Screen")
-    color: "#2E2C50"
+    color: "transparent"
     //    flags:Qt.FramelessWindowHint
     signal message(string msg)
+    signal sendThemeValueToPopup(bool value)
     property int taskScreenCurrentWidth: m_taskScreen.width
     property int taskScreenCurrentHeight: m_taskScreen.height
 
@@ -18,6 +19,45 @@ Rectangle {
     property var taskScreenListtaskScreen_txt_8: []
     property var taskScreenListtaskScreen_txt_9: []
     property var taskScreenListtaskScreenTxt_13: []
+
+    property bool dashboardNormalTheme: true
+
+    function changeTheme(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
+
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            taskScreenTxt_1.color = nColor
+            taskScreen_txt_8.color = nColor
+            taskScreenTxt_10.color = nColor
+            taskScreenTxt_12.color = nColor
+            taskScreenTxt_13.color = nColor
+            taskScreenTxt_14.color = nColor
+            taskScreenTxt_17.color = nColor
+        } else {
+            taskScreenTxt_1.color = abnColor
+            taskScreen_txt_8.color = abnColor
+            taskScreenTxt_10.color = abnColor
+            taskScreenTxt_12.color = abnColor
+            taskScreenTxt_13.color = abnColor
+            taskScreenTxt_14.color = abnColor
+            taskScreenTxt_17.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
+    //For loadersize
+    property int loaderW: 0
+    property int loaderH: 0
+    property int loaderX: 0
+    property int loaderY: 0
 
     Text {
         id: taskScreenborderLeftMain
@@ -27,23 +67,23 @@ Rectangle {
         height: 0
     }
 
-    Rectangle {
-        id: taskScreenRec_2
-        //        x: 0
-        //        y: 0
-        //        width: 284
-        //        height: 730
+//    Rectangle {
+//        id: taskScreenRec_2
+//        //        x: 0
+//        //        y: 0
+//        //        width: 284
+//        //        height: 730
 
-        anchors.left: taskScreenborderLeftMain.right
-        anchors.leftMargin: (0/1135)* parent.width //x
-        anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (0/730)* parent.height //y
-        width: (284/1135) * m_taskScreen.width //width
-        height: (730/730) * m_taskScreen.height //height
+//        anchors.left: taskScreenborderLeftMain.right
+//        anchors.leftMargin: (0/1135)* parent.width //x
+//        anchors.top: taskScreenborderLeftMain.bottom
+//        anchors.topMargin: (0/730)* parent.height //y
+//        width: (284/1135) * m_taskScreen.width //width
+//        height: (730/730) * m_taskScreen.height //height
 
-        color: "#282645"
+//        color: "#282645"
 
-    }
+//    }
     Text {
         id: taskScreenTxt_1
         property int textSize: 13
@@ -75,7 +115,7 @@ Rectangle {
         anchors.topMargin: (19/730)* parent.height //y
         width: (21/1135) * m_taskScreen.width //width
         height: (21/730) * m_taskScreen.height //height
-        source: "../image/0.Common/Add_inactive_icon.png"
+        source: dashboardNormalTheme?"../appIMG/1.TaskScren/Task_group_add_icon_4x.png":"../appIMG/7.LightMode/Add-icon-4x.png"
 
         MouseArea {
             anchors.fill: parent
@@ -101,6 +141,7 @@ Rectangle {
         delegate: TaskGroupDelegate {
             widthItem: (221/1135) * m_taskScreen.width
             heightItem: (106/730) * m_taskScreen.height
+            colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
         }
         clip: true
     }
@@ -225,7 +266,7 @@ Rectangle {
         color: "#FFFFFF"
     }
 
-    Image {
+    Rectangle {
         id: taskScreen_img_10
 //        width: 246
 //        height: 30
@@ -237,7 +278,8 @@ Rectangle {
         anchors.leftMargin: (796/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (21/730)* parent.height
-        source: "../image/border_2.png"
+        color: dashboardNormalTheme?"#282645":"#FFFFFF"
+        radius: 5
     }
     Image {
         id: taskScreen_img_21
@@ -251,7 +293,7 @@ Rectangle {
         anchors.leftMargin: (810/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "../image/TaskScreen/dollar-sign-15.png"
+        source: "../appIMG/1.TaskScren/dollar-sign-15-4x.png"
     }
     Text {
         id: taskScreenTxt_12
@@ -266,7 +308,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (823/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (28/730)* parent.height
+        anchors.topMargin: (29/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#FFFFFF"
@@ -283,7 +325,7 @@ Rectangle {
         anchors.leftMargin: (903/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "../image/TaskScreen/shopping-bag-outline-green.png"
+        source: "../appIMG/1.TaskScren/shopping-bag-outline-4x.png"
     }
     Text {
         id: taskScreenTxt_13
@@ -298,7 +340,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (921/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (28/730)* parent.height
+        anchors.topMargin: (29/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#FFFFFF"
@@ -315,7 +357,7 @@ Rectangle {
         anchors.leftMargin: (985/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (30/730)* parent.height
-        source: "../image/TaskScreen/shopping-bag-outline-red.png"
+        source: "../appIMG/1.TaskScren/shopping-bag-outline-red-4x.png"
     }
     Text {
         id: taskScreenTxt_14
@@ -330,7 +372,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (1003/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (28/730)* parent.height
+        anchors.topMargin: (29/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#FFFFFF"
@@ -347,26 +389,45 @@ Rectangle {
         anchors.leftMargin: (796/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (63/730)* parent.height
-        color:"#37345E"
-        radius: 3
-    }
-    TextInput {
-        id: taskScreenTxt_15
-        property int textSize: 9
-        text: qsTr("Mass link change")
-//        width: 450
-//        height: 15
-//        x: 12
-//        y: 8
-        width: (450/1135) * m_taskScreen.width
-        height: (15/730) * m_taskScreen.height
-        anchors.left: taskScreenborderLeftMain.right
-        anchors.leftMargin: (808/1135)* parent.width
-        anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (70/730)* parent.height
-        font.family: "Inter"
-        font.pointSize: textSize
-        color: "#75719B"
+        color: dashboardNormalTheme?"#37345E":"#EFF0F6"
+        radius: 5
+        clip: true
+
+        Text {
+            id: leftMargin
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        TextInput {
+            id: taskScreenTxt_15
+            property int textSize: 9
+    //        text: qsTr("Mass link change")
+    //        width: 450
+    //        height: 15
+    //        x: 12
+    //        y: 8
+            width: (180/196) * parent.width
+            height: (15/30) * parent.height
+            anchors.left: leftMargin.right
+            anchors.leftMargin: (12/196)* parent.width
+            anchors.top: leftMargin.bottom
+            anchors.topMargin: (8/30)* parent.height
+            font.family: "Inter"
+            font.pointSize: textSize
+            color: "#75719B"
+
+            property string placeholderText: "Mass link change"
+
+            Text {
+                text: taskScreenTxt_15.placeholderText
+                color: "#6a687d"
+                visible: !taskScreenTxt_15.text
+                font: taskScreenTxt_15.font
+            }
+        }
     }
     Rectangle {
         id: taskScreenRec_3_2
@@ -396,7 +457,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (1024/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (70/730)* parent.height
+        anchors.topMargin: (71/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#2E2C50"
@@ -413,7 +474,7 @@ Rectangle {
         anchors.leftMargin: (1078/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (75/730)* parent.height
-        source: "../image/TaskScreen/arrow_confirm.png"
+        source: "../appIMG/1.TaskScren/arrow-right-4x.png"
     }
     MouseArea {
         anchors.fill: taskScreenRec_3_2
@@ -465,7 +526,7 @@ Rectangle {
         anchors.leftMargin: (375/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (139/730)* parent.height
-        source: "../image/0.Common/Add_inactive_icon.png"
+        source: dashboardNormalTheme?"../appIMG/1.TaskScren/Add_item_4x.png":"../appIMG/7.LightMode/Add-icon-4x.png"
 
         MouseArea {
             anchors.fill: parent
@@ -502,7 +563,7 @@ Rectangle {
         anchors.leftMargin: (849/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (144/730)* parent.height
-        source: "../image/TaskScreen/starAll_icon.png"
+        source: "../appIMG/1.TaskScren/Start-All-Green-4x.png"
     }
     Text {
         id: taskScreenTxt_18
@@ -517,7 +578,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (795/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (141/730)* parent.height
+        anchors.topMargin: (142/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#29E182"
@@ -526,6 +587,10 @@ Rectangle {
         anchors.fill: taskScreen_img_30
         onClicked: {
             console.log("start all button")
+            setLoaderSize(500, 150, 309, 215)
+            loader_notification.source = "StartAllTaskNotification.qml"
+            bacgroundForLoaderpopup.visible = true
+            m_taskScreen.sendThemeValueToPopup(dashboardNormalTheme)
         }
     }
     Image {
@@ -554,7 +619,7 @@ Rectangle {
         anchors.leftMargin: (961/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (145/730)* parent.height
-        source: "../image/TaskScreen/stopAll_icon.png"
+        source: "../appIMG/1.TaskScren/Stop-All-4x.png"
     }
     Text {
         id: taskScreenTxt_19
@@ -569,7 +634,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (908/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (141/730)* parent.height
+        anchors.topMargin: (142/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#FFA94F"
@@ -578,6 +643,10 @@ Rectangle {
         anchors.fill: taskScreen_img_32
         onClicked: {
             console.log("stop all button")
+            setLoaderSize(500, 150, 309, 215)
+            loader_notification.source = "StopAllTaskNotification.qml"
+            bacgroundForLoaderpopup.visible = true
+            m_taskScreen.sendThemeValueToPopup(dashboardNormalTheme)
         }
     }
     Image {
@@ -606,7 +675,7 @@ Rectangle {
         anchors.leftMargin: (1075.96/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (143.96/730)* parent.height
-        source: "../image/TaskScreen/deleteAll_icon.png"
+        source: "../appIMG/1.TaskScren/trash-outline-2-4x.png"
     }
     Text {
         id: taskScreen_txt_20
@@ -621,7 +690,7 @@ Rectangle {
         anchors.left: taskScreenborderLeftMain.right
         anchors.leftMargin: (1012/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
-        anchors.topMargin: (141/730)* parent.height
+        anchors.topMargin: (142/730)* parent.height
         font.family: "Inter"
         font.pointSize: textSize
         color: "#FA5B79"
@@ -629,9 +698,14 @@ Rectangle {
     MouseArea {
         anchors.fill: taskScreen_img_34
         onClicked: {
-            console.log("stop all button")
+            console.log("Delete all button")
+            setLoaderSize(500, 150, 309, 215)
+            loader_notification.source = "DeleteAllTaskNotification.qml"
+            bacgroundForLoaderpopup.visible = true
+            m_taskScreen.sendThemeValueToPopup(dashboardNormalTheme)
         }
     }
+
     Rectangle {
         id: taskScreenRec_3_3
 //            width: 791
@@ -645,7 +719,7 @@ Rectangle {
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (183/730)* parent.height
         color: "#907DE2"
-        radius: 3
+        radius: 5
     }
     Text {
         id: taskScreen_txt_21
@@ -791,7 +865,7 @@ Rectangle {
         font.pointSize: textSize
         color: "#FFFFFF"
     }
-    Image {
+    Rectangle {
         id: img_36
 //        width: 9
 //        height: 495
@@ -803,7 +877,7 @@ Rectangle {
         anchors.leftMargin: (1093/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (229/730)* parent.height
-        source: "../image/TaskScreen/task_scroll_border.png"
+        color: dashboardNormalTheme?"#282645":"#d7d6de"
     }
     //List item
     ListView {
@@ -812,6 +886,15 @@ Rectangle {
 //        height: 498
 //        x: 27
 //        y: 227
+        signal eventFromItem(string msg, int itemIndex)
+        onEventFromItem: {
+            console.log("event: " + msg + " - index: " + itemIndex)
+            if (msg === "task_item_delegate_edit") {
+                setLoaderSize(582, 461, 309, 135)
+                loader_notification.source = "EditTaskScreen.qml"
+            }
+        }
+
         width: (793/1135) * m_taskScreen.width
         height: (498/730) * m_taskScreen.height
         anchors.left: taskScreenborderLeftMain.right
@@ -823,6 +906,10 @@ Rectangle {
         delegate: TaskItemDelegate {
             taskItemWidthDelegate: (770/1135) * m_taskScreen.width
             taskItemHeightDelegate: (30/730) * m_taskScreen.height
+            colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
+            Component.onCompleted: {
+                taskItemTrigger.connect(taskScreenList_2.eventFromItem)
+            }
         }
         clip: true
         flickableDirection: Flickable.VerticalFlick
@@ -832,18 +919,108 @@ Rectangle {
                 id: rec_4
                 implicitWidth: (9/1135) * m_taskScreen.width
                 implicitHeight: (221/730) * m_taskScreen.height
-                color: "#423F6B"
+                color: dashboardNormalTheme?"#423F6B":"#FFFFFF"
                 radius: 10
             }
         }
+    }
 
-        onWidthChanged: {
-            console.log("taskScreenList_2 = " + width)
+    Rectangle {
+        id: bacgroundForLoaderpopup
+        x: -65
+        y: 0
+        width: (1200/1135) * m_taskScreen.width
+        height: (730/730) * m_taskScreen.height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (-65/1135)* parent.width
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (0/730)* parent.height
+        color: dashboardNormalTheme?"#000000":"#F2F2F2"
+        opacity: 0.5
+        visible: false
+
+        Text {
+            id: leftMarginBackground
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+        }
+
+        MouseArea {
+            width: parent.width
+            height: (670/730)* m_taskScreen.height
+            anchors.top: leftMarginBackground.bottom
+            anchors.topMargin: (60/730)* m_taskScreen.height
         }
     }
 
+    Loader {
+        id: loader_notification
+        width: (500/1135) * parent.width //width
+        height: (150/730) * parent.height //height
+        anchors.left: taskScreenborderLeftMain.right
+        anchors.leftMargin: (309/1135)* parent.width //x
+        anchors.top: taskScreenborderLeftMain.bottom
+        anchors.topMargin: (215/730)* parent.height //y
+        source: ""
+        onLoaded: m_taskScreen.sendThemeValueToPopup.connect(loader_notification.item.changeThemePopup)
+    }
+
+//    Connections {
+//        target: loader_notification.item
+//        onSignalFromCreateScreen: {
+//            console.log(msg)
+//            if (msg === "evG_Cancel") {
+//                loader_notification.source = ""
+//            } else if (msg === "edit_task_edit") {
+//                loader_notification.source = ""
+//            }
+//        }
+//    }
+
+    function setLoaderSize(w, h, positionX, positionY) {
+        loaderW = w
+        loaderH = h
+        loaderX = positionX
+        loaderY = positionY
+        reSizeLoaderSize();
+    }
+
+    function reSizeLoaderSize() {
+        loader_notification.width = (loaderW/1135) * m_taskScreen.width //width
+        loader_notification.height = (loaderH/730) * m_taskScreen.height //height
+        loader_notification.anchors.left = taskScreenborderLeftMain.right
+        loader_notification.anchors.leftMargin = (loaderX/1135)* m_taskScreen.width //x
+        loader_notification.anchors.top = taskScreenborderLeftMain.bottom
+        loader_notification.anchors.topMargin = (loaderY/730)* m_taskScreen.height //y
+    }
+
+    Connections {
+        target: loader_notification.item
+        onTaskLoaderItemEvent: {
+            handleMsg(msg)
+        }
+    }
+
+    function handleMsg(msg) {
+        console.log(msg)
+        if (msg === "delete_all_tasks_cancel" || msg === "evG_Cancel") {
+            loader_notification.source = ""
+        } else if (msg === "delete_all_tasks_ok") {
+            loader_notification.source = ""
+        } else if (msg === "start_all_tasks_ok") {
+            loader_notification.source = ""
+        } else if (msg === "stop_all_tasks_ok") {
+            loader_notification.source = ""
+        } else if (msg === "edit_task_edit") {
+            loader_notification.source = ""
+        }
+        bacgroundForLoaderpopup.visible = false
+    }
+
     Component.onCompleted: {
-        console.log("complete")
+        updateTheme()
         taskScreenListtaskScreen_txt_7.push(taskScreen_txt_7)
         taskScreenListtaskScreen_txt_7.push(taskScreen_txt_9)
 
@@ -871,6 +1048,7 @@ Rectangle {
         taskScreenListtaskScreenTxt_13.push(taskScreenTxt_17)
     }
     onHeightChanged: {
+        reSizeLoaderSize();
         var rateTextSize = height/730
         for (var k = 0; k < taskScreenListtaskScreen_txt_7.length; k++) {
             taskScreenListtaskScreen_txt_7[k].textSize = 7 * rateTextSize
@@ -884,5 +1062,9 @@ Rectangle {
         for (var n = 0; n < taskScreenListtaskScreenTxt_13.length; n++) {
             taskScreenListtaskScreenTxt_13[n].textSize = 13 * rateTextSize
         }
+    }
+
+    onWidthChanged: {
+        reSizeLoaderSize();
     }
 }
