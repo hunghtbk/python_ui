@@ -8,7 +8,7 @@ Window {
     height: 436
     title: qsTr("UI Project")
     color: "#2E2C50"
-//    flags:Qt.FramelessWindowHint
+    flags:Qt.FramelessWindowHint
 
     property int currentWidth: m_app.width
     property int currentHeight: m_app.height
@@ -17,22 +17,35 @@ Window {
     property var listTextID: []
     property var listTextID_18: []
 
+    MouseArea {
+        anchors.fill: parent
+        onPressed: { pos = Qt.point(mouse.x, mouse.y) }
+        onPositionChanged: {
+            var diff = Qt.point(mouse.x - pos.x, mouse.y - pos.y)
+            m_app.x += diff.x
+            m_app.y += diff.y
+        }
+        property point pos
+    }
+
     Rectangle {
         id: btn_close
-        x: 581
-        y: 14
-        width: 18
-        height: 18
-        color: "transparent"
+        x: 596
+        y: 0
+        width: 20
+        height: 20
+        color: mcloseBtn.containsMouse ? "red" : "transparent"
         Image {
             id: btn_close_image
+            width: 18
+            height: 18
             anchors.centerIn: parent.Center
-            width: 9.01
-            height: 9.01
-            source: "../image/close.png"
+            source: "../appIMG/6.Common/close-outline-white.png"
         }
         MouseArea {
+            id: mcloseBtn
             anchors.fill: parent
+            hoverEnabled: true
             onClicked: {
                 m_app.close();
             }
@@ -42,27 +55,27 @@ Window {
 
     Rectangle {
         id: btn_small
-        x: 561
-        y: 14
-        width: 18
-        height: 18
-        color: "transparent"
+        x: 576
+        y: 0
+        width: 20
+        height: 20
+        color: mminimumBtn.containsMouse ? "red" : "transparent"
         Image {
             id: btn_small_image
-            x: 0
-            y: 5
-            width: 12
-            height: 1.5
-            source: "../image/minimize.png"
+            anchors.centerIn: parent.Center
+            width: 18
+            height: 18
+            source: "../appIMG/6.Common/minus-outline-white.png"
         }
         MouseArea {
+            id: mminimumBtn
             anchors.fill: parent
+            hoverEnabled: true
             onClicked: {
                 m_app.showMinimized();
             }
         }
-    }
-
+}
     Image {
         id: upoVal
         width: 280
@@ -172,149 +185,26 @@ Window {
         }
     }
 
-    //SmallLotus
+    //Small lotus
     Image {
-        id: lotus1
-        width: 14.78
-        height: 9.1
+        id: smallLotus
+        width: 39
+        height:  36
         x: 85
-        y: 97.63
-        source: "../image/small_lotus/small_1.png"
-    }
-    Image {
-        id: lotus2
-        width: 15.17
-        height: 7.97
-        x: 85
-        y: 94.45
-        source: "../image/small_lotus/small_2.png"
-    }
-    Image {
-        id: lotus3
-        width: 7.45
-        height: 15.53
-        x: 97.58
-        y: 84.01
-        source: "../image/small_lotus/small_3.png"
-    }
-    Image {
-        id: lotus4
-        width: 7.45
-        height: 15.53
-        x: 102.47
         y: 84
-        source: "../image/small_lotus/small_4.png"
-    }
-
-    Image {
-        id: lotus5
-        width: 15.17
-        height: 7.97
-        x: 107.33
-        y: 94.46
-        source: "../image/small_lotus/small_5.png"
-    }
-
-    Image {
-        id: lotus6
-        width: 14.78
-        height: 9.1
-        x: 107.72
-        y: 97.63
-        source: "../image/small_lotus/small_6.png"
-    }
-
-    Image {
-        id: lotus7
-        width: 10.14
-        height: 13.84
-        x: 106.21
-        y: 105.83
-        source: "../image/small_lotus/small_7.png"
-    }
-
-    Image {
-        id: lotus8
-        width: 11.15
-        height: 12.74
-        x: 104.18
-        y: 106.97
-        source: "../image/small_lotus/small_8.png"
-    }
-
-    Image {
-        id: lotus9
-        width: 11.15
-        height: 12.74
-        x: 92.16
-        y: 106.97
-        source: "../image/small_lotus/small_9.png"
-    }
-
-    Image {
-        id: lotus10
-        width: 10.14
-        height: 13.84
-        x: 91.15
-        y: 105.83
-        source: "../image/small_lotus/small_10.png"
+        source: "../appIMG/6.Common/login_lotus_icon_small.png"
     }
 
     //BigLotus
     Image {
-        id: big_lotus1
-        x: 338.5
-        y: 383.45
-        source: "../image/big_lostus/big_1.png"
-    }
-    Image {
-        id: big_lotus2
-        x: 325
-        y: 359.45
-        source: "../image/big_lostus/big_2.png"
+        id: bigLotus
+        width: 279
+        height: 251
+        x: 339
+        y: 185
+        source: "../appIMG/6.Common/login_lotus_icon_big.png"
     }
 
-    Image {
-        id: big_lotus3
-//        width: 123.46
-//        height: 141.580
-        x: 361.46
-        y: 260.85
-        source: "../image/big_lostus/big_3.png"
-    }
-    Image {
-        id: big_lotus4
-//        width: 123.49
-//        height: 141.6
-        x: 393.76
-        y: 238.26
-        source: "../image/big_lostus/big_4.png"
-    }
-    Image {
-        id: big_lotus5
-        x: 475.8
-        y: 251.79
-        source: "../image/big_lostus/big_5.png"
-    }
-    Image {
-        id: big_lotus6
-        x: 493.24
-        y: 273.67
-        source: "../image/big_lostus/big_6.png"
-    }
-    Image {
-        id: big_lotus7
-        x: 519
-        y: 364
-        source: "../image/big_lostus/big_7.png"
-    }
-    Image {
-        id: big_lotus8
-        x: 511.61
-        y: 376.79
-        source: "../image/big_lostus/big_8.png"
-    }
-    //////////////////
     Image {
         id: downoVal
         width: 486
@@ -335,25 +225,10 @@ Window {
         listID.push(img_authen_bgr)
         listID.push(authen_arrow)
         listTextID.push(authentxt)
-        listID.push(lotus1)
-        listID.push(lotus2)
-        listID.push(lotus3)
-        listID.push(lotus4)
-        listID.push(lotus5)
-        listID.push(lotus6)
-        listID.push(lotus7)
-        listID.push(lotus8)
-        listID.push(lotus9)
-        listID.push(lotus10)
 
-        listID.push(big_lotus1)
-        listID.push(big_lotus2)
-        listID.push(big_lotus3)
-        listID.push(big_lotus4)
-        listID.push(big_lotus5)
-        listID.push(big_lotus6)
-        listID.push(big_lotus7)
-        listID.push(big_lotus8)
+        listID.push(smallLotus)
+        listID.push(bigLotus)
+
         listID.push(btn_close);
         listID.push(btn_small);
         listID.push(btn_small_image);

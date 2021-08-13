@@ -319,5 +319,9 @@
         <file>appIMG/7.LightMode/item_delete_all_4x.png</file>
         <file>appIMG/7.LightMode/item_stop_all_4x.png</file>
         <file>appIMG/7.LightMode/arrow-down-5.png</file>
+        <file>appIMG/6.Common/login_lotus_icon_big.png</file>
+        <file>appIMG/6.Common/login_lotus_icon_small.png</file>
+        <file>appIMG/6.Common/close-outline-white.png</file>
+        <file>appIMG/6.Common/minus-outline-white.png</file>
     </qresource>
 </RCC>
