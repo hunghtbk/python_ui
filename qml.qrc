@@ -323,5 +323,8 @@
         <file>appIMG/6.Common/login_lotus_icon_small.png</file>
         <file>appIMG/6.Common/close-outline-white.png</file>
         <file>appIMG/6.Common/minus-outline-white.png</file>
+        <file>qmlScreen/ProfileEditBillingScreen.qml</file>
+        <file>qmlScreen/ProfileEditPaymentScreen.qml</file>
+        <file>qmlScreen/ProfileEditShippingScreen.qml</file>
     </qresource>
 </RCC>

@@ -15,6 +15,36 @@ Rectangle {
         dashboardNormalTheme = abcd
     }
 
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_6.color = nColor
+            txt_8.color = nColor
+            txt_10.color = nColor
+            txt_12.color = nColor
+            txt_14.color = nColor
+            txt_16.color = nColor
+            txt_18.color = nColor
+            txt_22.color = nColor
+            txt_24.color = nColor
+        } else {
+            txt_6.color = abnColor
+            txt_8.color = abnColor
+            txt_10.color = abnColor
+            txt_12.color = abnColor
+            txt_14.color = abnColor
+            txt_16.color = abnColor
+            txt_18.color = abnColor
+            txt_22.color = abnColor
+            txt_24.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
     color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     radius: 5
 
@@ -154,6 +184,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Name")
             property string placeholderText: "Enter Name"
 
@@ -198,6 +229,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("First Name")
             property string placeholderText: "First Name"
 
@@ -242,6 +274,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Last Name")
             property string placeholderText: "Last Name"
 
@@ -286,6 +319,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Email")
             property string placeholderText: "Enter Email"
 
@@ -330,6 +364,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Phone")
             property string placeholderText: "Enter Phone"
 
@@ -374,6 +409,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Address 1")
             property string placeholderText: "Enter Address 1"
 
@@ -418,6 +454,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Apt.")
             property string placeholderText: "Apt."
 
@@ -676,6 +713,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter City")
             property string placeholderText: "Enter City"
 
@@ -720,6 +758,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Zipcode")
             property string placeholderText: "Enter Zipcode"
 
@@ -809,6 +848,7 @@ Rectangle {
         }
     }
     Component.onCompleted: {
+        updateTheme();
         listItemID.push(item_1)
         listItemID.push(item_2)
         listItemID.push(item_3)

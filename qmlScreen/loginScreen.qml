@@ -144,6 +144,7 @@ Window {
             font.family: "Helvetica"
             font.pointSize: textSize
             color: "#907DE2"
+            selectByMouse: true
         }
     }
 

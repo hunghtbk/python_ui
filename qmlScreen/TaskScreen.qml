@@ -38,6 +38,7 @@ Rectangle {
             taskScreenTxt_13.color = nColor
             taskScreenTxt_14.color = nColor
             taskScreenTxt_17.color = nColor
+            taskScreenTxt_15.color = nColor
         } else {
             taskScreenTxt_1.color = abnColor
             taskScreen_txt_8.color = abnColor
@@ -46,6 +47,7 @@ Rectangle {
             taskScreenTxt_13.color = abnColor
             taskScreenTxt_14.color = abnColor
             taskScreenTxt_17.color = abnColor
+            taskScreenTxt_15.color = abnColor
         }
     }
 
@@ -418,6 +420,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: textSize
             color: "#75719B"
+            selectByMouse: true
 
             property string placeholderText: "Mass link change"
 
@@ -892,6 +895,8 @@ Rectangle {
             if (msg === "task_item_delegate_edit") {
                 setLoaderSize(582, 461, 309, 135)
                 loader_notification.source = "EditTaskScreen.qml"
+                m_taskScreen.sendThemeValueToPopup(dashboardNormalTheme)
+                bacgroundForLoaderpopup.visible = true
             }
         }
 

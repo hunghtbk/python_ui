@@ -16,6 +16,22 @@ Rectangle {
         dashboardNormalTheme = abcd
     }
 
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_3.color = nColor
+            txt_3_1.color = nColor
+        } else {
+            txt_3.color = abnColor
+            txt_3_1.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
     color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     radius: 5
     signal signalFromCreateScreen(string msg)
@@ -142,6 +158,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Name")
 
             property string placeholderText: "Enter Name"
@@ -213,6 +230,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("Enter Group Description")
 
             property string placeholderText: "Enter Group Description"
@@ -331,6 +349,7 @@ Rectangle {
         source: "../image/Proxy/arrow-right.png"
     }
     Component.onCompleted: {
+        updateTheme()
 //        listItemID.push(item_1)
 //        listItemID.push(item_2)
 //        listItemID.push(item_3)

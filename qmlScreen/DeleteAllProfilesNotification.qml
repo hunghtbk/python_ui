@@ -12,7 +12,7 @@ Rectangle {
 
     color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     radius: 5
-    signal deleteAllProfilesMessage(string msg)
+    signal profilesPopupSignalMessage(string msg)
     Text {
         id: marginLeft
         x: 0
@@ -95,7 +95,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("DeleteAllProfilesNotification.qml - Cancel")
-                notificationMain.deleteAllProfilesMessage("delete_all_profiles_cancel")
+                notificationMain.profilesPopupSignalMessage("delete_all_profiles_cancel")
             }
         }
     }
@@ -132,7 +132,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("DeleteAllProfilesNotification.qml - OK")
-                notificationMain.deleteAllProfilesMessage("delete_all_profiles_ok")
+                notificationMain.profilesPopupSignalMessage("delete_all_profiles_ok")
             }
         }
     }

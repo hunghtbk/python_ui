@@ -35,10 +35,12 @@ Rectangle {
             txt_1.color = nColor
             txt_2.color = nColor
             txt_3.color = nColor
+            txt_6.color = nColor
         } else {
             txt_1.color = abnColor
             txt_2.color = abnColor
             txt_3.color = abnColor
+            txt_6.color = abnColor
         }
     }
 
@@ -150,6 +152,7 @@ Rectangle {
         font.pointSize: textSize
         color: "#FFFFFF"
     }
+    /*
     Image {
         id: item15
 //        width: 21
@@ -171,6 +174,7 @@ Rectangle {
             }
         }
     }
+    */
     Rectangle {
         id: item16
 //        width: 196
@@ -210,6 +214,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: textSize
             color: "#FFFFFF"
+            selectByMouse: true
     //        text: qsTr("Privacy")
 
             property string placeholderText: "Enter Proxy Name..."
@@ -354,6 +359,7 @@ Rectangle {
             height: 0
         }
 
+        /*
         TextInput {
             id: txt_6
             property int textSize: 9
@@ -380,6 +386,23 @@ Rectangle {
                 visible: !txt_6.text
                 font: txt_6.font
             }
+        }
+        */
+        TextArea {
+            id: txt_6
+            property int textSize: 9
+            width: (340/363) * parent.width //width
+            height: (500/546) * parent.height //height
+            anchors.left: leftMarginTextInput.right
+            anchors.leftMargin: (10/363)* parent.width //x
+            anchors.top: leftMarginTextInput.bottom
+            anchors.topMargin: (12/546)* parent.height //y
+            font.family: "Inter"
+            wrapMode: Text.WrapAnywhere
+            font.pointSize: textSize
+            color: "#75719B"
+            placeholderText: qsTr("ip:auth:user:pass")
+            selectByMouse: true
         }
     }
     Rectangle {

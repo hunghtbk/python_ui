@@ -10,7 +10,7 @@ Rectangle {
     width: 582
     height: 453
     property bool dashboardNormalTheme: true
-    function changeTheme(abcd) {
+    function changeThemePopup(abcd) {
         console.log("TaskScreen " + abcd)
         dashboardNormalTheme = abcd
     }
@@ -35,7 +35,9 @@ Rectangle {
 
     color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     radius: 5
-    signal signalFromCreateScreen(string msg)
+
+    signal profilesPopupSignalMessage(string msg)
+
     property int currentWidth: m_profilePaymentScreen.width
     property int currentHeight: m_profilePaymentScreen.height
 
@@ -58,7 +60,7 @@ Rectangle {
             height: 19
             x: 25
             y: 21
-            text: qsTr("Create Profiles")
+            text: qsTr("Edit Profiles")
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#FFFFFF"
@@ -89,7 +91,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("call shipping")
-                m_profilePaymentScreen.signalFromCreateScreen("profile_shipping_screen_shipping")
+                m_profilePaymentScreen.profilesPopupSignalMessage("profile_edit_shipping_screen_shipping")
             }
         }
     }
@@ -110,7 +112,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("call billing")
-                m_profilePaymentScreen.signalFromCreateScreen("profile_shipping_screen_billing")
+                m_profilePaymentScreen.profilesPopupSignalMessage("profile_edit_shipping_screen_billing")
             }
         }
     }
@@ -525,7 +527,7 @@ Rectangle {
             }
             onClicked: {
                 console.log("Profile Payment Screen")
-                m_profilePaymentScreen.signalFromCreateScreen("evG_Cancel")
+                m_profilePaymentScreen.profilesPopupSignalMessage("evG_Cancel")
             }
         }
     }
@@ -565,7 +567,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 console.log("Create task button")
-                m_profilePaymentScreen.signalFromCreateScreen("profile_payment_screen_create")
+                m_profilePaymentScreen.profilesPopupSignalMessage("profile_edit_payment_screen_create")
             }
         }
     }

@@ -43,6 +43,11 @@ Rectangle {
             txt_15.color = nColor
             txt_19.color = nColor
             txt_20.color = nColor
+            txt_10.color = nColor
+            txt_12.color = nColor
+            txt_14.color = nColor
+            txt_16.color = nColor
+            txt_21.color = nColor
         } else {
             txt_1.color = abnColor
             txt_7.color = abnColor
@@ -53,6 +58,11 @@ Rectangle {
             txt_15.color = abnColor
             txt_19.color = abnColor
             txt_20.color = abnColor
+            txt_10.color = abnColor
+            txt_12.color = abnColor
+            txt_14.color = abnColor
+            txt_16.color = abnColor
+            txt_21.color = abnColor
         }
     }
 
@@ -259,6 +269,7 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
+                selectByMouse: true
 //                text: qsTr("Enter token")
                 property string placeholderText: "Enter token"
 
@@ -304,6 +315,7 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
+                selectByMouse: true
 //                text: qsTr("0")
                 property string placeholderText: "Enter value..."
 
@@ -349,6 +361,7 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
+                selectByMouse: true
 //                text: qsTr("Enter key")
                 property string placeholderText: "Enter Key"
 
@@ -394,6 +407,7 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
+                selectByMouse: true
 //                text: qsTr("0")
                 property string placeholderText: "Enter value..."
 
@@ -531,6 +545,7 @@ Rectangle {
                 font.family: "Inter"
                 font.pointSize: textSize
                 color: "#75719B"
+                selectByMouse: true
 //                text: qsTr("Enter webhook")
 
                 property string placeholderText: "Enter webhook"

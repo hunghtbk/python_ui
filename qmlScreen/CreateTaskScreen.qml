@@ -16,6 +16,21 @@ Rectangle {
     }
     color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     radius: 5
+
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_3.color = nColor
+        } else {
+            txt_3.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+
     signal signalFromCreateScreen(string msg)
 
     property int currentWidth: m_createTask.width
@@ -87,6 +102,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("SKU/Variant/Keyword")
             property string placeholderText: "SKU/Variant/Keyword"
 
@@ -807,6 +823,7 @@ Rectangle {
         }
     }
     Component.onCompleted: {
+        updateTheme();
         listItemID.push(item_1)
         listItemID.push(item_2)
         listItemID.push(item_3)

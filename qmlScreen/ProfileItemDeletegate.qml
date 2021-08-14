@@ -16,6 +16,8 @@ Rectangle {
         profileItem1.color = colorItem
     }
 
+    signal taskItemTrigger(string msg, int itemIndex)
+
     width: profileItem_widthDelegate
     height: profileItem_heightDelegate
     color: "transparent"
@@ -165,7 +167,8 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("action1")
+                console.log("action1 - event from Item")
+                profileItem_rect_item.taskItemTrigger("profile_item_delegate_edit", index)
             }
         }
     }

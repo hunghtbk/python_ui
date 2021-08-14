@@ -9,7 +9,28 @@ Rectangle {
     //    flags:Qt.FramelessWindowHint
     width: 582
     height: 461
-    color: "#37345E"
+
+    property bool dashboardNormalTheme: true
+    function changeThemePopup(abcd) {
+        console.log("TaskScreen " + abcd)
+        dashboardNormalTheme = abcd
+    }
+
+    function updateTheme() {
+        var nColor = "#FFFFFF" //white
+        var abnColor = "#000000" //black
+        if (dashboardNormalTheme) {
+            txt_3.color = nColor
+        } else {
+            txt_3.color = abnColor
+        }
+    }
+
+    onDashboardNormalThemeChanged: {
+        updateTheme()
+    }
+    radius: 5
+    color: dashboardNormalTheme?"#37345E":"#FFFFFF"
     signal taskLoaderItemEvent(string msg)
 
     property int currentWidth: m_editTask.width
@@ -59,7 +80,7 @@ Rectangle {
         text: qsTr("Monitor Input")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     Rectangle {
@@ -68,7 +89,7 @@ Rectangle {
         height: 30
         x: 40
         y: 130
-        color: "#3F3C68"
+        color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         radius: 5
         clip: true
         TextInput {
@@ -81,6 +102,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: txtSize
             color: "#75719B"
+            selectByMouse: true
 //            text: qsTr("SKU/Variant/Keyword")
             property string placeholderText: "SKU/Variant/Keyword"
 
@@ -103,7 +125,7 @@ Rectangle {
         text: qsTr("Size")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -129,7 +151,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -141,7 +163,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -158,10 +180,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_1.pressed ? "#17a81a" : "#37345E"
+            border.color: control_1.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_1.visualFocus ? 2 : 1
             radius: 5
         }
@@ -182,7 +204,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -210,7 +232,7 @@ Rectangle {
         text: qsTr("Proxy")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -236,7 +258,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -248,7 +270,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -265,10 +287,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_2.pressed ? "#17a81a" : "#37345E"
+            border.color: control_2.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_2.visualFocus ? 2 : 1
             radius: 5
         }
@@ -289,7 +311,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -317,7 +339,7 @@ Rectangle {
         text: qsTr("Item Quantity")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -343,7 +365,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -355,7 +377,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -372,10 +394,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_3.pressed ? "#17a81a" : "#37345E"
+            border.color: control_3.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_3.visualFocus ? 2 : 1
             radius: 5
         }
@@ -396,7 +418,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -424,7 +446,7 @@ Rectangle {
         text: qsTr("Profile")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -450,7 +472,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -462,7 +484,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -479,10 +501,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_4.pressed ? "#17a81a" : "#37345E"
+            border.color: control_4.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_4.visualFocus ? 2 : 1
             radius: 5
         }
@@ -503,7 +525,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -531,7 +553,7 @@ Rectangle {
         text: qsTr("Mode")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -557,7 +579,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -569,7 +591,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -586,10 +608,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_5.pressed ? "#17a81a" : "#37345E"
+            border.color: control_5.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_5.visualFocus ? 2 : 1
             radius: 5
         }
@@ -610,7 +632,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -638,7 +660,7 @@ Rectangle {
         text: qsTr("Task Quantity")
         font.family: "Inter"
         font.pointSize: txtSize
-        color: "#FFFFFF"
+        color: dashboardNormalTheme?"#FFFFFF":"#000000"
     }
 
     ComboBox {
@@ -664,7 +686,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
-                color: "#3F3C68"
+                color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
                 implicitWidth: 120
                 implicitHeight: 40
             }
@@ -676,7 +698,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: "../image/TaskScreen/arrow-down-5.png"
+            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -693,10 +715,10 @@ Rectangle {
         }
 
         background: Rectangle {
-            color: "#3F3C68"
+            color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             implicitWidth: 120
             implicitHeight: 40
-            border.color: control_6.pressed ? "#17a81a" : "#37345E"
+            border.color: control_6.pressed ? "#17a81a" : dashboardNormalTheme?"#37345E":"#FFFFFF"
             border.width: control_6.visualFocus ? 2 : 1
             radius: 5
         }
@@ -717,7 +739,7 @@ Rectangle {
             }
 
             background: Rectangle {
-                border.color: "#37345E"
+                border.color: dashboardNormalTheme?"#37345E":"#FFFFFF"
                 radius: 5
             }
         }
@@ -742,7 +764,7 @@ Rectangle {
         x: 299
         y: 395
         color: "transparent"
-        border.color: "#3F3C68"
+        border.color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         radius: 5
         Text {
             id: txt_10
@@ -754,12 +776,12 @@ Rectangle {
             text: qsTr("Cancel")
             font.family: "Inter"
             font.pointSize: txtSize
-            color: "#FFFFFF"
+            color: dashboardNormalTheme?"#FFFFFF":"#000000"
         }
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                item_4.color = "#3F3C68"
+                item_4.color = dashboardNormalTheme?"#3F3C68":"#F7F8FC"
             }
             onReleased: {
                 item_4.color = "transparent"
@@ -777,8 +799,8 @@ Rectangle {
         height: 30
         x: 424
         y: 395
-        color: "#FFFFFF"
-        border.color: "#3F3C68"
+        color: dashboardNormalTheme?"#FFFFFF":"#F7F8FC"
+        border.color: dashboardNormalTheme?"#3F3C68":"#F7F8FC"
         radius: 5
         Text {
             id: txt_11
@@ -801,6 +823,7 @@ Rectangle {
         }
     }
     Component.onCompleted: {
+        updateTheme();
         listItemID.push(item_1)
         listItemID.push(item_2)
         listItemID.push(item_3)

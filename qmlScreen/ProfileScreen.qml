@@ -48,6 +48,12 @@ Rectangle {
         updateTheme()
     }
 
+    //For loadersize
+    property int loaderW: 0
+    property int loaderH: 0
+    property int loaderX: 0
+    property int loaderY: 0
+
     Text {
         id: profileScreenborderLeftMain
         x: 0
@@ -214,6 +220,7 @@ Rectangle {
             font.family: "Inter"
             font.pointSize: textSize
             color: "#FFFFFF"
+            selectByMouse: true
     //        text: qsTr("Privacy")
 
             property string placeholderText: "Enter Profile Name..."
@@ -330,6 +337,7 @@ Rectangle {
         anchors.fill: profileScreen_item19
         onClicked: {
             console.log("Delete All button")
+            setLoaderSize(500, 150, 309, 215)
             loader_notification.source = "DeleteAllProfilesNotification.qml"
             bacgroundForLoaderpopup.visible = true
             m_profileScreen.sendThemeValueToPopup(dashboardNormalTheme)
@@ -457,6 +465,16 @@ Rectangle {
     //List item
     ListView {
         id: profileScreen_list_2
+        signal eventFromItem(string msg, int itemIndex)
+        onEventFromItem: {
+            console.log("event: " + msg + " - index: " + itemIndex)
+            if (msg === "profile_item_delegate_edit") {
+                setLoaderSize(582, 633, 309, 49)
+                loader_notification.source = "ProfileEditShippingScreen.qml"
+                m_profileScreen.sendThemeValueToPopup(dashboardNormalTheme)
+                bacgroundForLoaderpopup.visible = true
+            }
+        }
 //        width: 791
 //        height: 558
 //        x: 27
@@ -472,6 +490,9 @@ Rectangle {
             profileItem_widthDelegate: (770/1135) * m_profileScreen.width
             profileItem_heightDelegate: (30/730) * m_profileScreen.height
             colorItem: dashboardNormalTheme?"#37345E":"#FFFFFF"
+            Component.onCompleted: {
+                taskItemTrigger.connect(profileScreen_list_2.eventFromItem)
+            }
         }
         clip: true
         spacing: 8
@@ -531,21 +552,63 @@ Rectangle {
         onLoaded: m_profileScreen.sendThemeValueToPopup.connect(loader_notification.item.changeThemePopup)
     }
 
+    function setLoaderSize(w, h, positionX, positionY) {
+        loaderW = w
+        loaderH = h
+        loaderX = positionX
+        loaderY = positionY
+        reSizeLoaderSize();
+    }
+
+    function reSizeLoaderSize() {
+        loader_notification.width = (loaderW/1135) * m_profileScreen.width //width
+        loader_notification.height = (loaderH/730) * m_profileScreen.height //height
+        loader_notification.anchors.left = profileScreenborderLeftMain.right
+        loader_notification.anchors.leftMargin = (loaderX/1135)* m_profileScreen.width //x
+        loader_notification.anchors.top = profileScreenborderLeftMain.bottom
+        loader_notification.anchors.topMargin = (loaderY/730)* m_profileScreen.height //y
+    }
+
     Connections {
         target: loader_notification.item
-        onDeleteAllProfilesMessage: {
+        onProfilesPopupSignalMessage: {
             handleMsg(msg)
         }
     }
 
     function handleMsg(msg) {
         console.log(msg)
-        if (msg === "delete_all_profiles_cancel") {
+        if (msg === "delete_all_profiles_cancel" || msg === "evG_Cancel") {
             loader_notification.source = ""
         } else if (msg === "delete_all_profiles_ok") {
             loader_notification.source = ""
+        } else if (msg === "profile_edit_shipping_screen_create") {
+            loader_notification.source = ""
+        } else if (msg === "profile_edit_billing_screen_create") {
+            loader_notification.source = ""
+        } else if (msg === "profile_edit_payment_screen_create") {
+            loader_notification.source = ""
         }
+
         bacgroundForLoaderpopup.visible = false
+
+        if (msg === "profile_edit_shipping_screen_billing") {
+            setLoaderSize(582, 609, 309, 61)
+            loader_notification.source = "ProfileEditBillingScreen.qml"
+            m_profileScreen.sendThemeValueToPopup(dashboardNormalTheme)
+            bacgroundForLoaderpopup.visible = true
+        } else if (msg === "profile_edit_shipping_screen_shipping") {
+            setLoaderSize(582, 633, 309, 49)
+            loader_notification.source = "ProfileEditShippingScreen.qml"
+            m_profileScreen.sendThemeValueToPopup(dashboardNormalTheme)
+            bacgroundForLoaderpopup.visible = true
+        } else if (msg === "profile_edit_shipping_screen_payment") {
+            setLoaderSize(582, 453, 309, 139)
+            loader_notification.source = "ProfileEditPaymentScreen.qml"
+            m_profileScreen.sendThemeValueToPopup(dashboardNormalTheme)
+            bacgroundForLoaderpopup.visible = true
+        }
+
     }
 
     Component.onCompleted: {
