@@ -36,7 +36,7 @@ Rectangle {
         anchors.leftMargin: (17/221)* parent.width
         anchors.top: taskGroupLeftCorner.bottom
         anchors.topMargin: (15/106)* parent.height
-        source: "../image/TaskScreen/image_borde.png"
+        source: "../appIMG/6.Common/image_borde.png"
 
     }
     Image {

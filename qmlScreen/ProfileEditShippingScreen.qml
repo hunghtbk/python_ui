@@ -83,7 +83,7 @@ Rectangle {
             height: 44
             x: 297
             y: 18
-            source: "../image/create_task_donw_oval.png"
+            source: "../appIMG/6.Common/create_task_donw_oval.png"
         }
     }
 
@@ -516,7 +516,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
+            source: dashboardNormalTheme?"../appIMG/6.Common/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -623,7 +623,7 @@ Rectangle {
             height: 6
             x: 219
             y: 12
-            source: dashboardNormalTheme?"../image/TaskScreen/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
+            source: dashboardNormalTheme?"../appIMG/6.Common/arrow-down-5.png":"../appIMG/7.LightMode/arrow-down-5.png"
         }
 
         contentItem: Text {
@@ -837,7 +837,7 @@ Rectangle {
             height: 7
             x: 103
             y: 12
-            source: "../image/Profile/arrow-right.png"
+            source: "../appIMG/6.Common/arrow-right.png"
         }
 
         MouseArea {

@@ -82,7 +82,7 @@ Window {
         height: 127
         x: 338
         y: 0
-        source: "../image/oval_up.png"
+        source: "../appIMG/6.Common/oval_up.png"
     }
 
     Text {
@@ -130,7 +130,7 @@ Window {
         y: 215
         width: 448
         height: 30
-        source: "../image/text_input_bgr.png"
+        source: "../appIMG/6.Common/text_input_bgr.png"
 
         TextInput {
             id: txt_input
@@ -154,7 +154,7 @@ Window {
         y: 263
         width: 160
         height: 30
-        source: "../image/authen_bgr.png"
+        source: "../appIMG/6.Common/authen_bgr.png"
 
         Text {
             id: authentxt
@@ -175,7 +175,7 @@ Window {
             y: 12
             width: 5
             height: 10
-            source: "../image/authen_arrow.png"
+            source: "../appIMG/6.Common/authen_arrow.png"
         }
 
         MouseArea {
@@ -212,7 +212,7 @@ Window {
         height: 88
         x: 0
         y: 348
-        source: "../image/oval_down.png"
+        source: "../appIMG/6.Common/oval_down.png"
     }
 
     Component.onCompleted: {

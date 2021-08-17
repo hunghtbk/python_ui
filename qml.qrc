@@ -1,184 +1,33 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
-        <file>Button.qml</file>
-        <file>image/facebook_logo.jpg</file>
-        <file>image/close.png</file>
-        <file>image/minimize.png</file>
-        <file>image/oval_up.png</file>
-        <file>image/oval_down.png</file>
-        <file>image/small_lotus/small_3.png</file>
-        <file>image/small_lotus/small_1.png</file>
-        <file>image/small_lotus/small_2.png</file>
-        <file>image/small_lotus/small_4.png</file>
-        <file>image/small_lotus/small_5.png</file>
-        <file>image/small_lotus/small_6.png</file>
-        <file>image/small_lotus/small_7.png</file>
-        <file>image/small_lotus/small_8.png</file>
-        <file>image/small_lotus/small_9.png</file>
-        <file>image/small_lotus/small_10.png</file>
-        <file>image/big_lostus/big_1.png</file>
-        <file>image/big_lostus/big_2.png</file>
-        <file>image/big_lostus/big_3.png</file>
-        <file>image/big_lostus/big_4.png</file>
-        <file>image/big_lostus/big_5.png</file>
-        <file>image/big_lostus/big_6.png</file>
-        <file>image/big_lostus/big_7.png</file>
-        <file>image/big_lostus/big_8.png</file>
-        <file>image/text_input_bgr.png</file>
-        <file>image/authen_bgr.png</file>
-        <file>image/authen_arrow.png</file>
-        <file>SmallLotus.qml</file>
-        <file>BigLotus.qml</file>
         <file>qmlScreen/loginScreen.qml</file>
         <file>qmlScreen/TaskScreen.qml</file>
-        <file>image/dashboardIcon_inactive.png</file>
-        <file>image/taskIcon_active.png</file>
-        <file>image/selectedIcon.png</file>
-        <file>image/profileIcon_1_Inactive.png</file>
-        <file>image/profileIcon_inactive.png</file>
-        <file>image/proxyIcon_inactive.png</file>
-        <file>image/accounticon_inactive_2.png</file>
-        <file>image/accountIcon_inactive_1.png</file>
-        <file>image/settingIcon1.png</file>
-        <file>image/settingIcon2.png</file>
-        <file>image/changeTheme1_inactive.png</file>
-        <file>image/changeTheme2_inactive.png</file>
-        <file>image/changeTheme3_inactive.png</file>
-        <file>image/changeTheme4_inactive.png</file>
-        <file>image/changeTheme5_inactive.png</file>
-        <file>image/changeTheme6_inactive.png</file>
-        <file>image/changeTheme7_inactive.png</file>
-        <file>image/changeTheme8_inactive.png</file>
-        <file>image/changeTheme9_inactive.png</file>
-        <file>image/add_icon1.png</file>
-        <file>image/add_icon2.png</file>
         <file>qmlScreen/TaskGroupDelegate.qml</file>
         <file>qmlScreen/TaskGroupModel.qml</file>
-        <file>image/TaskScreen/delete_icon.png</file>
-        <file>image/TaskScreen/green_oval.png</file>
-        <file>image/TaskScreen/red_oval.png</file>
-        <file>image/task_item_bgr-active.png</file>
-        <file>image/task_item_bgr_inactive.png</file>
-        <file>image/Sony-Playstation-5-Blu-Ray-Edition-Console-White.png</file>
-        <file>image/dashboardIcon_active.png</file>
-        <file>image/profileIcon_1_active.png</file>
-        <file>image/profileIcon_active.png</file>
-        <file>image/proxyIcon_active.png</file>
-        <file>image/taskIcon_inactive.png</file>
-        <file>image/settingIcon1_active.png</file>
-        <file>image/settingIcon2_active.png</file>
-        <file>image/accountIcon_active_1.png</file>
-        <file>image/accountIcon_active_2.png</file>
-        <file>image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png</file>
-        <file>image/TaskScreen/line.png</file>
-        <file>image/border_2.png</file>
-        <file>image/Dola_icon.png</file>
-        <file>image/Green_icon.png</file>
-        <file>image/Green_icon_1.png</file>
-        <file>image/Red_icon.png</file>
-        <file>image/Red_icon_1.png</file>
-        <file>image/close_icon.png</file>
-        <file>image/minimize_icon.png</file>
-        <file>image/mask_link_border.png</file>
-        <file>image/confirm_border.png</file>
-        <file>image/TaskScreen/arrow_confirm.png</file>
-        <file>image/TaskScreen/white_border.png</file>
-        <file>image/TaskScreen/deleteAll_icon.png</file>
-        <file>image/TaskScreen/starAll_icon.png</file>
-        <file>image/TaskScreen/stopAll_icon.png</file>
-        <file>image/listviewTitleBorder.png</file>
         <file>qmlScreen/TaskItemDelegate.qml</file>
         <file>qmlScreen/TaskItemModel.qml</file>
-        <file>image/task_item_border.png</file>
-        <file>image/TaskScreen/task_scroll_border.png</file>
-        <file>image/delete_action.png</file>
-        <file>image/edit_action.png</file>
-        <file>image/start_action.png</file>
-        <file>image/stop_action.png</file>
-        <file>image/0.Common/credit-card-outline-active.png</file>
-        <file>image/0.Common/credit-card-outline-inactive.png</file>
-        <file>image/0.Common/cube-outline-active.png</file>
-        <file>image/0.Common/cube-outline-inactive.png</file>
-        <file>image/0.Common/flash-outline-2-active.png</file>
-        <file>image/0.Common/flash-outline-2-inactive.png</file>
-        <file>image/0.Common/grid-outline-active.png</file>
-        <file>image/0.Common/grid-outline-inactive.png</file>
-        <file>image/0.Common/person-outline-active.png</file>
-        <file>image/0.Common/person-outline-inactive.png</file>
-        <file>image/0.Common/settings-2-outline-active.png</file>
-        <file>image/0.Common/settings-2-outline-inactive.png</file>
-        <file>image/0.Common/Small_lotus.png</file>
-        <file>image/0.Common/sun-outline-inactive.png</file>
-        <file>image/0.Common/Add_inactive_icon.png</file>
-        <file>image/0.Common/close-outline-inactive.png</file>
-        <file>image/0.Common/minus-outline-inactive.png</file>
-        <file>image/TaskScreen/image_borde.png</file>
-        <file>image/TaskScreen/border_50_21.png</file>
         <file>qmlScreen/CreateTaskScreen.qml</file>
-        <file>image/create_task_donw_oval.png</file>
-        <file>image/TaskScreen/white_oval.png</file>
-        <file>image/TaskScreen/dollar-sign-15.png</file>
-        <file>image/TaskScreen/shopping-bag-outline-green.png</file>
-        <file>image/TaskScreen/shopping-bag-outline-red.png</file>
-        <file>image/TaskScreen/delete_icon_item.png</file>
-        <file>image/TaskScreen/edit_icon_item.png</file>
-        <file>image/TaskScreen/stop_icon_item.png</file>
-        <file>image/TaskScreen/arrow-down-5.png</file>
         <file>qmlScreen/TaskScreenCombobox.qml</file>
         <file>qmlScreen/ProfileScreen.qml</file>
         <file>qmlScreen/ProfileGroupDelegate.qml</file>
-        <file>image/Profile/arrow-right.png</file>
-        <file>image/Profile/edit-icon.png</file>
-        <file>image/Profile/oval-visa-logo.png</file>
-        <file>image/Profile/trash-outline.png</file>
-        <file>image/Profile/trash-outline-red.png</file>
-        <file>image/Profile/visa-seeklogo.com copy.png</file>
         <file>qmlScreen/ProfileGroupModel.qml</file>
         <file>qmlScreen/ProfileItemDeletegate.qml</file>
         <file>qmlScreen/ProfileItemModel.qml</file>
-        <file>image/Profile/delete-icon.png</file>
         <file>qmlScreen/ProfileShippingScreen.qml</file>
         <file>qmlScreen/ProfileBillingScreen.qml</file>
         <file>qmlScreen/ProfilePaymentScreen.qml</file>
         <file>qmlScreen/ProxyScreen.qml</file>
         <file>qmlScreen/ProxyGroupDelegate.qml</file>
         <file>qmlScreen/ProxyGroupModel.qml</file>
-        <file>image/Proxy/arrow-right.png</file>
-        <file>image/Proxy/delete-icon.png</file>
-        <file>image/Proxy/edit-icon.png</file>
-        <file>image/Proxy/oval-visa-logo.png</file>
-        <file>image/Proxy/trash-outline.png</file>
-        <file>image/Proxy/trash-outline-red.png</file>
-        <file>image/Proxy/visa-seeklogo.com copy.png</file>
-        <file>image/Proxy/save-outline.png</file>
-        <file>image/0.Common/task_scroll_border.png</file>
         <file>qmlScreen/ProxyItemDeletegate.qml</file>
         <file>qmlScreen/ProxyItemModel.qml</file>
         <file>qmlScreen/CreateProxyGroupScreen.qml</file>
         <file>qmlScreen/AccountScreen.qml</file>
         <file>qmlScreen/AccountGroupDelegate.qml</file>
         <file>qmlScreen/AccountGroupModel.qml</file>
-        <file>image/Account/arrow-right.png</file>
-        <file>image/Account/delete-icon.png</file>
-        <file>image/Account/edit-icon.png</file>
-        <file>image/Account/oval-visa-logo.png</file>
-        <file>image/Account/save-outline.png</file>
-        <file>image/Account/trash-outline.png</file>
-        <file>image/Account/trash-outline-red.png</file>
-        <file>image/Account/visa-seeklogo.com copy.png</file>
         <file>qmlScreen/AccountItemDeletegate.qml</file>
         <file>qmlScreen/AccountItemModel.qml</file>
         <file>qmlScreen/SettingScreen.qml</file>
-        <file>image/Setting/arrow-right.png</file>
-        <file>image/Setting/big_lotus.png</file>
-        <file>image/Setting/expired_rate.png</file>
-        <file>image/Setting/full-rate.png</file>
-        <file>image/Setting/grey_oval.png</file>
-        <file>image/Setting/normal_lotus.png</file>
-        <file>image/Setting/save-outline.png</file>
-        <file>image/Setting/white_oval.png</file>
         <file>qmlScreen/DashboardScreen.qml</file>
         <file>qmlScreen/MainQML.qml</file>
         <file>qmlScreen/CreateTaskGroupScreen.qml</file>
@@ -326,5 +175,17 @@
         <file>qmlScreen/ProfileEditBillingScreen.qml</file>
         <file>qmlScreen/ProfileEditPaymentScreen.qml</file>
         <file>qmlScreen/ProfileEditShippingScreen.qml</file>
+        <file>appIMG/6.Common/arrow-right.png</file>
+        <file>appIMG/6.Common/create_task_donw_oval.png</file>
+        <file>appIMG/6.Common/arrow-down-5.png</file>
+        <file>appIMG/6.Common/image_borde.png</file>
+        <file>appIMG/6.Common/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png</file>
+        <file>appIMG/6.Common/line.png</file>
+        <file>appIMG/6.Common/white_border.png</file>
+        <file>appIMG/6.Common/oval_down.png</file>
+        <file>appIMG/6.Common/oval_up.png</file>
+        <file>appIMG/6.Common/authen_arrow.png</file>
+        <file>appIMG/6.Common/authen_bgr.png</file>
+        <file>appIMG/6.Common/text_input_bgr.png</file>
     </qresource>
 </RCC>

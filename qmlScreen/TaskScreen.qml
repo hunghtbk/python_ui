@@ -175,7 +175,7 @@ Rectangle {
         anchors.topMargin: (22/730)* parent.height //y
         width: (70.4/1135) * m_taskScreen.width //width
         height: (70.4/730) * m_taskScreen.height //heigh
-        source: "../image/TaskScreen/image_borde.png"
+        source: "../appIMG/6.Common/image_borde.png"
     }
     Image {
         id: taskScreen_img_20
@@ -189,7 +189,7 @@ Rectangle {
         anchors.topMargin: (29/730)* parent.height //y
         width: (52/1135) * m_taskScreen.width //width
         height: (56/730) * m_taskScreen.height //heigh
-        source: "../image/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
+        source: "../appIMG/6.Common/Sony-Playstation-5-Blu-Ray-Edition-Console-White_Big.png"
     }
 
     Text {
@@ -497,7 +497,7 @@ Rectangle {
         anchors.leftMargin: (284/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (115.5/730)* parent.height
-        source: "../image/TaskScreen/line.png"
+        source: "../appIMG/6.Common/line.png"
     }
     Text {
         id: taskScreenTxt_17
@@ -551,8 +551,7 @@ Rectangle {
         anchors.leftMargin: (774/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "../image/TaskScreen/white_border.png"
-
+        source: "../appIMG/6.Common/white_border.png"
     }
     Image {
         id: taskScreen_img_31
@@ -608,7 +607,7 @@ Rectangle {
         anchors.leftMargin: (886/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "../image/TaskScreen/white_border.png"
+        source: "../appIMG/6.Common/white_border.png"
     }
     Image {
         id: taskScreen_img_33
@@ -664,7 +663,7 @@ Rectangle {
         anchors.leftMargin: (998/1135)* parent.width
         anchors.top: taskScreenborderLeftMain.bottom
         anchors.topMargin: (134/730)* parent.height
-        source: "../image/TaskScreen/white_border.png"
+        source: "../appIMG/6.Common/white_border.png"
     }
     Image {
         id: taskScreen_img_35

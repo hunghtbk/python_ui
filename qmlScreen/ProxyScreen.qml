@@ -1,6 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.2
 
 Rectangle {
     id: m_proxyScreen
@@ -359,50 +359,24 @@ Rectangle {
             height: 0
         }
 
-        /*
-        TextInput {
-            id: txt_6
-            property int textSize: 9
-    //        width: 323
-    //        height: 15
-    //        x: 20
-    //        y: 17
-            width: (323/363) * parent.width //width
-            height: (500/546) * parent.height //height
-            anchors.left: leftMarginTextInput.right
-            anchors.leftMargin: (20/363)* parent.width //x
-            anchors.top: leftMarginTextInput.bottom
-            anchors.topMargin: (17/546)* parent.height //y
-            font.family: "Inter"
-            wrapMode: Text.WrapAnywhere
-            font.pointSize: textSize
-            color: "#75719B"
-    //        text: qsTr("ip:auth:user:pass")
-            property string placeholderText: "ip:auth:user:pass"
-
-            Text {
-                text: txt_6.placeholderText
-                color: "#6a687d"
-                visible: !txt_6.text
-                font: txt_6.font
-            }
-        }
-        */
-        TextArea {
-            id: txt_6
-            property int textSize: 9
+        ScrollView {
             width: (340/363) * parent.width //width
-            height: (500/546) * parent.height //height
+            height: (525/546) * parent.height //height
             anchors.left: leftMarginTextInput.right
             anchors.leftMargin: (10/363)* parent.width //x
             anchors.top: leftMarginTextInput.bottom
             anchors.topMargin: (12/546)* parent.height //y
-            font.family: "Inter"
-            wrapMode: Text.WrapAnywhere
-            font.pointSize: textSize
-            color: "#75719B"
-            placeholderText: qsTr("ip:auth:user:pass")
-            selectByMouse: true
+            clip: true
+            TextArea {
+                id: txt_6
+                property int textSize: 9
+                font.family: "Inter"
+                wrapMode: Text.WrapAnywhere
+                font.pointSize: textSize
+                color: "#75719B"
+                placeholderText: qsTr("ip:auth:user:pass")
+                selectByMouse: true
+            }
         }
     }
     Rectangle {

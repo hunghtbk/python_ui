@@ -97,7 +97,7 @@ Rectangle {
         anchors.leftMargin: (312/defaultWidth)* parent.width //x
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (34/defaultHeight)* parent.height //y
-        source: "../image/create_task_donw_oval.png"
+        source: "../appIMG/6.Common/create_task_donw_oval.png"
     }
 
     Text {
@@ -341,7 +341,7 @@ Rectangle {
         anchors.leftMargin: (528/defaultWidth)* parent.width //x
         anchors.top: createAccountScreenborderLeftMain.bottom
         anchors.topMargin: (272/defaultHeight)* parent.height //y
-        source: "../image/Account/arrow-right.png"
+        source: "../appIMG/6.Common/arrow-right.png"
     }
     Component.onCompleted: {
         updateTheme();

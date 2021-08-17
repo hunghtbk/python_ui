@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
 //    QGuiApplication app(argc, argv);
 
     ControllMainAPP::getInstance()->initControlMainApp();
+    Qt::WindowFlags flags = Qt::Window;
+    flags |= Qt::MSWindowsFixedSizeDialogHint;
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

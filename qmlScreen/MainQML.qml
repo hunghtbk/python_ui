@@ -11,6 +11,9 @@ Window {
     color: "#2E2C50"
     flags:Qt.FramelessWindowHint
 
+    property int minHeight: 710
+    property int minWidth: 1140
+
     property int currentWidth: m_mainScreen.width
     property int currentHeight: m_mainScreen.height
 
@@ -665,8 +668,8 @@ Window {
         listREC_ID.push(rec_1)
     }
     onHeightChanged: {
-        if (height < 710) {
-            height = 710
+        if (height < minHeight) {
+            height = minHeight
         }
         reSizeLoaderSize();
         console.log("hunght H " + height)
@@ -708,8 +711,8 @@ Window {
     }
 
     onWidthChanged: {
-        if (width < 1140) {
-            width = 1140
+        if (width < minWidth) {
+            width = minWidth
         }
         reSizeLoaderSize();
         var rate = width/currentWidth

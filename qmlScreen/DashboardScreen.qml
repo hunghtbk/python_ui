@@ -565,11 +565,13 @@ Rectangle {
 
         ValueAxis {
             id: xAxis
-            min: 0
-            max: 10
+            min: 2
+            max: 8
             color: "#4B486E"
             gridLineColor: "#4B486E"
             labelsColor: "#5D5984"
+            labelsVisible: false
+            tickCount: 7
         }
 
         ValueAxis {
@@ -579,25 +581,54 @@ Rectangle {
             color: "#4B486E"
             gridLineColor: "#4B486E"
             labelsColor: "#5D5984"
+//            labelsVisible: false
+            tickCount: 6
+            labelFormat: "%.0f"
+
         }
-        SplineSeries {
-            id: splineSeries
-            //            name: "SplineSeries"
-            XYPoint { x: 0; y: 0.0 }
-            XYPoint { x: 1.1; y: 3.2 }
-            XYPoint { x: 1.9; y: 2.4 }
-            XYPoint { x: 2.1; y: 2.1 }
-            XYPoint { x: 2.9; y: 2.6 }
-            XYPoint { x: 3.4; y: 2.3 }
-            XYPoint { x: 4.1; y: 3.1 }
-            XYPoint { x: 4.5; y: 6.2 }
-            XYPoint { x: 9.1; y: 10.0 }
-            XYPoint { x: 10.0; y: 11.3 }
-            color: "#907DE2"
-            width: (2/730) * m_dashboardScreen.height
+
+        AreaSeries {
+            name: "Label for Chart"
             axisX: xAxis
             axisY: yAxis
+            color: "grey"
+            opacity: 0.175
+            upperSeries: LineSeries {
+                XYPoint { x: 2; y: 1.5 }
+                XYPoint { x: 2.3; y: 4.0}
+                XYPoint { x: 2.4; y: 4.4}
+                XYPoint { x: 2.5; y: 4.5 }
+                XYPoint { x: 3; y: 3.8 }
+                XYPoint { x: 3.5; y: 3 }
+                XYPoint { x: 4; y: 2 }
+                XYPoint { x: 4.5; y: 2.3 }
+                XYPoint { x: 5; y: 3.1 }
+                XYPoint { x: 5.5; y: 6 }
+                XYPoint { x: 6; y: 7.5 }
+                XYPoint { x: 6.5; y: 10.0 }
+                XYPoint { x: 7; y: 12.0 }
+                XYPoint { x: 7.5; y: 13.0 }
+                XYPoint { x: 8; y: 14.0 }
+            }
         }
+//        SplineSeries {
+//            id: splineSeries
+//            //            name: "SplineSeries"
+//            XYPoint { x: 0; y: 0.0 }
+//            XYPoint { x: 1.1; y: 3.2 }
+//            XYPoint { x: 1.9; y: 2.4 }
+//            XYPoint { x: 2.1; y: 2.1 }
+//            XYPoint { x: 2.9; y: 2.6 }
+//            XYPoint { x: 3.4; y: 2.3 }
+//            XYPoint { x: 4.1; y: 3.1 }
+//            XYPoint { x: 4.5; y: 6.2 }
+//            XYPoint { x: 9.1; y: 10.0 }
+//            XYPoint { x: 10.0; y: 11.3 }
+//            color: "#907DE2"
+//            width: (2/730) * m_dashboardScreen.height
+//            axisX: xAxis
+//            axisY: yAxis
+//        }
 
         //        Glow {
         //            id:glow
@@ -655,6 +686,111 @@ Rectangle {
         //                    XYPoint { x: 10; y: 10.0 }
         //                }
         //            }
+    }
+
+    Text {
+        id: txt_17
+        property int textSize: 9
+        text: qsTr("Mon")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (65/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_18
+        property int textSize: 9
+        text: qsTr("Tue")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (154/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_19
+        property int textSize: 9
+        text: qsTr("Wed")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (240/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_20
+        property int textSize: 9
+        text: qsTr("Thu")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (330/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_21
+        property int textSize: 9
+        text: qsTr("Fri")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (416/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_22
+        property int textSize: 9
+        text: qsTr("Sat")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (494/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
+    }
+
+    Text {
+        id: txt_23
+        property int textSize: 9
+        text: qsTr("Sun")
+        width: (26/1135) * m_dashboardScreen.width //width
+        height: (15/730) * m_dashboardScreen.height //height
+        anchors.left: dashboardScreenborderLeftMain.right
+        anchors.leftMargin: (577/1135)* parent.width //x
+        anchors.top: dashboardScreenborderLeftMain.bottom
+        anchors.topMargin: (656/730)* parent.height //y
+        font.family: "Inter"
+        font.pointSize: textSize
+        color: "#5D5984"
     }
 
     Rectangle {
